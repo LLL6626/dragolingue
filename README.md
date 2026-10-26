@@ -6,7 +6,20 @@ Está hecha con **Expo (React Native) + TypeScript** y funciona en Android y en 
 
 El contenido sigue la **grafía oficial de la Academia Aragonesa de la Lengua (2023)**.
 
-## Probarla en el móvil
+## Probarla ya: versión web instalable
+
+**https://lll6626.github.io/dragolingue/**
+
+Se publica sola con GitHub Pages desde la rama `main`. Para tenerla como una app:
+
+- **Android**: ábrela en Chrome y toca ⋮ → *Instalar aplicación*.
+- **iPhone**: ábrela en Safari y toca Compartir → *Añadir a pantalla de inicio*.
+
+Funciona sin conexión después de abrirla una vez. El progreso se guarda en el navegador del móvil.
+
+Esta versión web es el prototipo de la fase 2: `index.html`, `manifest.webmanifest`, `sw.js` y la carpeta `web/`. Lee las lecciones del mismo `src/content/contenido.json` que la app de Expo, así que una corrección en el JSON llega a las dos.
+
+## Probarla en el móvil con Expo (la app nativa)
 
 Solo hace falta un ordenador y el móvil conectados a la **misma wifi**.
 
@@ -83,6 +96,7 @@ src/exercises/              los 5 tipos de ejercicio
 src/screens/                Aprender, Vocabulario, Perfil, Lección y Final
 src/state/progress.ts       progreso guardado en el móvil (expo-sqlite)
 scripts/validar-contenido.mjs  comprobación del contenido
+index.html, sw.js, web/     versión web instalable (GitHub Pages)
 prototipo/                  prototipo HTML de la fase 2
 ```
 
