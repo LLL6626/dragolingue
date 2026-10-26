@@ -1,0 +1,813 @@
+{
+  "version": 2,
+  "ortografia": "Academia Aragonesa de la Lengua, 2023",
+  "ayuda": {
+    "tipos": {
+      "pick": "Elegir la imagen: es = palabra en castellano, answer = respuesta en aragonés, options = [palabra, emoji]",
+      "choice": "Traducir: ar = frase en aragonés, options = traducciones, answer = posición de la correcta (empieza en 0)",
+      "build": "Construir la frase: es = frase en castellano, answer = frase en aragonés, tiles = fichas (incluye las de relleno)",
+      "fill": "Completar: before + hueco + after, es = traducción, options = opciones, answer = la correcta",
+      "match": "Unir parejas: pairs = [aragonés, castellano]"
+    }
+  },
+  "secciones": [
+    {
+      "nombre": "Sección 1 · Primeros pasos",
+      "unidades": [
+        "u1",
+        "u2",
+        "u3"
+      ]
+    },
+    {
+      "nombre": "Sección 2 · El día a día",
+      "unidades": [
+        "u4",
+        "u5",
+        "u6"
+      ]
+    },
+    {
+      "nombre": "Sección 3 · Por el Pirineo",
+      "unidades": [
+        "u7",
+        "u8",
+        "u9",
+        "u10"
+      ]
+    }
+  ],
+  "felicitaciones": [
+    "¡Muito bien!",
+    "¡Perfecto!",
+    "¡Asinas se fa!"
+  ],
+  "unidades": [
+    {
+      "id": "u1",
+      "titulo": "Saludos y presentaciones",
+      "tema": "Saludar, presentarte y despedirte",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>En aragonés, <b>llamarse</b> se dice <b>clamar-se</b>: <i>me clamo Ana</i>, <i>¿cómo te clamas?</i></p> <p><b>Muito</b> es «mucho» o «muy»: <i>muito gusto</i>, <i>muito bien</i>.</p> <table><tr><td>dica luego</td><td>hasta luego</td></tr><tr><td>¿qué tal?</td><td>¿qué tal?</td></tr><tr><td>gracias</td><td>gracias</td></tr></table> <p>Muchas palabras se parecen al castellano. Fíjate en las que cambian.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "hola",
+          "es": "hola"
+        },
+        {
+          "ar": "adiós",
+          "es": "adiós"
+        },
+        {
+          "ar": "gracias",
+          "es": "gracias"
+        },
+        {
+          "ar": "por favor",
+          "es": "por favor"
+        },
+        {
+          "ar": "sí",
+          "es": "sí"
+        },
+        {
+          "ar": "no",
+          "es": "no"
+        },
+        {
+          "ar": "bien",
+          "es": "bien"
+        },
+        {
+          "ar": "muito bien",
+          "es": "muy bien"
+        },
+        {
+          "ar": "¿qué tal?",
+          "es": "¿qué tal?"
+        },
+        {
+          "ar": "me clamo",
+          "es": "me llamo"
+        },
+        {
+          "ar": "¿cómo te clamas?",
+          "es": "¿cómo te llamas?"
+        },
+        {
+          "ar": "muito gusto",
+          "es": "mucho gusto"
+        },
+        {
+          "ar": "dica luego",
+          "es": "hasta luego"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u1-l1",
+          "nombre": "Saludar",
+          "ejercicios": [
+            {
+              "id": "u1-l1-e1",
+              "t": "pick",
+              "es": "gracias",
+              "answer": "gracias",
+              "options": [
+                [
+                  "hola",
+                  "👋"
+                ],
+                [
+                  "gracias",
+                  "🙏"
+                ],
+                [
+                  "adiós",
+                  "🚶"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l1-e2",
+              "t": "pick",
+              "es": "sí",
+              "answer": "sí",
+              "options": [
+                [
+                  "no",
+                  "❌"
+                ],
+                [
+                  "bien",
+                  "👍"
+                ],
+                [
+                  "sí",
+                  "✅"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l1-e3",
+              "t": "choice",
+              "ar": "Hola, ¿qué tal?",
+              "options": [
+                "Hola, ¿qué tal?",
+                "Adiós, hasta luego.",
+                "Gracias, muy bien."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u1-l1-e4",
+              "t": "choice",
+              "ar": "Muito bien, gracias.",
+              "options": [
+                "Mucho gusto, gracias.",
+                "Muy bien, gracias.",
+                "Bien, por favor."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u1-l1-e5",
+              "t": "build",
+              "es": "Muy bien, gracias.",
+              "answer": "Muito bien, gracias.",
+              "tiles": [
+                "gracias.",
+                "Muito",
+                "adiós",
+                "bien,",
+                "no"
+              ]
+            },
+            {
+              "id": "u1-l1-e6",
+              "t": "match",
+              "pairs": [
+                [
+                  "muito bien",
+                  "muy bien"
+                ],
+                [
+                  "gracias",
+                  "gracias"
+                ],
+                [
+                  "adiós",
+                  "adiós"
+                ],
+                [
+                  "sí",
+                  "sí"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l1-e7",
+              "t": "fill",
+              "before": "Hola, ¿qué",
+              "after": "?",
+              "es": "Hola, ¿qué tal?",
+              "options": [
+                "bien",
+                "tal",
+                "muito"
+              ],
+              "answer": "tal"
+            }
+          ]
+        },
+        {
+          "id": "u1-l2",
+          "nombre": "Presentarse",
+          "ejercicios": [
+            {
+              "id": "u1-l2-e1",
+              "t": "choice",
+              "ar": "Me clamo Marta.",
+              "options": [
+                "Me gusta Marta.",
+                "Llamo a Marta.",
+                "Me llamo Marta."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u1-l2-e2",
+              "t": "fill",
+              "before": "¿Cómo te",
+              "after": "?",
+              "es": "¿Cómo te llamas?",
+              "options": [
+                "llamas",
+                "clamas",
+                "dices"
+              ],
+              "answer": "clamas"
+            },
+            {
+              "id": "u1-l2-e3",
+              "t": "pick",
+              "es": "mucho gusto",
+              "answer": "muito gusto",
+              "options": [
+                [
+                  "dica luego",
+                  "👋"
+                ],
+                [
+                  "muito gusto",
+                  "🤝"
+                ],
+                [
+                  "gracias",
+                  "🙏"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l2-e4",
+              "t": "build",
+              "es": "Hasta luego, Pablo.",
+              "answer": "Dica luego, Pablo.",
+              "tiles": [
+                "luego,",
+                "muito",
+                "Pablo.",
+                "Dica",
+                "clamo"
+              ]
+            },
+            {
+              "id": "u1-l2-e5",
+              "t": "match",
+              "pairs": [
+                [
+                  "me clamo",
+                  "me llamo"
+                ],
+                [
+                  "muito gusto",
+                  "mucho gusto"
+                ],
+                [
+                  "dica luego",
+                  "hasta luego"
+                ],
+                [
+                  "¿cómo te clamas?",
+                  "¿cómo te llamas?"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l2-e6",
+              "t": "build",
+              "es": "Hola, me llamo Ana.",
+              "answer": "Hola, me clamo Ana.",
+              "tiles": [
+                "me",
+                "Ana.",
+                "llamo",
+                "Hola,",
+                "clamo",
+                "te"
+              ]
+            },
+            {
+              "id": "u1-l2-e7",
+              "t": "choice",
+              "ar": "¿Cómo te clamas?",
+              "options": [
+                "¿Cómo te llamas?",
+                "¿Cómo estás?",
+                "¿De dónde eres?"
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "u1-l3",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "titulo": "Personas y familia",
+      "tema": "Quién es quién: personas, el verbo ser y la familia",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>El verbo <b>ser</b> en presente:</p> <table><tr><td>yo soi</td><td>yo soy</td></tr><tr><td>tu yes</td><td>tú eres</td></tr><tr><td>ell / ella ye</td><td>él / ella es</td></tr> <tr><td>nusatros somos</td><td>nosotros somos</td></tr><tr><td>vusatros soz</td><td>vosotros sois</td></tr><tr><td>ells / ellas son</td><td>ellos / ellas son</td></tr></table> <p>Para decir «mi» se usa el artículo: <i>lo mío pai</i> (mi padre), <i>la mía mai</i> (mi madre).</p> <p>Muchas palabras terminan en <b>-et / -eta</b>: <i>chiquet</i>, <i>chiqueta</i>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "yo",
+          "es": "yo"
+        },
+        {
+          "ar": "tu",
+          "es": "tú"
+        },
+        {
+          "ar": "ell / ella",
+          "es": "él / ella"
+        },
+        {
+          "ar": "nusatros",
+          "es": "nosotros"
+        },
+        {
+          "ar": "vusatros",
+          "es": "vosotros"
+        },
+        {
+          "ar": "hombre",
+          "es": "hombre"
+        },
+        {
+          "ar": "muller",
+          "es": "mujer"
+        },
+        {
+          "ar": "chiquet / chiqueta",
+          "es": "niño / niña"
+        },
+        {
+          "ar": "amigo / amiga",
+          "es": "amigo / amiga"
+        },
+        {
+          "ar": "mayestro / mayestra",
+          "es": "maestro / maestra"
+        },
+        {
+          "ar": "soi · yes · ye",
+          "es": "soy · eres · es"
+        },
+        {
+          "ar": "somos · soz · son",
+          "es": "somos · sois · son"
+        },
+        {
+          "ar": "pai",
+          "es": "padre"
+        },
+        {
+          "ar": "mai",
+          "es": "madre"
+        },
+        {
+          "ar": "chirmano / chirmana",
+          "es": "hermano / hermana"
+        },
+        {
+          "ar": "fillo / filla",
+          "es": "hijo / hija"
+        },
+        {
+          "ar": "lolo / lola",
+          "es": "abuelo / abuela"
+        },
+        {
+          "ar": "lo mío / la mía",
+          "es": "mi"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u2-l1",
+          "nombre": "Las personas",
+          "ejercicios": [
+            {
+              "id": "u2-l1-e1",
+              "t": "pick",
+              "es": "mujer",
+              "answer": "muller",
+              "options": [
+                [
+                  "hombre",
+                  "👨"
+                ],
+                [
+                  "muller",
+                  "👩"
+                ],
+                [
+                  "chiqueta",
+                  "👧"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l1-e2",
+              "t": "pick",
+              "es": "niño",
+              "answer": "chiquet",
+              "options": [
+                [
+                  "chiqueta",
+                  "👧"
+                ],
+                [
+                  "hombre",
+                  "👨"
+                ],
+                [
+                  "chiquet",
+                  "👦"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l1-e3",
+              "t": "pick",
+              "es": "maestra",
+              "answer": "mayestra",
+              "options": [
+                [
+                  "mayestra",
+                  "👩‍🏫"
+                ],
+                [
+                  "muller",
+                  "👩"
+                ],
+                [
+                  "amiga",
+                  "🧑‍🤝‍🧑"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l1-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "muller",
+                  "mujer"
+                ],
+                [
+                  "chiquet",
+                  "niño"
+                ],
+                [
+                  "chiqueta",
+                  "niña"
+                ],
+                [
+                  "mayestra",
+                  "maestra"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l1-e5",
+              "t": "choice",
+              "ar": "Una chiqueta y un chiquet.",
+              "options": [
+                "Una mujer y un hombre.",
+                "Una niña y un niño.",
+                "Una amiga y un amigo."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u2-l1-e6",
+              "t": "fill",
+              "before": "Una",
+              "after": "y un hombre.",
+              "es": "Una mujer y un hombre.",
+              "options": [
+                "chiquet",
+                "muller",
+                "mayestro"
+              ],
+              "answer": "muller"
+            }
+          ]
+        },
+        {
+          "id": "u2-l2",
+          "nombre": "Yo soi, tu yes",
+          "ejercicios": [
+            {
+              "id": "u2-l2-e1",
+              "t": "choice",
+              "ar": "Yo soi mayestra.",
+              "options": [
+                "Yo soy maestra.",
+                "Yo tengo maestra.",
+                "Tú eres maestra."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u2-l2-e2",
+              "t": "fill",
+              "before": "Tu",
+              "after": "lo mío amigo.",
+              "es": "Tú eres mi amigo.",
+              "options": [
+                "soi",
+                "yes",
+                "ye"
+              ],
+              "answer": "yes"
+            },
+            {
+              "id": "u2-l2-e3",
+              "t": "fill",
+              "before": "Ella",
+              "after": "una chiqueta.",
+              "es": "Ella es una niña.",
+              "options": [
+                "ye",
+                "yes",
+                "soi"
+              ],
+              "answer": "ye"
+            },
+            {
+              "id": "u2-l2-e4",
+              "t": "build",
+              "es": "Nosotros somos amigos.",
+              "answer": "Nusatros somos amigos.",
+              "tiles": [
+                "somos",
+                "ye",
+                "amigos.",
+                "Nusatros",
+                "soi"
+              ]
+            },
+            {
+              "id": "u2-l2-e5",
+              "t": "match",
+              "pairs": [
+                [
+                  "yo soi",
+                  "yo soy"
+                ],
+                [
+                  "tu yes",
+                  "tú eres"
+                ],
+                [
+                  "ell ye",
+                  "él es"
+                ],
+                [
+                  "vusatros soz",
+                  "vosotros sois"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l2-e6",
+              "t": "choice",
+              "ar": "Vusatros soz amigos.",
+              "options": [
+                "Ellos son amigos.",
+                "Nosotros somos amigos.",
+                "Vosotros sois amigos."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u2-l2-e7",
+              "t": "build",
+              "es": "Ella es maestra.",
+              "answer": "Ella ye mayestra.",
+              "tiles": [
+                "mayestra.",
+                "yes",
+                "Ella",
+                "muller",
+                "ye"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u2-l3",
+          "nombre": "La familia",
+          "ejercicios": [
+            {
+              "id": "u2-l3-e1",
+              "t": "pick",
+              "es": "abuela",
+              "answer": "lola",
+              "options": [
+                [
+                  "lolo",
+                  "👴"
+                ],
+                [
+                  "mai",
+                  "👩"
+                ],
+                [
+                  "lola",
+                  "👵"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l3-e2",
+              "t": "pick",
+              "es": "padre",
+              "answer": "pai",
+              "options": [
+                [
+                  "pai",
+                  "👨"
+                ],
+                [
+                  "fillo",
+                  "👶"
+                ],
+                [
+                  "lolo",
+                  "👴"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "mai",
+                  "madre"
+                ],
+                [
+                  "chirmana",
+                  "hermana"
+                ],
+                [
+                  "fillo",
+                  "hijo"
+                ],
+                [
+                  "lolo",
+                  "abuelo"
+                ]
+              ]
+            },
+            {
+              "id": "u2-l3-e4",
+              "t": "choice",
+              "ar": "Lo mío pai ye de Chaca.",
+              "options": [
+                "Mi abuelo es de Huesca.",
+                "Mi padre es de Jaca.",
+                "Mi hermano vive en Jaca."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u2-l3-e5",
+              "t": "fill",
+              "before": "La mía",
+              "after": "ye mayestra.",
+              "es": "Mi madre es maestra.",
+              "options": [
+                "pai",
+                "lolo",
+                "mai"
+              ],
+              "answer": "mai"
+            },
+            {
+              "id": "u2-l3-e6",
+              "t": "build",
+              "es": "Él es mi hermano.",
+              "answer": "Ell ye lo mío chirmano.",
+              "tiles": [
+                "chirmano.",
+                "lo",
+                "la",
+                "Ell",
+                "mía",
+                "ye",
+                "mío"
+              ]
+            },
+            {
+              "id": "u2-l3-e7",
+              "t": "choice",
+              "ar": "Ella ye la mía lola.",
+              "options": [
+                "Ella es mi abuela.",
+                "Ella es mi madre.",
+                "Ella es mi hija."
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "u2-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "titulo": "Números y colores",
+      "tema": "Del zero al vinte · blanco, royo, amariello…",
+      "bloqueada": true
+    },
+    {
+      "id": "u4",
+      "titulo": "Comida y bebida",
+      "tema": "Pan, augua, vin, leit, trunfas…",
+      "bloqueada": true
+    },
+    {
+      "id": "u5",
+      "titulo": "La casa",
+      "tema": "Cambra, cozina, finestra, leito…",
+      "bloqueada": true
+    },
+    {
+      "id": "u6",
+      "titulo": "El cuerpo",
+      "tema": "Cabeza, uellos, orellas, man, garra…",
+      "bloqueada": true
+    },
+    {
+      "id": "u7",
+      "titulo": "Animales y naturaleza",
+      "tema": "Can, mixín, onso, ibón, mont…",
+      "bloqueada": true
+    },
+    {
+      "id": "u8",
+      "titulo": "Días, meses y orache",
+      "tema": "Luns, chinero, agüerro, hibierno…",
+      "bloqueada": true
+    },
+    {
+      "id": "u9",
+      "titulo": "Viajes y lugares",
+      "tema": "Uesca, Chaca, puent, camín…",
+      "bloqueada": true
+    },
+    {
+      "id": "u10",
+      "titulo": "Verbos de cada día",
+      "tema": "Fer, minchar, charrar, puyar…",
+      "bloqueada": true
+    }
+  ]
+}
