@@ -83,7 +83,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .face{position:absolute;inset:0;border-radius:22px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--monte-soft)}
 .face img{width:100%;height:100%;object-fit:cover;display:block}
 .face.back{transform:rotateY(180deg)}
-.where{position:absolute;right:0;bottom:0;background:rgba(255,255,255,.94);color:var(--monte);font-weight:800;font-size:.74rem;padding:6px 12px 7px 12px;border-radius:14px 0 22px 0;display:flex;gap:6px;align-items:center;box-shadow:-2px -2px 8px rgba(0,0,0,.08)}
+.pic-wrap{display:flex;flex-direction:column}
+.where{align-self:flex-end;margin-right:18px;border:none;background:var(--monte-soft);color:var(--monte);font-weight:800;font-size:.74rem;padding:4px 12px 6px;border-radius:0 0 12px 12px;display:flex;gap:6px;align-items:center}
 .sign{position:absolute;right:14px;bottom:14px;background:#F6E2B3;border:3px solid #8C6A3C;border-radius:10px;padding:6px 14px;transform:rotate(-4deg);
   font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:#5A3A1A;text-align:center;line-height:1.1;box-shadow:0 4px 0 rgba(0,0,0,.25)}
 .sign small{display:block;font-family:var(--f-body, inherit);font-size:.72rem;font-weight:700;color:#8C6A3C}
@@ -731,11 +732,12 @@ function renderAbout(i, keep) {
         <button class="lang" data-lang="an" aria-pressed="${aboutLang() === "an"}" title="Aragonés">${FLAG_AR}</button>
       </div></div>
     <article class="about-card">
-      ${(() => { const k = aboutImgs[i], P = PLACES[k]; return `<div class="about-pic" id="flip" role="button" tabindex="0" aria-label="¿Dónde está Dragolingüe? Toca la imagen para verlo en el mapa">
+      ${(() => { const k = aboutImgs[i], P = PLACES[k]; return `<div class="pic-wrap"><div class="about-pic" id="flip" role="button" tabindex="0" aria-label="¿Dónde está Dragolingüe? Toca la imagen para verlo en el mapa">
         <div class="flip-inner">
-          <div class="face front"><img src="web/img/${k}.jpg" alt="Dragolingüe de paseo por Aragón"><span class="where">${an ? "¿Án ye Dragolingüe?" : "¿Dónde está Dragolingüe?"} <span aria-hidden="true">↻</span></span></div>
+          <div class="face front"><img src="web/img/${k}.jpg" alt="Dragolingüe de paseo por Aragón"></div>
           <div class="face back"><img src="web/img/mapa-${k}.jpg" alt="Mapa de Aragón con una chincheta roja"><div class="sign">${esc(P.ar)}${P.es ? `<small>${esc(P.es)}</small>` : ""}</div></div>
-        </div></div>`; })()}
+        </div></div>
+        <button class="where" id="where">${an ? "¿Án ye Dragolingüe?" : "¿Dónde está Dragolingüe?"} <span aria-hidden="true">↻</span></button></div>`; })()}
       <h1 lang="${an ? "an" : "es"}">${esc(T.title)}</h1>
       <div class="talk"><div class="mini">${dragon("happy")}</div><p lang="${an ? "an" : "es"}">${esc(T.text)}</p></div>
       ${T.src ? `<p class="src">${esc(T.src)}</p>` : ""}
@@ -755,6 +757,7 @@ function renderAbout(i, keep) {
   const fl = $app.querySelector("#flip");
   const flip = () => fl.classList.toggle("flipped");
   fl.onclick = flip;
+  $app.querySelector("#where").onclick = flip;
   fl.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } };
   const p = $app.querySelector("#ab-prev"); if (p) p.onclick = () => renderAbout(i - 1, true);
   $app.querySelector("#ab-next").onclick = () => {
