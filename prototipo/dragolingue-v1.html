@@ -1,0 +1,606 @@
+<title>Aragonés con Dragolingüe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Layout: columna de móvil centrada; mapa en zigzag por unidades temáticas; lección a pantalla completa con barra de comprobación fija abajo */
+:root{
+  --bg:#F6F4EE; --surface:#FFFFFF; --ink:#1F2A33; --muted:#66727C; --line:#E2DDD0;
+  --oro:#F2B200; --oro-soft:#FFF1C2; --rojo:#C8231B; --rojo-soft:#FBE3E0;
+  --monte:#2F5D7C; --monte-soft:#E3EEF5; --ok:#3F9A2E; --ok-soft:#E5F4DF; --ko:#C8231B; --ko-soft:#FBE3E0;
+  --locked:#C9C5BA; --shadow:rgba(31,42,51,.12);
+  --f-display:"Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --f-body:"Nunito", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13202A; --surface:#1C2C38; --ink:#EEF2F4; --muted:#9AA9B3; --line:#2B3D4A;
+  --oro:#FFC21A; --oro-soft:#3A3214; --rojo:#F0574C; --rojo-soft:#3E1F1E;
+  --monte:#7DB3D6; --monte-soft:#1F3443; --ok:#7BCB62; --ok-soft:#1E3420; --ko:#F0574C; --ko-soft:#3E1F1E;
+  --locked:#3A4A55; --shadow:rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13202A; --surface:#1C2C38; --ink:#EEF2F4; --muted:#9AA9B3; --line:#2B3D4A;
+  --oro:#FFC21A; --oro-soft:#3A3214; --rojo:#F0574C; --rojo-soft:#3E1F1E;
+  --monte:#7DB3D6; --monte-soft:#1F3443; --ok:#7BCB62; --ok-soft:#1E3420; --ko:#F0574C; --ko-soft:#3E1F1E;
+  --locked:#3A4A55; --shadow:rgba(0,0,0,.35); color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.45}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--monte);outline-offset:2px}
+.app{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.1;text-wrap:balance}
+
+/* barra superior */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:8px;padding-block:12px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.brand{display:flex;align-items:center;gap:6px;font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:var(--rojo)}
+.stats{display:flex;gap:12px}
+.stat{display:flex;align-items:center;gap:4px;font-weight:800;font-variant-numeric:tabular-nums}
+.stat svg{width:22px;height:22px}
+
+/* mapa */
+.view{flex:1;padding-bottom:96px}
+.section-label{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:24px 0 8px}
+.unit{margin-bottom:8px}
+.unit-head{border-radius:18px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:#fff;background:var(--rojo)}
+.unit-head.locked{background:var(--locked);color:var(--surface)}
+.unit-head .num{font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.unit-head h2{font-size:1.35rem;margin-top:2px}
+.unit-head .theme{font-size:.85rem;opacity:.95}
+.tip-btn{flex:none;border:2px solid rgba(255,255,255,.7);background:transparent;color:inherit;border-radius:12px;padding:8px 10px;font-weight:800;font-size:.85rem;display:flex;gap:6px;align-items:center}
+.path{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:24px 16px}
+.node{width:72px;height:66px;border-radius:50%;border:none;position:relative;display:grid;place-items:center;
+  background:var(--locked);box-shadow:0 7px 0 rgba(0,0,0,.18);transition:transform .1s}
+.node:active{transform:translateY(4px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.node svg{width:32px;height:32px}
+.node.done{background:var(--oro)}
+.node.current{background:var(--rojo)}
+.node.current::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:4px solid var(--rojo);opacity:.35;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.1}}
+.node.locked{cursor:not-allowed}
+.node-label{position:absolute;top:100%;margin-top:12px;font-size:.78rem;font-weight:800;color:var(--muted);white-space:nowrap}
+.start-bubble{position:absolute;bottom:100%;margin-bottom:10px;background:var(--surface);color:var(--rojo);border:2px solid var(--line);border-radius:12px;padding:4px 10px;font-weight:800;font-size:.85rem;white-space:nowrap}
+.mascot-on-path{position:absolute;width:118px;pointer-events:none}
+.locked-note{font-size:.88rem;color:var(--muted);padding:12px 4px 4px;text-align:center}
+
+/* nav inferior */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:2px solid var(--line);
+  padding:6px max(16px, env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
+.tabbar-inner{max-width:480px;margin:0 auto;display:flex;justify-content:space-around}
+.tab{border:2px solid transparent;background:none;border-radius:12px;padding:6px 14px;display:flex;flex-direction:column;align-items:center;font-size:.75rem;font-weight:800;color:var(--muted)}
+.tab svg{width:26px;height:26px}
+.tab[aria-selected="true"]{color:var(--monte);border-color:var(--monte-soft);background:var(--monte-soft)}
+
+/* vocabulario y perfil */
+.panel{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:16px;margin-top:12px}
+.vocab-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:10px}
+.vocab-list .ar{font-weight:800}
+.vocab-list .es{color:var(--muted)}
+.profile-head{display:flex;gap:12px;align-items:center}
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.metric{border:2px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.metric b{display:block;font-family:var(--f-display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.metric span{font-size:.78rem;color:var(--muted);font-weight:700}
+.link-btn{background:none;border:none;color:var(--monte);font-weight:800;text-decoration:underline;padding:0}
+
+/* lección */
+.lesson{display:flex;flex-direction:column;min-height:100%;padding-bottom:150px}
+.lesson-top{display:flex;align-items:center;gap:12px;padding-block:14px}
+.icon-btn{background:none;border:none;padding:4px;display:grid;place-items:center;color:var(--muted)}
+.icon-btn svg{width:26px;height:26px}
+.progress{flex:1;height:16px;border-radius:99px;background:var(--line);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--ok);border-radius:99px;transition:width .3s}
+.hearts{display:flex;align-items:center;gap:4px;font-weight:800;color:var(--rojo);font-variant-numeric:tabular-nums}
+.hearts svg{width:24px;height:24px}
+.q-kind{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--monte);margin:10px 0 6px}
+.q-title{font-size:1.5rem;margin-bottom:14px}
+.coach{display:flex;align-items:flex-end;gap:10px;margin-bottom:18px}
+.coach .mini{width:84px;flex:none}
+.bubble{position:relative;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:12px 14px;font-weight:800;font-size:1.15rem;min-width:0}
+.bubble::before{content:"";position:absolute;left:-10px;bottom:16px;width:16px;height:16px;background:var(--surface);border-left:2px solid var(--line);border-bottom:2px solid var(--line);transform:rotate(45deg)}
+.bubble .es-hint{display:block;font-weight:600;font-size:.85rem;color:var(--muted);margin-top:2px}
+.audio{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;border:2px dashed var(--line);background:none;color:var(--muted);vertical-align:middle;margin-right:6px}
+.audio svg{width:18px;height:18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card,.opt,.tile,.mbtn{border:2px solid var(--line);background:var(--surface);border-radius:16px;box-shadow:0 4px 0 var(--line);font-weight:800}
+.card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px;font-size:1rem}
+.card .pic{font-size:2.6rem;line-height:1}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{text-align:left;padding:14px 16px;font-size:1.05rem}
+.selected{border-color:var(--monte)!important;background:var(--monte-soft)!important;box-shadow:0 4px 0 var(--monte)!important}
+.answer-line{min-height:62px;border-bottom:2px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;padding:8px 0;margin-bottom:22px;border-top:2px solid var(--line)}
+.bank{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tile{padding:8px 14px;font-size:1.05rem}
+.tile.ghost{visibility:hidden}
+.fill-sentence{font-family:var(--f-display);font-size:1.6rem;font-weight:700;margin-bottom:6px}
+.fill-sentence .gap{display:inline-block;min-width:96px;border-bottom:3px solid var(--monte);text-align:center;color:var(--monte)}
+.fill-es{color:var(--muted);margin-bottom:20px}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match-col{display:flex;flex-direction:column;gap:10px}
+.mbtn{padding:12px 8px;font-size:1rem}
+.mbtn.gone{opacity:.35;box-shadow:none;cursor:default}
+.mbtn.bad{border-color:var(--ko);background:var(--ko-soft);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+.checkbar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--bg);border-top:2px solid var(--line);
+  padding:14px max(16px, env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
+.checkbar.ok{background:var(--ok-soft);border-color:transparent}
+.checkbar.ko{background:var(--ko-soft);border-color:transparent}
+.checkbar-inner{max-width:448px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.fb{display:flex;align-items:center;gap:10px}
+.fb .mini{width:58px;flex:none}
+.fb h3{font-size:1.3rem}
+.checkbar.ok .fb h3{color:var(--ok)} .checkbar.ko .fb h3{color:var(--ko)}
+.fb p{margin:2px 0 0;font-weight:700}
+.big-btn{width:100%;border:none;border-radius:16px;padding:14px;font-weight:800;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;
+  background:var(--ok);color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.2)}
+.big-btn:disabled{background:var(--line);color:var(--muted);box-shadow:none;cursor:not-allowed}
+.big-btn.red{background:var(--ko)}
+.big-btn.secondary{background:var(--surface);color:var(--monte);border:2px solid var(--line);box-shadow:0 4px 0 var(--line)}
+
+/* fin de lección */
+.finish{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding-top:24px;padding-bottom:160px}
+.finish .hero-dragon{width:220px;max-width:70%}
+.finish h1{font-size:2rem;color:var(--rojo)}
+.finish-stats{display:flex;gap:10px;width:100%}
+.finish-stats .metric{flex:1}
+
+/* modal consejos */
+.sheet-back{position:fixed;inset:0;z-index:20;background:rgba(10,20,28,.45);display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--surface);width:100%;max-width:480px;max-height:85%;overflow:auto;border-radius:22px 22px 0 0;
+  padding:20px max(16px, env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
+.sheet h2{color:var(--rojo);font-size:1.5rem}
+.sheet table{border-collapse:collapse;width:100%;margin:10px 0}
+.sheet td{border-bottom:1px solid var(--line);padding:6px 4px}
+.sheet td:first-child{font-weight:800}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:700;z-index:30;max-width:90%}
+.proto-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:20px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="app" id="app"></div>
+
+<script>
+/* ---------- Dragolingüe (SVG) ---------- */
+let dragonId = 0;
+function dragon(mood = "happy") {
+  const id = "d" + (++dragonId);
+  const wingL = mood === "cheer" ? "rotate(14 66 120)" : mood === "sad" ? "rotate(-10 66 120)" : "";
+  const wingR = mood === "cheer" ? "rotate(-14 134 120)" : mood === "sad" ? "rotate(10 134 120)" : "";
+  const mouth = {
+    happy: '<path d="M90 103 Q100 112 110 103" fill="none" stroke="#6E1612" stroke-width="3" stroke-linecap="round"/>',
+    cheer: '<path d="M88 101 Q100 118 112 101 Z" fill="#6E1612"/><path d="M93 107 Q100 112 107 107" fill="#F07A86"/>',
+    sad: '<path d="M90 108 Q100 101 110 108" fill="none" stroke="#6E1612" stroke-width="3" stroke-linecap="round"/>',
+    think: '<path d="M93 105 L108 103" fill="none" stroke="#6E1612" stroke-width="3" stroke-linecap="round"/>'
+  }[mood];
+  const look = mood === "think" ? -3 : 0;
+  const brows = mood === "sad" ? '<path d="M74 58 L92 63 M126 58 L108 63" stroke="#7A1A15" stroke-width="3" stroke-linecap="round"/>' : "";
+  const wing = `M66 122 C34 102 12 78 14 50 C25 60 35 64 45 62 C41 74 46 84 57 88 C51 98 56 108 66 114 Z`;
+  return `<svg viewBox="0 0 200 200" role="img" aria-label="Dragolingüe">
+  <defs>
+    <pattern id="${id}p" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)">
+      <rect width="16" height="16" fill="#F2C200"/><rect width="8" height="16" fill="#D7261E"/>
+    </pattern>
+  </defs>
+  <path d="M128 162 C160 178 180 166 182 144 L192 148 L186 132 L176 142 C172 158 152 164 132 150 Z" fill="#C92A22" stroke="#8E1B16" stroke-width="3" stroke-linejoin="round"/>
+  <g transform="${wingL}"><path d="${wing}" fill="url(#${id}p)" stroke="#8E1B16" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M66 118 L22 58 M62 112 L44 66 M60 104 L56 88" stroke="#8E1B16" stroke-width="2.5" stroke-linecap="round" fill="none"/></g>
+  <g transform="${wingR}"><g transform="translate(200 0) scale(-1 1)"><path d="${wing}" fill="url(#${id}p)" stroke="#8E1B16" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M66 118 L22 58 M62 112 L44 66 M60 104 L56 88" stroke="#8E1B16" stroke-width="2.5" stroke-linecap="round" fill="none"/></g></g>
+  <ellipse cx="100" cy="142" rx="43" ry="44" fill="#D6332A" stroke="#8E1B16" stroke-width="3"/>
+  <ellipse cx="100" cy="150" rx="27" ry="31" fill="#F6E2B3"/>
+  <path d="M78 142 H122 M76 154 H124 M79 166 H121" stroke="#E2C88E" stroke-width="2.5" fill="none"/>
+  <ellipse cx="68" cy="142" rx="9" ry="14" transform="rotate(20 68 142)" fill="#C92A22" stroke="#8E1B16" stroke-width="2.5"/>
+  <ellipse cx="132" cy="142" rx="9" ry="14" transform="rotate(-20 132 142)" fill="#C92A22" stroke="#8E1B16" stroke-width="2.5"/>
+  <ellipse cx="80" cy="184" rx="15" ry="8" fill="#C92A22" stroke="#8E1B16" stroke-width="2.5"/>
+  <ellipse cx="120" cy="184" rx="15" ry="8" fill="#C92A22" stroke="#8E1B16" stroke-width="2.5"/>
+  <path d="M95 48 C86 32 98 22 104 12 C106 24 120 28 110 48 Z" fill="#B8221B" stroke="#8E1B16" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M70 58 L64 42 L78 52 Z M130 58 L136 42 L122 52 Z" fill="#F6E2B3" stroke="#8E1B16" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="100" cy="78" rx="41" ry="35" fill="#D6332A" stroke="#8E1B16" stroke-width="3"/>
+  <ellipse cx="100" cy="98" rx="23" ry="14" fill="#DE4A3F"/>
+  <circle cx="93" cy="93" r="2.2" fill="#7A1A15"/><circle cx="107" cy="93" r="2.2" fill="#7A1A15"/>
+  <ellipse cx="70" cy="90" rx="7" ry="4" fill="#F07A86" opacity=".7"/><ellipse cx="130" cy="90" rx="7" ry="4" fill="#F07A86" opacity=".7"/>
+  <ellipse cx="84" cy="74" rx="11" ry="13" fill="#fff"/><ellipse cx="116" cy="74" rx="11" ry="13" fill="#fff"/>
+  <circle cx="85" cy="${76 + look}" r="8" fill="#2F7FC1"/><circle cx="115" cy="${76 + look}" r="8" fill="#2F7FC1"/>
+  <circle cx="85" cy="${77 + look}" r="4" fill="#0F2233"/><circle cx="115" cy="${77 + look}" r="4" fill="#0F2233"/>
+  <circle cx="88" cy="${72 + look}" r="2.6" fill="#fff"/><circle cx="118" cy="${72 + look}" r="2.6" fill="#fff"/>
+  ${brows}${mouth}
+  <path d="M70 110 Q100 118 130 110 L100 134 Z" fill="#C9A26B" stroke="#8C6A3C" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="95" y="114" width="10" height="12" rx="2" fill="#F2C200" stroke="#8C6A3C" stroke-width="1.5"/>
+  <path d="M97.5 115 V125 M100 115 V125 M102.5 115 V125" stroke="#D7261E" stroke-width="1.2"/>
+</svg>`;
+}
+
+/* ---------- Iconos ---------- */
+const ICON = {
+  fire: '<svg viewBox="0 0 24 24"><path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z" fill="#F28C1B"/></svg>',
+  gem: '<svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z" fill="#F2B200"/><path d="M2 9h20M8 3l4 18 4-18" stroke="#C48A00" stroke-width="1.2" fill="none"/></svg>',
+  heart: '<svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z" fill="currentColor"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z" fill="#fff"/></svg>',
+  check: '<svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  lock: '<svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2" fill="#fff" opacity=".9"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#fff" stroke-width="2.5" fill="none" opacity=".9"/></svg>',
+  chest: '<svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="11" rx="2" fill="#fff"/><path d="M3 9a9 5 0 0 1 18 0" fill="#fff"/><rect x="10" y="11" width="4" height="4" rx="1" fill="currentColor"/></svg>',
+  close: '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>',
+  book: '<svg viewBox="0 0 24 24"><path d="M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-5a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+  home: '<svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+  user: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+  speaker: '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 9a4 4 0 0 1 0 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>'
+};
+
+/* ---------- Contenido (grafía oficial 2023) ---------- */
+const SECTIONS = [
+  { name: "Sección 1 · Primeros pasos", units: [0, 1, 2] },
+  { name: "Sección 2 · El día a día", units: [3, 4, 5] },
+  { name: "Sección 3 · Por el Pirineo", units: [6, 7, 8, 9] }
+];
+
+const UNITS = [
+  {
+    title: "Saludos y presentaciones", theme: "Saludar, presentarte y despedirte",
+    tip: {
+      title: "Consejo de Dragolingüe",
+      html: `<p>En aragonés, <b>llamarse</b> se dice <b>clamar-se</b>: <i>me clamo Ana</i>, <i>¿cómo te clamas?</i></p>
+      <p><b>Muito</b> es «mucho» o «muy»: <i>muito gusto</i>, <i>muito bien</i>.</p>
+      <table><tr><td>dica luego</td><td>hasta luego</td></tr><tr><td>¿qué tal?</td><td>¿qué tal?</td></tr><tr><td>gracias</td><td>gracias</td></tr></table>
+      <p>Muchas palabras se parecen al castellano. Fíjate en las que cambian.</p>`
+    },
+    vocab: [["hola","hola"],["adiós","adiós"],["gracias","gracias"],["por favor","por favor"],["sí","sí"],["no","no"],["bien","bien"],["muito bien","muy bien"],["¿qué tal?","¿qué tal?"],["me clamo","me llamo"],["¿cómo te clamas?","¿cómo te llamas?"],["muito gusto","mucho gusto"],["dica luego","hasta luego"]],
+    lessons: [
+      { name: "Saludar", ex: [
+        { t: "pick", es: "gracias", answer: "gracias", options: [["hola","👋"],["gracias","🙏"],["adiós","🚶"]] },
+        { t: "pick", es: "sí", answer: "sí", options: [["no","❌"],["bien","👍"],["sí","✅"]] },
+        { t: "choice", ar: "Hola, ¿qué tal?", options: ["Hola, ¿qué tal?","Adiós, hasta luego.","Gracias, muy bien."], answer: 0 },
+        { t: "choice", ar: "Muito bien, gracias.", options: ["Mucho gusto, gracias.","Muy bien, gracias.","Bien, por favor."], answer: 1 },
+        { t: "build", es: "Muy bien, gracias.", answer: "Muito bien, gracias.", tiles: ["gracias.","Muito","adiós","bien,","no"] },
+        { t: "match", pairs: [["muito bien","muy bien"],["gracias","gracias"],["adiós","adiós"],["sí","sí"]] },
+        { t: "fill", before: "Hola, ¿qué", after: "?", es: "Hola, ¿qué tal?", options: ["bien","tal","muito"], answer: "tal" }
+      ]},
+      { name: "Presentarse", ex: [
+        { t: "choice", ar: "Me clamo Marta.", options: ["Me gusta Marta.","Llamo a Marta.","Me llamo Marta."], answer: 2 },
+        { t: "fill", before: "¿Cómo te", after: "?", es: "¿Cómo te llamas?", options: ["llamas","clamas","dices"], answer: "clamas" },
+        { t: "pick", es: "mucho gusto", answer: "muito gusto", options: [["dica luego","👋"],["muito gusto","🤝"],["gracias","🙏"]] },
+        { t: "build", es: "Hasta luego, Pablo.", answer: "Dica luego, Pablo.", tiles: ["luego,","muito","Pablo.","Dica","clamo"] },
+        { t: "match", pairs: [["me clamo","me llamo"],["muito gusto","mucho gusto"],["dica luego","hasta luego"],["¿cómo te clamas?","¿cómo te llamas?"]] },
+        { t: "build", es: "Hola, me llamo Ana.", answer: "Hola, me clamo Ana.", tiles: ["me","Ana.","llamo","Hola,","clamo","te"] },
+        { t: "choice", ar: "¿Cómo te clamas?", options: ["¿Cómo te llamas?","¿Cómo estás?","¿De dónde eres?"], answer: 0 }
+      ]},
+      { name: "Repaso", review: true }
+    ]
+  },
+  {
+    title: "Personas y familia", theme: "Quién es quién: personas, el verbo ser y la familia",
+    tip: {
+      title: "Consejo de Dragolingüe",
+      html: `<p>El verbo <b>ser</b> en presente:</p>
+      <table><tr><td>yo soi</td><td>yo soy</td></tr><tr><td>tu yes</td><td>tú eres</td></tr><tr><td>ell / ella ye</td><td>él / ella es</td></tr>
+      <tr><td>nusatros somos</td><td>nosotros somos</td></tr><tr><td>vusatros soz</td><td>vosotros sois</td></tr><tr><td>ells / ellas son</td><td>ellos / ellas son</td></tr></table>
+      <p>Para decir «mi» se usa el artículo: <i>lo mío pai</i> (mi padre), <i>la mía mai</i> (mi madre).</p>
+      <p>Muchas palabras terminan en <b>-et / -eta</b>: <i>chiquet</i>, <i>chiqueta</i>.</p>`
+    },
+    vocab: [["yo","yo"],["tu","tú"],["ell / ella","él / ella"],["nusatros","nosotros"],["vusatros","vosotros"],["hombre","hombre"],["muller","mujer"],["chiquet / chiqueta","niño / niña"],["amigo / amiga","amigo / amiga"],["mayestro / mayestra","maestro / maestra"],["soi · yes · ye","soy · eres · es"],["somos · soz · son","somos · sois · son"],["pai","padre"],["mai","madre"],["chirmano / chirmana","hermano / hermana"],["fillo / filla","hijo / hija"],["lolo / lola","abuelo / abuela"],["lo mío / la mía","mi"]],
+    lessons: [
+      { name: "Las personas", ex: [
+        { t: "pick", es: "mujer", answer: "muller", options: [["hombre","👨"],["muller","👩"],["chiqueta","👧"]] },
+        { t: "pick", es: "niño", answer: "chiquet", options: [["chiqueta","👧"],["hombre","👨"],["chiquet","👦"]] },
+        { t: "pick", es: "maestra", answer: "mayestra", options: [["mayestra","👩‍🏫"],["muller","👩"],["amiga","🧑‍🤝‍🧑"]] },
+        { t: "match", pairs: [["muller","mujer"],["chiquet","niño"],["chiqueta","niña"],["mayestra","maestra"]] },
+        { t: "choice", ar: "Una chiqueta y un chiquet.", options: ["Una mujer y un hombre.","Una niña y un niño.","Una amiga y un amigo."], answer: 1 },
+        { t: "fill", before: "Una", after: "y un hombre.", es: "Una mujer y un hombre.", options: ["chiquet","muller","mayestro"], answer: "muller" }
+      ]},
+      { name: "Yo soi, tu yes", ex: [
+        { t: "choice", ar: "Yo soi mayestra.", options: ["Yo soy maestra.","Yo tengo maestra.","Tú eres maestra."], answer: 0 },
+        { t: "fill", before: "Tu", after: "lo mío amigo.", es: "Tú eres mi amigo.", options: ["soi","yes","ye"], answer: "yes" },
+        { t: "fill", before: "Ella", after: "una chiqueta.", es: "Ella es una niña.", options: ["ye","yes","soi"], answer: "ye" },
+        { t: "build", es: "Nosotros somos amigos.", answer: "Nusatros somos amigos.", tiles: ["somos","ye","amigos.","Nusatros","soi"] },
+        { t: "match", pairs: [["yo soi","yo soy"],["tu yes","tú eres"],["ell ye","él es"],["vusatros soz","vosotros sois"]] },
+        { t: "choice", ar: "Vusatros soz amigos.", options: ["Ellos son amigos.","Nosotros somos amigos.","Vosotros sois amigos."], answer: 2 },
+        { t: "build", es: "Ella es maestra.", answer: "Ella ye mayestra.", tiles: ["mayestra.","yes","Ella","muller","ye"] }
+      ]},
+      { name: "La familia", ex: [
+        { t: "pick", es: "abuela", answer: "lola", options: [["lolo","👴"],["mai","👩"],["lola","👵"]] },
+        { t: "pick", es: "padre", answer: "pai", options: [["pai","👨"],["fillo","👶"],["lolo","👴"]] },
+        { t: "match", pairs: [["mai","madre"],["chirmana","hermana"],["fillo","hijo"],["lolo","abuelo"]] },
+        { t: "choice", ar: "Lo mío pai ye de Chaca.", options: ["Mi abuelo es de Huesca.","Mi padre es de Jaca.","Mi hermano vive en Jaca."], answer: 1 },
+        { t: "fill", before: "La mía", after: "ye mayestra.", es: "Mi madre es maestra.", options: ["pai","lolo","mai"], answer: "mai" },
+        { t: "build", es: "Él es mi hermano.", answer: "Ell ye lo mío chirmano.", tiles: ["chirmano.","lo","la","Ell","mía","ye","mío"] },
+        { t: "choice", ar: "Ella ye la mía lola.", options: ["Ella es mi abuela.","Ella es mi madre.","Ella es mi hija."], answer: 0 }
+      ]},
+      { name: "Repaso", review: true }
+    ]
+  },
+  { title: "Números y colores", theme: "Del zero al vinte · blanco, royo, amariello…", locked: true },
+  { title: "Comida y bebida", theme: "Pan, augua, vin, leit, trunfas…", locked: true },
+  { title: "La casa", theme: "Cambra, cozina, finestra, leito…", locked: true },
+  { title: "El cuerpo", theme: "Cabeza, uellos, orellas, man, garra…", locked: true },
+  { title: "Animales y naturaleza", theme: "Can, mixín, onso, ibón, mont…", locked: true },
+  { title: "Días, meses y orache", theme: "Luns, chinero, agüerro, hibierno…", locked: true },
+  { title: "Viajes y lugares", theme: "Uesca, Chaca, puent, camín…", locked: true },
+  { title: "Verbos de cada día", theme: "Fer, minchar, charrar, puyar…", locked: true }
+];
+
+const PRAISE = ["¡Muito bien!", "¡Perfecto!", "¡Asinas se fa!"];
+
+/* ---------- Estado ---------- */
+const KEY = "dragolingue-v1";
+let S = load();
+function load() {
+  const base = { done: {}, xp: 0, streak: 0, lastDay: null, unlockAll: false };
+  try { return Object.assign(base, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) { return base; }
+}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+const lk = (u, l) => u + "-" + l;
+function isDone(u, l) { return !!S.done[lk(u, l)]; }
+function currentLesson() {
+  for (let u = 0; u < UNITS.length; u++) {
+    if (UNITS[u].locked) return null;
+    for (let l = 0; l < UNITS[u].lessons.length; l++) if (!isDone(u, l)) return [u, l];
+  }
+  return null;
+}
+function isOpen(u, l) {
+  if (UNITS[u].locked) return false;
+  if (S.unlockAll || isDone(u, l)) return true;
+  const c = currentLesson(); return c && c[0] === u && c[1] === l;
+}
+let tab = "learn";
+
+/* ---------- Utilidades ---------- */
+const $app = document.getElementById("app");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const norm = s => s.toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ").trim();
+function toast(msg) {
+  const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2400);
+}
+function today() { return new Date().toISOString().slice(0, 10); }
+
+/* ---------- Pantalla principal ---------- */
+function topbar() {
+  return `<header class="topbar">
+    <div class="brand"><span style="width:34px;display:inline-block">${dragon("happy")}</span>Dragolingüe</div>
+    <div class="stats">
+      <span class="stat" title="Racha de días">${ICON.fire}${S.streak}</span>
+      <span class="stat" title="Puntos de experiencia">${ICON.gem}${S.xp}</span>
+    </div></header>`;
+}
+function tabbar() {
+  const t = (id, label, ic) => `<button class="tab" role="tab" aria-selected="${tab === id}" data-tab="${id}">${ICON[ic]}${label}</button>`;
+  return `<nav class="tabbar"><div class="tabbar-inner" role="tablist">${t("learn","Aprender","home")}${t("vocab","Vocabulario","book")}${t("profile","Perfil","user")}</div></nav>`;
+}
+function renderHome() {
+  window.scrollTo(0, 0);
+  let html = topbar() + `<main class="view">`;
+  if (tab === "learn") html += learnView();
+  if (tab === "vocab") html += vocabView();
+  if (tab === "profile") html += profileView();
+  html += `</main>` + tabbar();
+  $app.className = "app"; $app.innerHTML = html;
+  $app.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { tab = b.dataset.tab; renderHome(); });
+  $app.querySelectorAll("[data-lesson]").forEach(b => b.onclick = () => {
+    const [u, l] = b.dataset.lesson.split("-").map(Number);
+    if (isOpen(u, l)) startLesson(u, l); else toast("Completa antes la lección anterior.");
+  });
+  $app.querySelectorAll("[data-tip]").forEach(b => b.onclick = () => openTip(+b.dataset.tip));
+  const ul = $app.querySelector("#unlock"); if (ul) ul.onclick = () => { S.unlockAll = !S.unlockAll; save(); renderHome(); };
+  const rs = $app.querySelector("#reset"); if (rs) rs.onclick = () => { S = { done: {}, xp: 0, streak: 0, lastDay: null, unlockAll: false }; save(); tab = "learn"; renderHome(); toast("Progreso borrado."); };
+  const cur = $app.querySelector(".node.current"); if (cur && tab === "learn") setTimeout(() => cur.scrollIntoView({ block: "center", behavior: "smooth" }), 60);
+}
+function learnView() {
+  const cur = currentLesson();
+  let h = "";
+  SECTIONS.forEach(sec => {
+    h += `<p class="section-label">${sec.name}</p>`;
+    sec.units.forEach(u => {
+      const U = UNITS[u];
+      h += `<section class="unit"><div class="unit-head ${U.locked ? "locked" : ""}">
+        <div><div class="num">Unidad ${u + 1}</div><h2>${U.title}</h2><div class="theme">${U.theme}</div></div>
+        ${U.locked ? "" : `<button class="tip-btn" data-tip="${u}">${ICON.book.replace('<svg','<svg width="18" height="18"')}Consejos</button>`}
+      </div>`;
+      if (U.locked) { h += `<p class="locked-note">Contenido en preparación</p></section>`; return; }
+      h += `<div class="path">`;
+      U.lessons.forEach((L, l) => {
+        const off = Math.round(Math.sin((l + u) * 1.3) * 70);
+        const done = isDone(u, l), isCur = cur && cur[0] === u && cur[1] === l, open = isOpen(u, l);
+        const cls = done ? "done" : isCur ? "current" : open ? "current" : "locked";
+        const icon = L.review ? ICON.chest : done ? ICON.check : open ? ICON.star : ICON.lock;
+        h += `<div style="position:relative;transform:translateX(${off}px);display:flex;flex-direction:column;align-items:center">
+          ${isCur ? `<span class="start-bubble">EMPEZAR</span>` : ""}
+          <button class="node ${cls}" data-lesson="${u}-${l}" aria-label="${esc(L.name)}">${icon}</button>
+          <span class="node-label">${esc(L.name)}</span>
+          ${isCur ? `<div class="mascot-on-path" style="${off > 0 ? "right:110%" : "left:110%"};top:-20px">${dragon("happy")}</div>` : ""}
+        </div>`;
+      });
+      h += `</div></section>`;
+    });
+  });
+  h += `<p class="proto-note">Prototipo · <button class="link-btn" id="unlock">${S.unlockAll ? "Volver al orden normal" : "Desbloquear todas las lecciones"}</button></p>`;
+  return h;
+}
+function vocabView() {
+  let h = `<h1 style="font-size:1.7rem;margin-top:8px">Tu vocabulario</h1><p style="color:var(--muted);margin:4px 0 0">Palabras de las unidades disponibles, en la grafía oficial de 2023.</p>`;
+  UNITS.forEach((U, u) => {
+    if (U.locked) return;
+    h += `<div class="panel"><h2 style="font-size:1.2rem">Unidad ${u + 1} · ${U.title}</h2><div class="vocab-list">` +
+      U.vocab.map(([a, e]) => `<span class="ar">${esc(a)}</span><span class="es">${esc(e)}</span>`).join("") + `</div></div>`;
+  });
+  return h;
+}
+function profileView() {
+  const lessons = Object.keys(S.done).length;
+  return `<div class="panel"><div class="profile-head"><div style="width:84px">${dragon("cheer")}</div>
+    <div><h1 style="font-size:1.5rem">Tu progreso</h1><p style="margin:2px 0 0;color:var(--muted)">Dragolingüe te acompaña en cada lección.</p></div></div>
+    <div class="profile-grid">
+      <div class="metric"><b>${S.streak}</b><span>días de racha</span></div>
+      <div class="metric"><b>${S.xp}</b><span>XP</span></div>
+      <div class="metric"><b>${lessons}</b><span>lecciones</span></div>
+    </div></div>
+    <p class="proto-note"><button class="link-btn" id="reset">Borrar el progreso</button></p>`;
+}
+function openTip(u) {
+  const T = UNITS[u].tip;
+  const back = document.createElement("div"); back.className = "sheet-back";
+  back.innerHTML = `<div class="sheet" role="dialog" aria-label="${esc(T.title)}">
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px"><div style="width:70px">${dragon("think")}</div><h2>${T.title}</h2></div>
+    ${T.html}<button class="big-btn" style="margin-top:12px">Entendido</button></div>`;
+  document.body.appendChild(back);
+  const close = () => back.remove();
+  back.querySelector(".big-btn").onclick = close;
+  back.onclick = e => { if (e.target === back) close(); };
+}
+
+/* ---------- Lección ---------- */
+let L = null;
+function startLesson(u, l) {
+  const lesson = UNITS[u].lessons[l];
+  let ex = lesson.review
+    ? shuffle(UNITS[u].lessons.filter(x => !x.review).flatMap(x => x.ex)).slice(0, 8)
+    : lesson.ex.slice();
+  L = { u, l, queue: ex, total: ex.length, i: 0, hearts: 5, right: 0, firstTry: 0, missed: new Set(), state: null };
+  renderEx();
+}
+function lessonTop() {
+  const pct = Math.round(L.right / L.total * 100);
+  return `<div class="lesson-top">
+    <button class="icon-btn" id="quit" aria-label="Salir de la lección">${ICON.close}</button>
+    <div class="progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>
+    <span class="hearts" aria-label="Vidas">${ICON.heart}${L.hearts}</span></div>`;
+}
+const audioBtn = `<button class="audio" title="Audio pendiente: se grabará con hablantes" aria-label="Audio pendiente de grabar">${ICON.speaker}</button>`;
+function renderEx() {
+  const ex = L.queue[L.i];
+  L.state = { ex, sel: null, built: [], matched: 0 };
+  let body = "";
+  if (ex.t === "pick") {
+    body = `<p class="q-kind">Nueva palabra</p><h1 class="q-title">¿Cómo se dice «${esc(ex.es)}»?</h1>
+      <div class="cards">${shuffle(ex.options).map(([w, p]) => `<button class="card" data-v="${esc(w)}"><span class="pic" aria-hidden="true">${p}</span>${esc(w)}</button>`).join("")}</div>`;
+  } else if (ex.t === "choice") {
+    body = `<p class="q-kind">Traduce</p>
+      <div class="coach"><div class="mini">${dragon("happy")}</div><div class="bubble">${audioBtn}${esc(ex.ar)}</div></div>
+      <div class="opts">${ex.options.map((o, i) => `<button class="opt" data-v="${i}">${esc(o)}</button>`).join("")}</div>`;
+  } else if (ex.t === "build") {
+    body = `<p class="q-kind">Escribe en aragonés</p>
+      <div class="coach"><div class="mini">${dragon("think")}</div><div class="bubble">${esc(ex.es)}</div></div>
+      <div class="answer-line" id="line"></div>
+      <div class="bank" id="bank">${shuffle(ex.tiles.map((w, i) => [w, i])).map(([w, i]) => `<button class="tile" data-i="${i}">${esc(w)}</button>`).join("")}</div>`;
+  } else if (ex.t === "fill") {
+    body = `<p class="q-kind">Completa la frase</p>
+      <p class="fill-sentence">${esc(ex.before)} <span class="gap" id="gap">&nbsp;</span> ${esc(ex.after)}</p>
+      <p class="fill-es">${esc(ex.es)}</p>
+      <div class="opts">${shuffle(ex.options).map(o => `<button class="opt" data-v="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
+  } else if (ex.t === "match") {
+    body = `<p class="q-kind">Une las parejas</p><h1 class="q-title">Aragonés y castellano</h1>
+      <div class="match"><div class="match-col">${shuffle(ex.pairs.map((p, i) => [p[0], i])).map(([w, i]) => `<button class="mbtn" data-side="a" data-i="${i}">${esc(w)}</button>`).join("")}</div>
+      <div class="match-col">${shuffle(ex.pairs.map((p, i) => [p[1], i])).map(([w, i]) => `<button class="mbtn" data-side="b" data-i="${i}">${esc(w)}</button>`).join("")}</div></div>`;
+  }
+  $app.className = "app lesson";
+  $app.innerHTML = lessonTop() + `<main>${body}</main>` +
+    `<div class="checkbar" id="bar"><div class="checkbar-inner"><button class="big-btn" id="check" disabled>Comprobar</button></div></div>`;
+  $app.querySelector("#quit").onclick = () => { L = null; renderHome(); };
+  $app.querySelectorAll(".audio").forEach(b => b.onclick = () => toast("El audio se grabará con hablantes nativos."));
+  wire(ex);
+  window.scrollTo(0, 0);
+}
+function setReady(v) { const c = $app.querySelector("#check"); if (c) c.disabled = !v; }
+function wire(ex) {
+  const st = L.state;
+  if (ex.t === "pick" || ex.t === "choice" || ex.t === "fill") {
+    const sel = ex.t === "pick" ? ".card" : ".opt";
+    $app.querySelectorAll(sel).forEach(b => b.onclick = () => {
+      if (st.locked) return;
+      $app.querySelectorAll(sel).forEach(x => x.classList.remove("selected"));
+      b.classList.add("selected"); st.sel = b.dataset.v;
+      if (ex.t === "fill") $app.querySelector("#gap").textContent = st.sel;
+      setReady(true);
+    });
+  }
+  if (ex.t === "build") {
+    const line = $app.querySelector("#line");
+    $app.querySelectorAll("#bank .tile").forEach(b => b.onclick = () => {
+      if (st.locked || b.classList.contains("ghost")) return;
+      b.classList.add("ghost"); st.built.push(+b.dataset.i);
+      const t = document.createElement("button"); t.className = "tile"; t.textContent = b.textContent;
+      t.onclick = () => { if (st.locked) return; t.remove(); b.classList.remove("ghost"); st.built.splice(st.built.indexOf(+b.dataset.i), 1); setReady(st.built.length > 0); };
+      line.appendChild(t); setReady(true);
+    });
+  }
+  if (ex.t === "match") {
+    let pick = null;
+    $app.querySelectorAll(".mbtn").forEach(b => b.onclick = () => {
+      if (b.classList.contains("gone")) return;
+      if (!pick || pick.dataset.side === b.dataset.side) {
+        if (pick) pick.classList.remove("selected");
+        pick = b; b.classList.add("selected"); return;
+      }
+      if (pick.dataset.i === b.dataset.i) {
+        [pick, b].forEach(x => { x.classList.remove("selected"); x.classList.add("gone"); x.disabled = true; });
+        st.matched++; pick = null;
+        if (st.matched === ex.pairs.length) { st.sel = "ok"; resolve(true); }
+      } else {
+        const a = pick; [a, b].forEach(x => { x.classList.remove("selected"); x.classList.add("bad"); });
+        setTimeout(() => [a, b].forEach(x => x.classList.remove("bad")), 400);
+        pick = null; st.matchErr = true;
+      }
+    });
+  }
+  const c = $app.querySelector("#check");
+  if (c) c.onclick = () => {
+    let ok = false, correct = "";
+    if (ex.t === "pick") { ok = st.sel === ex.answer; correct = ex.answer; }
+    if (ex.t === "choice") { ok = +st.sel === ex.answer; correct = ex.options[ex.answer]; }
+    if (ex.t === "fill") { ok = st.sel === ex.answer; correct = `${ex.before} ${ex.answer} ${ex.after}`; }
+    if (ex.t === "build") { ok = norm(st.built.map(i => ex.tiles[i]).join(" ")) === norm(ex.answer); correct = ex.answer; }
+    resolve(ok, correct);
+  };
+}
+function resolve(ok, correct) {
+  const st = L.state; st.locked = true;
+  const ex = st.ex;
+  if (ok) { L.right++; if (!L.missed.has(ex) && !st.matchErr) L.firstTry++; }
+  else { L.hearts--; L.missed.add(ex); L.queue.push(ex); }
+  const bar = $app.querySelector("#bar");
+  const out = L.hearts <= 0;
+  bar.className = "checkbar " + (ok ? "ok" : "ko");
+  bar.innerHTML = `<div class="checkbar-inner"><div class="fb"><div class="mini">${dragon(ok ? "cheer" : "sad")}</div>
+    <div>${ok ? `<h3>${PRAISE[Math.floor(Math.random() * PRAISE.length)]}</h3>` :
+      `<h3>${out ? "Te has quedado sin vidas" : "Casi lo tienes"}</h3><p>Respuesta correcta: ${esc(correct)}</p>`}</div></div>
+    <button class="big-btn ${ok ? "" : "red"}" id="next">${out ? "Volver al mapa" : "Continuar"}</button></div>`;
+  const prog = $app.querySelector(".progress i"); if (prog) prog.style.width = Math.round(L.right / L.total * 100) + "%";
+  const hearts = $app.querySelector(".hearts"); if (hearts) hearts.innerHTML = ICON.heart + L.hearts;
+  const next = $app.querySelector("#next"); next.focus();
+  next.onclick = () => {
+    if (out) { L = null; renderHome(); toast("Repasa los consejos de la unidad y vuelve a intentarlo."); return; }
+    L.i++;
+    if (L.i >= L.queue.length) finishLesson(); else renderEx();
+  };
+}
+function finishLesson() {
+  const first = !isDone(L.u, L.l);
+  const acc = Math.round(L.firstTry / L.total * 100);
+  const xp = 10 + (acc === 100 ? 5 : 0);
+  S.done[lk(L.u, L.l)] = true; S.xp += xp;
+  const t = today();
+  if (S.lastDay !== t) {
+    const y = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
+    S.streak = S.lastDay === y ? S.streak + 1 : 1; S.lastDay = t;
+  }
+  save();
+  const lessonName = UNITS[L.u].lessons[L.l].name;
+  $app.className = "app";
+  $app.innerHTML = `<main class="finish"><div class="hero-dragon">${dragon("cheer")}</div>
+    <h1>¡Lección completada!</h1><p style="margin:0;color:var(--muted);font-weight:700">${esc(lessonName)} · Unidad ${L.u + 1}</p>
+    <div class="finish-stats">
+      <div class="metric"><b>+${xp}</b><span>XP</span></div>
+      <div class="metric"><b>${acc}%</b><span>a la primera</span></div>
+      <div class="metric"><b>${S.streak}</b><span>días de racha</span></div>
+    </div>
+    <p style="margin:0">${first ? "Dragolingüe ha guardado tu progreso." : "Repaso hecho. ¡Muito bien!"}</p></main>
+    <div class="checkbar"><div class="checkbar-inner"><button class="big-btn" id="cont">Continuar</button></div></div>`;
+  L = null;
+  $app.querySelector("#cont").onclick = () => { tab = "learn"; renderHome(); };
+}
+
+renderHome();
+</script>
