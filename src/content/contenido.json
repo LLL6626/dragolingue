@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -2379,25 +2379,1527 @@
       "id": "u7",
       "titulo": "Animales y naturaleza",
       "tema": "Can, mixín, onso, ibón, mont…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Animales que cambian mucho: <b>can</b> (perro), <b>mixín</b> (gato), <b>paixaro</b> (pájaro), <b>craba</b> (cabra), <b>ovella</b> (oveja) y <b>onso</b> (oso).</p><p>Un <b>ibón</b> es un lago de alta montaña del Pirineo, y <b>mont</b> es el monte.</p><p>El sufijo <b>-et / -eta</b> hace las cosas pequeñas: <i>un can chiquet y royo</i> (un perro pequeño y rojo).</p><p>Delante de vocal, el artículo se apostrofa: <i>l'arbol</i>, <i>l'ibón</i>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "can",
+          "es": "perro"
+        },
+        {
+          "ar": "mixín",
+          "es": "gato"
+        },
+        {
+          "ar": "paixaro",
+          "es": "pájaro"
+        },
+        {
+          "ar": "vaca",
+          "es": "vaca"
+        },
+        {
+          "ar": "craba",
+          "es": "cabra"
+        },
+        {
+          "ar": "ovella",
+          "es": "oveja"
+        },
+        {
+          "ar": "caballo",
+          "es": "caballo"
+        },
+        {
+          "ar": "onso",
+          "es": "oso"
+        },
+        {
+          "ar": "mont",
+          "es": "monte"
+        },
+        {
+          "ar": "ibón",
+          "es": "lago de montaña"
+        },
+        {
+          "ar": "arbol",
+          "es": "árbol"
+        },
+        {
+          "ar": "río",
+          "es": "río"
+        },
+        {
+          "ar": "chiquet / chiqueta",
+          "es": "pequeño / pequeña"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u7-l1",
+          "nombre": "Animales de casa",
+          "ejercicios": [
+            {
+              "id": "u7-l1-e1",
+              "t": "pick",
+              "es": "perro",
+              "answer": "can",
+              "options": [
+                [
+                  "mixín",
+                  "🐱"
+                ],
+                [
+                  "can",
+                  "🐶"
+                ],
+                [
+                  "paixaro",
+                  "🐦"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l1-e2",
+              "t": "pick",
+              "es": "gato",
+              "answer": "mixín",
+              "options": [
+                [
+                  "caballo",
+                  "🐴"
+                ],
+                [
+                  "can",
+                  "🐶"
+                ],
+                [
+                  "mixín",
+                  "🐱"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l1-e3",
+              "t": "pick",
+              "es": "pájaro",
+              "answer": "paixaro",
+              "options": [
+                [
+                  "paixaro",
+                  "🐦"
+                ],
+                [
+                  "vaca",
+                  "🐄"
+                ],
+                [
+                  "onso",
+                  "🐻"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l1-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "can",
+                  "perro"
+                ],
+                [
+                  "mixín",
+                  "gato"
+                ],
+                [
+                  "paixaro",
+                  "pájaro"
+                ],
+                [
+                  "caballo",
+                  "caballo"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l1-e5",
+              "t": "choice",
+              "ar": "Tiengo un can y dos mixins.",
+              "options": [
+                "Tengo un gato y dos perros.",
+                "Tengo un perro y dos gatos.",
+                "Tiene un perro y dos gatos."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u7-l1-e6",
+              "t": "fill",
+              "before": "Tiengo un",
+              "after": "negro.",
+              "es": "Tengo un gato negro.",
+              "options": [
+                "vaca",
+                "ovella",
+                "mixín"
+              ],
+              "answer": "mixín"
+            },
+            {
+              "id": "u7-l1-e7",
+              "t": "build",
+              "es": "Un perro pequeño y rojo.",
+              "answer": "Un can chiquet y royo.",
+              "tiles": [
+                "can",
+                "royo.",
+                "Un",
+                "y",
+                "chiquet",
+                "roya.",
+                "mixín"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u7-l2",
+          "nombre": "Animales del Pirineo",
+          "ejercicios": [
+            {
+              "id": "u7-l2-e1",
+              "t": "pick",
+              "es": "cabra",
+              "answer": "craba",
+              "options": [
+                [
+                  "vaca",
+                  "🐄"
+                ],
+                [
+                  "craba",
+                  "🐐"
+                ],
+                [
+                  "ovella",
+                  "🐑"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l2-e2",
+              "t": "pick",
+              "es": "oveja",
+              "answer": "ovella",
+              "options": [
+                [
+                  "ovella",
+                  "🐑"
+                ],
+                [
+                  "craba",
+                  "🐐"
+                ],
+                [
+                  "caballo",
+                  "🐴"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l2-e3",
+              "t": "pick",
+              "es": "oso",
+              "answer": "onso",
+              "options": [
+                [
+                  "can",
+                  "🐶"
+                ],
+                [
+                  "vaca",
+                  "🐄"
+                ],
+                [
+                  "onso",
+                  "🐻"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l2-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "craba",
+                  "cabra"
+                ],
+                [
+                  "ovella",
+                  "oveja"
+                ],
+                [
+                  "onso",
+                  "oso"
+                ],
+                [
+                  "vaca",
+                  "vaca"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l2-e5",
+              "t": "choice",
+              "ar": "En lo mont bi ha vacas y crabas.",
+              "options": [
+                "En el monte hay vacas y cabras.",
+                "En el monte hay ovejas y cabras.",
+                "En el río hay vacas y cabras."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u7-l2-e6",
+              "t": "fill",
+              "before": "En lo Pirineo bi ha",
+              "after": ".",
+              "es": "En el Pirineo hay osos.",
+              "options": [
+                "mixín",
+                "onsos",
+                "ovella"
+              ],
+              "answer": "onsos"
+            },
+            {
+              "id": "u7-l2-e7",
+              "t": "build",
+              "es": "Hay una cabra.",
+              "answer": "Bi ha una craba.",
+              "tiles": [
+                "craba.",
+                "ha",
+                "Bi",
+                "una",
+                "ovella.",
+                "ye"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u7-l3",
+          "nombre": "La naturaleza",
+          "ejercicios": [
+            {
+              "id": "u7-l3-e1",
+              "t": "pick",
+              "es": "árbol",
+              "answer": "arbol",
+              "options": [
+                [
+                  "mont",
+                  "⛰️"
+                ],
+                [
+                  "arbol",
+                  "🌳"
+                ],
+                [
+                  "río",
+                  "🌊"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l3-e2",
+              "t": "pick",
+              "es": "lago de montaña",
+              "answer": "ibón",
+              "options": [
+                [
+                  "ibón",
+                  "🏞️"
+                ],
+                [
+                  "arbol",
+                  "🌳"
+                ],
+                [
+                  "mont",
+                  "⛰️"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "mont",
+                  "monte"
+                ],
+                [
+                  "ibón",
+                  "lago de montaña"
+                ],
+                [
+                  "arbol",
+                  "árbol"
+                ],
+                [
+                  "onso",
+                  "oso"
+                ]
+              ]
+            },
+            {
+              "id": "u7-l3-e4",
+              "t": "choice",
+              "ar": "Bi ha un onso en lo mont.",
+              "options": [
+                "Hay un oso en el río.",
+                "Hay un perro en el monte.",
+                "Hay un oso en el monte."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u7-l3-e5",
+              "t": "fill",
+              "before": "En lo mont bi ha un",
+              "after": ".",
+              "es": "En el monte hay un lago.",
+              "options": [
+                "peix",
+                "ibón",
+                "mixín"
+              ],
+              "answer": "ibón"
+            },
+            {
+              "id": "u7-l3-e6",
+              "t": "build",
+              "es": "Hay un árbol grande.",
+              "answer": "Bi ha un arbol gran.",
+              "tiles": [
+                "arbol",
+                "Bi",
+                "gran.",
+                "ha",
+                "un",
+                "grans.",
+                "una"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u7-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar el plural «mixins» y la grafía «arbol» (sin tilde, como en «l'arbol» del documento de la fase 1).",
+        "Comprobar «río» y la contracción «en lo mont» (variante: «en o mont»)."
+      ]
     },
     {
       "id": "u8",
       "titulo": "Días, meses y orache",
       "tema": "Luns, chinero, agüerro, hibierno…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Los días de la semana: <i>luns, martes, mierques, chueves, viernes, sabado, domingo</i>.</p><p>Palabras para situarte en el tiempo:</p><table><tr><td>hue</td><td>hoy</td></tr><tr><td>ahier</td><td>ayer</td></tr><tr><td>maitín</td><td>mañana</td></tr><tr><td>agora</td><td>ahora</td></tr></table><p>Los meses que más cambian: <b>chinero</b> (enero), <b>chunio</b>, <b>chulio</b> y <b>aviento</b> (diciembre).</p><p>El <b>orache</b> es el tiempo que hace: <i>fa sol</i>, <i>fa frío</i>, <i>plueve</i>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "luns",
+          "es": "lunes"
+        },
+        {
+          "ar": "martes",
+          "es": "martes"
+        },
+        {
+          "ar": "mierques",
+          "es": "miércoles"
+        },
+        {
+          "ar": "chueves",
+          "es": "jueves"
+        },
+        {
+          "ar": "viernes",
+          "es": "viernes"
+        },
+        {
+          "ar": "sabado · domingo",
+          "es": "sábado · domingo"
+        },
+        {
+          "ar": "chinero",
+          "es": "enero"
+        },
+        {
+          "ar": "febrero · marzo · abril · mayo",
+          "es": "febrero · marzo · abril · mayo"
+        },
+        {
+          "ar": "chunio · chulio",
+          "es": "junio · julio"
+        },
+        {
+          "ar": "agosto · setiembre",
+          "es": "agosto · septiembre"
+        },
+        {
+          "ar": "octubre · noviembre",
+          "es": "octubre · noviembre"
+        },
+        {
+          "ar": "aviento",
+          "es": "diciembre"
+        },
+        {
+          "ar": "primavera",
+          "es": "primavera"
+        },
+        {
+          "ar": "verano / estiu",
+          "es": "verano"
+        },
+        {
+          "ar": "agüerro",
+          "es": "otoño"
+        },
+        {
+          "ar": "hibierno",
+          "es": "invierno"
+        },
+        {
+          "ar": "hue · ahier",
+          "es": "hoy · ayer"
+        },
+        {
+          "ar": "maitín · agora",
+          "es": "mañana · ahora"
+        },
+        {
+          "ar": "orache",
+          "es": "tiempo (atmosférico)"
+        },
+        {
+          "ar": "fa sol · fa frío · plueve",
+          "es": "hace sol · hace frío · llueve"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u8-l1",
+          "nombre": "Los días",
+          "ejercicios": [
+            {
+              "id": "u8-l1-e1",
+              "t": "match",
+              "pairs": [
+                [
+                  "luns",
+                  "lunes"
+                ],
+                [
+                  "mierques",
+                  "miércoles"
+                ],
+                [
+                  "chueves",
+                  "jueves"
+                ],
+                [
+                  "sabado",
+                  "sábado"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l1-e2",
+              "t": "choice",
+              "ar": "Maitín ye chueves.",
+              "options": [
+                "Mañana es jueves.",
+                "Hoy es jueves.",
+                "Ayer fue jueves."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u8-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "hue",
+                  "hoy"
+                ],
+                [
+                  "ahier",
+                  "ayer"
+                ],
+                [
+                  "maitín",
+                  "mañana"
+                ],
+                [
+                  "agora",
+                  "ahora"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l1-e4",
+              "t": "fill",
+              "before": "Hue ye mierques, maitín ye",
+              "after": ".",
+              "es": "Hoy es miércoles, mañana es jueves.",
+              "options": [
+                "martes",
+                "chueves",
+                "domingo"
+              ],
+              "answer": "chueves"
+            },
+            {
+              "id": "u8-l1-e5",
+              "t": "choice",
+              "ar": "Hue ye luns.",
+              "options": [
+                "Hoy es martes.",
+                "Mañana es lunes.",
+                "Hoy es lunes."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u8-l1-e6",
+              "t": "build",
+              "es": "Hoy es domingo.",
+              "answer": "Hue ye domingo.",
+              "tiles": [
+                "ye",
+                "domingo.",
+                "Hue",
+                "ahier",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u8-l2",
+          "nombre": "Los meses",
+          "ejercicios": [
+            {
+              "id": "u8-l2-e1",
+              "t": "match",
+              "pairs": [
+                [
+                  "chinero",
+                  "enero"
+                ],
+                [
+                  "chunio",
+                  "junio"
+                ],
+                [
+                  "chulio",
+                  "julio"
+                ],
+                [
+                  "aviento",
+                  "diciembre"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l2-e2",
+              "t": "fill",
+              "before": "Agosto, setiembre,",
+              "after": ".",
+              "es": "Agosto, septiembre, octubre.",
+              "options": [
+                "aviento",
+                "octubre",
+                "chinero"
+              ],
+              "answer": "octubre"
+            },
+            {
+              "id": "u8-l2-e3",
+              "t": "choice",
+              "ar": "En aviento fa frío.",
+              "options": [
+                "En diciembre hace frío.",
+                "En enero hace frío.",
+                "En diciembre hace sol."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u8-l2-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "setiembre",
+                  "septiembre"
+                ],
+                [
+                  "chinero",
+                  "enero"
+                ],
+                [
+                  "aviento",
+                  "diciembre"
+                ],
+                [
+                  "mayo",
+                  "mayo"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l2-e5",
+              "t": "build",
+              "es": "En enero hace frío.",
+              "answer": "En chinero fa frío.",
+              "tiles": [
+                "fa",
+                "En",
+                "frío.",
+                "chinero",
+                "aviento",
+                "sol."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u8-l3",
+          "nombre": "Lo orache",
+          "ejercicios": [
+            {
+              "id": "u8-l3-e1",
+              "t": "pick",
+              "es": "invierno",
+              "answer": "hibierno",
+              "options": [
+                [
+                  "primavera",
+                  "🌸"
+                ],
+                [
+                  "hibierno",
+                  "❄️"
+                ],
+                [
+                  "agüerro",
+                  "🍂"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l3-e2",
+              "t": "pick",
+              "es": "otoño",
+              "answer": "agüerro",
+              "options": [
+                [
+                  "agüerro",
+                  "🍂"
+                ],
+                [
+                  "estiu",
+                  "☀️"
+                ],
+                [
+                  "hibierno",
+                  "❄️"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "hibierno",
+                  "invierno"
+                ],
+                [
+                  "agüerro",
+                  "otoño"
+                ],
+                [
+                  "estiu",
+                  "verano"
+                ],
+                [
+                  "orache",
+                  "tiempo"
+                ]
+              ]
+            },
+            {
+              "id": "u8-l3-e4",
+              "t": "choice",
+              "ar": "En hibierno fa frío.",
+              "options": [
+                "En verano hace frío.",
+                "En invierno hace frío.",
+                "En invierno hace sol."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u8-l3-e5",
+              "t": "fill",
+              "before": "En verano fa",
+              "after": ".",
+              "es": "En verano hace sol.",
+              "options": [
+                "frío",
+                "fambre",
+                "sol"
+              ],
+              "answer": "sol"
+            },
+            {
+              "id": "u8-l3-e6",
+              "t": "choice",
+              "ar": "Hue plueve.",
+              "options": [
+                "Hoy llueve.",
+                "Ayer llovió.",
+                "Hoy hace sol."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u8-l3-e7",
+              "t": "build",
+              "es": "Ahora llueve.",
+              "answer": "Agora plueve.",
+              "tiles": [
+                "plueve.",
+                "Agora",
+                "hue",
+                "fa"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u8-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar «sabado» (sin tilde) y «setiembre».",
+        "Comprobar las expresiones del orache: «fa sol», «fa frío» y «plueve»."
+      ]
     },
     {
       "id": "u9",
       "titulo": "Viajes y lugares",
       "tema": "Uesca, Chaca, puent, camín…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Muchos lugares de Aragón tienen nombre en aragonés: <b>Uesca</b> (Huesca), <b>Chaca</b> (Jaca), <b>Tergüel</b> (Teruel), <b>Balbastro</b> (Barbastro).</p><p>El verbo <b>ir</b>: <i>yo voi, tu vas, ell / ella va</i>.</p><p>Para decir adónde vas se usa <b>ta</b>: <i>voi ta Chaca</i> (voy a Jaca).</p><p>Un <b>lugar</b> es un pueblo, y la <b>carrera</b> es la calle.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "Uesca",
+          "es": "Huesca"
+        },
+        {
+          "ar": "Chaca",
+          "es": "Jaca"
+        },
+        {
+          "ar": "Tergüel",
+          "es": "Teruel"
+        },
+        {
+          "ar": "Balbastro",
+          "es": "Barbastro"
+        },
+        {
+          "ar": "Zaragoza",
+          "es": "Zaragoza"
+        },
+        {
+          "ar": "lugar",
+          "es": "pueblo"
+        },
+        {
+          "ar": "puent",
+          "es": "puente"
+        },
+        {
+          "ar": "camín",
+          "es": "camino"
+        },
+        {
+          "ar": "carrera",
+          "es": "calle"
+        },
+        {
+          "ar": "plaza",
+          "es": "plaza"
+        },
+        {
+          "ar": "tren",
+          "es": "tren"
+        },
+        {
+          "ar": "voi · vas · va",
+          "es": "voy · vas · va"
+        },
+        {
+          "ar": "ta",
+          "es": "a, hacia"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u9-l1",
+          "nombre": "Lugares de Aragón",
+          "ejercicios": [
+            {
+              "id": "u9-l1-e1",
+              "t": "match",
+              "pairs": [
+                [
+                  "Uesca",
+                  "Huesca"
+                ],
+                [
+                  "Chaca",
+                  "Jaca"
+                ],
+                [
+                  "Tergüel",
+                  "Teruel"
+                ],
+                [
+                  "Balbastro",
+                  "Barbastro"
+                ]
+              ]
+            },
+            {
+              "id": "u9-l1-e2",
+              "t": "choice",
+              "ar": "Yo soi de Uesca.",
+              "options": [
+                "Yo soy de Huesca.",
+                "Yo voy a Huesca.",
+                "Tú eres de Huesca."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u9-l1-e3",
+              "t": "fill",
+              "before": "Lo mío pai ye de",
+              "after": ".",
+              "es": "Mi padre es de Teruel.",
+              "options": [
+                "Chaca",
+                "Tergüel",
+                "Uesca"
+              ],
+              "answer": "Tergüel"
+            },
+            {
+              "id": "u9-l1-e4",
+              "t": "build",
+              "es": "Soy de Jaca.",
+              "answer": "Soi de Chaca.",
+              "tiles": [
+                "Chaca.",
+                "Soi",
+                "de",
+                "Uesca.",
+                "yes"
+              ]
+            },
+            {
+              "id": "u9-l1-e5",
+              "t": "choice",
+              "ar": "La mía mai ye de Balbastro.",
+              "options": [
+                "Mi madre es de Barbastro.",
+                "Mi madre vive en Barbastro.",
+                "Mi abuela es de Barbastro."
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "u9-l2",
+          "nombre": "Voi ta…",
+          "ejercicios": [
+            {
+              "id": "u9-l2-e1",
+              "t": "choice",
+              "ar": "Voi ta Chaca.",
+              "options": [
+                "Soy de Jaca.",
+                "Voy a Jaca.",
+                "Vas a Jaca."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u9-l2-e2",
+              "t": "fill",
+              "before": "Maitín",
+              "after": "ta Uesca.",
+              "es": "Mañana voy a Huesca.",
+              "options": [
+                "vas",
+                "voi",
+                "va"
+              ],
+              "answer": "voi"
+            },
+            {
+              "id": "u9-l2-e3",
+              "t": "fill",
+              "before": "Tu",
+              "after": "ta Zaragoza.",
+              "es": "Tú vas a Zaragoza.",
+              "options": [
+                "voi",
+                "va",
+                "vas"
+              ],
+              "answer": "vas"
+            },
+            {
+              "id": "u9-l2-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "voi",
+                  "voy"
+                ],
+                [
+                  "ta",
+                  "a, hacia"
+                ],
+                [
+                  "Chaca",
+                  "Jaca"
+                ],
+                [
+                  "Tergüel",
+                  "Teruel"
+                ]
+              ]
+            },
+            {
+              "id": "u9-l2-e5",
+              "t": "build",
+              "es": "Ella va a Teruel.",
+              "answer": "Ella va ta Tergüel.",
+              "tiles": [
+                "va",
+                "Tergüel.",
+                "Ella",
+                "ta",
+                "voi",
+                "Teruel."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u9-l3",
+          "nombre": "Por lo camín",
+          "ejercicios": [
+            {
+              "id": "u9-l3-e1",
+              "t": "pick",
+              "es": "puente",
+              "answer": "puent",
+              "options": [
+                [
+                  "puent",
+                  "🌉"
+                ],
+                [
+                  "tren",
+                  "🚆"
+                ],
+                [
+                  "lugar",
+                  "🏘️"
+                ]
+              ]
+            },
+            {
+              "id": "u9-l3-e2",
+              "t": "pick",
+              "es": "pueblo",
+              "answer": "lugar",
+              "options": [
+                [
+                  "tren",
+                  "🚆"
+                ],
+                [
+                  "lugar",
+                  "🏘️"
+                ],
+                [
+                  "puent",
+                  "🌉"
+                ]
+              ]
+            },
+            {
+              "id": "u9-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "puent",
+                  "puente"
+                ],
+                [
+                  "camín",
+                  "camino"
+                ],
+                [
+                  "carrera",
+                  "calle"
+                ],
+                [
+                  "lugar",
+                  "pueblo"
+                ]
+              ]
+            },
+            {
+              "id": "u9-l3-e4",
+              "t": "choice",
+              "ar": "Bi ha un puent en lo lugar.",
+              "options": [
+                "Hay un puente en el pueblo.",
+                "Hay un camino en el pueblo.",
+                "Hay un puente en la calle."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u9-l3-e5",
+              "t": "fill",
+              "before": "Voi ta Uesca en",
+              "after": ".",
+              "es": "Voy a Huesca en tren.",
+              "options": [
+                "puent",
+                "tren",
+                "camín"
+              ],
+              "answer": "tren"
+            },
+            {
+              "id": "u9-l3-e6",
+              "t": "build",
+              "es": "Hay un camino al pueblo.",
+              "answer": "Bi ha un camín ta lo lugar.",
+              "tiles": [
+                "camín",
+                "ta",
+                "Bi",
+                "lugar.",
+                "un",
+                "lo",
+                "ha",
+                "puent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u9-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar los topónimos «Tergüel» y «Balbastro».",
+        "Comprobar «carrera» (calle), «lugar» (pueblo), «ta» y el presente de ir: «voi, vas, va»."
+      ]
     },
     {
       "id": "u10",
       "titulo": "Verbos de cada día",
       "tema": "Fer, minchar, charrar, puyar…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Verbos muy útiles: <b>charrar</b> (hablar), <b>chugar</b> (jugar), <b>puyar</b> (subir), <b>baixar</b> (bajar), <b>trobar</b> (encontrar), <b>plorar</b> (llorar).</p><p>El pasado compuesto se hace con <b>haber</b> (he, has, ha, hemos…) y el participio en <b>-au</b> o <b>-iu</b>:</p><table><tr><td>minchar → minchau</td><td>comer → comido</td></tr><tr><td>charrar → charrau</td><td>hablar → hablado</td></tr><tr><td>beber → bebiu</td><td>beber → bebido</td></tr><tr><td>dormir → dormiu</td><td>dormir → dormido</td></tr></table><p>Irregulares: <b>feito</b> (hecho), <b>dito</b> (dicho), <b>visto</b> (visto). <i>Hue he minchau en casa.</i></p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "fer",
+          "es": "hacer"
+        },
+        {
+          "ar": "decir",
+          "es": "decir"
+        },
+        {
+          "ar": "ir · venir",
+          "es": "ir · venir"
+        },
+        {
+          "ar": "charrar",
+          "es": "hablar"
+        },
+        {
+          "ar": "minchar · beber",
+          "es": "comer · beber"
+        },
+        {
+          "ar": "veyer",
+          "es": "ver"
+        },
+        {
+          "ar": "saber",
+          "es": "saber"
+        },
+        {
+          "ar": "chugar",
+          "es": "jugar"
+        },
+        {
+          "ar": "puyar",
+          "es": "subir"
+        },
+        {
+          "ar": "baixar",
+          "es": "bajar"
+        },
+        {
+          "ar": "trobar",
+          "es": "encontrar"
+        },
+        {
+          "ar": "plorar",
+          "es": "llorar"
+        },
+        {
+          "ar": "dormir",
+          "es": "dormir"
+        },
+        {
+          "ar": "he · has · ha · hemos",
+          "es": "he · has · ha · hemos"
+        },
+        {
+          "ar": "minchau · charrau",
+          "es": "comido · hablado"
+        },
+        {
+          "ar": "bebiu · dormiu",
+          "es": "bebido · dormido"
+        },
+        {
+          "ar": "feito · dito · visto",
+          "es": "hecho · dicho · visto"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u10-l1",
+          "nombre": "Charrar y chugar",
+          "ejercicios": [
+            {
+              "id": "u10-l1-e1",
+              "t": "match",
+              "pairs": [
+                [
+                  "minchar",
+                  "comer"
+                ],
+                [
+                  "charrar",
+                  "hablar"
+                ],
+                [
+                  "chugar",
+                  "jugar"
+                ],
+                [
+                  "puyar",
+                  "subir"
+                ]
+              ]
+            },
+            {
+              "id": "u10-l1-e2",
+              "t": "choice",
+              "ar": "Charro aragonés.",
+              "options": [
+                "Hablo aragonés.",
+                "Aprendo aragonés.",
+                "Hablas aragonés."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u10-l1-e3",
+              "t": "fill",
+              "before": "Los chiquez",
+              "after": "en la plaza.",
+              "es": "Los niños juegan en la plaza.",
+              "options": [
+                "minchan",
+                "chugan",
+                "plora"
+              ],
+              "answer": "chugan"
+            },
+            {
+              "id": "u10-l1-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "baixar",
+                  "bajar"
+                ],
+                [
+                  "trobar",
+                  "encontrar"
+                ],
+                [
+                  "plorar",
+                  "llorar"
+                ],
+                [
+                  "veyer",
+                  "ver"
+                ]
+              ]
+            },
+            {
+              "id": "u10-l1-e5",
+              "t": "choice",
+              "ar": "Lo chiquet plora.",
+              "options": [
+                "El niño juega.",
+                "El niño come.",
+                "El niño llora."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u10-l1-e6",
+              "t": "build",
+              "es": "Hablamos aragonés.",
+              "answer": "Charramos aragonés.",
+              "tiles": [
+                "aragonés.",
+                "Charramos",
+                "Charro",
+                "minchamos"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u10-l2",
+          "nombre": "He minchau",
+          "ejercicios": [
+            {
+              "id": "u10-l2-e1",
+              "t": "choice",
+              "ar": "Hue he minchau en casa.",
+              "options": [
+                "Hoy he comido en casa.",
+                "Ayer comí en casa.",
+                "Hoy he dormido en casa."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u10-l2-e2",
+              "t": "fill",
+              "before": "Hue",
+              "after": "minchau peix.",
+              "es": "Hoy he comido pescado.",
+              "options": [
+                "has",
+                "he",
+                "ha"
+              ],
+              "answer": "he"
+            },
+            {
+              "id": "u10-l2-e3",
+              "t": "fill",
+              "before": "Ella ha",
+              "after": "muito.",
+              "es": "Ella ha dormido mucho.",
+              "options": [
+                "dormido",
+                "minchau",
+                "dormiu"
+              ],
+              "answer": "dormiu"
+            },
+            {
+              "id": "u10-l2-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "minchau",
+                  "comido"
+                ],
+                [
+                  "charrau",
+                  "hablado"
+                ],
+                [
+                  "dormiu",
+                  "dormido"
+                ],
+                [
+                  "bebiu",
+                  "bebido"
+                ]
+              ]
+            },
+            {
+              "id": "u10-l2-e5",
+              "t": "build",
+              "es": "Hemos jugado.",
+              "answer": "Hemos chugau.",
+              "tiles": [
+                "chugau.",
+                "Hemos",
+                "chugado.",
+                "has"
+              ]
+            },
+            {
+              "id": "u10-l2-e6",
+              "t": "choice",
+              "ar": "¿Has puyau ta lo mont?",
+              "options": [
+                "¿Has bajado del monte?",
+                "¿Has subido al monte?",
+                "¿Has visto el monte?"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "u10-l3",
+          "nombre": "Feito, dito, visto",
+          "ejercicios": [
+            {
+              "id": "u10-l3-e1",
+              "t": "match",
+              "pairs": [
+                [
+                  "feito",
+                  "hecho"
+                ],
+                [
+                  "dito",
+                  "dicho"
+                ],
+                [
+                  "visto",
+                  "visto"
+                ],
+                [
+                  "trobau",
+                  "encontrado"
+                ]
+              ]
+            },
+            {
+              "id": "u10-l3-e2",
+              "t": "choice",
+              "ar": "¿Qué has feito hue?",
+              "options": [
+                "¿Qué has dicho hoy?",
+                "¿Qué haces hoy?",
+                "¿Qué has hecho hoy?"
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u10-l3-e3",
+              "t": "fill",
+              "before": "¡Hue he",
+              "after": "un onso!",
+              "es": "¡Hoy he visto un oso!",
+              "options": [
+                "feito",
+                "visto",
+                "dito"
+              ],
+              "answer": "visto"
+            },
+            {
+              "id": "u10-l3-e4",
+              "t": "build",
+              "es": "He encontrado la llave.",
+              "answer": "He trobau la clau.",
+              "tiles": [
+                "trobau",
+                "la",
+                "He",
+                "clau.",
+                "baixau",
+                "has"
+              ]
+            },
+            {
+              "id": "u10-l3-e5",
+              "t": "choice",
+              "ar": "Lo mío chirmano ha baixau de lo mont.",
+              "options": [
+                "Mi hermano ha subido al monte.",
+                "Mi hermano ha bajado del monte.",
+                "Mi padre ha bajado del monte."
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "u10-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar las formas del presente «charro», «charramos», «chugan» y «plora».",
+        "Comprobar los participios «bebiu», «dormiu», «trobau», «baixau» y la contracción «de lo mont» (variante: «d'o mont»)."
+      ]
     }
   ]
 }
