@@ -66,9 +66,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .about-top{display:flex;align-items:center;gap:12px;padding-block:14px}
 .dots{flex:1;display:flex;justify-content:center;gap:6px}
 .langs{display:flex;gap:6px}
-.lang{width:40px;height:30px;padding:2px;border-radius:8px;border:2px solid transparent;background:none;display:grid;place-items:center;opacity:.55}
-.lang svg{width:100%;height:100%;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.lang{width:32px;height:32px;padding:0;border-radius:50%;border:2px solid transparent;background:none;display:grid;place-items:center;opacity:.5;transition:opacity .15s}
+.lang svg{width:26px;height:26px;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
 .lang[aria-pressed="true"]{opacity:1;border-color:var(--monte)}
+.lang[aria-pressed="true"] svg{width:24px;height:24px}
 .dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
 .dots i.on{background:var(--rojo);width:22px;border-radius:99px}
 .about-card{flex:1;display:flex;flex-direction:column;gap:14px}
@@ -670,14 +671,43 @@ function pickAboutImgs() {
   aboutImgs = ABOUT.map((_, k) => (k === 1 ? where : rest.shift()));
 }
 // Banderas para cambiar el idioma de «Sobre el aragonés». Las traducciones al aragonés están pendientes de revisión.
-const FLAG_ES = `<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg>`;
-const FLAG_AR = `<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#FCDD09"/>${[0,1,2,3].map(k => `<rect y="${2.22 + k * 4.44}" width="30" height="2.22" fill="#DA121A"/>`).join("")}
-  <g transform="translate(5.2 3.2)"><path d="M0 2.6h7.2v6.4c0 2.6-1.8 4.2-3.6 4.6C1.8 13.2 0 11.6 0 9z" fill="#fff" stroke="#7A1A15" stroke-width=".5"/>
-  <rect x=".35" y="2.95" width="3.25" height="3.2" fill="#E8C33A"/><path d="M1.95 3.3v2.5" stroke="#3F7A2E" stroke-width="1.1"/>
-  <rect x="3.6" y="2.95" width="3.25" height="3.2" fill="#2F5DA8"/><path d="M5.2 3.3v2.5M4.1 4.55h2.2" stroke="#fff" stroke-width=".55"/>
-  <path d="M.35 6.15h3.25v3.3H.35z" fill="#fff"/><path d="M1.95 6.3v3M.6 7.75h2.7" stroke="#DA121A" stroke-width=".6"/>
-  <path d="M3.6 6.15h3.25v3.1c0 1.6-1 2.9-3.25 3.7z" fill="#FCDD09"/><path d="M4.3 6.15v5.9M5.4 6.15v5.1M6.4 6.15v3.6" stroke="#DA121A" stroke-width=".5"/>
-  <path d="M.6 2.6l.6-1.6 1.2 1 1.2-1.6 1.2 1.6 1.2-1 .6 1.6z" fill="#E8C33A" stroke="#7A1A15" stroke-width=".3"/></g></svg>`;
+const FLAG_ES = `<svg viewBox="0 0 100 100" aria-hidden="true"><defs><clipPath id="cES"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+<g clip-path="url(#cES)"><rect width="100" height="100" fill="#AA151B"/><rect y="25" width="100" height="50" fill="#F1BF00"/></g></svg>`;
+
+const FLAG_AR = (() => {
+  const band = 100 / 9;
+  const stripes = [0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => `<rect y="${(k * band).toFixed(2)}" width="100" height="${(band + 0.3).toFixed(2)}" fill="${k % 2 ? "#DA121A" : "#FCDD09"}"/>`).join("");
+  // Escudo: forma española (fondo redondeado), 44 x 54
+  const shield = "M29 33 H71 V63 A21 21 0 0 1 29 63 Z";
+  const bars = [0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => k % 2 ? `<rect x="${(50 + k * 21 / 9).toFixed(2)}" y="53" width="${(21 / 9).toFixed(2)}" height="32" fill="#DA121A"/>` : "").join("");
+  const head = (x, y) => `<circle cx="${x}" cy="${y}" r="2.7" fill="#2B1B12"/><path d="M${x - 2.8} ${y - 0.9}h5.6" stroke="#fff" stroke-width="1.1"/>`;
+  return `<svg viewBox="0 0 100 100" aria-hidden="true"><defs>
+<clipPath id="cAR"><circle cx="50" cy="50" r="50"/></clipPath><clipPath id="cSh"><path d="${shield}"/></clipPath></defs>
+<g clip-path="url(#cAR)">${stripes}
+<g clip-path="url(#cSh)">
+  <!-- 1: árbol de Sobrarbe (encina con cruz roja) sobre oro -->
+  <rect x="29" y="33" width="21" height="20" fill="#F4C430"/>
+  <rect x="38.4" y="44" width="3.2" height="7" fill="#6B4423"/>
+  <ellipse cx="40" cy="43" rx="6.6" ry="5" fill="#2E7D32"/>
+  <path d="M40 34.2v6.6M37.2 36.6h5.6" stroke="#DA121A" stroke-width="1.7"/>
+  <!-- 2: cruz de Íñigo Arista (plata) sobre azul, en el cantón -->
+  <rect x="50" y="33" width="21" height="20" fill="#1F4E9C"/>
+  <path d="M56 35.2v9.6M51.2 40h9.6" stroke="#fff" stroke-width="2.3"/>
+  <!-- 3: cruz de San Jorge con cuatro cabezas sobre plata -->
+  <rect x="29" y="53" width="21" height="32" fill="#fff"/>
+  <path d="M39.5 53v32M29 62.5h21" stroke="#DA121A" stroke-width="3.2"/>
+  ${head(33.8, 57.6)}${head(45.2, 57.6)}${head(33.8, 68.4)}${head(45.2, 68.4)}
+  <!-- 4: barras de Aragón -->
+  <rect x="50" y="53" width="21" height="32" fill="#FCDD09"/>${bars}
+  <path d="M50 33v52M29 53h42" stroke="#5C3A00" stroke-width="0.8"/>
+</g>
+<path d="${shield}" fill="none" stroke="#5C3A00" stroke-width="1.6"/>
+<!-- corona real abierta -->
+<path d="M31 32 L31 22 L37 26.5 L43.5 17.5 L50 25 L56.5 17.5 L63 26.5 L69 22 L69 32 Z" fill="#E8B80A" stroke="#5C3A00" stroke-width="1.3" stroke-linejoin="round"/>
+<circle cx="43.5" cy="17.2" r="1.7" fill="#E8B80A" stroke="#5C3A00" stroke-width=".8"/><circle cx="56.5" cy="17.2" r="1.7" fill="#E8B80A" stroke="#5C3A00" stroke-width=".8"/><circle cx="50" cy="23.6" r="1.5" fill="#E8B80A" stroke="#5C3A00" stroke-width=".8"/>
+<circle cx="40" cy="29" r="1.3" fill="#DA121A"/><circle cx="50" cy="29" r="1.3" fill="#1F4E9C"/><circle cx="60" cy="29" r="1.3" fill="#2E7D32"/>
+</g></svg>`;
+})();
 function aboutLang() { return S.aboutLang === "an" ? "an" : "es"; }
 function renderAbout(i, keep) {
   if (!keep || !aboutImgs.length) pickAboutImgs();
