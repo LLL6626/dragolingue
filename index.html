@@ -54,7 +54,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .welcome{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;padding-block:32px calc(32px + env(safe-area-inset-bottom,0px))}
 .welcome .logo-row{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.6rem;color:var(--rojo)}
 .welcome .logo-row img{width:44px;height:44px}
-.welcome .hero{width:min(260px,70%);animation:bob 3s ease-in-out infinite}
+.welcome .hero{width:min(240px,64%);animation:bob 3s ease-in-out infinite}
+.welcome .hero img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:32px;border:4px solid var(--surface);box-shadow:0 8px 24px var(--shadow)}
 @keyframes bob{50%{transform:translateY(-6px)}}
 .say{position:relative;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:14px 18px;max-width:340px}
 .say::before{content:"";position:absolute;left:50%;top:-10px;width:16px;height:16px;margin-left:-8px;background:var(--surface);border-left:2px solid var(--line);border-top:2px solid var(--line);transform:rotate(45deg)}
@@ -67,7 +68,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
 .dots i.on{background:var(--rojo);width:22px;border-radius:99px}
 .about-card{flex:1;display:flex;flex-direction:column;gap:14px}
-.about-pic{border-radius:22px;background:var(--monte-soft);aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden}
+.about-pic{position:relative;border-radius:22px;background:var(--monte-soft);aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden}
+.about-pic .place{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--ink);font-weight:800;font-size:.8rem;padding:4px 10px;border-radius:99px}
 .about-pic img{width:100%;height:100%;object-fit:cover}
 .about-pic .dr{width:58%}
 .about-card h1{font-size:1.7rem;color:var(--rojo)}
@@ -599,7 +601,7 @@ function renderWelcome() {
   $app.className = "app";
   $app.innerHTML = `<main class="welcome">
     <div class="logo-row"><img src="web/logo.svg" alt="">Dragolingüe</div>
-    <div class="hero">${dragon("cheer")}</div>
+    <div class="hero"><img src="web/img/dragolingue.jpg" alt="Dragolingüe"></div>
     <div class="say"><div class="ar">¡Hola! Yo soi Dragolingüe.</div><div class="es">¡Hola! Soy Dragolingüe. ¿Qué quieres hacer?</div></div>
     <div class="welcome-btns">
       <button class="big-btn" id="go-learn">¡Aprende aragonés!</button>
@@ -610,21 +612,21 @@ function renderWelcome() {
 }
 
 /* ---------- Sobre el aragonés ----------
-   Cada tarjeta puede llevar una imagen: pon en "img" la ruta (por ejemplo "web/lugares/pirineo.jpg").
+   Cada tarjeta puede llevar una imagen: pon en "img" la ruta (por ejemplo "web/img/ainsa.jpg") y en "place" el lugar.
    Mientras no haya imagen, se ve el dragón con el ánimo de "mood". */
 const ABOUT = [
-  { title: "¿Qué es el aragonés?", mood: "happy", img: null,
+  { title: "¿Qué es el aragonés?", mood: "happy", img: "web/img/albarracin.jpg", place: "Albarracín",
     text: "El aragonés es mi lengua: una lengua romance, hermana del castellano y del catalán, nacida del latín. Es la propia del norte de Aragón y viene del navarroaragonés que ya se hablaba en la Edad Media." },
-  { title: "¿Dónde se habla?", mood: "think", img: null,
+  { title: "¿Dónde se habla?", mood: "think", img: "web/img/ainsa.jpg", place: "Aínsa, en el Sobrarbe",
     text: "Sobre todo en los valles del Pirineo y en el Prepirineo de Huesca: Echo, Ansó, Panticosa, Bielsa, Chistau… Y cada vez más en ciudades como Zaragoza o Huesca, donde mucha gente lo aprende de nuevo." },
-  { title: "Muchas variedades", mood: "cheer", img: null,
+  { title: "Muchas variedades", mood: "cheer", img: "web/img/huesca.jpg", place: "Uesca (Huesca)",
     text: "Cada valle tiene su manera de hablarlo: el cheso en Echo, el patués en Benasque, el belsetán en Bielsa, el chistabín en Chistau… En esta app aprenderás el aragonés común, y te avisaré cuando una palabra se diga de otra forma." },
-  { title: "¿Cuánta gente lo habla?", mood: "think", img: null,
+  { title: "¿Cuánta gente lo habla?", mood: "think", img: "web/img/calatayud.jpg", place: "Calatayud",
     text: "En el censo de 2011, unas 56.000 personas dijeron conocerlo y unas 25.000, hablarlo. Hoy se calcula que lo usan a diario entre 10.000 y 12.000 personas. Es una lengua minoritaria y en retroceso: ¡por eso te necesito!",
     src: "Fuentes: censo de 2011; Dirección General de Política Lingüística (2017)." },
-  { title: "Una lengua con norma", mood: "think", img: null,
+  { title: "Una lengua con norma", mood: "think", img: "web/img/zaragoza.jpg", place: "Zaragoza",
     text: "Desde 2021 existe la Academia Aragonesa de la Lengua. En 2023 aprobó la ortografía oficial del aragonés, y fue la primera norma del Boletín Oficial de Aragón escrita en aragonés. Es la ortografía que usamos aquí." },
-  { title: "¿Por qué aprenderlo?", mood: "cheer", img: null,
+  { title: "¿Por qué aprenderlo?", mood: "cheer", img: "web/img/teruel.jpg", place: "Teruel",
     text: "Porque es parte de Aragón: está en los nombres de los pueblos, de los montes y en muchas palabras de nuestros abuelos. Y si hablas castellano, te resultará muy fácil de entender. ¿Empezamos?" },
 ];
 function renderAbout(i) {
@@ -635,7 +637,7 @@ function renderAbout(i) {
     <div class="about-top"><button class="icon-btn" id="ab-close" aria-label="Cerrar">${ICON.close}</button>
       <div class="dots">${ABOUT.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div><span style="width:34px"></span></div>
     <article class="about-card">
-      <div class="about-pic">${c.img ? `<img src="${esc(c.img)}" alt="">` : `<div class="dr">${dragon(c.mood)}</div>`}</div>
+      <div class="about-pic">${c.img ? `<img src="${esc(c.img)}" alt="Dragolingüe en ${esc(c.place || "Aragón")}">${c.place ? `<span class="place">📍 ${esc(c.place)}</span>` : ""}` : `<div class="dr">${dragon(c.mood)}</div>`}</div>
       <h1>${esc(c.title)}</h1>
       <div class="talk"><div class="mini">${dragon("happy")}</div><p>${esc(c.text)}</p></div>
       ${c.src ? `<p class="src">${esc(c.src)}</p>` : ""}
