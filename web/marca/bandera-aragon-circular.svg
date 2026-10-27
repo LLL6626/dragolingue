@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 100 100"><defs>
+<clipPath id="cAR"><circle cx="50" cy="50" r="50"/></clipPath><clipPath id="cSh"><path d="M29 33 H71 V63 A21 21 0 0 1 29 63 Z"/></clipPath></defs>
+<g clip-path="url(#cAR)"><rect y="0.00" width="100" height="11.41" fill="#FCDD09"/><rect y="11.11" width="100" height="11.41" fill="#DA121A"/><rect y="22.22" width="100" height="11.41" fill="#FCDD09"/><rect y="33.33" width="100" height="11.41" fill="#DA121A"/><rect y="44.44" width="100" height="11.41" fill="#FCDD09"/><rect y="55.56" width="100" height="11.41" fill="#DA121A"/><rect y="66.67" width="100" height="11.41" fill="#FCDD09"/><rect y="77.78" width="100" height="11.41" fill="#DA121A"/><rect y="88.89" width="100" height="11.41" fill="#FCDD09"/>
+<g clip-path="url(#cSh)">
+  <!-- 1: árbol de Sobrarbe (encina con cruz roja) sobre oro -->
+  <rect x="29" y="33" width="21" height="20" fill="#F4C430"/>
+  <rect x="38.4" y="44" width="3.2" height="7" fill="#6B4423"/>
+  <ellipse cx="40" cy="43" rx="6.6" ry="5" fill="#2E7D32"/>
+  <path d="M40 34.2v6.6M37.2 36.6h5.6" stroke="#DA121A" stroke-width="1.7"/>
+  <!-- 2: cruz de Íñigo Arista (plata) sobre azul, en el cantón -->
+  <rect x="50" y="33" width="21" height="20" fill="#1F4E9C"/>
+  <path d="M56 35.2v9.6M51.2 40h9.6" stroke="#fff" stroke-width="2.3"/>
+  <!-- 3: cruz de San Jorge con cuatro cabezas sobre plata -->
+  <rect x="29" y="53" width="21" height="32" fill="#fff"/>
+  <path d="M39.5 53v32M29 62.5h21" stroke="#DA121A" stroke-width="3.2"/>
+  <circle cx="33.8" cy="57.6" r="2.7" fill="#2B1B12"/><path d="M30.999999999999996 56.7h5.6" stroke="#fff" stroke-width="1.1"/><circle cx="45.2" cy="57.6" r="2.7" fill="#2B1B12"/><path d="M42.400000000000006 56.7h5.6" stroke="#fff" stroke-width="1.1"/><circle cx="33.8" cy="68.4" r="2.7" fill="#2B1B12"/><path d="M30.999999999999996 67.5h5.6" stroke="#fff" stroke-width="1.1"/><circle cx="45.2" cy="68.4" r="2.7" fill="#2B1B12"/><path d="M42.400000000000006 67.5h5.6" stroke="#fff" stroke-width="1.1"/>
+  <!-- 4: barras de Aragón -->
+  <rect x="50" y="53" width="21" height="32" fill="#FCDD09"/><rect x="52.33" y="53" width="2.33" height="32" fill="#DA121A"/><rect x="57.00" y="53" width="2.33" height="32" fill="#DA121A"/><rect x="61.67" y="53" width="2.33" height="32" fill="#DA121A"/><rect x="66.33" y="53" width="2.33" height="32" fill="#DA121A"/>
+  <path d="M50 33v52M29 53h42" stroke="#5C3A00" stroke-width="0.8"/>
+</g>
+<path d="M29 33 H71 V63 A21 21 0 0 1 29 63 Z" fill="none" stroke="#5C3A00" stroke-width="1.6"/>
+<!-- corona real abierta -->
+<path d="M31 32 L31 22 L37 26.5 L43.5 17.5 L50 25 L56.5 17.5 L63 26.5 L69 22 L69 32 Z" fill="#E8B80A" stroke="#5C3A00" stroke-width="1.3" stroke-linejoin="round"/>
+<circle cx="43.5" cy="17.2" r="1.7" fill="#E8B80A" stroke="#5C3A00" stroke-width=".8"/><circle cx="56.5" cy="17.2" r="1.7" fill="#E8B80A" stroke="#5C3A00" stroke-width=".8"/><circle cx="50" cy="23.6" r="1.5" fill="#E8B80A" stroke="#5C3A00" stroke-width=".8"/>
+<circle cx="40" cy="29" r="1.3" fill="#DA121A"/><circle cx="50" cy="29" r="1.3" fill="#1F4E9C"/><circle cx="60" cy="29" r="1.3" fill="#2E7D32"/>
+</g></svg>
