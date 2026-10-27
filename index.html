@@ -68,9 +68,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
 .dots i.on{background:var(--rojo);width:22px;border-radius:99px}
 .about-card{flex:1;display:flex;flex-direction:column;gap:14px}
-.about-pic{position:relative;border-radius:22px;background:var(--monte-soft);aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden}
-.about-pic .place{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--ink);font-weight:800;font-size:.8rem;padding:4px 10px;border-radius:99px}
-.about-pic img{width:100%;height:100%;object-fit:cover}
+.about-pic{position:relative;border-radius:22px;aspect-ratio:5/3;perspective:1200px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.about-pic.flipped .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:22px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--monte-soft)}
+.face img{width:100%;height:100%;object-fit:cover;display:block}
+.face.back{transform:rotateY(180deg)}
+.where{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--monte);font-weight:800;font-size:.78rem;padding:5px 10px;border-radius:99px;display:flex;gap:6px;align-items:center}
+.sign{position:absolute;right:14px;bottom:14px;background:#F6E2B3;border:3px solid #8C6A3C;border-radius:10px;padding:6px 14px;transform:rotate(-4deg);
+  font-family:var(--f-display);font-weight:800;font-size:1.25rem;color:#5A3A1A;text-align:center;line-height:1.1;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.sign small{display:block;font-family:var(--f-body, inherit);font-size:.72rem;font-weight:700;color:#8C6A3C}
 .about-pic .dr{width:58%}
 .about-card h1{font-size:1.7rem;color:var(--rojo)}
 .about-card .talk{display:flex;gap:10px;align-items:flex-start}
@@ -615,21 +622,38 @@ function renderWelcome() {
    Cada tarjeta puede llevar una imagen: pon en "img" la ruta (por ejemplo "web/img/ainsa.jpg") y en "place" el lugar.
    Mientras no haya imagen, se ve el dragón con el ánimo de "mood". */
 const ABOUT = [
-  { title: "¿Qué es el aragonés?", mood: "happy", img: "web/img/albarracin.jpg", place: "Albarracín",
+  { title: "¿Qué es el aragonés?", mood: "happy",
     text: "El aragonés es mi lengua: una lengua romance, hermana del castellano y del catalán, nacida del latín. Es la propia del norte de Aragón y viene del navarroaragonés que ya se hablaba en la Edad Media." },
-  { title: "¿Dónde se habla?", mood: "think", img: "web/img/ainsa.jpg", place: "Aínsa, en el Sobrarbe",
+  { title: "¿Dónde se habla?", mood: "think",
     text: "Sobre todo en los valles del Pirineo y en el Prepirineo de Huesca: Echo, Ansó, Panticosa, Bielsa, Chistau… Y cada vez más en ciudades como Zaragoza o Huesca, donde mucha gente lo aprende de nuevo." },
-  { title: "Muchas variedades", mood: "cheer", img: "web/img/huesca.jpg", place: "Uesca (Huesca)",
+  { title: "Muchas variedades", mood: "cheer",
     text: "Cada valle tiene su manera de hablarlo: el cheso en Echo, el patués en Benasque, el belsetán en Bielsa, el chistabín en Chistau… En esta app aprenderás el aragonés común, y te avisaré cuando una palabra se diga de otra forma." },
-  { title: "¿Cuánta gente lo habla?", mood: "think", img: "web/img/calatayud.jpg", place: "Calatayud",
+  { title: "¿Cuánta gente lo habla?", mood: "think",
     text: "En el censo de 2011, unas 56.000 personas dijeron conocerlo y unas 25.000, hablarlo. Hoy se calcula que lo usan a diario entre 10.000 y 12.000 personas. Es una lengua minoritaria y en retroceso: ¡por eso te necesito!",
     src: "Fuentes: censo de 2011; Dirección General de Política Lingüística (2017)." },
-  { title: "Una lengua con norma", mood: "think", img: "web/img/zaragoza.jpg", place: "Zaragoza",
+  { title: "Una lengua con norma", mood: "think",
     text: "Desde 2021 existe la Academia Aragonesa de la Lengua. En 2023 aprobó la ortografía oficial del aragonés, y fue la primera norma del Boletín Oficial de Aragón escrita en aragonés. Es la ortografía que usamos aquí." },
-  { title: "¿Por qué aprenderlo?", mood: "cheer", img: "web/img/teruel.jpg", place: "Teruel",
+  { title: "¿Por qué aprenderlo?", mood: "cheer",
     text: "Porque es parte de Aragón: está en los nombres de los pueblos, de los montes y en muchas palabras de nuestros abuelos. Y si hablas castellano, te resultará muy fácil de entender. ¿Empezamos?" },
 ];
-function renderAbout(i) {
+// Lugares donde aparece Dragolingüe. "ar" es el nombre en aragonés del cartel; "es", el castellano si cambia.
+const PLACES = {
+  ainsa: { ar: "L'Aínsa", es: "Aínsa" },
+  huesca: { ar: "Uesca", es: "Huesca" },
+  zaragoza: { ar: "Zaragoza" },
+  albarracin: { ar: "Albarracín" },
+  calatayud: { ar: "Calatayud" },
+  teruel: { ar: "Teruel" },
+};
+let aboutImgs = [];
+// Cada vez que se entra, reparte las 6 imágenes sin repetir. En «¿Dónde se habla?» (tarjeta 2) siempre L'Aínsa o Uesca.
+function pickAboutImgs() {
+  const where = Math.random() < 0.5 ? "ainsa" : "huesca";
+  const rest = shuffle(Object.keys(PLACES).filter(k => k !== where));
+  aboutImgs = ABOUT.map((_, k) => (k === 1 ? where : rest.shift()));
+}
+function renderAbout(i, keep) {
+  if (!keep || !aboutImgs.length) pickAboutImgs();
   window.scrollTo(0, 0);
   const c = ABOUT[i], last = i === ABOUT.length - 1;
   $app.className = "app";
@@ -637,7 +661,11 @@ function renderAbout(i) {
     <div class="about-top"><button class="icon-btn" id="ab-close" aria-label="Cerrar">${ICON.close}</button>
       <div class="dots">${ABOUT.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div><span style="width:34px"></span></div>
     <article class="about-card">
-      <div class="about-pic">${c.img ? `<img src="${esc(c.img)}" alt="Dragolingüe en ${esc(c.place || "Aragón")}">${c.place ? `<span class="place">📍 ${esc(c.place)}</span>` : ""}` : `<div class="dr">${dragon(c.mood)}</div>`}</div>
+      ${(() => { const k = aboutImgs[i], P = PLACES[k]; return `<div class="about-pic" id="flip" role="button" tabindex="0" aria-label="¿Dónde está Dragolingüe? Toca la imagen para verlo en el mapa">
+        <div class="flip-inner">
+          <div class="face front"><img src="web/img/${k}.jpg" alt="Dragolingüe de paseo por Aragón"><span class="where">¿Dónde está Dragolingüe? <span aria-hidden="true">↻</span></span></div>
+          <div class="face back"><img src="web/img/mapa-${k}.jpg" alt="Mapa de Aragón con una chincheta roja"><div class="sign">${esc(P.ar)}${P.es ? `<small>${esc(P.es)}</small>` : ""}</div></div>
+        </div></div>`; })()}
       <h1>${esc(c.title)}</h1>
       <div class="talk"><div class="mini">${dragon("happy")}</div><p>${esc(c.text)}</p></div>
       ${c.src ? `<p class="src">${esc(c.src)}</p>` : ""}
@@ -647,9 +675,13 @@ function renderAbout(i) {
       <button class="big-btn" id="ab-next">${last ? "¡Aprende aragonés!" : "Siguiente"}</button>
     </div></main>`;
   $app.querySelector("#ab-close").onclick = () => (S.welcomed ? renderHome() : renderWelcome());
-  const p = $app.querySelector("#ab-prev"); if (p) p.onclick = () => renderAbout(i - 1);
+  const fl = $app.querySelector("#flip");
+  const flip = () => fl.classList.toggle("flipped");
+  fl.onclick = flip;
+  fl.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } };
+  const p = $app.querySelector("#ab-prev"); if (p) p.onclick = () => renderAbout(i - 1, true);
   $app.querySelector("#ab-next").onclick = () => {
-    if (last) { S.welcomed = true; save(); tab = "learn"; renderHome(); } else renderAbout(i + 1);
+    if (last) { S.welcomed = true; save(); tab = "learn"; renderHome(); } else renderAbout(i + 1, true);
   };
 }
 
