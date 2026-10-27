@@ -1,6 +1,6 @@
 // Service worker de Dragolingüe: permite usar la app sin conexión.
 // Primero intenta la red (así siempre llegan las correcciones del contenido) y, si no hay, usa la copia guardada.
-const CACHE = 'dragolingue-v4';
+const CACHE = 'dragolingue-v5';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'src/content/contenido.json', 'web/icon-192.png', 'web/icon-512.png', 'web/logo.svg', 'web/img/dragolingue.jpg'];
 
 self.addEventListener('install', e => {

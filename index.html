@@ -65,6 +65,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .about{flex:1;display:flex;flex-direction:column;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
 .about-top{display:flex;align-items:center;gap:12px;padding-block:14px}
 .dots{flex:1;display:flex;justify-content:center;gap:6px}
+.langs{display:flex;gap:6px}
+.lang{width:40px;height:30px;padding:2px;border-radius:8px;border:2px solid transparent;background:none;display:grid;place-items:center;opacity:.55}
+.lang svg{width:100%;height:100%;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.lang[aria-pressed="true"]{opacity:1;border-color:var(--monte)}
 .dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
 .dots i.on{background:var(--rojo);width:22px;border-radius:99px}
 .about-card{flex:1;display:flex;flex-direction:column;gap:14px}
@@ -623,18 +627,31 @@ function renderWelcome() {
    Mientras no haya imagen, se ve el dragón con el ánimo de "mood". */
 const ABOUT = [
   { title: "¿Qué es el aragonés?", mood: "happy",
-    text: "El aragonés es mi lengua: una lengua romance, hermana del castellano y del catalán, nacida del latín. Es la propia del norte de Aragón y viene del navarroaragonés que ya se hablaba en la Edad Media." },
+    text: "El aragonés es mi lengua: una lengua romance, hermana del castellano y del catalán, nacida del latín. Es la propia del norte de Aragón y viene del navarroaragonés que ya se hablaba en la Edad Media.",
+    title_ar: "¿Qué ye l'aragonés?",
+    text_ar: "L'aragonés ye la mía luenga: una luenga romance, chirmana de lo castellano y de lo catalán, naixida de lo latín. Ye la luenga propia de lo norte d'Aragón y vien de lo navarroaragonés que ya se charraba en la Edat Meya." },
   { title: "¿Dónde se habla?", mood: "think",
-    text: "Sobre todo en los valles del Pirineo y en el Prepirineo de Huesca: Echo, Ansó, Panticosa, Bielsa, Chistau… Y cada vez más en ciudades como Zaragoza o Huesca, donde mucha gente lo aprende de nuevo." },
+    text: "Sobre todo en los valles del Pirineo y en el Prepirineo de Huesca: Echo, Ansó, Panticosa, Bielsa, Chistau… Y cada vez más en ciudades como Zaragoza o Huesca, donde mucha gente lo aprende de nuevo.",
+    title_ar: "¿Án se charra?",
+    text_ar: "Sobre tot en las vals de lo Pirineo y en lo Prepirineo d'Uesca: Echo, Ansó, Panticosa, Bielsa, Chistau… Y cada vegada más en ciudaz como Zaragoza u Uesca, an que muita chent l'aprende de nuevo." },
   { title: "Muchas variedades", mood: "cheer",
-    text: "Cada valle tiene su manera de hablarlo: el cheso en Echo, el patués en Benasque, el belsetán en Bielsa, el chistabín en Chistau… En esta app aprenderás el aragonés común, y te avisaré cuando una palabra se diga de otra forma." },
+    text: "Cada valle tiene su manera de hablarlo: el cheso en Echo, el patués en Benasque, el belsetán en Bielsa, el chistabín en Chistau… En esta app aprenderás el aragonés común, y te avisaré cuando una palabra se diga de otra forma.",
+    title_ar: "Muitas variedaz",
+    text_ar: "Cada val tiene la suya manera de charrar-lo: lo cheso en Echo, lo patués en Benasque, lo belsetán en Bielsa, lo chistabín en Chistau… En ista app aprendrás l'aragonés común, y te avisaré quan una parola se diga d'atra manera." },
   { title: "¿Cuánta gente lo habla?", mood: "think",
     text: "En el censo de 2011, unas 56.000 personas dijeron conocerlo y unas 25.000, hablarlo. Hoy se calcula que lo usan a diario entre 10.000 y 12.000 personas. Es una lengua minoritaria y en retroceso: ¡por eso te necesito!",
-    src: "Fuentes: censo de 2011; Dirección General de Política Lingüística (2017)." },
+    src: "Fuentes: censo de 2011; Dirección General de Política Lingüística (2017).",
+    title_ar: "¿Quánta chent lo charra?",
+    text_ar: "En lo censo de 2011, bellas 56.000 personas dicioron que lo conoixeban y bellas 25.000, que lo charraban. Hue se calcula que lo emplegan cada día entre 10.000 y 12.000 personas. Ye una luenga minoritaria y en retroceso: ¡por ixo te necesito!",
+    src_ar: "Fuents: censo de 2011; Dirección General de Política Lingüística (2017)." },
   { title: "Una lengua con norma", mood: "think",
-    text: "Desde 2021 existe la Academia Aragonesa de la Lengua. En 2023 aprobó la ortografía oficial del aragonés, y fue la primera norma del Boletín Oficial de Aragón escrita en aragonés. Es la ortografía que usamos aquí." },
+    text: "Desde 2021 existe la Academia Aragonesa de la Lengua. En 2023 aprobó la ortografía oficial del aragonés, y fue la primera norma del Boletín Oficial de Aragón escrita en aragonés. Es la ortografía que usamos aquí.",
+    title_ar: "Una luenga con norma",
+    text_ar: "Dende 2021 existe l'Academia Aragonesa de la Lengua. En 2023 aprebó la ortografía oficial de l'aragonés, y estió la primera norma de lo Boletín Oficial d'Aragón escrita en aragonés. Ye la ortografía que emplegamos aquí." },
   { title: "¿Por qué aprenderlo?", mood: "cheer",
-    text: "Porque es parte de Aragón: está en los nombres de los pueblos, de los montes y en muchas palabras de nuestros abuelos. Y si hablas castellano, te resultará muy fácil de entender. ¿Empezamos?" },
+    text: "Porque es parte de Aragón: está en los nombres de los pueblos, de los montes y en muchas palabras de nuestros abuelos. Y si hablas castellano, te resultará muy fácil de entender. ¿Empezamos?",
+    title_ar: "¿Por qué aprender-lo?",
+    text_ar: "Porque ye parte d'Aragón: ye en los nombres de los lugars, de los monts y en muitas parolas de los nuestros lolos. Y si charras castellano, te será muito fácil d'entender. ¿Empecipiamos?" },
 ];
 // Lugares donde aparece Dragolingüe. "ar" es el nombre en aragonés del cartel; "es", el castellano si cambia.
 const PLACES = {
@@ -652,29 +669,51 @@ function pickAboutImgs() {
   const rest = shuffle(Object.keys(PLACES).filter(k => k !== where));
   aboutImgs = ABOUT.map((_, k) => (k === 1 ? where : rest.shift()));
 }
+// Banderas para cambiar el idioma de «Sobre el aragonés». Las traducciones al aragonés están pendientes de revisión.
+const FLAG_ES = `<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg>`;
+const FLAG_AR = `<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#FCDD09"/>${[0,1,2,3].map(k => `<rect y="${2.22 + k * 4.44}" width="30" height="2.22" fill="#DA121A"/>`).join("")}
+  <g transform="translate(5.2 3.2)"><path d="M0 2.6h7.2v6.4c0 2.6-1.8 4.2-3.6 4.6C1.8 13.2 0 11.6 0 9z" fill="#fff" stroke="#7A1A15" stroke-width=".5"/>
+  <rect x=".35" y="2.95" width="3.25" height="3.2" fill="#E8C33A"/><path d="M1.95 3.3v2.5" stroke="#3F7A2E" stroke-width="1.1"/>
+  <rect x="3.6" y="2.95" width="3.25" height="3.2" fill="#2F5DA8"/><path d="M5.2 3.3v2.5M4.1 4.55h2.2" stroke="#fff" stroke-width=".55"/>
+  <path d="M.35 6.15h3.25v3.3H.35z" fill="#fff"/><path d="M1.95 6.3v3M.6 7.75h2.7" stroke="#DA121A" stroke-width=".6"/>
+  <path d="M3.6 6.15h3.25v3.1c0 1.6-1 2.9-3.25 3.7z" fill="#FCDD09"/><path d="M4.3 6.15v5.9M5.4 6.15v5.1M6.4 6.15v3.6" stroke="#DA121A" stroke-width=".5"/>
+  <path d="M.6 2.6l.6-1.6 1.2 1 1.2-1.6 1.2 1.6 1.2-1 .6 1.6z" fill="#E8C33A" stroke="#7A1A15" stroke-width=".3"/></g></svg>`;
+function aboutLang() { return S.aboutLang === "an" ? "an" : "es"; }
 function renderAbout(i, keep) {
   if (!keep || !aboutImgs.length) pickAboutImgs();
   window.scrollTo(0, 0);
-  const c = ABOUT[i], last = i === ABOUT.length - 1;
+  const c = ABOUT[i], last = i === ABOUT.length - 1, an = aboutLang() === "an";
+  const T = { title: an ? c.title_ar : c.title, text: an ? c.text_ar : c.text, src: an ? c.src_ar : c.src };
   $app.className = "app";
   $app.innerHTML = `<main class="about">
     <div class="about-top"><button class="icon-btn" id="ab-close" aria-label="Cerrar">${ICON.close}</button>
-      <div class="dots">${ABOUT.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div><span style="width:34px"></span></div>
+      <div class="dots">${ABOUT.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div>
+      <div class="langs" role="group" aria-label="Idioma">
+        <button class="lang" data-lang="es" aria-pressed="${aboutLang() === "es"}" title="Castellano">${FLAG_ES}</button>
+        <button class="lang" data-lang="an" aria-pressed="${aboutLang() === "an"}" title="Aragonés">${FLAG_AR}</button>
+      </div></div>
     <article class="about-card">
       ${(() => { const k = aboutImgs[i], P = PLACES[k]; return `<div class="about-pic" id="flip" role="button" tabindex="0" aria-label="¿Dónde está Dragolingüe? Toca la imagen para verlo en el mapa">
         <div class="flip-inner">
-          <div class="face front"><img src="web/img/${k}.jpg" alt="Dragolingüe de paseo por Aragón"><span class="where">¿Dónde está Dragolingüe? <span aria-hidden="true">↻</span></span></div>
+          <div class="face front"><img src="web/img/${k}.jpg" alt="Dragolingüe de paseo por Aragón"><span class="where">${an ? "¿Án ye Dragolingüe?" : "¿Dónde está Dragolingüe?"} <span aria-hidden="true">↻</span></span></div>
           <div class="face back"><img src="web/img/mapa-${k}.jpg" alt="Mapa de Aragón con una chincheta roja"><div class="sign">${esc(P.ar)}${P.es ? `<small>${esc(P.es)}</small>` : ""}</div></div>
         </div></div>`; })()}
-      <h1>${esc(c.title)}</h1>
-      <div class="talk"><div class="mini">${dragon("happy")}</div><p>${esc(c.text)}</p></div>
-      ${c.src ? `<p class="src">${esc(c.src)}</p>` : ""}
+      <h1 lang="${an ? "an" : "es"}">${esc(T.title)}</h1>
+      <div class="talk"><div class="mini">${dragon("happy")}</div><p lang="${an ? "an" : "es"}">${esc(T.text)}</p></div>
+      ${T.src ? `<p class="src">${esc(T.src)}</p>` : ""}
     </article>
     <div class="about-nav">
       ${i > 0 ? `<button class="big-btn secondary" id="ab-prev">Anterior</button>` : ""}
-      <button class="big-btn" id="ab-next">${last ? "¡Aprende aragonés!" : "Siguiente"}</button>
+      <button class="big-btn" id="ab-next">${last ? "¡Aprende aragonés!" : an ? "Siguient" : "Siguiente"}</button>
     </div></main>`;
   $app.querySelector("#ab-close").onclick = () => (S.welcomed ? renderHome() : renderWelcome());
+  $app.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => {
+    if (aboutLang() === b.dataset.lang) return;
+    S.aboutLang = b.dataset.lang; save();
+    const flipped = $app.querySelector("#flip").classList.contains("flipped");
+    renderAbout(i, true);
+    if (flipped) $app.querySelector("#flip").classList.add("flipped");
+  });
   const fl = $app.querySelector("#flip");
   const flip = () => fl.classList.toggle("flipped");
   fl.onclick = flip;
