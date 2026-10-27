@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -765,25 +765,1615 @@
       "id": "u3",
       "titulo": "Números y colores",
       "tema": "Del zero al vinte · blanco, royo, amariello…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Los números que más cambian: <b>cuatre</b>, <b>siet</b>, <b>ueito</b>, <b>nueu</b> y <b>vinte</b>.</p><p>Del 16 al 19 se dice <b>deci-</b> + el número: <i>deciséis, decisiet, deciueito, decinueu</i>.</p><p>El verbo <b>tener</b>:</p><table><tr><td>yo tiengo</td><td>yo tengo</td></tr><tr><td>tu tiens</td><td>tú tienes</td></tr><tr><td>ell / ella tiene</td><td>él / ella tiene</td></tr></table><p>El plural se hace con <b>-s</b>, pero las palabras que acaban en <b>-t</b> cambian a <b>-z</b>: <i>chiquet → chiquez</i>, <i>piet → piez</i>.</p><p>Los colores cambian con el género: <i>royo / roya</i>, <i>amariello / amariella</i>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "zero",
+          "es": "cero"
+        },
+        {
+          "ar": "uno / una",
+          "es": "uno / una"
+        },
+        {
+          "ar": "dos · tres",
+          "es": "dos · tres"
+        },
+        {
+          "ar": "cuatre",
+          "es": "cuatro"
+        },
+        {
+          "ar": "cinco · seis",
+          "es": "cinco · seis"
+        },
+        {
+          "ar": "siet",
+          "es": "siete"
+        },
+        {
+          "ar": "ueito",
+          "es": "ocho"
+        },
+        {
+          "ar": "nueu",
+          "es": "nueve"
+        },
+        {
+          "ar": "diez",
+          "es": "diez"
+        },
+        {
+          "ar": "once · doce · trece",
+          "es": "once · doce · trece"
+        },
+        {
+          "ar": "catorce · quince",
+          "es": "catorce · quince"
+        },
+        {
+          "ar": "deciséis · decisiet",
+          "es": "dieciséis · diecisiete"
+        },
+        {
+          "ar": "deciueito · decinueu",
+          "es": "dieciocho · diecinueve"
+        },
+        {
+          "ar": "vinte",
+          "es": "veinte"
+        },
+        {
+          "ar": "blanco · negro",
+          "es": "blanco · negro"
+        },
+        {
+          "ar": "royo",
+          "es": "rojo"
+        },
+        {
+          "ar": "amariello",
+          "es": "amarillo"
+        },
+        {
+          "ar": "verde · azul",
+          "es": "verde · azul"
+        },
+        {
+          "ar": "narancha",
+          "es": "naranja"
+        },
+        {
+          "ar": "griso",
+          "es": "gris"
+        },
+        {
+          "ar": "morau",
+          "es": "morado"
+        },
+        {
+          "ar": "rosa · marrón",
+          "es": "rosa · marrón"
+        },
+        {
+          "ar": "tiengo · tiens · tiene",
+          "es": "tengo · tienes · tiene"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u3-l1",
+          "nombre": "Del zero al diez",
+          "ejercicios": [
+            {
+              "id": "u3-l1-e1",
+              "t": "pick",
+              "es": "ocho",
+              "answer": "ueito",
+              "options": [
+                [
+                  "ueito",
+                  "8️⃣"
+                ],
+                [
+                  "nueu",
+                  "9️⃣"
+                ],
+                [
+                  "cuatre",
+                  "4️⃣"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l1-e2",
+              "t": "pick",
+              "es": "cuatro",
+              "answer": "cuatre",
+              "options": [
+                [
+                  "siet",
+                  "7️⃣"
+                ],
+                [
+                  "cuatre",
+                  "4️⃣"
+                ],
+                [
+                  "dos",
+                  "2️⃣"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "siet",
+                  "siete"
+                ],
+                [
+                  "nueu",
+                  "nueve"
+                ],
+                [
+                  "ueito",
+                  "ocho"
+                ],
+                [
+                  "zero",
+                  "cero"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l1-e4",
+              "t": "choice",
+              "ar": "Tiengo dos chirmanos.",
+              "options": [
+                "Tengo dos hermanos.",
+                "Tienes dos hermanos.",
+                "Tengo tres hermanos."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u3-l1-e5",
+              "t": "fill",
+              "before": "Cinco y dos son",
+              "after": ".",
+              "es": "Cinco y dos son siete.",
+              "options": [
+                "siet",
+                "seis",
+                "nueu"
+              ],
+              "answer": "siet"
+            },
+            {
+              "id": "u3-l1-e6",
+              "t": "build",
+              "es": "Tengo tres libros.",
+              "answer": "Tiengo tres libros.",
+              "tiles": [
+                "libros.",
+                "Tiengo",
+                "tiens",
+                "tres",
+                "cuatre"
+              ]
+            },
+            {
+              "id": "u3-l1-e7",
+              "t": "choice",
+              "ar": "Tiene dos chiquez.",
+              "options": [
+                "Tiene dos niños.",
+                "Tiene dos hermanos.",
+                "Tienes dos niños."
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "u3-l2",
+          "nombre": "Del once al vinte",
+          "ejercicios": [
+            {
+              "id": "u3-l2-e1",
+              "t": "pick",
+              "es": "dieciocho",
+              "answer": "deciueito",
+              "options": [
+                [
+                  "decisiet",
+                  "1️⃣7️⃣"
+                ],
+                [
+                  "deciueito",
+                  "1️⃣8️⃣"
+                ],
+                [
+                  "decinueu",
+                  "1️⃣9️⃣"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l2-e2",
+              "t": "pick",
+              "es": "veinte",
+              "answer": "vinte",
+              "options": [
+                [
+                  "vinte",
+                  "2️⃣0️⃣"
+                ],
+                [
+                  "doce",
+                  "1️⃣2️⃣"
+                ],
+                [
+                  "diez",
+                  "🔟"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "deciséis",
+                  "dieciséis"
+                ],
+                [
+                  "decisiet",
+                  "diecisiete"
+                ],
+                [
+                  "decinueu",
+                  "diecinueve"
+                ],
+                [
+                  "vinte",
+                  "veinte"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l2-e4",
+              "t": "fill",
+              "before": "Diez y diez son",
+              "after": ".",
+              "es": "Diez y diez son veinte.",
+              "options": [
+                "doce",
+                "vinte",
+                "quince"
+              ],
+              "answer": "vinte"
+            },
+            {
+              "id": "u3-l2-e5",
+              "t": "choice",
+              "ar": "Tiens quince amigos.",
+              "options": [
+                "Tengo quince amigos.",
+                "Tienes quince amigos.",
+                "Tiene cinco amigos."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u3-l2-e6",
+              "t": "build",
+              "es": "Tienes veinte libros.",
+              "answer": "Tiens vinte libros.",
+              "tiles": [
+                "vinte",
+                "libros.",
+                "Tiens",
+                "tiengo",
+                "siet"
+              ]
+            },
+            {
+              "id": "u3-l2-e7",
+              "t": "choice",
+              "ar": "Trece y siet son vinte.",
+              "options": [
+                "Tres y siete son diez.",
+                "Trece y seis son diecinueve.",
+                "Trece y siete son veinte."
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "u3-l3",
+          "nombre": "Los colores",
+          "ejercicios": [
+            {
+              "id": "u3-l3-e1",
+              "t": "pick",
+              "es": "amarillo",
+              "answer": "amariello",
+              "options": [
+                [
+                  "royo",
+                  "🔴"
+                ],
+                [
+                  "amariello",
+                  "🟡"
+                ],
+                [
+                  "verde",
+                  "🟢"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l3-e2",
+              "t": "pick",
+              "es": "rojo",
+              "answer": "royo",
+              "options": [
+                [
+                  "morau",
+                  "🟣"
+                ],
+                [
+                  "narancha",
+                  "🟠"
+                ],
+                [
+                  "royo",
+                  "🔴"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l3-e3",
+              "t": "pick",
+              "es": "gris",
+              "answer": "griso",
+              "options": [
+                [
+                  "griso",
+                  "🩶"
+                ],
+                [
+                  "negro",
+                  "⚫"
+                ],
+                [
+                  "blanco",
+                  "⚪"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l3-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "royo",
+                  "rojo"
+                ],
+                [
+                  "amariello",
+                  "amarillo"
+                ],
+                [
+                  "narancha",
+                  "naranja"
+                ],
+                [
+                  "morau",
+                  "morado"
+                ]
+              ]
+            },
+            {
+              "id": "u3-l3-e5",
+              "t": "fill",
+              "before": "La bandera d'Aragón ye",
+              "after": "y roya.",
+              "es": "La bandera de Aragón es amarilla y roja.",
+              "options": [
+                "verde",
+                "amariella",
+                "azul"
+              ],
+              "answer": "amariella"
+            },
+            {
+              "id": "u3-l3-e6",
+              "t": "choice",
+              "ar": "Tiengo un libro verde.",
+              "options": [
+                "Tengo un libro azul.",
+                "Tengo un libro verde.",
+                "Tienes un libro verde."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u3-l3-e7",
+              "t": "build",
+              "es": "Tengo un libro rojo.",
+              "answer": "Tiengo un libro royo.",
+              "tiles": [
+                "royo.",
+                "un",
+                "Tiengo",
+                "roya.",
+                "libro",
+                "tiene"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u3-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Revisar en el DicAra «libro» y la expresión «La bandera d'Aragón»."
+      ]
     },
     {
       "id": "u4",
       "titulo": "Comida y bebida",
       "tema": "Pan, augua, vin, leit, trunfas…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Los artículos en aragonés:</p><table><tr><td>lo pan</td><td>el pan</td></tr><tr><td>la carne</td><td>la carne</td></tr><tr><td>los uegos</td><td>los huevos</td></tr><tr><td>las trunfas</td><td>las patatas</td></tr></table><p>Delante de vocal se escribe <b>l'</b>: <i>l'augua</i> (el agua). En algunos valles se dice <i>o, a, os, as</i>.</p><p><b>Minchar</b> es «comer»: <i>minchamos pan y queso</i>. Para pedir algo con educación: <i>querría augua, por favor</i>.</p><p>Fíjate en <b>fambre</b> (hambre) y <b>sete</b> (sed): <i>tiengo fambre</i>, <i>tiengo sete</i>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "pan",
+          "es": "pan"
+        },
+        {
+          "ar": "augua",
+          "es": "agua"
+        },
+        {
+          "ar": "vin",
+          "es": "vino"
+        },
+        {
+          "ar": "leit",
+          "es": "leche"
+        },
+        {
+          "ar": "queso",
+          "es": "queso"
+        },
+        {
+          "ar": "uego",
+          "es": "huevo"
+        },
+        {
+          "ar": "carne",
+          "es": "carne"
+        },
+        {
+          "ar": "peix",
+          "es": "pescado"
+        },
+        {
+          "ar": "mazana",
+          "es": "manzana"
+        },
+        {
+          "ar": "cebolla",
+          "es": "cebolla"
+        },
+        {
+          "ar": "allo",
+          "es": "ajo"
+        },
+        {
+          "ar": "trunfa",
+          "es": "patata"
+        },
+        {
+          "ar": "chodiga",
+          "es": "judía"
+        },
+        {
+          "ar": "sal",
+          "es": "sal"
+        },
+        {
+          "ar": "minchar",
+          "es": "comer"
+        },
+        {
+          "ar": "beber",
+          "es": "beber"
+        },
+        {
+          "ar": "fambre",
+          "es": "hambre"
+        },
+        {
+          "ar": "sete",
+          "es": "sed"
+        },
+        {
+          "ar": "querría",
+          "es": "querría"
+        },
+        {
+          "ar": "lo · la · los · las",
+          "es": "el · la · los · las"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u4-l1",
+          "nombre": "Beber",
+          "ejercicios": [
+            {
+              "id": "u4-l1-e1",
+              "t": "pick",
+              "es": "agua",
+              "answer": "augua",
+              "options": [
+                [
+                  "leit",
+                  "🥛"
+                ],
+                [
+                  "augua",
+                  "💧"
+                ],
+                [
+                  "vin",
+                  "🍷"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l1-e2",
+              "t": "pick",
+              "es": "leche",
+              "answer": "leit",
+              "options": [
+                [
+                  "leit",
+                  "🥛"
+                ],
+                [
+                  "queso",
+                  "🧀"
+                ],
+                [
+                  "augua",
+                  "💧"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "vin",
+                  "vino"
+                ],
+                [
+                  "leit",
+                  "leche"
+                ],
+                [
+                  "augua",
+                  "agua"
+                ],
+                [
+                  "sete",
+                  "sed"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l1-e4",
+              "t": "fill",
+              "before": "Tiengo",
+              "after": ".",
+              "es": "Tengo sed.",
+              "options": [
+                "sal",
+                "sete",
+                "fambre"
+              ],
+              "answer": "sete"
+            },
+            {
+              "id": "u4-l1-e5",
+              "t": "choice",
+              "ar": "Querría augua, por favor.",
+              "options": [
+                "Querría agua, por favor.",
+                "Quiero vino, por favor.",
+                "Tengo agua, gracias."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u4-l1-e6",
+              "t": "build",
+              "es": "Querría leche, por favor.",
+              "answer": "Querría leit, por favor.",
+              "tiles": [
+                "leit,",
+                "por",
+                "Querría",
+                "favor.",
+                "vin,",
+                "tiengo"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u4-l2",
+          "nombre": "Minchar",
+          "ejercicios": [
+            {
+              "id": "u4-l2-e1",
+              "t": "pick",
+              "es": "huevo",
+              "answer": "uego",
+              "options": [
+                [
+                  "pan",
+                  "🍞"
+                ],
+                [
+                  "uego",
+                  "🥚"
+                ],
+                [
+                  "queso",
+                  "🧀"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l2-e2",
+              "t": "pick",
+              "es": "pescado",
+              "answer": "peix",
+              "options": [
+                [
+                  "carne",
+                  "🥩"
+                ],
+                [
+                  "uego",
+                  "🥚"
+                ],
+                [
+                  "peix",
+                  "🐟"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l2-e3",
+              "t": "pick",
+              "es": "manzana",
+              "answer": "mazana",
+              "options": [
+                [
+                  "mazana",
+                  "🍎"
+                ],
+                [
+                  "cebolla",
+                  "🧅"
+                ],
+                [
+                  "trunfa",
+                  "🥔"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l2-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "trunfa",
+                  "patata"
+                ],
+                [
+                  "allo",
+                  "ajo"
+                ],
+                [
+                  "chodiga",
+                  "judía"
+                ],
+                [
+                  "peix",
+                  "pescado"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l2-e5",
+              "t": "choice",
+              "ar": "Minchamos pan y queso.",
+              "options": [
+                "Compramos pan y queso.",
+                "Comemos pan y queso.",
+                "Comes pan y queso."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u4-l2-e6",
+              "t": "fill",
+              "before": "Tiengo",
+              "after": ": querría minchar.",
+              "es": "Tengo hambre: querría comer.",
+              "options": [
+                "fambre",
+                "sete",
+                "sal"
+              ],
+              "answer": "fambre"
+            },
+            {
+              "id": "u4-l2-e7",
+              "t": "build",
+              "es": "Comemos pescado.",
+              "answer": "Minchamos peix.",
+              "tiles": [
+                "peix.",
+                "Minchamos",
+                "carne.",
+                "beber"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u4-l3",
+          "nombre": "Lo, la, los, las",
+          "ejercicios": [
+            {
+              "id": "u4-l3-e1",
+              "t": "match",
+              "pairs": [
+                [
+                  "los uegos",
+                  "los huevos"
+                ],
+                [
+                  "las trunfas",
+                  "las patatas"
+                ],
+                [
+                  "l'augua",
+                  "el agua"
+                ],
+                [
+                  "lo vin",
+                  "el vino"
+                ]
+              ]
+            },
+            {
+              "id": "u4-l3-e2",
+              "t": "fill",
+              "before": "",
+              "after": "pan ye bueno.",
+              "es": "El pan es bueno.",
+              "options": [
+                "La",
+                "Lo",
+                "Las"
+              ],
+              "answer": "Lo"
+            },
+            {
+              "id": "u4-l3-e3",
+              "t": "fill",
+              "before": "Minchamos",
+              "after": "carne.",
+              "es": "Comemos la carne.",
+              "options": [
+                "lo",
+                "la",
+                "los"
+              ],
+              "answer": "la"
+            },
+            {
+              "id": "u4-l3-e4",
+              "t": "choice",
+              "ar": "Las trunfas y los uegos.",
+              "options": [
+                "Las patatas y los huevos.",
+                "Las judías y los huevos.",
+                "Las patatas y el pescado."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u4-l3-e5",
+              "t": "build",
+              "es": "El agua y el vino.",
+              "answer": "L'augua y lo vin.",
+              "tiles": [
+                "lo",
+                "L'augua",
+                "vin.",
+                "y",
+                "la",
+                "leit."
+              ]
+            },
+            {
+              "id": "u4-l3-e6",
+              "t": "choice",
+              "ar": "Ella bebe leit.",
+              "options": [
+                "Ella come pescado.",
+                "Ella quiere leche.",
+                "Ella bebe leche."
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "u4-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar en el DicAra «uego» o «güego», «chodiga» y «sete».",
+        "Comprobar «bueno» (lo pan ye bueno) y las formas «minchamos» y «bebe»."
+      ]
     },
     {
       "id": "u5",
       "titulo": "La casa",
-      "tema": "Cambra, cozina, finestra, leito…",
-      "bloqueada": true
+      "tema": "Cambra, cocina, finestra, leito…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Para decir «hay» se usa <b>bi ha</b>: <i>en la cambra bi ha un leito</i> (en la habitación hay una cama).</p><p>Para decir «no hay ninguno» se refuerza con <b>garra</b>: <i>no bi ha garra silla</i>.</p><p>Algunas palabras cambian de género: <i>lo leito</i> (la cama).</p><p>La <b>cadiera</b> no es una silla: es el banco de madera junto al <b>fogaril</b> (el hogar), típico de las casas del Pirineo.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "casa",
+          "es": "casa"
+        },
+        {
+          "ar": "cambra",
+          "es": "habitación"
+        },
+        {
+          "ar": "cocina",
+          "es": "cocina"
+        },
+        {
+          "ar": "puerta",
+          "es": "puerta"
+        },
+        {
+          "ar": "finestra",
+          "es": "ventana"
+        },
+        {
+          "ar": "mesa",
+          "es": "mesa"
+        },
+        {
+          "ar": "silla",
+          "es": "silla"
+        },
+        {
+          "ar": "cadiera",
+          "es": "banco junto al fuego"
+        },
+        {
+          "ar": "leito",
+          "es": "cama"
+        },
+        {
+          "ar": "fogaril",
+          "es": "hogar"
+        },
+        {
+          "ar": "almario",
+          "es": "armario"
+        },
+        {
+          "ar": "clau",
+          "es": "llave"
+        },
+        {
+          "ar": "bi ha",
+          "es": "hay"
+        },
+        {
+          "ar": "no bi ha garra…",
+          "es": "no hay ningún…"
+        },
+        {
+          "ar": "ista",
+          "es": "esta"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u5-l1",
+          "nombre": "La casa",
+          "ejercicios": [
+            {
+              "id": "u5-l1-e1",
+              "t": "pick",
+              "es": "ventana",
+              "answer": "finestra",
+              "options": [
+                [
+                  "puerta",
+                  "🚪"
+                ],
+                [
+                  "finestra",
+                  "🪟"
+                ],
+                [
+                  "leito",
+                  "🛏️"
+                ]
+              ]
+            },
+            {
+              "id": "u5-l1-e2",
+              "t": "pick",
+              "es": "cama",
+              "answer": "leito",
+              "options": [
+                [
+                  "silla",
+                  "🪑"
+                ],
+                [
+                  "almario",
+                  "🗄️"
+                ],
+                [
+                  "leito",
+                  "🛏️"
+                ]
+              ]
+            },
+            {
+              "id": "u5-l1-e3",
+              "t": "pick",
+              "es": "llave",
+              "answer": "clau",
+              "options": [
+                [
+                  "clau",
+                  "🔑"
+                ],
+                [
+                  "puerta",
+                  "🚪"
+                ],
+                [
+                  "casa",
+                  "🏠"
+                ]
+              ]
+            },
+            {
+              "id": "u5-l1-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "cambra",
+                  "habitación"
+                ],
+                [
+                  "finestra",
+                  "ventana"
+                ],
+                [
+                  "leito",
+                  "cama"
+                ],
+                [
+                  "clau",
+                  "llave"
+                ]
+              ]
+            },
+            {
+              "id": "u5-l1-e5",
+              "t": "choice",
+              "ar": "Ista ye la mía cambra.",
+              "options": [
+                "Esta es mi cocina.",
+                "Esta es mi habitación.",
+                "Esta es mi casa."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u5-l1-e6",
+              "t": "fill",
+              "before": "La mía",
+              "after": "ye chiqueta.",
+              "es": "Mi habitación es pequeña.",
+              "options": [
+                "clau",
+                "leito",
+                "cambra"
+              ],
+              "answer": "cambra"
+            }
+          ]
+        },
+        {
+          "id": "u5-l2",
+          "nombre": "Bi ha…",
+          "ejercicios": [
+            {
+              "id": "u5-l2-e1",
+              "t": "choice",
+              "ar": "En la cambra bi ha un leito.",
+              "options": [
+                "En la habitación hay una cama.",
+                "En la cocina hay una mesa.",
+                "En la habitación hay una silla."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u5-l2-e2",
+              "t": "fill",
+              "before": "En la cocina",
+              "after": "una mesa.",
+              "es": "En la cocina hay una mesa.",
+              "options": [
+                "ye",
+                "bi ha",
+                "tiengo"
+              ],
+              "answer": "bi ha"
+            },
+            {
+              "id": "u5-l2-e3",
+              "t": "build",
+              "es": "Hay una ventana.",
+              "answer": "Bi ha una finestra.",
+              "tiles": [
+                "finestra.",
+                "Bi",
+                "ye",
+                "una",
+                "ha",
+                "puerta."
+              ]
+            },
+            {
+              "id": "u5-l2-e4",
+              "t": "choice",
+              "ar": "No bi ha garra silla.",
+              "options": [
+                "Hay una silla.",
+                "No hay ninguna mesa.",
+                "No hay ninguna silla."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u5-l2-e5",
+              "t": "build",
+              "es": "En la casa hay dos puertas.",
+              "answer": "En la casa bi ha dos puertas.",
+              "tiles": [
+                "casa",
+                "dos",
+                "En",
+                "bi",
+                "puertas.",
+                "la",
+                "ha",
+                "tiene"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u5-l3",
+          "nombre": "En casa",
+          "ejercicios": [
+            {
+              "id": "u5-l3-e1",
+              "t": "pick",
+              "es": "armario",
+              "answer": "almario",
+              "options": [
+                [
+                  "leito",
+                  "🛏️"
+                ],
+                [
+                  "almario",
+                  "🗄️"
+                ],
+                [
+                  "silla",
+                  "🪑"
+                ]
+              ]
+            },
+            {
+              "id": "u5-l3-e2",
+              "t": "match",
+              "pairs": [
+                [
+                  "almario",
+                  "armario"
+                ],
+                [
+                  "cadiera",
+                  "banco junto al fuego"
+                ],
+                [
+                  "fogaril",
+                  "hogar"
+                ],
+                [
+                  "puerta",
+                  "puerta"
+                ]
+              ]
+            },
+            {
+              "id": "u5-l3-e3",
+              "t": "choice",
+              "ar": "Bi ha un fogaril en la cocina.",
+              "options": [
+                "Hay un hogar en la cocina.",
+                "Hay una mesa en la cocina.",
+                "Hay un hogar en la habitación."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u5-l3-e4",
+              "t": "fill",
+              "before": "Tiengo la",
+              "after": "de la casa.",
+              "es": "Tengo la llave de la casa.",
+              "options": [
+                "mesa",
+                "clau",
+                "cambra"
+              ],
+              "answer": "clau"
+            },
+            {
+              "id": "u5-l3-e5",
+              "t": "build",
+              "es": "La cama y la silla.",
+              "answer": "Lo leito y la silla.",
+              "tiles": [
+                "leito",
+                "silla.",
+                "Lo",
+                "y",
+                "la",
+                "La",
+                "mesa."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u5-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar la grafía «cocina»: el documento de la fase 1 decía «cozina», pero con la norma de 2023 (c ante e/i) debería ser «cocina».",
+        "Comprobar «ista» (esta) y «chiqueta» como adjetivo (pequeña)."
+      ]
     },
     {
       "id": "u6",
       "titulo": "El cuerpo",
       "tema": "Cabeza, uellos, orellas, man, garra…",
-      "bloqueada": true
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Ojo con <b>garra</b>: en aragonés es la <b>pierna</b>.</p><p>Plurales que hay que aprender: <i>man → mans</i>, <i>piet → piez</i>, <i>uello → uellos</i>, <i>gran → grans</i>.</p><p>Para describir: <i>tiene los uellos grans</i> (tiene los ojos grandes).</p><p>Si algo duele: <i>me fa mal la cabeza</i> (me duele la cabeza).</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "cabeza",
+          "es": "cabeza"
+        },
+        {
+          "ar": "uello",
+          "es": "ojo"
+        },
+        {
+          "ar": "orella",
+          "es": "oreja"
+        },
+        {
+          "ar": "naso",
+          "es": "nariz"
+        },
+        {
+          "ar": "boca",
+          "es": "boca"
+        },
+        {
+          "ar": "dient",
+          "es": "diente"
+        },
+        {
+          "ar": "man · mans",
+          "es": "mano · manos"
+        },
+        {
+          "ar": "brazo",
+          "es": "brazo"
+        },
+        {
+          "ar": "garra",
+          "es": "pierna"
+        },
+        {
+          "ar": "chenullo",
+          "es": "rodilla"
+        },
+        {
+          "ar": "piet · piez",
+          "es": "pie · pies"
+        },
+        {
+          "ar": "gran · grans",
+          "es": "grande · grandes"
+        },
+        {
+          "ar": "me fa mal",
+          "es": "me duele"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u6-l1",
+          "nombre": "La cara",
+          "ejercicios": [
+            {
+              "id": "u6-l1-e1",
+              "t": "pick",
+              "es": "ojo",
+              "answer": "uello",
+              "options": [
+                [
+                  "uello",
+                  "👁️"
+                ],
+                [
+                  "orella",
+                  "👂"
+                ],
+                [
+                  "boca",
+                  "👄"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l1-e2",
+              "t": "pick",
+              "es": "oreja",
+              "answer": "orella",
+              "options": [
+                [
+                  "naso",
+                  "👃"
+                ],
+                [
+                  "orella",
+                  "👂"
+                ],
+                [
+                  "uello",
+                  "👁️"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l1-e3",
+              "t": "pick",
+              "es": "nariz",
+              "answer": "naso",
+              "options": [
+                [
+                  "boca",
+                  "👄"
+                ],
+                [
+                  "dient",
+                  "🦷"
+                ],
+                [
+                  "naso",
+                  "👃"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l1-e4",
+              "t": "match",
+              "pairs": [
+                [
+                  "uello",
+                  "ojo"
+                ],
+                [
+                  "orella",
+                  "oreja"
+                ],
+                [
+                  "dient",
+                  "diente"
+                ],
+                [
+                  "naso",
+                  "nariz"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l1-e5",
+              "t": "choice",
+              "ar": "Tiene los uellos verdes.",
+              "options": [
+                "Tiene las orejas verdes.",
+                "Tiene los ojos verdes.",
+                "Tiene los ojos negros."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u6-l1-e6",
+              "t": "fill",
+              "before": "Tiengo dos",
+              "after": ".",
+              "es": "Tengo dos ojos.",
+              "options": [
+                "naso",
+                "uellos",
+                "boca"
+              ],
+              "answer": "uellos"
+            }
+          ]
+        },
+        {
+          "id": "u6-l2",
+          "nombre": "Mans y piez",
+          "ejercicios": [
+            {
+              "id": "u6-l2-e1",
+              "t": "pick",
+              "es": "pierna",
+              "answer": "garra",
+              "options": [
+                [
+                  "brazo",
+                  "💪"
+                ],
+                [
+                  "piet",
+                  "🦶"
+                ],
+                [
+                  "garra",
+                  "🦵"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l2-e2",
+              "t": "pick",
+              "es": "mano",
+              "answer": "man",
+              "options": [
+                [
+                  "man",
+                  "✋"
+                ],
+                [
+                  "piet",
+                  "🦶"
+                ],
+                [
+                  "orella",
+                  "👂"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "man",
+                  "mano"
+                ],
+                [
+                  "piet",
+                  "pie"
+                ],
+                [
+                  "garra",
+                  "pierna"
+                ],
+                [
+                  "chenullo",
+                  "rodilla"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l2-e4",
+              "t": "fill",
+              "before": "Tiengo dos",
+              "after": "y dos piez.",
+              "es": "Tengo dos manos y dos pies.",
+              "options": [
+                "garra",
+                "man",
+                "mans"
+              ],
+              "answer": "mans"
+            },
+            {
+              "id": "u6-l2-e5",
+              "t": "choice",
+              "ar": "Los piez y las mans.",
+              "options": [
+                "Las piernas y los brazos.",
+                "Los pies y las manos.",
+                "Los ojos y las orejas."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u6-l2-e6",
+              "t": "build",
+              "es": "Tengo dos pies.",
+              "answer": "Tiengo dos piez.",
+              "tiles": [
+                "piez.",
+                "dos",
+                "Tiengo",
+                "piet.",
+                "mans.",
+                "tiens"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u6-l3",
+          "nombre": "¿Cómo ye?",
+          "ejercicios": [
+            {
+              "id": "u6-l3-e1",
+              "t": "choice",
+              "ar": "Tiene los uellos grans.",
+              "options": [
+                "Tiene los ojos grandes.",
+                "Tiene las orejas grandes.",
+                "Tiene los ojos pequeños."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u6-l3-e2",
+              "t": "match",
+              "pairs": [
+                [
+                  "uellos",
+                  "ojos"
+                ],
+                [
+                  "orellas",
+                  "orejas"
+                ],
+                [
+                  "piez",
+                  "pies"
+                ],
+                [
+                  "mans",
+                  "manos"
+                ]
+              ]
+            },
+            {
+              "id": "u6-l3-e3",
+              "t": "fill",
+              "before": "Ell tiene las orellas",
+              "after": ".",
+              "es": "Él tiene las orejas grandes.",
+              "options": [
+                "gran",
+                "grans",
+                "chiquet"
+              ],
+              "answer": "grans"
+            },
+            {
+              "id": "u6-l3-e4",
+              "t": "build",
+              "es": "Tiene la boca grande.",
+              "answer": "Tiene la boca gran.",
+              "tiles": [
+                "boca",
+                "Tiene",
+                "gran.",
+                "la",
+                "grans.",
+                "lo"
+              ]
+            },
+            {
+              "id": "u6-l3-e5",
+              "t": "choice",
+              "ar": "Me fa mal la cabeza.",
+              "options": [
+                "Me duele la pierna.",
+                "Tengo una cabeza grande.",
+                "Me duele la cabeza."
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "u6-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": [
+        "Comprobar en el DicAra «naso» o «nariz», «chenullo» y el plural «mans».",
+        "Comprobar la expresión «me fa mal» (me duele)."
+      ]
     },
     {
       "id": "u7",
