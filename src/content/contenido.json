@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -49,11 +49,11 @@
       "tema": "Saludar, presentarte y despedirte",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>En aragonés, <b>llamarse</b> se dice <b>clamar-se</b>: <i>me clamo Ana</i>, <i>¿cómo te clamas?</i></p> <p><b>Muito</b> es «mucho» o «muy»: <i>muito gusto</i>, <i>muito bien</i>.</p> <table><tr><td>dica luego</td><td>hasta luego</td></tr><tr><td>¿qué tal?</td><td>¿qué tal?</td></tr><tr><td>gracias</td><td>gracias</td></tr></table> <p>Muchas palabras se parecen al castellano. Fíjate en las que cambian.</p>"
+        "html": "<p>En aragonés, <b>llamarse</b> se dice <b>clamar-se</b>: <i>me clamo Ana</i>, <i>¿cómo te clamas?</i></p> <p>«Hola» se dice <b>ola</b>, sin h. <b>Muito</b> es «mucho» o «muy»: <i>muito bien</i>.</p> <table><tr><td>dica luego</td><td>hasta luego</td></tr><tr><td>¿qué tal?</td><td>¿qué tal?</td></tr><tr><td>gracias</td><td>gracias</td></tr></table> <p>Muchas palabras se parecen al castellano. Fíjate en las que cambian.</p>"
       },
       "vocabulario": [
         {
-          "ar": "hola",
+          "ar": "ola",
           "es": "hola"
         },
         {
@@ -97,10 +97,6 @@
           "es": "¿cómo te llamas?"
         },
         {
-          "ar": "muito gusto",
-          "es": "mucho gusto"
-        },
-        {
           "ar": "dica luego",
           "es": "hasta luego"
         }
@@ -117,7 +113,7 @@
               "answer": "gracias",
               "options": [
                 [
-                  "hola",
+                  "ola",
                   "👋"
                 ],
                 [
@@ -153,7 +149,7 @@
             {
               "id": "u1-l1-e3",
               "t": "choice",
-              "ar": "Hola, ¿qué tal?",
+              "ar": "Ola, ¿qué tal?",
               "options": [
                 "Hola, ¿qué tal?",
                 "Adiós, hasta luego.",
@@ -166,7 +162,7 @@
               "t": "choice",
               "ar": "Muito bien, gracias.",
               "options": [
-                "Mucho gusto, gracias.",
+                "Mucho, gracias.",
                 "Muy bien, gracias.",
                 "Bien, por favor."
               ],
@@ -210,7 +206,7 @@
             {
               "id": "u1-l1-e7",
               "t": "fill",
-              "before": "Hola, ¿qué",
+              "before": "Ola, ¿qué",
               "after": "?",
               "es": "Hola, ¿qué tal?",
               "options": [
@@ -253,16 +249,16 @@
             {
               "id": "u1-l2-e3",
               "t": "pick",
-              "es": "mucho gusto",
-              "answer": "muito gusto",
+              "es": "hasta luego",
+              "answer": "dica luego",
               "options": [
                 [
                   "dica luego",
                   "👋"
                 ],
                 [
-                  "muito gusto",
-                  "🤝"
+                  "ola",
+                  "🙋"
                 ],
                 [
                   "gracias",
@@ -292,8 +288,8 @@
                   "me llamo"
                 ],
                 [
-                  "muito gusto",
-                  "mucho gusto"
+                  "ola",
+                  "hola"
                 ],
                 [
                   "dica luego",
@@ -309,12 +305,12 @@
               "id": "u1-l2-e6",
               "t": "build",
               "es": "Hola, me llamo Ana.",
-              "answer": "Hola, me clamo Ana.",
+              "answer": "Ola, me clamo Ana.",
               "tiles": [
                 "me",
                 "Ana.",
                 "llamo",
-                "Hola,",
+                "Ola,",
                 "clamo",
                 "te"
               ]
@@ -345,7 +341,7 @@
       "tema": "Quién es quién: personas, el verbo ser y la familia",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>El verbo <b>ser</b> en presente:</p> <table><tr><td>yo soi</td><td>yo soy</td></tr><tr><td>tu yes</td><td>tú eres</td></tr><tr><td>ell / ella ye</td><td>él / ella es</td></tr> <tr><td>nusatros somos</td><td>nosotros somos</td></tr><tr><td>vusatros soz</td><td>vosotros sois</td></tr><tr><td>ells / ellas son</td><td>ellos / ellas son</td></tr></table> <p>Para decir «mi» se usa el artículo: <i>lo mío pai</i> (mi padre), <i>la mía mai</i> (mi madre).</p> <p>Muchas palabras terminan en <b>-et / -eta</b>: <i>chiquet</i>, <i>chiqueta</i>.</p>"
+        "html": "<p>El verbo <b>ser</b> en presente:</p> <table><tr><td>yo soi</td><td>yo soy</td></tr><tr><td>tu yes</td><td>tú eres</td></tr><tr><td>él / ella ye</td><td>él / ella es</td></tr> <tr><td>nusatros somos</td><td>nosotros somos</td></tr><tr><td>vusatros soz</td><td>vosotros sois</td></tr><tr><td>ellos / ellas son</td><td>ellos / ellas son</td></tr></table> <p>Con la familia, «mi» se dice <b>mi</b>: <i>mi pai</i> (mi padre), <i>mi mai</i> (mi madre). Con el resto de cosas se usa el artículo: <i>o mío amigo</i>, <i>a mía cambra</i>.</p> <p>Muchas palabras terminan en <b>-et / -eta</b>: <i>chiquet</i>, <i>chiqueta</i>.</p>"
       },
       "vocabulario": [
         {
@@ -357,7 +353,7 @@
           "es": "tú"
         },
         {
-          "ar": "ell / ella",
+          "ar": "él / ella",
           "es": "él / ella"
         },
         {
@@ -405,7 +401,7 @@
           "es": "madre"
         },
         {
-          "ar": "chirmano / chirmana",
+          "ar": "chirmán / chirmana",
           "es": "hermano / hermana"
         },
         {
@@ -417,8 +413,12 @@
           "es": "abuelo / abuela"
         },
         {
-          "ar": "lo mío / la mía",
-          "es": "mi"
+          "ar": "mi pai · mi mai",
+          "es": "mi padre · mi madre"
+        },
+        {
+          "ar": "o mío / a mía",
+          "es": "mi (con el resto de cosas)"
         }
       ],
       "lecciones": [
@@ -553,7 +553,7 @@
               "id": "u2-l2-e2",
               "t": "fill",
               "before": "Tu",
-              "after": "lo mío amigo.",
+              "after": "o mío amigo.",
               "es": "Tú eres mi amigo.",
               "options": [
                 "soi",
@@ -601,7 +601,7 @@
                   "tú eres"
                 ],
                 [
-                  "ell ye",
+                  "él ye",
                   "él es"
                 ],
                 [
@@ -705,7 +705,7 @@
             {
               "id": "u2-l3-e4",
               "t": "choice",
-              "ar": "Lo mío pai ye de Chaca.",
+              "ar": "Mi pai ye de Chaca.",
               "options": [
                 "Mi abuelo es de Huesca.",
                 "Mi padre es de Jaca.",
@@ -716,7 +716,7 @@
             {
               "id": "u2-l3-e5",
               "t": "fill",
-              "before": "La mía",
+              "before": "Mi",
               "after": "ye mayestra.",
               "es": "Mi madre es maestra.",
               "options": [
@@ -730,21 +730,21 @@
               "id": "u2-l3-e6",
               "t": "build",
               "es": "Él es mi hermano.",
-              "answer": "Ell ye lo mío chirmano.",
+              "answer": "Él ye mi chirmán.",
               "tiles": [
-                "chirmano.",
-                "lo",
-                "la",
-                "Ell",
-                "mía",
+                "chirmán.",
+                "mi",
+                "o",
+                "Él",
+                "mío",
                 "ye",
-                "mío"
+                "chirmana."
               ]
             },
             {
               "id": "u2-l3-e7",
               "t": "choice",
-              "ar": "Ella ye la mía lola.",
+              "ar": "Ella ye mi lola.",
               "options": [
                 "Ella es mi abuela.",
                 "Ella es mi madre.",
@@ -759,7 +759,8 @@
           "nombre": "Repaso",
           "repaso": true
         }
-      ]
+      ],
+      "revisar": []
     },
     {
       "id": "u3",
@@ -767,7 +768,7 @@
       "tema": "Del zero al vinte · blanco, royo, amariello…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Los números que más cambian: <b>cuatre</b>, <b>siet</b>, <b>ueito</b>, <b>nueu</b> y <b>vinte</b>.</p><p>Del 16 al 19 se dice <b>deci-</b> + el número: <i>deciséis, decisiet, deciueito, decinueu</i>.</p><p>El verbo <b>tener</b>:</p><table><tr><td>yo tiengo</td><td>yo tengo</td></tr><tr><td>tu tiens</td><td>tú tienes</td></tr><tr><td>ell / ella tiene</td><td>él / ella tiene</td></tr></table><p>El plural se hace con <b>-s</b>, pero las palabras que acaban en <b>-t</b> cambian a <b>-z</b>: <i>chiquet → chiquez</i>, <i>piet → piez</i>.</p><p>Los colores cambian con el género: <i>royo / roya</i>, <i>amariello / amariella</i>.</p>"
+        "html": "<p>Los números que más cambian: <b>cuatre</b>, <b>siet</b>, <b>ueito</b>, <b>nueu</b> y <b>vinte</b>.</p><p>Del 16 al 19 se dice <b>deci-</b> + el número: <i>deciséis, decisiet, deciueito, decinueu</i>.</p><p>El verbo <b>tener</b>:</p><table><tr><td>yo tiengo</td><td>yo tengo</td></tr><tr><td>tu tiens</td><td>tú tienes</td></tr><tr><td>él / ella tiene</td><td>él / ella tiene</td></tr></table><p>El plural se hace con <b>-s</b>, pero las palabras que acaban en <b>-t</b> cambian a <b>-z</b>: <i>chiquet → chiquez</i>, <i>piet → piez</i>.</p><p>Los colores cambian con el género: <i>royo / roya</i>, <i>amariello / amariella</i>.</p>"
       },
       "vocabulario": [
         {
@@ -933,7 +934,7 @@
             {
               "id": "u3-l1-e4",
               "t": "choice",
-              "ar": "Tiengo dos chirmanos.",
+              "ar": "Tiengo dos chirmans.",
               "options": [
                 "Tengo dos hermanos.",
                 "Tienes dos hermanos.",
@@ -1185,7 +1186,7 @@
             {
               "id": "u3-l3-e5",
               "t": "fill",
-              "before": "La bandera d'Aragón ye",
+              "before": "A bandera d'Aragón ye",
               "after": "y roya.",
               "es": "La bandera de Aragón es amarilla y roja.",
               "options": [
@@ -1228,9 +1229,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Revisar en el DicAra «libro» y la expresión «La bandera d'Aragón»."
-      ]
+      "revisar": []
     },
     {
       "id": "u4",
@@ -1238,7 +1237,7 @@
       "tema": "Pan, augua, vin, leit, trunfas…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Los artículos en aragonés:</p><table><tr><td>lo pan</td><td>el pan</td></tr><tr><td>la carne</td><td>la carne</td></tr><tr><td>los uegos</td><td>los huevos</td></tr><tr><td>las trunfas</td><td>las patatas</td></tr></table><p>Delante de vocal se escribe <b>l'</b>: <i>l'augua</i> (el agua). En algunos valles se dice <i>o, a, os, as</i>.</p><p><b>Minchar</b> es «comer»: <i>minchamos pan y queso</i>. Para pedir algo con educación: <i>querría augua, por favor</i>.</p><p>Fíjate en <b>fambre</b> (hambre) y <b>sete</b> (sed): <i>tiengo fambre</i>, <i>tiengo sete</i>.</p>"
+        "html": "<p>Los artículos en aragonés:</p><table><tr><td>o pan</td><td>el pan</td></tr><tr><td>a carne</td><td>la carne</td></tr><tr><td>os uegos</td><td>los huevos</td></tr><tr><td>as trunfas</td><td>las patatas</td></tr></table><p>Delante de vocal se escribe <b>l'</b>: <i>l'augua</i> (el agua). Con <b>de</b> se apostrofa: <i>d'o pan</i> (del pan). En algunos valles se dice <i>lo, la, los, las</i>.</p><p><b>Minchar</b> es «comer»: <i>minchamos pan y queso</i>. Para pedir algo con educación: <i>querría augua, por favor</i>.</p><p>Ojo: <b>pex</b> es el pez (el animal) y <b>pescau</b> el pescado que se come.</p><p>Fíjate en <b>fambre</b> (hambre) y <b>sete</b> (sed): <i>tiengo fambre</i>, <i>tiengo sete</i>.</p>"
       },
       "vocabulario": [
         {
@@ -1270,8 +1269,12 @@
           "es": "carne"
         },
         {
-          "ar": "peix",
+          "ar": "pescau",
           "es": "pescado"
+        },
+        {
+          "ar": "pex",
+          "es": "pez"
         },
         {
           "ar": "mazana",
@@ -1318,7 +1321,7 @@
           "es": "querría"
         },
         {
-          "ar": "lo · la · los · las",
+          "ar": "o · a · os · as",
           "es": "el · la · los · las"
         }
       ],
@@ -1457,7 +1460,7 @@
               "id": "u4-l2-e2",
               "t": "pick",
               "es": "pescado",
-              "answer": "peix",
+              "answer": "pescau",
               "options": [
                 [
                   "carne",
@@ -1468,7 +1471,7 @@
                   "🥚"
                 ],
                 [
-                  "peix",
+                  "pescau",
                   "🐟"
                 ]
               ]
@@ -1510,7 +1513,7 @@
                   "judía"
                 ],
                 [
-                  "peix",
+                  "pescau",
                   "pescado"
                 ]
               ]
@@ -1543,9 +1546,9 @@
               "id": "u4-l2-e7",
               "t": "build",
               "es": "Comemos pescado.",
-              "answer": "Minchamos peix.",
+              "answer": "Minchamos pescau.",
               "tiles": [
-                "peix.",
+                "pescau.",
                 "Minchamos",
                 "carne.",
                 "beber"
@@ -1562,11 +1565,11 @@
               "t": "match",
               "pairs": [
                 [
-                  "los uegos",
+                  "os uegos",
                   "los huevos"
                 ],
                 [
-                  "las trunfas",
+                  "as trunfas",
                   "las patatas"
                 ],
                 [
@@ -1574,7 +1577,7 @@
                   "el agua"
                 ],
                 [
-                  "lo vin",
+                  "o vin",
                   "el vino"
                 ]
               ]
@@ -1586,11 +1589,11 @@
               "after": "pan ye bueno.",
               "es": "El pan es bueno.",
               "options": [
-                "La",
-                "Lo",
-                "Las"
+                "A",
+                "O",
+                "As"
               ],
-              "answer": "Lo"
+              "answer": "O"
             },
             {
               "id": "u4-l3-e3",
@@ -1599,16 +1602,16 @@
               "after": "carne.",
               "es": "Comemos la carne.",
               "options": [
-                "lo",
-                "la",
-                "los"
+                "o",
+                "a",
+                "os"
               ],
-              "answer": "la"
+              "answer": "a"
             },
             {
               "id": "u4-l3-e4",
               "t": "choice",
-              "ar": "Las trunfas y los uegos.",
+              "ar": "As trunfas y os uegos.",
               "options": [
                 "Las patatas y los huevos.",
                 "Las judías y los huevos.",
@@ -1620,13 +1623,13 @@
               "id": "u4-l3-e5",
               "t": "build",
               "es": "El agua y el vino.",
-              "answer": "L'augua y lo vin.",
+              "answer": "L'augua y o vin.",
               "tiles": [
-                "lo",
+                "o",
                 "L'augua",
                 "vin.",
                 "y",
-                "la",
+                "a",
                 "leit."
               ]
             },
@@ -1649,10 +1652,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar en el DicAra «uego» o «güego», «chodiga» y «sete».",
-        "Comprobar «bueno» (lo pan ye bueno) y las formas «minchamos» y «bebe»."
-      ]
+      "revisar": []
     },
     {
       "id": "u5",
@@ -1660,7 +1660,7 @@
       "tema": "Cambra, cocina, finestra, leito…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Para decir «hay» se usa <b>bi ha</b>: <i>en la cambra bi ha un leito</i> (en la habitación hay una cama).</p><p>Para decir «no hay ninguno» se refuerza con <b>garra</b>: <i>no bi ha garra silla</i>.</p><p>Algunas palabras cambian de género: <i>lo leito</i> (la cama).</p><p>La <b>cadiera</b> no es una silla: es el banco de madera junto al <b>fogaril</b> (el hogar), típico de las casas del Pirineo.</p>"
+        "html": "<p>Para decir «hay» se usa <b>bi ha</b>: <i>en a cambra bi ha un leito</i> (en la habitación hay una cama).</p><p>Para decir «no hay ninguno» se refuerza con <b>garra</b>: <i>no bi ha garra silla</i>.</p><p>Algunas palabras cambian de género: <i>o leito</i> (la cama).</p><p>La <b>cadiera</b> no es una silla: es el banco de madera junto al <b>fogaril</b> (el hogar), típico de las casas del Pirineo.</p>"
       },
       "vocabulario": [
         {
@@ -1814,7 +1814,7 @@
             {
               "id": "u5-l1-e5",
               "t": "choice",
-              "ar": "Ista ye la mía cambra.",
+              "ar": "Ista ye a mía cambra.",
               "options": [
                 "Esta es mi cocina.",
                 "Esta es mi habitación.",
@@ -1825,7 +1825,7 @@
             {
               "id": "u5-l1-e6",
               "t": "fill",
-              "before": "La mía",
+              "before": "A mía",
               "after": "ye chiqueta.",
               "es": "Mi habitación es pequeña.",
               "options": [
@@ -1844,7 +1844,7 @@
             {
               "id": "u5-l2-e1",
               "t": "choice",
-              "ar": "En la cambra bi ha un leito.",
+              "ar": "En a cambra bi ha un leito.",
               "options": [
                 "En la habitación hay una cama.",
                 "En la cocina hay una mesa.",
@@ -1855,7 +1855,7 @@
             {
               "id": "u5-l2-e2",
               "t": "fill",
-              "before": "En la cocina",
+              "before": "En a cocina",
               "after": "una mesa.",
               "es": "En la cocina hay una mesa.",
               "options": [
@@ -1894,14 +1894,14 @@
               "id": "u5-l2-e5",
               "t": "build",
               "es": "En la casa hay dos puertas.",
-              "answer": "En la casa bi ha dos puertas.",
+              "answer": "En a casa bi ha dos puertas.",
               "tiles": [
                 "casa",
                 "dos",
                 "En",
                 "bi",
                 "puertas.",
-                "la",
+                "a",
                 "ha",
                 "tiene"
               ]
@@ -1957,7 +1957,7 @@
             {
               "id": "u5-l3-e3",
               "t": "choice",
-              "ar": "Bi ha un fogaril en la cocina.",
+              "ar": "Bi ha un fogaril en a cocina.",
               "options": [
                 "Hay un hogar en la cocina.",
                 "Hay una mesa en la cocina.",
@@ -1968,8 +1968,8 @@
             {
               "id": "u5-l3-e4",
               "t": "fill",
-              "before": "Tiengo la",
-              "after": "de la casa.",
+              "before": "Tiengo a",
+              "after": "d'a casa.",
               "es": "Tengo la llave de la casa.",
               "options": [
                 "mesa",
@@ -1982,14 +1982,14 @@
               "id": "u5-l3-e5",
               "t": "build",
               "es": "La cama y la silla.",
-              "answer": "Lo leito y la silla.",
+              "answer": "O leito y a silla.",
               "tiles": [
                 "leito",
                 "silla.",
-                "Lo",
+                "O",
                 "y",
-                "la",
-                "La",
+                "a",
+                "Os",
                 "mesa."
               ]
             }
@@ -2001,10 +2001,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar la grafía «cocina»: el documento de la fase 1 decía «cozina», pero con la norma de 2023 (c ante e/i) debería ser «cocina».",
-        "Comprobar «ista» (esta) y «chiqueta» como adjetivo (pequeña)."
-      ]
+      "revisar": []
     },
     {
       "id": "u6",
@@ -2012,7 +2009,7 @@
       "tema": "Cabeza, uellos, orellas, man, garra…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Ojo con <b>garra</b>: en aragonés es la <b>pierna</b>.</p><p>Plurales que hay que aprender: <i>man → mans</i>, <i>piet → piez</i>, <i>uello → uellos</i>, <i>gran → grans</i>.</p><p>Para describir: <i>tiene los uellos grans</i> (tiene los ojos grandes).</p><p>Si algo duele: <i>me fa mal la cabeza</i> (me duele la cabeza).</p>"
+        "html": "<p>Ojo con <b>garra</b>: en aragonés es la <b>pierna</b>.</p><p>Plurales que hay que aprender: <i>man → mans</i>, <i>piet → piez</i>, <i>uello → uellos</i>, <i>gran → grans</i>.</p><p>Para describir: <i>tiene os uellos grans</i> (tiene los ojos grandes).</p><p>Si algo duele: <i>me fa mal a cabeza</i> (me duele la cabeza).</p>"
       },
       "vocabulario": [
         {
@@ -2158,7 +2155,7 @@
             {
               "id": "u6-l1-e5",
               "t": "choice",
-              "ar": "Tiene los uellos verdes.",
+              "ar": "Tiene os uellos verdes.",
               "options": [
                 "Tiene las orejas verdes.",
                 "Tiene los ojos verdes.",
@@ -2263,7 +2260,7 @@
             {
               "id": "u6-l2-e5",
               "t": "choice",
-              "ar": "Los piez y las mans.",
+              "ar": "Os piez y as mans.",
               "options": [
                 "Las piernas y los brazos.",
                 "Los pies y las manos.",
@@ -2294,7 +2291,7 @@
             {
               "id": "u6-l3-e1",
               "t": "choice",
-              "ar": "Tiene los uellos grans.",
+              "ar": "Tiene os uellos grans.",
               "options": [
                 "Tiene los ojos grandes.",
                 "Tiene las orejas grandes.",
@@ -2327,7 +2324,7 @@
             {
               "id": "u6-l3-e3",
               "t": "fill",
-              "before": "Ell tiene las orellas",
+              "before": "Él tiene as orellas",
               "after": ".",
               "es": "Él tiene las orejas grandes.",
               "options": [
@@ -2341,20 +2338,20 @@
               "id": "u6-l3-e4",
               "t": "build",
               "es": "Tiene la boca grande.",
-              "answer": "Tiene la boca gran.",
+              "answer": "Tiene a boca gran.",
               "tiles": [
                 "boca",
                 "Tiene",
                 "gran.",
-                "la",
+                "a",
                 "grans.",
-                "lo"
+                "o"
               ]
             },
             {
               "id": "u6-l3-e5",
               "t": "choice",
-              "ar": "Me fa mal la cabeza.",
+              "ar": "Me fa mal a cabeza.",
               "options": [
                 "Me duele la pierna.",
                 "Tengo una cabeza grande.",
@@ -2370,10 +2367,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar en el DicAra «naso» o «nariz», «chenullo» y el plural «mans».",
-        "Comprobar la expresión «me fa mal» (me duele)."
-      ]
+      "revisar": []
     },
     {
       "id": "u7",
@@ -2381,7 +2375,7 @@
       "tema": "Can, mixín, onso, ibón, mont…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Animales que cambian mucho: <b>can</b> (perro), <b>mixín</b> (gato), <b>paixaro</b> (pájaro), <b>craba</b> (cabra), <b>ovella</b> (oveja) y <b>onso</b> (oso).</p><p>Un <b>ibón</b> es un lago de alta montaña del Pirineo, y <b>mont</b> es el monte.</p><p>El sufijo <b>-et / -eta</b> hace las cosas pequeñas: <i>un can chiquet y royo</i> (un perro pequeño y rojo).</p><p>Delante de vocal, el artículo se apostrofa: <i>l'arbol</i>, <i>l'ibón</i>.</p>"
+        "html": "<p>Animales que cambian mucho: <b>can</b> (perro), <b>mixín</b> (gato), <b>paixaro</b> (pájaro), <b>craba</b> (cabra), <b>ovella</b> (oveja) y <b>onso</b> (oso).</p><p>Un <b>ibón</b> es un lago de alta montaña del Pirineo, y <b>mont</b> es el monte.</p><p>El sufijo <b>-et / -eta</b> hace las cosas pequeñas: <i>un can chiquet y royo</i> (un perro pequeño y rojo).</p><p>Delante de vocal, el artículo se apostrofa: <i>l'árbol</i>, <i>l'ibón</i>.</p>"
       },
       "vocabulario": [
         {
@@ -2425,7 +2419,7 @@
           "es": "lago de montaña"
         },
         {
-          "ar": "arbol",
+          "ar": "árbol",
           "es": "árbol"
         },
         {
@@ -2654,7 +2648,7 @@
             {
               "id": "u7-l2-e5",
               "t": "choice",
-              "ar": "En lo mont bi ha vacas y crabas.",
+              "ar": "En o mont bi ha vacas y crabas.",
               "options": [
                 "En el monte hay vacas y cabras.",
                 "En el monte hay ovejas y cabras.",
@@ -2665,7 +2659,7 @@
             {
               "id": "u7-l2-e6",
               "t": "fill",
-              "before": "En lo Pirineo bi ha",
+              "before": "En o Pirineo bi ha",
               "after": ".",
               "es": "En el Pirineo hay osos.",
               "options": [
@@ -2699,14 +2693,14 @@
               "id": "u7-l3-e1",
               "t": "pick",
               "es": "árbol",
-              "answer": "arbol",
+              "answer": "árbol",
               "options": [
                 [
                   "mont",
                   "⛰️"
                 ],
                 [
-                  "arbol",
+                  "árbol",
                   "🌳"
                 ],
                 [
@@ -2726,7 +2720,7 @@
                   "🏞️"
                 ],
                 [
-                  "arbol",
+                  "árbol",
                   "🌳"
                 ],
                 [
@@ -2748,7 +2742,7 @@
                   "lago de montaña"
                 ],
                 [
-                  "arbol",
+                  "árbol",
                   "árbol"
                 ],
                 [
@@ -2760,7 +2754,7 @@
             {
               "id": "u7-l3-e4",
               "t": "choice",
-              "ar": "Bi ha un onso en lo mont.",
+              "ar": "Bi ha un onso en o mont.",
               "options": [
                 "Hay un oso en el río.",
                 "Hay un perro en el monte.",
@@ -2771,11 +2765,11 @@
             {
               "id": "u7-l3-e5",
               "t": "fill",
-              "before": "En lo mont bi ha un",
+              "before": "En o mont bi ha un",
               "after": ".",
               "es": "En el monte hay un lago.",
               "options": [
-                "peix",
+                "pex",
                 "ibón",
                 "mixín"
               ],
@@ -2785,9 +2779,9 @@
               "id": "u7-l3-e6",
               "t": "build",
               "es": "Hay un árbol grande.",
-              "answer": "Bi ha un arbol gran.",
+              "answer": "Bi ha un árbol gran.",
               "tiles": [
-                "arbol",
+                "árbol",
                 "Bi",
                 "gran.",
                 "ha",
@@ -2804,10 +2798,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar el plural «mixins» y la grafía «arbol» (sin tilde, como en «l'arbol» del documento de la fase 1).",
-        "Comprobar «río» y la contracción «en lo mont» (variante: «en o mont»)."
-      ]
+      "revisar": []
     },
     {
       "id": "u8",
@@ -2815,7 +2806,7 @@
       "tema": "Luns, chinero, agüerro, hibierno…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Los días de la semana: <i>luns, martes, mierques, chueves, viernes, sabado, domingo</i>.</p><p>Palabras para situarte en el tiempo:</p><table><tr><td>hue</td><td>hoy</td></tr><tr><td>ahier</td><td>ayer</td></tr><tr><td>maitín</td><td>mañana</td></tr><tr><td>agora</td><td>ahora</td></tr></table><p>Los meses que más cambian: <b>chinero</b> (enero), <b>chunio</b>, <b>chulio</b> y <b>aviento</b> (diciembre).</p><p>El <b>orache</b> es el tiempo que hace: <i>fa sol</i>, <i>fa frío</i>, <i>plueve</i>.</p>"
+        "html": "<p>Los días de la semana: <i>luns, martes, mierques, chueves, viernes, sabado, domingo</i>.</p><p>Palabras para situarte en el tiempo:</p><table><tr><td>hue</td><td>hoy</td></tr><tr><td>ahier</td><td>ayer</td></tr><tr><td>maitín</td><td>mañana</td></tr><tr><td>agora</td><td>ahora</td></tr></table><p>Los meses que más cambian: <b>chinero</b> (enero), <b>chunio</b>, <b>chulio</b> y <b>aviento</b> (diciembre).</p><p>El <b>orache</b> es el tiempo que hace: <i>fa sol</i>, <i>fa frío</i>, <i>pleve</i> (de <b>plever</b>, llover).</p>"
       },
       "vocabulario": [
         {
@@ -2895,7 +2886,7 @@
           "es": "tiempo (atmosférico)"
         },
         {
-          "ar": "fa sol · fa frío · plueve",
+          "ar": "fa sol · fa frío · pleve",
           "es": "hace sol · hace frío · llueve"
         }
       ],
@@ -3179,7 +3170,7 @@
             {
               "id": "u8-l3-e6",
               "t": "choice",
-              "ar": "Hue plueve.",
+              "ar": "Hue pleve.",
               "options": [
                 "Hoy llueve.",
                 "Ayer llovió.",
@@ -3191,9 +3182,9 @@
               "id": "u8-l3-e7",
               "t": "build",
               "es": "Ahora llueve.",
-              "answer": "Agora plueve.",
+              "answer": "Agora pleve.",
               "tiles": [
-                "plueve.",
+                "pleve.",
                 "Agora",
                 "hue",
                 "fa"
@@ -3207,10 +3198,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar «sabado» (sin tilde) y «setiembre».",
-        "Comprobar las expresiones del orache: «fa sol», «fa frío» y «plueve»."
-      ]
+      "revisar": []
     },
     {
       "id": "u9",
@@ -3218,7 +3206,7 @@
       "tema": "Uesca, Chaca, puent, camín…",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>Muchos lugares de Aragón tienen nombre en aragonés: <b>Uesca</b> (Huesca), <b>Chaca</b> (Jaca), <b>Tergüel</b> (Teruel), <b>Balbastro</b> (Barbastro).</p><p>El verbo <b>ir</b>: <i>yo voi, tu vas, ell / ella va</i>.</p><p>Para decir adónde vas se usa <b>ta</b>: <i>voi ta Chaca</i> (voy a Jaca).</p><p>Un <b>lugar</b> es un pueblo, y la <b>carrera</b> es la calle.</p>"
+        "html": "<p>Muchos lugares de Aragón tienen nombre en aragonés: <b>Uesca</b> (Huesca), <b>Chaca</b> (Jaca), <b>Balbastro</b> (Barbastro), <b>L'Aínsa</b> (Aínsa).</p><p>El verbo <b>ir</b>: <i>yo voi, tu vas, él / ella va</i>.</p><p>Para decir adónde vas se usa <b>ta</b>: <i>voi ta Chaca</i> (voy a Jaca).</p><p>Un <b>lugar</b> es un pueblo, y la <b>carrera</b> es la calle.</p>"
       },
       "vocabulario": [
         {
@@ -3230,8 +3218,8 @@
           "es": "Jaca"
         },
         {
-          "ar": "Tergüel",
-          "es": "Teruel"
+          "ar": "L'Aínsa",
+          "es": "Aínsa"
         },
         {
           "ar": "Balbastro",
@@ -3292,8 +3280,8 @@
                   "Jaca"
                 ],
                 [
-                  "Tergüel",
-                  "Teruel"
+                  "L'Aínsa",
+                  "Aínsa"
                 ],
                 [
                   "Balbastro",
@@ -3315,15 +3303,15 @@
             {
               "id": "u9-l1-e3",
               "t": "fill",
-              "before": "Lo mío pai ye de",
+              "before": "Mi pai ye de",
               "after": ".",
-              "es": "Mi padre es de Teruel.",
+              "es": "Mi padre es de Barbastro.",
               "options": [
                 "Chaca",
-                "Tergüel",
+                "Balbastro",
                 "Uesca"
               ],
-              "answer": "Tergüel"
+              "answer": "Balbastro"
             },
             {
               "id": "u9-l1-e4",
@@ -3341,7 +3329,7 @@
             {
               "id": "u9-l1-e5",
               "t": "choice",
-              "ar": "La mía mai ye de Balbastro.",
+              "ar": "Mi mai ye de Balbastro.",
               "options": [
                 "Mi madre es de Barbastro.",
                 "Mi madre vive en Barbastro.",
@@ -3409,23 +3397,23 @@
                   "Jaca"
                 ],
                 [
-                  "Tergüel",
-                  "Teruel"
+                  "Uesca",
+                  "Huesca"
                 ]
               ]
             },
             {
               "id": "u9-l2-e5",
               "t": "build",
-              "es": "Ella va a Teruel.",
-              "answer": "Ella va ta Tergüel.",
+              "es": "Ella va a Huesca.",
+              "answer": "Ella va ta Uesca.",
               "tiles": [
                 "va",
-                "Tergüel.",
+                "Uesca.",
                 "Ella",
                 "ta",
                 "voi",
-                "Teruel."
+                "Huesca."
               ]
             }
           ]
@@ -3499,7 +3487,7 @@
             {
               "id": "u9-l3-e4",
               "t": "choice",
-              "ar": "Bi ha un puent en lo lugar.",
+              "ar": "Bi ha un puent en o lugar.",
               "options": [
                 "Hay un puente en el pueblo.",
                 "Hay un camino en el pueblo.",
@@ -3524,14 +3512,14 @@
               "id": "u9-l3-e6",
               "t": "build",
               "es": "Hay un camino al pueblo.",
-              "answer": "Bi ha un camín ta lo lugar.",
+              "answer": "Bi ha un camín ta o lugar.",
               "tiles": [
                 "camín",
                 "ta",
                 "Bi",
                 "lugar.",
                 "un",
-                "lo",
+                "o",
                 "ha",
                 "puent"
               ]
@@ -3544,10 +3532,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar los topónimos «Tergüel» y «Balbastro».",
-        "Comprobar «carrera» (calle), «lugar» (pueblo), «ta» y el presente de ir: «voi, vas, va»."
-      ]
+      "revisar": []
     },
     {
       "id": "u10",
@@ -3668,8 +3653,8 @@
             {
               "id": "u10-l1-e3",
               "t": "fill",
-              "before": "Los chiquez",
-              "after": "en la plaza.",
+              "before": "Os chiquez",
+              "after": "en a plaza.",
               "es": "Los niños juegan en la plaza.",
               "options": [
                 "minchan",
@@ -3703,7 +3688,7 @@
             {
               "id": "u10-l1-e5",
               "t": "choice",
-              "ar": "Lo chiquet plora.",
+              "ar": "O chiquet plora.",
               "options": [
                 "El niño juega.",
                 "El niño come.",
@@ -3744,7 +3729,7 @@
               "id": "u10-l2-e2",
               "t": "fill",
               "before": "Hue",
-              "after": "minchau peix.",
+              "after": "minchau pescau.",
               "es": "Hoy he comido pescado.",
               "options": [
                 "has",
@@ -3803,7 +3788,7 @@
             {
               "id": "u10-l2-e6",
               "t": "choice",
-              "ar": "¿Has puyau ta lo mont?",
+              "ar": "¿Has puyau ta o mont?",
               "options": [
                 "¿Has bajado del monte?",
                 "¿Has subido al monte?",
@@ -3867,10 +3852,10 @@
               "id": "u10-l3-e4",
               "t": "build",
               "es": "He encontrado la llave.",
-              "answer": "He trobau la clau.",
+              "answer": "He trobau a clau.",
               "tiles": [
                 "trobau",
-                "la",
+                "a",
                 "He",
                 "clau.",
                 "baixau",
@@ -3880,7 +3865,7 @@
             {
               "id": "u10-l3-e5",
               "t": "choice",
-              "ar": "Lo mío chirmano ha baixau de lo mont.",
+              "ar": "Mi chirmán ha baixau d'o mont.",
               "options": [
                 "Mi hermano ha subido al monte.",
                 "Mi hermano ha bajado del monte.",
@@ -3896,10 +3881,7 @@
           "repaso": true
         }
       ],
-      "revisar": [
-        "Comprobar las formas del presente «charro», «charramos», «chugan» y «plora».",
-        "Comprobar los participios «bebiu», «dormiu», «trobau», «baixau» y la contracción «de lo mont» (variante: «d'o mont»)."
-      ]
+      "revisar": []
     }
   ]
 }
