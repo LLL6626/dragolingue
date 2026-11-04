@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -49,12 +49,24 @@
       "tema": "Saludar, presentarte y despedirte",
       "consejo": {
         "titulo": "Consejo de Dragolingüe",
-        "html": "<p>En aragonés, <b>llamarse</b> se dice <b>clamar-se</b>: <i>me clamo Ana</i>, <i>¿cómo te clamas?</i></p> <p>«Hola» se dice <b>ola</b>, sin h. <b>Muito</b> es «mucho» o «muy»: <i>muito bien</i>.</p> <table><tr><td>dica luego</td><td>hasta luego</td></tr><tr><td>¿qué tal?</td><td>¿qué tal?</td></tr><tr><td>gracias</td><td>gracias</td></tr></table> <p>Muchas palabras se parecen al castellano. Fíjate en las que cambian.</p>"
+        "html": "<p>En aragonés, <b>llamarse</b> se dice <b>clamar-se</b>: <i>me clamo Ana</i>, <i>¿cómo te clamas?</i></p> <p>«Hola» se dice <b>ola</b>, sin h. <b>Muito</b> es «mucho» o «muy»: <i>muito bien</i>.</p> <table><tr><td>dica luego</td><td>hasta luego</td></tr><tr><td>¿qué tal?</td><td>¿qué tal?</td></tr><tr><td>gracias</td><td>gracias</td></tr></table> <p>Los saludos van en singular: <b>buen día</b> (buenos días), <b>buena tarde</b> (buenas tardes) y <b>buena nuei</b> (buenas noches).</p> <p>Muchas palabras se parecen al castellano. Fíjate en las que cambian.</p>"
       },
       "vocabulario": [
         {
           "ar": "ola",
           "es": "hola"
+        },
+        {
+          "ar": "buen día",
+          "es": "buenos días"
+        },
+        {
+          "ar": "buena tarde",
+          "es": "buenas tardes"
+        },
+        {
+          "ar": "buena nuei",
+          "es": "buenas noches"
         },
         {
           "ar": "adiós",
@@ -215,6 +227,75 @@
                 "muito"
               ],
               "answer": "tal"
+            },
+            {
+              "id": "u1-l1-e8",
+              "t": "pick",
+              "es": "buenas noches",
+              "answer": "buena nuei",
+              "options": [
+                [
+                  "buen día",
+                  "☀️"
+                ],
+                [
+                  "buena nuei",
+                  "🌙"
+                ],
+                [
+                  "buena tarde",
+                  "🌇"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l1-e9",
+              "t": "match",
+              "pairs": [
+                [
+                  "buen día",
+                  "buenos días"
+                ],
+                [
+                  "buena tarde",
+                  "buenas tardes"
+                ],
+                [
+                  "buena nuei",
+                  "buenas noches"
+                ],
+                [
+                  "ola",
+                  "hola"
+                ]
+              ]
+            },
+            {
+              "id": "u1-l1-e10",
+              "t": "fill",
+              "before": "¡Buen",
+              "after": ", Pablo!",
+              "es": "¡Buenos días, Pablo!",
+              "options": [
+                "día",
+                "días",
+                "nuei"
+              ],
+              "answer": "día"
+            },
+            {
+              "id": "u1-l1-e11",
+              "t": "build",
+              "es": "Buenas tardes, ¿qué tal?",
+              "answer": "Buena tarde, ¿qué tal?",
+              "tiles": [
+                "tarde,",
+                "¿qué",
+                "Buena",
+                "tal?",
+                "Buenas",
+                "nuei,"
+              ]
             }
           ]
         },
