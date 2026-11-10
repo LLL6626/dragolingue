@@ -163,8 +163,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .bubble{position:relative;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:12px 14px;font-weight:800;font-size:1.15rem;min-width:0}
 .bubble::before{content:"";position:absolute;left:-10px;bottom:16px;width:16px;height:16px;background:var(--surface);border-left:2px solid var(--line);border-bottom:2px solid var(--line);transform:rotate(45deg)}
 .bubble .es-hint{display:block;font-weight:600;font-size:.85rem;color:var(--muted);margin-top:2px}
-.audio{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;border:2px dashed var(--line);background:none;color:var(--muted);vertical-align:middle;margin-right:6px}
-.audio svg{width:18px;height:18px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .card,.opt,.tile,.mbtn{border:2px solid var(--line);background:var(--surface);border-radius:16px;box-shadow:0 4px 0 var(--line);font-weight:800}
 .card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px;font-size:1rem}
@@ -453,7 +451,6 @@ function lessonTop() {
     <div class="progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>
     <span class="hearts" aria-label="Vidas">${ICON.heart}${L.hearts}</span></div>`;
 }
-const audioBtn = `<button class="audio" title="Audio pendiente: se grabará con hablantes" aria-label="Audio pendiente de grabar">${ICON.speaker}</button>`;
 function renderEx() {
   const ex = L.queue[L.i];
   L.state = { ex, sel: null, built: [], matched: 0 };
@@ -463,7 +460,7 @@ function renderEx() {
       <div class="cards">${shuffle(ex.options).map(([w, p]) => `<button class="card" data-v="${esc(w)}"><span class="pic" aria-hidden="true">${p}</span>${esc(w)}</button>`).join("")}</div>`;
   } else if (ex.t === "choice") {
     body = `<p class="q-kind">Traduce</p>
-      <div class="coach"><div class="mini">${dragon("happy")}</div><div class="bubble">${audioBtn}${esc(ex.ar)}</div></div>
+      <div class="coach"><div class="mini">${dragon("happy")}</div><div class="bubble">${esc(ex.ar)}</div></div>
       <div class="opts">${ex.options.map((o, i) => `<button class="opt" data-v="${i}">${esc(o)}</button>`).join("")}</div>`;
   } else if (ex.t === "build") {
     body = `<p class="q-kind">Escribe en aragonés</p>
@@ -484,7 +481,6 @@ function renderEx() {
   $app.innerHTML = lessonTop() + `<main>${body}</main>` +
     `<div class="checkbar" id="bar"><div class="checkbar-inner"><button class="big-btn" id="check" disabled>Comprobar</button></div></div>`;
   $app.querySelector("#quit").onclick = () => { L = null; renderHome(); };
-  $app.querySelectorAll(".audio").forEach(b => b.onclick = () => toast("El audio se grabará con hablantes nativos."));
   wire(ex);
   window.scrollTo(0, 0);
 }
