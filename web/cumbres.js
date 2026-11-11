@@ -21,7 +21,7 @@
   function layout(root) {
     root.querySelectorAll('.cumbre[data-cumbre]').forEach(p => {
       const P = CUMBRES[+p.dataset.cumbre]; if (!P) return;
-      const S = [...p.querySelectorAll('.stop')].reverse(), n = S.length; if (!n) return; // al revés: la primera lección, en la cima
+      const S = [...p.querySelectorAll('.stop')], n = S.length; if (!n) return; // se sube: la primera lección abajo y el repaso en la cima
       const sp = route(P, n), svg = p.querySelector('svg.mtn'), g = svg.querySelector('g');
       const paths = [...g.querySelectorAll('path')].filter(e => e.getAttribute('fill') && e.getAttribute('fill') !== 'none');
       const inF = (e, x, y) => { try { return e.isPointInFill(new DOMPoint(x, y)); } catch (_) { return false; } };
