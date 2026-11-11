@@ -147,6 +147,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .scape .node-label{margin-top:8px;font-size:.92rem;background:rgba(255,255,255,.92);color:#2C3A44;padding:2px 9px;border-radius:8px}
 .scape .start-bubble{background:#C8402F;color:#fff;border:none;border-radius:9px;font-size:.9rem;padding:4px 12px}
 .scape .mascot-on-path{width:84px;top:-14px}
+.cumbre{display:block;height:560px;padding:0;border-radius:0 0 16px 16px;overflow:hidden;isolation:isolate}
+.cumbre .mtn{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.cumbre .stop{position:absolute;margin:0;translate:-50% 0}
+.cumbre .node{width:66px;height:66px;border:4px solid #fff;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.cumbre .node svg{width:28px;height:28px}
+.cumbre .node.current::after{inset:-9px;border-color:#fff;opacity:.75}
+.cumbre .node.locked{background:#B9B4A8}
+.cumbre[data-cumbre="6"] .node.locked{background:#8D93A8}
+.cumbre .node-label{margin-top:7px;font-size:.95rem;background:rgba(255,255,255,.94);color:#1F2A33;padding:3px 10px;border-radius:9px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.cumbre .start-bubble{background:#C8231B;color:#fff;border:none;border-radius:9px;margin-bottom:10px;font-size:.9rem;padding:4px 12px}
+.cumbre .mascot-on-path{width:78px;top:-30px}
+.summit-flag{position:absolute;top:-28px;left:50%;font-size:26px;line-height:1;pointer-events:none}
 .locked-note{font-size:.88rem;color:var(--muted);padding:12px 4px 4px;text-align:center}
 
 /* nav inferior */
@@ -254,6 +266,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 
 <script src="web/paisajes.js"></script>
+<script src="web/cumbres.js"></script>
 <script>
 /* ---------- Dragolingüe (SVG) ---------- */
 let dragonId = 0;
@@ -424,6 +437,7 @@ function renderHome() {
   html += `</main>` + tabbar();
   $app.className = "app"; $app.style.removeProperty("--accent"); $app.innerHTML = html;
   if (tab === "learn" && window.layoutPaisajes) layoutPaisajes($app);
+  if (tab === "learn" && window.layoutCumbres) layoutCumbres($app);
   paintLives();
   $app.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { tab = b.dataset.tab; renderHome(); });
   $app.querySelectorAll("[data-lesson]").forEach(b => b.onclick = () => {
@@ -438,6 +452,7 @@ function renderHome() {
   const rs = $app.querySelector("#reset"); if (rs) rs.onclick = () => { S = { done: {}, xp: 0, streak: 0, lastDay: null, unlockAll: false, sound: S.sound, welcomed: true }; save(); tab = "learn"; renderHome(); toast("Progreso borrado."); };
   const cur = $app.querySelector(".node.current"); if (cur && tab === "learn") setTimeout(() => cur.scrollIntoView({ block: "center", behavior: "smooth" }), 60);
 }
+function scapeOf(u) { return (window.PAISAJES && PAISAJES[u]) || (window.CUMBRES && CUMBRES[u - 10]) || null; }
 function paintLives() {
   const el = document.getElementById("lives-n"); if (!el) return;
   const n = lives(); el.innerHTML = n + (n < MAX_LIVES ? `<small>${nextLifeText()}</small>` : "");
@@ -450,20 +465,21 @@ function learnView() {
     h += `<p class="section-label">${sec.name}</p>`;
     sec.units.forEach(u => {
       const U = UNITS[u];
-      const PH = !U.locked && window.PAISAJES && PAISAJES[u];
+      const PH = !U.locked && scapeOf(u);
       h += `<section class="unit ${PH ? "has-scape" : ""}"><div class="unit-head ${U.locked ? "locked" : ""}" ${PH ? `style="background:${PH.head}"` : ""}>
         <div><div class="num">Unidad ${u + 1}</div><h2>${U.title}</h2><div class="theme">${U.theme}</div></div>
         ${U.locked ? "" : `<button class="tip-btn" data-tip="${u}">${ICON.book.replace('<svg','<svg width="18" height="18"')}Consejos</button>`}
       </div>`;
       if (U.locked) { h += `<p class="locked-note">Contenido en preparación</p></section>`; return; }
-      const scape = window.PAISAJES && PAISAJES[u];
-      h += scape ? `<div class="path scape ${scape.o && scape.o.source ? "source" : ""}" data-scape="${u}" style="background:${scape.bg}">` : `<div class="path">`;
+      const scape = window.PAISAJES && PAISAJES[u], peak = !scape && window.CUMBRES && CUMBRES[u - 10];
+      h += scape ? `<div class="path scape ${scape.o && scape.o.source ? "source" : ""}" data-scape="${u}" style="background:${scape.bg}">`
+        : peak ? `<div class="path cumbre" data-cumbre="${u - 10}">${cumbreSVG(u - 10)}` : `<div class="path">`;
       U.lessons.forEach((L, l) => {
         const off = Math.round(scape ? Math.sin(l * 1.1 + 0.6) * 55 : Math.sin((l + u) * 1.3) * 70);
         const done = isDone(u, l), isCur = cur && cur[0] === u && cur[1] === l, open = isOpen(u, l);
         const cls = done ? "done" : isCur ? "current" : open ? "current" : "locked";
         const icon = L.review ? ICON.chest : done ? ICON.check : open ? ICON.star : ICON.lock;
-        h += `<div class="stop ${isCur && l > 0 ? "has-bubble" : ""}" style="transform:translateX(${off}px)">
+        h += `<div class="stop ${isCur && l > 0 && !peak ? "has-bubble" : ""}" style="${peak ? "" : `transform:translateX(${off}px)`}">
           ${isCur ? `<span class="start-bubble">Empezar</span>` : ""}
           <button class="node ${cls}" data-lesson="${u}-${l}" aria-label="${esc(L.name)}">${icon}</button>
           <span class="node-label">${esc(L.name)}</span>
@@ -539,7 +555,7 @@ function startPractice() {
   const c = currentLesson() || [0, 0];
   if (!pool.length) pool = UNITS[c[0]].lessons[c[1]].ex.slice();
   const ex = shuffle(pool).slice(0, 8);
-  const PA = window.PAISAJES && PAISAJES[c[0]]; if (PA) $app.style.setProperty("--accent", PA.accent);
+  const PA = scapeOf(c[0]); if (PA) $app.style.setProperty("--accent", PA.accent);
   L = { u: c[0], l: c[1], practice: true, free: true, queue: ex, total: ex.length, i: 0, hearts: lives(), right: 0, firstTry: 0, missed: new Set(), state: null };
   renderEx();
 }
@@ -549,7 +565,7 @@ function startLesson(u, l) {
   let ex = lesson.review
     ? shuffle(UNITS[u].lessons.filter(x => !x.review).flatMap(x => x.ex)).slice(0, 8)
     : lesson.ex.slice();
-  const PA = window.PAISAJES && PAISAJES[u]; if (PA) $app.style.setProperty("--accent", PA.accent); else $app.style.removeProperty("--accent");
+  const PA = scapeOf(u); if (PA) $app.style.setProperty("--accent", PA.accent); else $app.style.removeProperty("--accent");
   L = { u, l, free: lesson.review, queue: ex, total: ex.length, i: 0, hearts: lives(), right: 0, firstTry: 0, missed: new Set(), state: null };
   renderEx();
 }

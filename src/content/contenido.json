@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -34,6 +34,26 @@
         "u8",
         "u9",
         "u10"
+      ]
+    },
+    {
+      "nombre": "Sección 4 · La vida de cada día",
+      "unidades": [
+        "u11",
+        "u12",
+        "u13",
+        "u14",
+        "u15"
+      ]
+    },
+    {
+      "nombre": "Sección 5 · Historia, fiestas y montaña",
+      "unidades": [
+        "u16",
+        "u17",
+        "u18",
+        "u19",
+        "u20"
       ]
     }
   ],
@@ -4135,6 +4155,4620 @@
         },
         {
           "id": "u10-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u11",
+      "titulo": "La ropa",
+      "tema": "Camisa, pantalons, saya, levar…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>«Llevar» se dice <b>levar</b>: <i>levo, levas, leva, levamos, levaz, levan</i>.</p><p>El adjetivo concuerda con la prenda: <i>un chapero negro</i>, <i>una camisa blanca</i>, <i>os pantalons curtos</i>, <i>as sayas largas</i>.</p><p>«Corto» es <b>curto</b>, y la falda es la <b>saya</b>. El <b>cacherulo</b> es el pañuelo de la cabeza del traje aragonés.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "camisa",
+          "es": "camisa"
+        },
+        {
+          "ar": "pantalons",
+          "es": "pantalones"
+        },
+        {
+          "ar": "saya",
+          "es": "falda"
+        },
+        {
+          "ar": "zapatos",
+          "es": "zapatos"
+        },
+        {
+          "ar": "chapero",
+          "es": "sombrero"
+        },
+        {
+          "ar": "guans",
+          "es": "guantes"
+        },
+        {
+          "ar": "blanco",
+          "es": "blanco"
+        },
+        {
+          "ar": "negro",
+          "es": "negro"
+        },
+        {
+          "ar": "azul",
+          "es": "azul"
+        },
+        {
+          "ar": "largo",
+          "es": "largo"
+        },
+        {
+          "ar": "curto",
+          "es": "corto"
+        },
+        {
+          "ar": "nuevo",
+          "es": "nuevo"
+        },
+        {
+          "ar": "chambreta",
+          "es": "camiseta"
+        },
+        {
+          "ar": "peducos",
+          "es": "calcetines"
+        },
+        {
+          "ar": "botas",
+          "es": "botas"
+        },
+        {
+          "ar": "abrigo",
+          "es": "abrigo"
+        },
+        {
+          "ar": "bufanda",
+          "es": "bufanda"
+        },
+        {
+          "ar": "cacherulo",
+          "es": "pañuelo de cabeza"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u11-l1",
+          "nombre": "Prendas",
+          "ejercicios": [
+            {
+              "id": "u11-l1-e1",
+              "t": "pick",
+              "es": "camisa",
+              "answer": "camisa",
+              "options": [
+                [
+                  "guans",
+                  "🧤"
+                ],
+                [
+                  "camisa",
+                  "👔"
+                ],
+                [
+                  "chapero",
+                  "🎩"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l1-e2",
+              "t": "pick",
+              "es": "pantalones",
+              "answer": "pantalons",
+              "options": [
+                [
+                  "saya",
+                  "👗"
+                ],
+                [
+                  "pantalons",
+                  "👖"
+                ],
+                [
+                  "chapero",
+                  "🎩"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "saya",
+                  "falda"
+                ],
+                [
+                  "zapatos",
+                  "zapatos"
+                ],
+                [
+                  "chapero",
+                  "sombrero"
+                ],
+                [
+                  "guans",
+                  "guantes"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l1-e4",
+              "t": "choice",
+              "ar": "Levo una camisa.",
+              "options": [
+                "Los pantalones son cortos.",
+                "Llevo una camisa.",
+                "Tengo un sombrero nuevo."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u11-l1-e5",
+              "t": "fill",
+              "before": "Levo",
+              "after": "zapatos.",
+              "es": "Llevo zapatos.",
+              "options": [
+                "os",
+                "a",
+                "una"
+              ],
+              "answer": "os"
+            },
+            {
+              "id": "u11-l1-e6",
+              "t": "build",
+              "es": "Ella lleva una falda.",
+              "answer": "Ella leva una saya.",
+              "tiles": [
+                "saya.",
+                "leva",
+                "una",
+                "unas",
+                "lleva",
+                "Ella"
+              ]
+            },
+            {
+              "id": "u11-l1-e7",
+              "t": "choice",
+              "ar": "Tiengo un chapero nuevo.",
+              "options": [
+                "Hace frío: lleva el abrigo.",
+                "Tengo un sombrero nuevo.",
+                "¿Qué llevas hoy?"
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u11-l1-e8",
+              "t": "write",
+              "es": "Tengo un sombrero nuevo.",
+              "answer": "Tiengo un chapero nuevo."
+            }
+          ]
+        },
+        {
+          "id": "u11-l2",
+          "nombre": "Colors",
+          "ejercicios": [
+            {
+              "id": "u11-l2-e1",
+              "t": "pick",
+              "es": "blanco",
+              "answer": "blanco",
+              "options": [
+                [
+                  "nuevo",
+                  "✨"
+                ],
+                [
+                  "blanco",
+                  "⚪"
+                ],
+                [
+                  "negro",
+                  "⚫"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l2-e2",
+              "t": "pick",
+              "es": "negro",
+              "answer": "negro",
+              "options": [
+                [
+                  "blanco",
+                  "⚪"
+                ],
+                [
+                  "nuevo",
+                  "✨"
+                ],
+                [
+                  "negro",
+                  "⚫"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "azul",
+                  "azul"
+                ],
+                [
+                  "largo",
+                  "largo"
+                ],
+                [
+                  "curto",
+                  "corto"
+                ],
+                [
+                  "nuevo",
+                  "nuevo"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l2-e4",
+              "t": "choice",
+              "ar": "A camisa ye blanca.",
+              "options": [
+                "La camisa es blanca.",
+                "Llevo el pañuelo.",
+                "Llevo una camisa."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u11-l2-e5",
+              "t": "fill",
+              "before": "A saya ye",
+              "after": ".",
+              "es": "La falda es larga.",
+              "options": [
+                "larga",
+                "largo",
+                "largos"
+              ],
+              "answer": "larga"
+            },
+            {
+              "id": "u11-l2-e6",
+              "t": "build",
+              "es": "Los pantalones son cortos.",
+              "answer": "Os pantalons son curtos.",
+              "tiles": [
+                "corto",
+                "Os",
+                "son",
+                "pantalons",
+                "blanco",
+                "curtos."
+              ]
+            },
+            {
+              "id": "u11-l2-e7",
+              "t": "choice",
+              "ar": "Un chapero negro.",
+              "options": [
+                "Los pantalones son cortos.",
+                "La camisa es blanca.",
+                "Un sombrero negro."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u11-l2-e8",
+              "t": "write",
+              "es": "Un sombrero negro.",
+              "answer": "Un chapero negro."
+            }
+          ]
+        },
+        {
+          "id": "u11-l3",
+          "nombre": "¿Qué levas?",
+          "ejercicios": [
+            {
+              "id": "u11-l3-e1",
+              "t": "pick",
+              "es": "camiseta",
+              "answer": "chambreta",
+              "options": [
+                [
+                  "abrigo",
+                  "🧥"
+                ],
+                [
+                  "chambreta",
+                  "👕"
+                ],
+                [
+                  "bufanda",
+                  "🧣"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l3-e2",
+              "t": "pick",
+              "es": "calcetines",
+              "answer": "peducos",
+              "options": [
+                [
+                  "cacherulo",
+                  "🟥"
+                ],
+                [
+                  "abrigo",
+                  "🧥"
+                ],
+                [
+                  "peducos",
+                  "🧦"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "botas",
+                  "botas"
+                ],
+                [
+                  "abrigo",
+                  "abrigo"
+                ],
+                [
+                  "bufanda",
+                  "bufanda"
+                ],
+                [
+                  "cacherulo",
+                  "pañuelo de cabeza"
+                ]
+              ]
+            },
+            {
+              "id": "u11-l3-e4",
+              "t": "choice",
+              "ar": "¿Qué levas hue?",
+              "options": [
+                "Llevo una camisa.",
+                "¿Qué llevas hoy?",
+                "Hace frío: lleva el abrigo."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u11-l3-e5",
+              "t": "fill",
+              "before": "Fa frío: leva",
+              "after": "bufanda.",
+              "es": "Hace frío: lleva la bufanda.",
+              "options": [
+                "a",
+                "o",
+                "os"
+              ],
+              "answer": "a"
+            },
+            {
+              "id": "u11-l3-e6",
+              "t": "build",
+              "es": "Llevo el pañuelo.",
+              "answer": "Levo o cacherulo.",
+              "tiles": [
+                "calor:",
+                "cacherulo.",
+                "o",
+                "Levo",
+                "lleva"
+              ]
+            },
+            {
+              "id": "u11-l3-e7",
+              "t": "choice",
+              "ar": "Fa frío: leva o abrigo.",
+              "options": [
+                "Ella lleva una falda.",
+                "Hace frío: lleva el abrigo.",
+                "Llevo una camisa."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u11-l3-e8",
+              "t": "write",
+              "es": "Hace frío: lleva el abrigo.",
+              "answer": "Fa frío: leva o abrigo."
+            }
+          ]
+        },
+        {
+          "id": "u11-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u12",
+      "titulo": "Tiempo libre y deportes",
+      "tema": "Me cuaca leyer, chugar, nadar…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Para decir que algo te gusta se usa <b>cuacar</b>: <i>me cuaca</i> (me gusta), <i>no me cuaca</i> (no me gusta), <i>¿te cuaca?</i> (¿te gusta?).</p><p><b>Siempre</b>, <b>nunca</b> y <b>a vegadas</b> (a veces) dicen con qué frecuencia haces algo.</p><p>Fíjate: <b>leyer</b> (leer), <b>mosica</b> (música), <b>becicleta</b> (bicicleta), <b>esporte</b> (deporte).</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "leyer",
+          "es": "leer"
+        },
+        {
+          "ar": "cantar",
+          "es": "cantar"
+        },
+        {
+          "ar": "bailar",
+          "es": "bailar"
+        },
+        {
+          "ar": "mosica",
+          "es": "música"
+        },
+        {
+          "ar": "nadar",
+          "es": "nadar"
+        },
+        {
+          "ar": "correr",
+          "es": "correr"
+        },
+        {
+          "ar": "esporte",
+          "es": "deporte"
+        },
+        {
+          "ar": "futbol",
+          "es": "fútbol"
+        },
+        {
+          "ar": "pilota",
+          "es": "pelota"
+        },
+        {
+          "ar": "becicleta",
+          "es": "bicicleta"
+        },
+        {
+          "ar": "equipo",
+          "es": "equipo"
+        },
+        {
+          "ar": "ganar",
+          "es": "ganar"
+        },
+        {
+          "ar": "siempre",
+          "es": "siempre"
+        },
+        {
+          "ar": "nunca",
+          "es": "nunca"
+        },
+        {
+          "ar": "a vegadas",
+          "es": "a veces"
+        },
+        {
+          "ar": "chuego",
+          "es": "juego"
+        },
+        {
+          "ar": "perder",
+          "es": "perder"
+        },
+        {
+          "ar": "amigos",
+          "es": "amigos"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u12-l1",
+          "nombre": "Aficions",
+          "ejercicios": [
+            {
+              "id": "u12-l1-e1",
+              "t": "pick",
+              "es": "leer",
+              "answer": "leyer",
+              "options": [
+                [
+                  "correr",
+                  "🏃"
+                ],
+                [
+                  "bailar",
+                  "💃"
+                ],
+                [
+                  "leyer",
+                  "📖"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l1-e2",
+              "t": "pick",
+              "es": "cantar",
+              "answer": "cantar",
+              "options": [
+                [
+                  "correr",
+                  "🏃"
+                ],
+                [
+                  "cantar",
+                  "🎤"
+                ],
+                [
+                  "nadar",
+                  "🏊"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "bailar",
+                  "bailar"
+                ],
+                [
+                  "mosica",
+                  "música"
+                ],
+                [
+                  "nadar",
+                  "nadar"
+                ],
+                [
+                  "correr",
+                  "correr"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l1-e4",
+              "t": "choice",
+              "ar": "Me cuaca leyer.",
+              "options": [
+                "Me gusta leer.",
+                "Nuestro equipo ha ganado.",
+                "Nunca nado en el río."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u12-l1-e5",
+              "t": "fill",
+              "before": "Me",
+              "after": "cantar.",
+              "es": "Me gusta cantar.",
+              "options": [
+                "cuaca",
+                "cuacan",
+                "gusta"
+              ],
+              "answer": "cuaca"
+            },
+            {
+              "id": "u12-l1-e6",
+              "t": "build",
+              "es": "No me gusta bailar.",
+              "answer": "No me cuaca bailar.",
+              "tiles": [
+                "bailar.",
+                "gusta",
+                "me",
+                "le",
+                "No",
+                "cuaca"
+              ]
+            },
+            {
+              "id": "u12-l1-e7",
+              "t": "choice",
+              "ar": "¿Te cuaca a mosica?",
+              "options": [
+                "Nunca nado en el río.",
+                "A veces canto en casa.",
+                "¿Te gusta la música?"
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u12-l1-e8",
+              "t": "write",
+              "es": "¿Te gusta la música?",
+              "answer": "¿Te cuaca a mosica?"
+            }
+          ]
+        },
+        {
+          "id": "u12-l2",
+          "nombre": "Esportes",
+          "ejercicios": [
+            {
+              "id": "u12-l2-e1",
+              "t": "pick",
+              "es": "deporte",
+              "answer": "esporte",
+              "options": [
+                [
+                  "pilota",
+                  "🏐"
+                ],
+                [
+                  "futbol",
+                  "⚽"
+                ],
+                [
+                  "esporte",
+                  "🏅"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l2-e2",
+              "t": "pick",
+              "es": "fútbol",
+              "answer": "futbol",
+              "options": [
+                [
+                  "equipo",
+                  "👥"
+                ],
+                [
+                  "ganar",
+                  "🏆"
+                ],
+                [
+                  "futbol",
+                  "⚽"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "pilota",
+                  "pelota"
+                ],
+                [
+                  "becicleta",
+                  "bicicleta"
+                ],
+                [
+                  "equipo",
+                  "equipo"
+                ],
+                [
+                  "ganar",
+                  "ganar"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l2-e4",
+              "t": "choice",
+              "ar": "Chugo a futbol.",
+              "options": [
+                "A veces canto en casa.",
+                "Voy en bicicleta.",
+                "Juego al fútbol."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u12-l2-e5",
+              "t": "fill",
+              "before": "O equipo ha",
+              "after": ".",
+              "es": "El equipo ha ganado.",
+              "options": [
+                "ganau",
+                "ganar",
+                "gana"
+              ],
+              "answer": "ganau"
+            },
+            {
+              "id": "u12-l2-e6",
+              "t": "build",
+              "es": "Nuestro equipo ha ganado.",
+              "answer": "O nuestro equipo ha ganau.",
+              "tiles": [
+                "ganau.",
+                "equipo",
+                "nuestro",
+                "O",
+                "bicicleta.",
+                "juego",
+                "ha"
+              ]
+            },
+            {
+              "id": "u12-l2-e7",
+              "t": "choice",
+              "ar": "Voi en becicleta.",
+              "options": [
+                "Voy en bicicleta.",
+                "Me gusta leer.",
+                "Juego al fútbol."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u12-l2-e8",
+              "t": "write",
+              "es": "Voy en bicicleta.",
+              "answer": "Voi en becicleta."
+            }
+          ]
+        },
+        {
+          "id": "u12-l3",
+          "nombre": "Siempre y nunca",
+          "ejercicios": [
+            {
+              "id": "u12-l3-e1",
+              "t": "pick",
+              "es": "siempre",
+              "answer": "siempre",
+              "options": [
+                [
+                  "a vegadas",
+                  "🎲"
+                ],
+                [
+                  "nunca",
+                  "🚫"
+                ],
+                [
+                  "siempre",
+                  "🔁"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l3-e2",
+              "t": "pick",
+              "es": "nunca",
+              "answer": "nunca",
+              "options": [
+                [
+                  "amigos",
+                  "🤝"
+                ],
+                [
+                  "siempre",
+                  "🔁"
+                ],
+                [
+                  "nunca",
+                  "🚫"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "a vegadas",
+                  "a veces"
+                ],
+                [
+                  "chuego",
+                  "juego"
+                ],
+                [
+                  "perder",
+                  "perder"
+                ],
+                [
+                  "amigos",
+                  "amigos"
+                ]
+              ]
+            },
+            {
+              "id": "u12-l3-e4",
+              "t": "choice",
+              "ar": "Siempre chugo con os amigos.",
+              "options": [
+                "A veces canto en casa.",
+                "Siempre juego con los amigos.",
+                "Juego al fútbol."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u12-l3-e5",
+              "t": "fill",
+              "before": "",
+              "after": "nado en o río.",
+              "es": "Nunca nado en el río.",
+              "options": [
+                "Nunca",
+                "Siempre",
+                "A vegadas"
+              ],
+              "answer": "Nunca"
+            },
+            {
+              "id": "u12-l3-e6",
+              "t": "build",
+              "es": "Nunca nado en el río.",
+              "answer": "Nunca nado en o río.",
+              "tiles": [
+                "o",
+                "Nunca",
+                "nado",
+                "juego",
+                "en",
+                "río.",
+                "nunca"
+              ]
+            },
+            {
+              "id": "u12-l3-e7",
+              "t": "choice",
+              "ar": "A vegadas canto en casa.",
+              "options": [
+                "No me gusta bailar.",
+                "Me gusta leer.",
+                "A veces canto en casa."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u12-l3-e8",
+              "t": "write",
+              "es": "A veces canto en casa.",
+              "answer": "A vegadas canto en casa."
+            }
+          ]
+        },
+        {
+          "id": "u12-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u13",
+      "titulo": "La ciudad y las tiendas",
+      "tema": "Ciudat, botiga, crompar, ¿cuánto costa?",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Una ciudad es una <b>ciudat</b> (plural <i>ciudaz</i>). Una tienda es una <b>botiga</b>, la panadería es el <b>forno</b> y la farmacia, la <b>botica</b>.</p><p>«Comprar» se dice <b>crompar</b>: <i>crompo pan en o forno</i>.</p><p>Para preguntar el precio: <i>¿Cuánto costa?</i> Algo caro es <b>carero</b>; algo barato, <b>barato</b>.</p><p>Una tienda puede estar <b>ubierta</b> (abierta) o <b>zarrada</b> (cerrada).</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "ciudat",
+          "es": "ciudad"
+        },
+        {
+          "ar": "plaza",
+          "es": "plaza"
+        },
+        {
+          "ar": "ilesia",
+          "es": "iglesia"
+        },
+        {
+          "ar": "espital",
+          "es": "hospital"
+        },
+        {
+          "ar": "mercau",
+          "es": "mercado"
+        },
+        {
+          "ar": "botica",
+          "es": "farmacia"
+        },
+        {
+          "ar": "botiga",
+          "es": "tienda"
+        },
+        {
+          "ar": "forno",
+          "es": "panadería"
+        },
+        {
+          "ar": "crompar",
+          "es": "comprar"
+        },
+        {
+          "ar": "vender",
+          "es": "vender"
+        },
+        {
+          "ar": "diners",
+          "es": "dinero"
+        },
+        {
+          "ar": "pagar",
+          "es": "pagar"
+        },
+        {
+          "ar": "cien",
+          "es": "cien"
+        },
+        {
+          "ar": "mil",
+          "es": "mil"
+        },
+        {
+          "ar": "carero",
+          "es": "caro"
+        },
+        {
+          "ar": "barato",
+          "es": "barato"
+        },
+        {
+          "ar": "precio",
+          "es": "precio"
+        },
+        {
+          "ar": "ubierto",
+          "es": "abierto"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u13-l1",
+          "nombre": "A ciudat",
+          "ejercicios": [
+            {
+              "id": "u13-l1-e1",
+              "t": "pick",
+              "es": "ciudad",
+              "answer": "ciudat",
+              "options": [
+                [
+                  "ciudat",
+                  "🏙️"
+                ],
+                [
+                  "espital",
+                  "🏥"
+                ],
+                [
+                  "plaza",
+                  "⛲"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l1-e2",
+              "t": "pick",
+              "es": "plaza",
+              "answer": "plaza",
+              "options": [
+                [
+                  "ilesia",
+                  "⛪"
+                ],
+                [
+                  "plaza",
+                  "⛲"
+                ],
+                [
+                  "mercau",
+                  "🧺"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "ilesia",
+                  "iglesia"
+                ],
+                [
+                  "espital",
+                  "hospital"
+                ],
+                [
+                  "mercau",
+                  "mercado"
+                ],
+                [
+                  "botica",
+                  "farmacia"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l1-e4",
+              "t": "choice",
+              "ar": "A botica ye en a plaza.",
+              "options": [
+                "El libro es barato.",
+                "La farmacia está en la plaza.",
+                "El hospital es grande."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u13-l1-e5",
+              "t": "fill",
+              "before": "A",
+              "after": "ye en a plaza.",
+              "es": "La iglesia está en la plaza.",
+              "options": [
+                "ilesia",
+                "espital",
+                "mercau"
+              ],
+              "answer": "ilesia"
+            },
+            {
+              "id": "u13-l1-e6",
+              "t": "build",
+              "es": "Hay un mercado en la ciudad.",
+              "answer": "Bi ha un mercau en a ciudat.",
+              "tiles": [
+                "iglesia",
+                "un",
+                "Bi",
+                "a",
+                "ha",
+                "está",
+                "ciudat.",
+                "mercau",
+                "en"
+              ]
+            },
+            {
+              "id": "u13-l1-e7",
+              "t": "choice",
+              "ar": "O espital ye gran.",
+              "options": [
+                "El libro es barato.",
+                "El hospital es grande.",
+                "¿Dónde está la tienda?"
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u13-l1-e8",
+              "t": "write",
+              "es": "El hospital es grande.",
+              "answer": "O espital ye gran."
+            }
+          ]
+        },
+        {
+          "id": "u13-l2",
+          "nombre": "Crompar",
+          "ejercicios": [
+            {
+              "id": "u13-l2-e1",
+              "t": "pick",
+              "es": "tienda",
+              "answer": "botiga",
+              "options": [
+                [
+                  "diners",
+                  "💶"
+                ],
+                [
+                  "forno",
+                  "🥖"
+                ],
+                [
+                  "botiga",
+                  "🏪"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l2-e2",
+              "t": "pick",
+              "es": "panadería",
+              "answer": "forno",
+              "options": [
+                [
+                  "vender",
+                  "🏷️"
+                ],
+                [
+                  "botiga",
+                  "🏪"
+                ],
+                [
+                  "forno",
+                  "🥖"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "crompar",
+                  "comprar"
+                ],
+                [
+                  "vender",
+                  "vender"
+                ],
+                [
+                  "diners",
+                  "dinero"
+                ],
+                [
+                  "pagar",
+                  "pagar"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l2-e4",
+              "t": "choice",
+              "ar": "Crompo pan en o forno.",
+              "options": [
+                "Compro pan en la panadería.",
+                "La tienda está cerrada.",
+                "¿Dónde está la tienda?"
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u13-l2-e5",
+              "t": "fill",
+              "before": "",
+              "after": "pan en o forno.",
+              "es": "Compro pan en la panadería.",
+              "options": [
+                "Crompo",
+                "Vendo",
+                "Pago"
+              ],
+              "answer": "Crompo"
+            },
+            {
+              "id": "u13-l2-e6",
+              "t": "build",
+              "es": "¿Dónde está la tienda?",
+              "answer": "¿Án ye a botiga?",
+              "tiles": [
+                "botiga?",
+                "¿Án",
+                "tienda",
+                "ye",
+                "compro",
+                "a"
+              ]
+            },
+            {
+              "id": "u13-l2-e7",
+              "t": "choice",
+              "ar": "A botiga ye zarrada.",
+              "options": [
+                "Hay un mercado en la ciudad.",
+                "La tienda está cerrada.",
+                "El hospital es grande."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u13-l2-e8",
+              "t": "write",
+              "es": "La tienda está cerrada.",
+              "answer": "A botiga ye zarrada."
+            }
+          ]
+        },
+        {
+          "id": "u13-l3",
+          "nombre": "¿Cuánto costa?",
+          "ejercicios": [
+            {
+              "id": "u13-l3-e1",
+              "t": "pick",
+              "es": "cien",
+              "answer": "cien",
+              "options": [
+                [
+                  "barato",
+                  "🪙"
+                ],
+                [
+                  "carero",
+                  "💰"
+                ],
+                [
+                  "cien",
+                  "💯"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l3-e2",
+              "t": "pick",
+              "es": "mil",
+              "answer": "mil",
+              "options": [
+                [
+                  "mil",
+                  "🔢"
+                ],
+                [
+                  "barato",
+                  "🪙"
+                ],
+                [
+                  "cien",
+                  "💯"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "carero",
+                  "caro"
+                ],
+                [
+                  "barato",
+                  "barato"
+                ],
+                [
+                  "precio",
+                  "precio"
+                ],
+                [
+                  "ubierto",
+                  "abierto"
+                ]
+              ]
+            },
+            {
+              "id": "u13-l3-e4",
+              "t": "choice",
+              "ar": "¿Cuánto costa o pan?",
+              "options": [
+                "Compro pan en la panadería.",
+                "La farmacia está en la plaza.",
+                "¿Cuánto cuesta el pan?"
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u13-l3-e5",
+              "t": "fill",
+              "before": "O libro ye",
+              "after": ".",
+              "es": "El libro es caro.",
+              "options": [
+                "carero",
+                "barato",
+                "ubierto"
+              ],
+              "answer": "carero"
+            },
+            {
+              "id": "u13-l3-e6",
+              "t": "build",
+              "es": "El libro es barato.",
+              "answer": "O libro ye barato.",
+              "tiles": [
+                "cuesta",
+                "barato.",
+                "O",
+                "libro",
+                "mil",
+                "ye"
+              ]
+            },
+            {
+              "id": "u13-l3-e7",
+              "t": "choice",
+              "ar": "A camisa costa cien euros.",
+              "options": [
+                "Compro pan en la panadería.",
+                "La camisa cuesta cien euros.",
+                "El hospital es grande."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u13-l3-e8",
+              "t": "write",
+              "es": "La camisa cuesta cien euros.",
+              "answer": "A camisa costa cien euros."
+            }
+          ]
+        },
+        {
+          "id": "u13-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u14",
+      "titulo": "La escuela y el trabajo",
+      "tema": "Treballo, escuela, medico, pastor…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>«Trabajar» es <b>treballar</b> y el trabajo, <b>treballo</b>: <i>treballo de maitins</i> (trabajo por la mañana).</p><p>Los oficios cambian en femenino: <i>medico / medica</i>, <i>pastor / pastora</i>, <i>fornero / fornera</i> (panadero), <i>guisandero / guisandera</i> (cocinero).</p><p>«Mediodía» es <b>meyodía</b>, y «empezar» y «terminar», <b>empecipiar</b> y <b>rematar</b>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "medico",
+          "es": "médico"
+        },
+        {
+          "ar": "pastor",
+          "es": "pastor"
+        },
+        {
+          "ar": "fornero",
+          "es": "panadero"
+        },
+        {
+          "ar": "guisandero",
+          "es": "cocinero"
+        },
+        {
+          "ar": "profesor",
+          "es": "profesor"
+        },
+        {
+          "ar": "agricultor",
+          "es": "agricultor"
+        },
+        {
+          "ar": "escuela",
+          "es": "escuela"
+        },
+        {
+          "ar": "clase",
+          "es": "clase"
+        },
+        {
+          "ar": "lápiz",
+          "es": "lápiz"
+        },
+        {
+          "ar": "papel",
+          "es": "papel"
+        },
+        {
+          "ar": "cuaderno",
+          "es": "cuaderno"
+        },
+        {
+          "ar": "alumno",
+          "es": "alumno"
+        },
+        {
+          "ar": "treballo",
+          "es": "trabajo"
+        },
+        {
+          "ar": "treballar",
+          "es": "trabajar"
+        },
+        {
+          "ar": "meyodía",
+          "es": "mediodía"
+        },
+        {
+          "ar": "empecipiar",
+          "es": "empezar"
+        },
+        {
+          "ar": "rematar",
+          "es": "terminar"
+        },
+        {
+          "ar": "hora",
+          "es": "hora"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u14-l1",
+          "nombre": "Oficios",
+          "ejercicios": [
+            {
+              "id": "u14-l1-e1",
+              "t": "pick",
+              "es": "médico",
+              "answer": "medico",
+              "options": [
+                [
+                  "pastor",
+                  "🐑"
+                ],
+                [
+                  "agricultor",
+                  "🚜"
+                ],
+                [
+                  "medico",
+                  "🩺"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l1-e2",
+              "t": "pick",
+              "es": "pastor",
+              "answer": "pastor",
+              "options": [
+                [
+                  "guisandero",
+                  "👨‍🍳"
+                ],
+                [
+                  "agricultor",
+                  "🚜"
+                ],
+                [
+                  "pastor",
+                  "🐑"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "fornero",
+                  "panadero"
+                ],
+                [
+                  "guisandero",
+                  "cocinero"
+                ],
+                [
+                  "profesor",
+                  "profesor"
+                ],
+                [
+                  "agricultor",
+                  "agricultor"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l1-e4",
+              "t": "choice",
+              "ar": "Mi pai ye medico.",
+              "options": [
+                "Los alumnos leen un libro.",
+                "¿En qué trabajas?",
+                "Mi padre es médico."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u14-l1-e5",
+              "t": "fill",
+              "before": "Mi mai ye",
+              "after": ".",
+              "es": "Mi madre es médica.",
+              "options": [
+                "medica",
+                "medico",
+                "medicos"
+              ],
+              "answer": "medica"
+            },
+            {
+              "id": "u14-l1-e6",
+              "t": "build",
+              "es": "Ella es pastora.",
+              "answer": "Ella ye pastora.",
+              "tiles": [
+                "es",
+                "padre",
+                "Ella",
+                "ye",
+                "pastora."
+              ]
+            },
+            {
+              "id": "u14-l1-e7",
+              "t": "choice",
+              "ar": "¿En qué treballas?",
+              "options": [
+                "Aprendemos aragonés en clase.",
+                "¿En qué trabajas?",
+                "Termino el trabajo."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u14-l1-e8",
+              "t": "write",
+              "es": "¿En qué trabajas?",
+              "answer": "¿En qué treballas?"
+            }
+          ]
+        },
+        {
+          "id": "u14-l2",
+          "nombre": "En clase",
+          "ejercicios": [
+            {
+              "id": "u14-l2-e1",
+              "t": "pick",
+              "es": "escuela",
+              "answer": "escuela",
+              "options": [
+                [
+                  "papel",
+                  "📄"
+                ],
+                [
+                  "escuela",
+                  "🏫"
+                ],
+                [
+                  "lápiz",
+                  "✏️"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l2-e2",
+              "t": "pick",
+              "es": "clase",
+              "answer": "clase",
+              "options": [
+                [
+                  "escuela",
+                  "🏫"
+                ],
+                [
+                  "clase",
+                  "🧑‍🏫"
+                ],
+                [
+                  "cuaderno",
+                  "📓"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "lápiz",
+                  "lápiz"
+                ],
+                [
+                  "papel",
+                  "papel"
+                ],
+                [
+                  "cuaderno",
+                  "cuaderno"
+                ],
+                [
+                  "alumno",
+                  "alumno"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l2-e4",
+              "t": "choice",
+              "ar": "Escribo en o cuaderno.",
+              "options": [
+                "Aprendemos aragonés en clase.",
+                "Termino el trabajo.",
+                "Escribo en el cuaderno."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u14-l2-e5",
+              "t": "fill",
+              "before": "Escribo con un",
+              "after": ".",
+              "es": "Escribo con un lápiz.",
+              "options": [
+                "lápiz",
+                "papel",
+                "clase"
+              ],
+              "answer": "lápiz"
+            },
+            {
+              "id": "u14-l2-e6",
+              "t": "build",
+              "es": "Los alumnos leen un libro.",
+              "answer": "Os alumnos leyen un libro.",
+              "tiles": [
+                "alumnos",
+                "leyen",
+                "a",
+                "leen",
+                "Os",
+                "libro.",
+                "un"
+              ]
+            },
+            {
+              "id": "u14-l2-e7",
+              "t": "choice",
+              "ar": "Aprendemos aragonés en clase.",
+              "options": [
+                "Aprendemos aragonés en clase.",
+                "¿En qué trabajas?",
+                "Ella es pastora."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u14-l2-e8",
+              "t": "write",
+              "es": "Aprendemos aragonés en clase.",
+              "answer": "Aprendemos aragonés en clase."
+            }
+          ]
+        },
+        {
+          "id": "u14-l3",
+          "nombre": "A mía chornada",
+          "ejercicios": [
+            {
+              "id": "u14-l3-e1",
+              "t": "pick",
+              "es": "trabajo",
+              "answer": "treballo",
+              "options": [
+                [
+                  "treballo",
+                  "💼"
+                ],
+                [
+                  "hora",
+                  "⏰"
+                ],
+                [
+                  "rematar",
+                  "🏁"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l3-e2",
+              "t": "pick",
+              "es": "trabajar",
+              "answer": "treballar",
+              "options": [
+                [
+                  "hora",
+                  "⏰"
+                ],
+                [
+                  "treballar",
+                  "🛠️"
+                ],
+                [
+                  "treballo",
+                  "💼"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "meyodía",
+                  "mediodía"
+                ],
+                [
+                  "empecipiar",
+                  "empezar"
+                ],
+                [
+                  "rematar",
+                  "terminar"
+                ],
+                [
+                  "hora",
+                  "hora"
+                ]
+              ]
+            },
+            {
+              "id": "u14-l3-e4",
+              "t": "choice",
+              "ar": "Treballo de maitins.",
+              "options": [
+                "Termino el trabajo.",
+                "Los alumnos leen un libro.",
+                "Trabajo por la mañana."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u14-l3-e5",
+              "t": "fill",
+              "before": "A",
+              "after": "minchamos.",
+              "es": "A mediodía comemos.",
+              "options": [
+                "meyodía",
+                "nuei",
+                "hora"
+              ],
+              "answer": "meyodía"
+            },
+            {
+              "id": "u14-l3-e6",
+              "t": "build",
+              "es": "A mediodía comemos.",
+              "answer": "A meyodía minchamos.",
+              "tiles": [
+                "comemos",
+                "trabajo",
+                "minchamos.",
+                "meyodía",
+                "A"
+              ]
+            },
+            {
+              "id": "u14-l3-e7",
+              "t": "choice",
+              "ar": "Remato o treballo.",
+              "options": [
+                "Termino el trabajo.",
+                "A mediodía comemos.",
+                "Trabajo por la mañana."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u14-l3-e8",
+              "t": "write",
+              "es": "Termino el trabajo.",
+              "answer": "Remato o treballo."
+            }
+          ]
+        },
+        {
+          "id": "u14-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u15",
+      "titulo": "Cómo me siento",
+      "tema": "Contento, triste, canso, malo…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Para decir cómo estás se usa el verbo <b>ser</b>: <i>soi contento</i> (estoy contento), <i>yes canso?</i> (¿estás cansado?), <i>ella ye triste</i>.</p><p>«Cansado» es <b>canso</b>, «enfermo» es <b>malo</b> y «resfriado», <b>refriau</b>.</p><p>En el médico: <i>tiengo calentura</i> (tengo fiebre), <i>tiengo tos</i>, <i>me fa mal a cabeza</i>. La medicina es la <b>merecina</b>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "contento",
+          "es": "contento"
+        },
+        {
+          "ar": "triste",
+          "es": "triste"
+        },
+        {
+          "ar": "canso",
+          "es": "cansado"
+        },
+        {
+          "ar": "niervoso",
+          "es": "nervioso"
+        },
+        {
+          "ar": "alegre",
+          "es": "alegre"
+        },
+        {
+          "ar": "preocupau",
+          "es": "preocupado"
+        },
+        {
+          "ar": "malo",
+          "es": "enfermo"
+        },
+        {
+          "ar": "calentura",
+          "es": "fiebre"
+        },
+        {
+          "ar": "tos",
+          "es": "tos"
+        },
+        {
+          "ar": "refriau",
+          "es": "resfriado"
+        },
+        {
+          "ar": "merecina",
+          "es": "medicina"
+        },
+        {
+          "ar": "medico",
+          "es": "médico"
+        },
+        {
+          "ar": "sano",
+          "es": "sano"
+        },
+        {
+          "ar": "feliz",
+          "es": "feliz"
+        },
+        {
+          "ar": "dormir",
+          "es": "dormir"
+        },
+        {
+          "ar": "escansar",
+          "es": "descansar"
+        },
+        {
+          "ar": "bien",
+          "es": "bien"
+        },
+        {
+          "ar": "mal",
+          "es": "mal"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u15-l1",
+          "nombre": "Emocions",
+          "ejercicios": [
+            {
+              "id": "u15-l1-e1",
+              "t": "pick",
+              "es": "contento",
+              "answer": "contento",
+              "options": [
+                [
+                  "contento",
+                  "😊"
+                ],
+                [
+                  "triste",
+                  "😢"
+                ],
+                [
+                  "niervoso",
+                  "😬"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l1-e2",
+              "t": "pick",
+              "es": "triste",
+              "answer": "triste",
+              "options": [
+                [
+                  "canso",
+                  "😩"
+                ],
+                [
+                  "triste",
+                  "😢"
+                ],
+                [
+                  "preocupau",
+                  "😟"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "canso",
+                  "cansado"
+                ],
+                [
+                  "niervoso",
+                  "nervioso"
+                ],
+                [
+                  "alegre",
+                  "alegre"
+                ],
+                [
+                  "preocupau",
+                  "preocupado"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l1-e4",
+              "t": "choice",
+              "ar": "Hue soi muito contento.",
+              "options": [
+                "Hoy estoy muy contento.",
+                "Soy feliz.",
+                "Duermo ocho horas."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u15-l1-e5",
+              "t": "fill",
+              "before": "Ella ye muito",
+              "after": ".",
+              "es": "Ella está muy cansada.",
+              "options": [
+                "cansa",
+                "canso",
+                "cansos"
+              ],
+              "answer": "cansa"
+            },
+            {
+              "id": "u15-l1-e6",
+              "t": "build",
+              "es": "¿Estás cansado?",
+              "answer": "¿Yes canso?",
+              "tiles": [
+                "¿Yes",
+                "estoy",
+                "está",
+                "canso?"
+              ]
+            },
+            {
+              "id": "u15-l1-e7",
+              "t": "choice",
+              "ar": "Ella ye triste.",
+              "options": [
+                "Ella está triste.",
+                "Tengo tos.",
+                "¿Estás cansado?"
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u15-l1-e8",
+              "t": "write",
+              "es": "Ella está triste.",
+              "answer": "Ella ye triste."
+            }
+          ]
+        },
+        {
+          "id": "u15-l2",
+          "nombre": "En o medico",
+          "ejercicios": [
+            {
+              "id": "u15-l2-e1",
+              "t": "pick",
+              "es": "enfermo",
+              "answer": "malo",
+              "options": [
+                [
+                  "medico",
+                  "🩺"
+                ],
+                [
+                  "malo",
+                  "🤒"
+                ],
+                [
+                  "tos",
+                  "😷"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l2-e2",
+              "t": "pick",
+              "es": "fiebre",
+              "answer": "calentura",
+              "options": [
+                [
+                  "medico",
+                  "🩺"
+                ],
+                [
+                  "refriau",
+                  "🤧"
+                ],
+                [
+                  "calentura",
+                  "🌡️"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "tos",
+                  "tos"
+                ],
+                [
+                  "refriau",
+                  "resfriado"
+                ],
+                [
+                  "merecina",
+                  "medicina"
+                ],
+                [
+                  "medico",
+                  "médico"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l2-e4",
+              "t": "choice",
+              "ar": "Tiengo calentura.",
+              "options": [
+                "Estoy resfriado.",
+                "Tengo fiebre.",
+                "Ella está triste."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u15-l2-e5",
+              "t": "fill",
+              "before": "Me fa mal a",
+              "after": ".",
+              "es": "Me duele la cabeza.",
+              "options": [
+                "cabeza",
+                "calentura",
+                "tos"
+              ],
+              "answer": "cabeza"
+            },
+            {
+              "id": "u15-l2-e6",
+              "t": "build",
+              "es": "Estoy resfriado.",
+              "answer": "Soi refriau.",
+              "tiles": [
+                "tengo",
+                "fiebre",
+                "refriau.",
+                "Soi"
+              ]
+            },
+            {
+              "id": "u15-l2-e7",
+              "t": "choice",
+              "ar": "Tiengo tos.",
+              "options": [
+                "Tengo tos.",
+                "Tengo fiebre.",
+                "¿Estás cansado?"
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u15-l2-e8",
+              "t": "write",
+              "es": "Tengo tos.",
+              "answer": "Tiengo tos."
+            }
+          ]
+        },
+        {
+          "id": "u15-l3",
+          "nombre": "Estar bien",
+          "ejercicios": [
+            {
+              "id": "u15-l3-e1",
+              "t": "pick",
+              "es": "sano",
+              "answer": "sano",
+              "options": [
+                [
+                  "sano",
+                  "💪"
+                ],
+                [
+                  "bien",
+                  "👍"
+                ],
+                [
+                  "dormir",
+                  "😴"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l3-e2",
+              "t": "pick",
+              "es": "feliz",
+              "answer": "feliz",
+              "options": [
+                [
+                  "bien",
+                  "👍"
+                ],
+                [
+                  "feliz",
+                  "🥰"
+                ],
+                [
+                  "escansar",
+                  "🛋️"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "dormir",
+                  "dormir"
+                ],
+                [
+                  "escansar",
+                  "descansar"
+                ],
+                [
+                  "bien",
+                  "bien"
+                ],
+                [
+                  "mal",
+                  "mal"
+                ]
+              ]
+            },
+            {
+              "id": "u15-l3-e4",
+              "t": "choice",
+              "ar": "Duermo ueito horas.",
+              "options": [
+                "Hoy estoy muy contento.",
+                "Duermo ocho horas.",
+                "Ella está triste."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u15-l3-e5",
+              "t": "fill",
+              "before": "Hue",
+              "after": "en casa.",
+              "es": "Hoy descanso en casa.",
+              "options": [
+                "escanso",
+                "duermo",
+                "soi"
+              ],
+              "answer": "escanso"
+            },
+            {
+              "id": "u15-l3-e6",
+              "t": "build",
+              "es": "Hoy descanso en casa.",
+              "answer": "Hue escanso en casa.",
+              "tiles": [
+                "casa.",
+                "Hue",
+                "escanso",
+                "descanso",
+                "en",
+                "horas"
+              ]
+            },
+            {
+              "id": "u15-l3-e7",
+              "t": "choice",
+              "ar": "Soi feliz.",
+              "options": [
+                "Tengo fiebre.",
+                "Soy feliz.",
+                "Ella está triste."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u15-l3-e8",
+              "t": "write",
+              "es": "Soy feliz.",
+              "answer": "Soi feliz."
+            }
+          ]
+        },
+        {
+          "id": "u15-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u16",
+      "titulo": "El pasado",
+      "tema": "Ahier, yera, chugaba, estió…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Para lo que pasó ayer, el pasado simple: <i>charré</i> (hablé), <i>chugué</i> (jugué), <i>minchemos</i> (comimos), <i>trobó</i> (encontró).</p><p>Para lo que pasaba antes, el pasado de costumbre: <i>chugaba</i> (jugaba), <i>viviba</i> (vivía), <i>yera</i> (era / estaba).</p><p>El pasado de «ser»: <i>estió</i> (fue). <i>Aragón estió un reino.</i></p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "ahier",
+          "es": "ayer"
+        },
+        {
+          "ar": "antis d'ahier",
+          "es": "anteayer"
+        },
+        {
+          "ar": "chugué",
+          "es": "jugué"
+        },
+        {
+          "ar": "charré",
+          "es": "hablé"
+        },
+        {
+          "ar": "minché",
+          "es": "comí"
+        },
+        {
+          "ar": "trobé",
+          "es": "encontré"
+        },
+        {
+          "ar": "yera",
+          "es": "era"
+        },
+        {
+          "ar": "viviba",
+          "es": "vivía"
+        },
+        {
+          "ar": "chugaba",
+          "es": "jugaba"
+        },
+        {
+          "ar": "antis",
+          "es": "antes"
+        },
+        {
+          "ar": "agora",
+          "es": "ahora"
+        },
+        {
+          "ar": "nineza",
+          "es": "niñez"
+        },
+        {
+          "ar": "rei",
+          "es": "rey"
+        },
+        {
+          "ar": "reino",
+          "es": "reino"
+        },
+        {
+          "ar": "castiello",
+          "es": "castillo"
+        },
+        {
+          "ar": "monesterio",
+          "es": "monasterio"
+        },
+        {
+          "ar": "año",
+          "es": "año"
+        },
+        {
+          "ar": "estió",
+          "es": "fue"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u16-l1",
+          "nombre": "Ahier",
+          "ejercicios": [
+            {
+              "id": "u16-l1-e1",
+              "t": "pick",
+              "es": "ayer",
+              "answer": "ahier",
+              "options": [
+                [
+                  "antis d'ahier",
+                  "🗓️"
+                ],
+                [
+                  "charré",
+                  "💬"
+                ],
+                [
+                  "ahier",
+                  "📅"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l1-e2",
+              "t": "pick",
+              "es": "anteayer",
+              "answer": "antis d'ahier",
+              "options": [
+                [
+                  "trobé",
+                  "🔍"
+                ],
+                [
+                  "antis d'ahier",
+                  "🗓️"
+                ],
+                [
+                  "ahier",
+                  "📅"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "chugué",
+                  "jugué"
+                ],
+                [
+                  "charré",
+                  "hablé"
+                ],
+                [
+                  "minché",
+                  "comí"
+                ],
+                [
+                  "trobé",
+                  "encontré"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l1-e4",
+              "t": "choice",
+              "ar": "Ahier chugué con os amigos.",
+              "options": [
+                "Aragón fue un reino.",
+                "Ayer jugué con los amigos.",
+                "Ayer hablé con mi padre."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u16-l1-e5",
+              "t": "fill",
+              "before": "Ahier",
+              "after": "con mi pai.",
+              "es": "Ayer hablé con mi padre.",
+              "options": [
+                "charré",
+                "charro",
+                "charrará"
+              ],
+              "answer": "charré"
+            },
+            {
+              "id": "u16-l1-e6",
+              "t": "build",
+              "es": "Ayer hablé con mi padre.",
+              "answer": "Ahier charré con mi pai.",
+              "tiles": [
+                "hablé",
+                "Ahier",
+                "pai.",
+                "hoy",
+                "con",
+                "mi",
+                "charré"
+              ]
+            },
+            {
+              "id": "u16-l1-e7",
+              "t": "choice",
+              "ar": "Ahier minchemos pescau.",
+              "options": [
+                "El monasterio es viejo.",
+                "Ayer comimos pescado.",
+                "Mi abuelo era pastor."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u16-l1-e8",
+              "t": "write",
+              "es": "Ayer comimos pescado.",
+              "answer": "Ahier minchemos pescau."
+            }
+          ]
+        },
+        {
+          "id": "u16-l2",
+          "nombre": "Cuan yera chiquet",
+          "ejercicios": [
+            {
+              "id": "u16-l2-e1",
+              "t": "pick",
+              "es": "era",
+              "answer": "yera",
+              "options": [
+                [
+                  "yera",
+                  "🧒"
+                ],
+                [
+                  "nineza",
+                  "👶"
+                ],
+                [
+                  "chugaba",
+                  "🪀"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l2-e2",
+              "t": "pick",
+              "es": "vivía",
+              "answer": "viviba",
+              "options": [
+                [
+                  "chugaba",
+                  "🪀"
+                ],
+                [
+                  "viviba",
+                  "🏡"
+                ],
+                [
+                  "nineza",
+                  "👶"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "chugaba",
+                  "jugaba"
+                ],
+                [
+                  "antis",
+                  "antes"
+                ],
+                [
+                  "agora",
+                  "ahora"
+                ],
+                [
+                  "nineza",
+                  "niñez"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l2-e4",
+              "t": "choice",
+              "ar": "Cuan yera chiquet, viviba en Chaca.",
+              "options": [
+                "Cuando era pequeño, vivía en Jaca.",
+                "Ayer hablé con mi padre.",
+                "Jugaba en la plaza."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u16-l2-e5",
+              "t": "fill",
+              "before": "Mi lolo",
+              "after": "pastor.",
+              "es": "Mi abuelo era pastor.",
+              "options": [
+                "yera",
+                "ye",
+                "estió"
+              ],
+              "answer": "yera"
+            },
+            {
+              "id": "u16-l2-e6",
+              "t": "build",
+              "es": "Jugaba en la plaza.",
+              "answer": "Chugaba en a plaza.",
+              "tiles": [
+                "jugaba",
+                "a",
+                "Chugaba",
+                "era",
+                "plaza.",
+                "en"
+              ]
+            },
+            {
+              "id": "u16-l2-e7",
+              "t": "choice",
+              "ar": "Mi lolo yera pastor.",
+              "options": [
+                "Mi abuelo era pastor.",
+                "El rey vivía en el castillo.",
+                "Jugaba en la plaza."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u16-l2-e8",
+              "t": "write",
+              "es": "Mi abuelo era pastor.",
+              "answer": "Mi lolo yera pastor."
+            }
+          ]
+        },
+        {
+          "id": "u16-l3",
+          "nombre": "Historias",
+          "ejercicios": [
+            {
+              "id": "u16-l3-e1",
+              "t": "pick",
+              "es": "rey",
+              "answer": "rei",
+              "options": [
+                [
+                  "año",
+                  "📆"
+                ],
+                [
+                  "rei",
+                  "👑"
+                ],
+                [
+                  "monesterio",
+                  "⛪"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l3-e2",
+              "t": "pick",
+              "es": "reino",
+              "answer": "reino",
+              "options": [
+                [
+                  "rei",
+                  "👑"
+                ],
+                [
+                  "estió",
+                  "📜"
+                ],
+                [
+                  "reino",
+                  "🏰"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "castiello",
+                  "castillo"
+                ],
+                [
+                  "monesterio",
+                  "monasterio"
+                ],
+                [
+                  "año",
+                  "año"
+                ],
+                [
+                  "estió",
+                  "fue"
+                ]
+              ]
+            },
+            {
+              "id": "u16-l3-e4",
+              "t": "choice",
+              "ar": "Aragón estió un reino.",
+              "options": [
+                "Aragón fue un reino.",
+                "Ayer jugué con los amigos.",
+                "El rey vivía en el castillo."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u16-l3-e5",
+              "t": "fill",
+              "before": "Aragón",
+              "after": "un reino.",
+              "es": "Aragón fue un reino.",
+              "options": [
+                "estió",
+                "yera",
+                "ye"
+              ],
+              "answer": "estió"
+            },
+            {
+              "id": "u16-l3-e6",
+              "t": "build",
+              "es": "El rey vivía en el castillo.",
+              "answer": "O rei viviba en o castiello.",
+              "tiles": [
+                "rey",
+                "rei",
+                "en",
+                "fue",
+                "viviba",
+                "O",
+                "castiello.",
+                "o"
+              ]
+            },
+            {
+              "id": "u16-l3-e7",
+              "t": "choice",
+              "ar": "O monesterio ye viello.",
+              "options": [
+                "El monasterio es viejo.",
+                "Jugaba en la plaza.",
+                "Mi abuelo era pastor."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u16-l3-e8",
+              "t": "write",
+              "es": "El monasterio es viejo.",
+              "answer": "O monesterio ye viello."
+            }
+          ]
+        },
+        {
+          "id": "u16-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u17",
+      "titulo": "Fiestas y tradiciones",
+      "tema": "Jota, dance, foguera, Nadal…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>La <b>fiesta gran</b> es la fiesta mayor del pueblo. En ella hay <b>chigans</b> (gigantes), <b>capezudos</b> (cabezudos) y <b>codetes</b> (cohetes).</p><p>El <b>dance</b> es una representación con bailes y diálogos; los <b>danzans</b> bailan el <b>palotiau</b> (paloteado). Y, claro, la <b>jota</b>.</p><p>La Navidad es <b>Nadal</b> y la hoguera, la <b>foguera</b>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "Nadal",
+          "es": "Navidad"
+        },
+        {
+          "ar": "carnaval",
+          "es": "carnaval"
+        },
+        {
+          "ar": "fiesta gran",
+          "es": "fiesta mayor"
+        },
+        {
+          "ar": "foguera",
+          "es": "hoguera"
+        },
+        {
+          "ar": "codete",
+          "es": "cohete"
+        },
+        {
+          "ar": "procesión",
+          "es": "procesión"
+        },
+        {
+          "ar": "jota",
+          "es": "jota"
+        },
+        {
+          "ar": "dance",
+          "es": "dance"
+        },
+        {
+          "ar": "danzán",
+          "es": "danzante"
+        },
+        {
+          "ar": "palotiau",
+          "es": "paloteado"
+        },
+        {
+          "ar": "gaita",
+          "es": "gaita"
+        },
+        {
+          "ar": "tambor",
+          "es": "tambor"
+        },
+        {
+          "ar": "chigán",
+          "es": "gigante"
+        },
+        {
+          "ar": "capezudo",
+          "es": "cabezudo"
+        },
+        {
+          "ar": "trache",
+          "es": "traje"
+        },
+        {
+          "ar": "baile",
+          "es": "baile"
+        },
+        {
+          "ar": "cantar",
+          "es": "cantar"
+        },
+        {
+          "ar": "tocar",
+          "es": "tocar"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u17-l1",
+          "nombre": "Fiestas de l'año",
+          "ejercicios": [
+            {
+              "id": "u17-l1-e1",
+              "t": "pick",
+              "es": "Navidad",
+              "answer": "Nadal",
+              "options": [
+                [
+                  "codete",
+                  "🎆"
+                ],
+                [
+                  "carnaval",
+                  "🎭"
+                ],
+                [
+                  "Nadal",
+                  "🎄"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l1-e2",
+              "t": "pick",
+              "es": "carnaval",
+              "answer": "carnaval",
+              "options": [
+                [
+                  "Nadal",
+                  "🎄"
+                ],
+                [
+                  "codete",
+                  "🎆"
+                ],
+                [
+                  "carnaval",
+                  "🎭"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "fiesta gran",
+                  "fiesta mayor"
+                ],
+                [
+                  "foguera",
+                  "hoguera"
+                ],
+                [
+                  "codete",
+                  "cohete"
+                ],
+                [
+                  "procesión",
+                  "procesión"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l1-e4",
+              "t": "choice",
+              "ar": "En Nadal minchamos con a familia.",
+              "options": [
+                "Los danzantes bailan el paloteado.",
+                "Bailamos la jota.",
+                "En Navidad comemos con la familia."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u17-l1-e5",
+              "t": "fill",
+              "before": "Fan una",
+              "after": "en a plaza.",
+              "es": "Hacen una hoguera en la plaza.",
+              "options": [
+                "foguera",
+                "codete",
+                "fiesta"
+              ],
+              "answer": "foguera"
+            },
+            {
+              "id": "u17-l1-e6",
+              "t": "build",
+              "es": "La fiesta mayor es en agosto.",
+              "answer": "A fiesta gran ye en agosto.",
+              "tiles": [
+                "hacen",
+                "gran",
+                "ye",
+                "fiesta",
+                "A",
+                "agosto.",
+                "en",
+                "Navidad"
+              ]
+            },
+            {
+              "id": "u17-l1-e7",
+              "t": "choice",
+              "ar": "Fan una foguera en a plaza.",
+              "options": [
+                "Hacen una hoguera en la plaza.",
+                "Bailamos la jota.",
+                "Mi hermano toca la gaita."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u17-l1-e8",
+              "t": "write",
+              "es": "Hacen una hoguera en la plaza.",
+              "answer": "Fan una foguera en a plaza."
+            }
+          ]
+        },
+        {
+          "id": "u17-l2",
+          "nombre": "A jota y o dance",
+          "ejercicios": [
+            {
+              "id": "u17-l2-e1",
+              "t": "pick",
+              "es": "jota",
+              "answer": "jota",
+              "options": [
+                [
+                  "palotiau",
+                  "🥢"
+                ],
+                [
+                  "jota",
+                  "💃"
+                ],
+                [
+                  "gaita",
+                  "🎶"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l2-e2",
+              "t": "pick",
+              "es": "dance",
+              "answer": "dance",
+              "options": [
+                [
+                  "dance",
+                  "🎭"
+                ],
+                [
+                  "palotiau",
+                  "🥢"
+                ],
+                [
+                  "danzán",
+                  "🕺"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "danzán",
+                  "danzante"
+                ],
+                [
+                  "palotiau",
+                  "paloteado"
+                ],
+                [
+                  "gaita",
+                  "gaita"
+                ],
+                [
+                  "tambor",
+                  "tambor"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l2-e4",
+              "t": "choice",
+              "ar": "Bailamos a jota.",
+              "options": [
+                "La fiesta mayor es en agosto.",
+                "Bailamos la jota.",
+                "Cantamos y bailamos."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u17-l2-e5",
+              "t": "fill",
+              "before": "Mi chirmán toca o",
+              "after": ".",
+              "es": "Mi hermano toca el tambor.",
+              "options": [
+                "tambor",
+                "gaita",
+                "dance"
+              ],
+              "answer": "tambor"
+            },
+            {
+              "id": "u17-l2-e6",
+              "t": "build",
+              "es": "Los danzantes bailan el paloteado.",
+              "answer": "Os danzans bailan o palotiau.",
+              "tiles": [
+                "danzans",
+                "bailan",
+                "la",
+                "o",
+                "bailo",
+                "Os",
+                "palotiau."
+              ]
+            },
+            {
+              "id": "u17-l2-e7",
+              "t": "choice",
+              "ar": "Mi chirmán toca a gaita.",
+              "options": [
+                "Ella lleva un traje nuevo.",
+                "Mi hermano toca la gaita.",
+                "Los danzantes bailan el paloteado."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u17-l2-e8",
+              "t": "write",
+              "es": "Mi hermano toca la gaita.",
+              "answer": "Mi chirmán toca a gaita."
+            }
+          ]
+        },
+        {
+          "id": "u17-l3",
+          "nombre": "En a fiesta",
+          "ejercicios": [
+            {
+              "id": "u17-l3-e1",
+              "t": "pick",
+              "es": "gigante",
+              "answer": "chigán",
+              "options": [
+                [
+                  "cantar",
+                  "🎤"
+                ],
+                [
+                  "chigán",
+                  "🗿"
+                ],
+                [
+                  "capezudo",
+                  "🎃"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l3-e2",
+              "t": "pick",
+              "es": "cabezudo",
+              "answer": "capezudo",
+              "options": [
+                [
+                  "capezudo",
+                  "🎃"
+                ],
+                [
+                  "cantar",
+                  "🎤"
+                ],
+                [
+                  "chigán",
+                  "🗿"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "trache",
+                  "traje"
+                ],
+                [
+                  "baile",
+                  "baile"
+                ],
+                [
+                  "cantar",
+                  "cantar"
+                ],
+                [
+                  "tocar",
+                  "tocar"
+                ]
+              ]
+            },
+            {
+              "id": "u17-l3-e4",
+              "t": "choice",
+              "ar": "Veigo os chigans y os capezudos.",
+              "options": [
+                "Veo los gigantes y los cabezudos.",
+                "La fiesta mayor es en agosto.",
+                "Los danzantes bailan el paloteado."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u17-l3-e5",
+              "t": "fill",
+              "before": "Veigo os",
+              "after": ".",
+              "es": "Veo los gigantes.",
+              "options": [
+                "chigans",
+                "chigán",
+                "capezudo"
+              ],
+              "answer": "chigans"
+            },
+            {
+              "id": "u17-l3-e6",
+              "t": "build",
+              "es": "Ella lleva un traje nuevo.",
+              "answer": "Ella leva un trache nuevo.",
+              "tiles": [
+                "Ella",
+                "gigantes",
+                "veo",
+                "nuevo.",
+                "trache",
+                "un",
+                "leva"
+              ]
+            },
+            {
+              "id": "u17-l3-e7",
+              "t": "choice",
+              "ar": "Cantamos y bailamos.",
+              "options": [
+                "Ella lleva un traje nuevo.",
+                "Cantamos y bailamos.",
+                "La fiesta mayor es en agosto."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u17-l3-e8",
+              "t": "write",
+              "es": "Cantamos y bailamos.",
+              "answer": "Cantamos y bailamos."
+            }
+          ]
+        },
+        {
+          "id": "u17-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u18",
+      "titulo": "La cocina aragonesa",
+      "tema": "Migas, ternasco, borraja, corta…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Platos de Aragón: <b>migas</b>, <b>ternasco</b>, <b>borraja</b>… y de postre, <b>presiego</b> (melocotón).</p><p>En la cocina: <b>sartana</b> (sartén), <b>olla</b>, <b>cullara</b> (cuchara), <b>forqueta</b> (tenedor), <b>cuitiello</b> (cuchillo).</p><p>Para dar instrucciones se usa el imperativo: <i>corta</i> (corta), <i>chita</i> (echa), <i>cuece</i> (cuece). <i>Chita sal y aceite.</i></p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "migas",
+          "es": "migas"
+        },
+        {
+          "ar": "ternasco",
+          "es": "ternasco"
+        },
+        {
+          "ar": "borraja",
+          "es": "borraja"
+        },
+        {
+          "ar": "presiego",
+          "es": "melocotón"
+        },
+        {
+          "ar": "castaña",
+          "es": "castaña"
+        },
+        {
+          "ar": "fongos",
+          "es": "setas"
+        },
+        {
+          "ar": "sartana",
+          "es": "sartén"
+        },
+        {
+          "ar": "olla",
+          "es": "olla"
+        },
+        {
+          "ar": "cullara",
+          "es": "cuchara"
+        },
+        {
+          "ar": "forqueta",
+          "es": "tenedor"
+        },
+        {
+          "ar": "cuitiello",
+          "es": "cuchillo"
+        },
+        {
+          "ar": "plato",
+          "es": "plato"
+        },
+        {
+          "ar": "cortar",
+          "es": "cortar"
+        },
+        {
+          "ar": "chitar",
+          "es": "echar"
+        },
+        {
+          "ar": "sal",
+          "es": "sal"
+        },
+        {
+          "ar": "aceite",
+          "es": "aceite"
+        },
+        {
+          "ar": "cocer",
+          "es": "cocer"
+        },
+        {
+          "ar": "guisar",
+          "es": "cocinar"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u18-l1",
+          "nombre": "Platos d'Aragón",
+          "ejercicios": [
+            {
+              "id": "u18-l1-e1",
+              "t": "pick",
+              "es": "migas",
+              "answer": "migas",
+              "options": [
+                [
+                  "presiego",
+                  "🍑"
+                ],
+                [
+                  "migas",
+                  "🍞"
+                ],
+                [
+                  "borraja",
+                  "🥬"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l1-e2",
+              "t": "pick",
+              "es": "ternasco",
+              "answer": "ternasco",
+              "options": [
+                [
+                  "migas",
+                  "🍞"
+                ],
+                [
+                  "borraja",
+                  "🥬"
+                ],
+                [
+                  "ternasco",
+                  "🐑"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "borraja",
+                  "borraja"
+                ],
+                [
+                  "presiego",
+                  "melocotón"
+                ],
+                [
+                  "castaña",
+                  "castaña"
+                ],
+                [
+                  "fongos",
+                  "setas"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l1-e4",
+              "t": "choice",
+              "ar": "Me cuaca o ternasco.",
+              "options": [
+                "Me gusta el ternasco.",
+                "Corta el pan.",
+                "Las migas son muy buenas."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u18-l1-e5",
+              "t": "fill",
+              "before": "En agüerro minchamos",
+              "after": ".",
+              "es": "En otoño comemos setas.",
+              "options": [
+                "fongos",
+                "presiegos",
+                "migas"
+              ],
+              "answer": "fongos"
+            },
+            {
+              "id": "u18-l1-e6",
+              "t": "build",
+              "es": "Las migas son muy buenas.",
+              "answer": "As migas son muito buenas.",
+              "tiles": [
+                "setas",
+                "buenas.",
+                "As",
+                "muito",
+                "migas",
+                "son",
+                "comemos"
+              ]
+            },
+            {
+              "id": "u18-l1-e7",
+              "t": "choice",
+              "ar": "En agüerro minchamos castañas.",
+              "options": [
+                "En otoño comemos castañas.",
+                "Las migas son muy buenas.",
+                "Echa sal y aceite."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u18-l1-e8",
+              "t": "write",
+              "es": "En otoño comemos castañas.",
+              "answer": "En agüerro minchamos castañas."
+            }
+          ]
+        },
+        {
+          "id": "u18-l2",
+          "nombre": "En a cocina",
+          "ejercicios": [
+            {
+              "id": "u18-l2-e1",
+              "t": "pick",
+              "es": "sartén",
+              "answer": "sartana",
+              "options": [
+                [
+                  "cuitiello",
+                  "🔪"
+                ],
+                [
+                  "cullara",
+                  "🥄"
+                ],
+                [
+                  "sartana",
+                  "🍳"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l2-e2",
+              "t": "pick",
+              "es": "olla",
+              "answer": "olla",
+              "options": [
+                [
+                  "cuitiello",
+                  "🔪"
+                ],
+                [
+                  "olla",
+                  "🍲"
+                ],
+                [
+                  "cullara",
+                  "🥄"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "cullara",
+                  "cuchara"
+                ],
+                [
+                  "forqueta",
+                  "tenedor"
+                ],
+                [
+                  "cuitiello",
+                  "cuchillo"
+                ],
+                [
+                  "plato",
+                  "plato"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l2-e4",
+              "t": "choice",
+              "ar": "A cullara y a forqueta.",
+              "options": [
+                "El cuchillo está en la mesa.",
+                "Hay aceite en la sartén.",
+                "La cuchara y el tenedor."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u18-l2-e5",
+              "t": "fill",
+              "before": "Bi ha aceite en a",
+              "after": ".",
+              "es": "Hay aceite en la sartén.",
+              "options": [
+                "sartana",
+                "olla",
+                "cullara"
+              ],
+              "answer": "sartana"
+            },
+            {
+              "id": "u18-l2-e6",
+              "t": "build",
+              "es": "El cuchillo está en la mesa.",
+              "answer": "O cuitiello ye en a mesa.",
+              "tiles": [
+                "O",
+                "a",
+                "cuchara.",
+                "cuitiello",
+                "ye",
+                "el",
+                "mesa.",
+                "en"
+              ]
+            },
+            {
+              "id": "u18-l2-e7",
+              "t": "choice",
+              "ar": "Bi ha aceite en a sartana.",
+              "options": [
+                "La cuchara y el tenedor.",
+                "Las migas son muy buenas.",
+                "Hay aceite en la sartén."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u18-l2-e8",
+              "t": "write",
+              "es": "Hay aceite en la sartén.",
+              "answer": "Bi ha aceite en a sartana."
+            }
+          ]
+        },
+        {
+          "id": "u18-l3",
+          "nombre": "Una receta",
+          "ejercicios": [
+            {
+              "id": "u18-l3-e1",
+              "t": "pick",
+              "es": "cortar",
+              "answer": "cortar",
+              "options": [
+                [
+                  "sal",
+                  "🧂"
+                ],
+                [
+                  "guisar",
+                  "👩‍🍳"
+                ],
+                [
+                  "cortar",
+                  "🔪"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l3-e2",
+              "t": "pick",
+              "es": "echar",
+              "answer": "chitar",
+              "options": [
+                [
+                  "cocer",
+                  "♨️"
+                ],
+                [
+                  "aceite",
+                  "🫒"
+                ],
+                [
+                  "chitar",
+                  "🫗"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "sal",
+                  "sal"
+                ],
+                [
+                  "aceite",
+                  "aceite"
+                ],
+                [
+                  "cocer",
+                  "cocer"
+                ],
+                [
+                  "guisar",
+                  "cocinar"
+                ]
+              ]
+            },
+            {
+              "id": "u18-l3-e4",
+              "t": "choice",
+              "ar": "Corta o pan.",
+              "options": [
+                "Echa sal y aceite.",
+                "Corta el pan.",
+                "El cuchillo está en la mesa."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u18-l3-e5",
+              "t": "fill",
+              "before": "",
+              "after": "sal y aceite.",
+              "es": "Echa sal y aceite.",
+              "options": [
+                "Chita",
+                "Corta",
+                "Cuece"
+              ],
+              "answer": "Chita"
+            },
+            {
+              "id": "u18-l3-e6",
+              "t": "build",
+              "es": "Echa sal y aceite.",
+              "answer": "Chita sal y aceite.",
+              "tiles": [
+                "el",
+                "y",
+                "echa",
+                "Chita",
+                "aceite.",
+                "sal"
+              ]
+            },
+            {
+              "id": "u18-l3-e7",
+              "t": "choice",
+              "ar": "Cuece as borrajas.",
+              "options": [
+                "Corta el pan.",
+                "Cuece las borrajas.",
+                "Hay aceite en la sartén."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u18-l3-e8",
+              "t": "write",
+              "es": "Cuece las borrajas.",
+              "answer": "Cuece as borrajas."
+            }
+          ]
+        },
+        {
+          "id": "u18-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u19",
+      "titulo": "Planes y vacaciones",
+      "tema": "Maitín, viacharé, voi a…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>Para el futuro: <i>viacharé</i> (viajaré), <i>visitarás</i>, <i>tornaremos</i> (volveremos). O, más fácil, <b>voi a</b> + infinitivo: <i>maitín voi a viachar</i>.</p><p>«Mañana» es <b>maitín</b> y «la semana que viene», <i>a semana prosima</i>.</p><p>La playa es la <b>placha</b>, y «volver», <b>tornar</b>.</p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "maitín",
+          "es": "mañana"
+        },
+        {
+          "ar": "semana",
+          "es": "semana"
+        },
+        {
+          "ar": "prosimo",
+          "es": "próximo"
+        },
+        {
+          "ar": "luego",
+          "es": "pronto"
+        },
+        {
+          "ar": "vacacions",
+          "es": "vacaciones"
+        },
+        {
+          "ar": "tornar",
+          "es": "volver"
+        },
+        {
+          "ar": "tren",
+          "es": "tren"
+        },
+        {
+          "ar": "autobús",
+          "es": "autobús"
+        },
+        {
+          "ar": "coche",
+          "es": "coche"
+        },
+        {
+          "ar": "avión",
+          "es": "avión"
+        },
+        {
+          "ar": "maleta",
+          "es": "maleta"
+        },
+        {
+          "ar": "billete",
+          "es": "billete"
+        },
+        {
+          "ar": "mar",
+          "es": "mar"
+        },
+        {
+          "ar": "placha",
+          "es": "playa"
+        },
+        {
+          "ar": "visitar",
+          "es": "visitar"
+        },
+        {
+          "ar": "viachar",
+          "es": "viajar"
+        },
+        {
+          "ar": "nadaremos",
+          "es": "nadaremos"
+        },
+        {
+          "ar": "tornaremos",
+          "es": "volveremos"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u19-l1",
+          "nombre": "Maitín",
+          "ejercicios": [
+            {
+              "id": "u19-l1-e1",
+              "t": "pick",
+              "es": "mañana",
+              "answer": "maitín",
+              "options": [
+                [
+                  "tornar",
+                  "🔙"
+                ],
+                [
+                  "maitín",
+                  "🌅"
+                ],
+                [
+                  "luego",
+                  "⏩"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l1-e2",
+              "t": "pick",
+              "es": "semana",
+              "answer": "semana",
+              "options": [
+                [
+                  "maitín",
+                  "🌅"
+                ],
+                [
+                  "vacacions",
+                  "🏖️"
+                ],
+                [
+                  "semana",
+                  "📅"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "prosimo",
+                  "próximo"
+                ],
+                [
+                  "luego",
+                  "pronto"
+                ],
+                [
+                  "vacacions",
+                  "vacaciones"
+                ],
+                [
+                  "tornar",
+                  "volver"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l1-e4",
+              "t": "choice",
+              "ar": "Maitín voi a viachar.",
+              "options": [
+                "Mañana voy a viajar.",
+                "La semana que viene visitaré a mi abuela.",
+                "Visitaré Huesca y Jaca."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u19-l1-e5",
+              "t": "fill",
+              "before": "Maitín voi a",
+              "after": ".",
+              "es": "Mañana voy a viajar.",
+              "options": [
+                "viachar",
+                "viacharé",
+                "viacho"
+              ],
+              "answer": "viachar"
+            },
+            {
+              "id": "u19-l1-e6",
+              "t": "build",
+              "es": "La semana que viene visitaré a mi abuela.",
+              "answer": "A semana prosima visitaré a mi lola.",
+              "tiles": [
+                "viajar",
+                "voy",
+                "mi",
+                "a",
+                "lola.",
+                "A",
+                "semana",
+                "visitaré",
+                "prosima"
+              ]
+            },
+            {
+              "id": "u19-l1-e7",
+              "t": "choice",
+              "ar": "Tornaremos luego.",
+              "options": [
+                "La semana que viene visitaré a mi abuela.",
+                "¿Tienes el billete?",
+                "Volveremos pronto."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u19-l1-e8",
+              "t": "write",
+              "es": "Volveremos pronto.",
+              "answer": "Tornaremos luego."
+            }
+          ]
+        },
+        {
+          "id": "u19-l2",
+          "nombre": "Viaches",
+          "ejercicios": [
+            {
+              "id": "u19-l2-e1",
+              "t": "pick",
+              "es": "tren",
+              "answer": "tren",
+              "options": [
+                [
+                  "autobús",
+                  "🚌"
+                ],
+                [
+                  "maleta",
+                  "🧳"
+                ],
+                [
+                  "tren",
+                  "🚆"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l2-e2",
+              "t": "pick",
+              "es": "autobús",
+              "answer": "autobús",
+              "options": [
+                [
+                  "autobús",
+                  "🚌"
+                ],
+                [
+                  "billete",
+                  "🎫"
+                ],
+                [
+                  "maleta",
+                  "🧳"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "coche",
+                  "coche"
+                ],
+                [
+                  "avión",
+                  "avión"
+                ],
+                [
+                  "maleta",
+                  "maleta"
+                ],
+                [
+                  "billete",
+                  "billete"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l2-e4",
+              "t": "choice",
+              "ar": "Viacharemos en tren.",
+              "options": [
+                "Viajaremos en tren.",
+                "Visitaré Huesca y Jaca.",
+                "La semana que viene visitaré a mi abuela."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u19-l2-e5",
+              "t": "fill",
+              "before": "Viacharemos en",
+              "after": ".",
+              "es": "Viajaremos en avión.",
+              "options": [
+                "avión",
+                "maleta",
+                "billete"
+              ],
+              "answer": "avión"
+            },
+            {
+              "id": "u19-l2-e6",
+              "t": "build",
+              "es": "Mi maleta es grande.",
+              "answer": "A mía maleta ye gran.",
+              "tiles": [
+                "maleta",
+                "ye",
+                "gran.",
+                "mía",
+                "viajaremos",
+                "tren",
+                "A"
+              ]
+            },
+            {
+              "id": "u19-l2-e7",
+              "t": "choice",
+              "ar": "¿Tiens o billete?",
+              "options": [
+                "¿Tienes el billete?",
+                "Nadaremos en la playa.",
+                "Volveremos pronto."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u19-l2-e8",
+              "t": "write",
+              "es": "¿Tienes el billete?",
+              "answer": "¿Tiens o billete?"
+            }
+          ]
+        },
+        {
+          "id": "u19-l3",
+          "nombre": "Viacharé…",
+          "ejercicios": [
+            {
+              "id": "u19-l3-e1",
+              "t": "pick",
+              "es": "mar",
+              "answer": "mar",
+              "options": [
+                [
+                  "nadaremos",
+                  "🏊"
+                ],
+                [
+                  "mar",
+                  "🌊"
+                ],
+                [
+                  "visitar",
+                  "🗺️"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l3-e2",
+              "t": "pick",
+              "es": "playa",
+              "answer": "placha",
+              "options": [
+                [
+                  "tornaremos",
+                  "🔙"
+                ],
+                [
+                  "placha",
+                  "🏖️"
+                ],
+                [
+                  "mar",
+                  "🌊"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "visitar",
+                  "visitar"
+                ],
+                [
+                  "viachar",
+                  "viajar"
+                ],
+                [
+                  "nadaremos",
+                  "nadaremos"
+                ],
+                [
+                  "tornaremos",
+                  "volveremos"
+                ]
+              ]
+            },
+            {
+              "id": "u19-l3-e4",
+              "t": "choice",
+              "ar": "En vacacions viacharemos ta o mar.",
+              "options": [
+                "Visitaré Huesca y Jaca.",
+                "En vacaciones viajaremos al mar.",
+                "Mi maleta es grande."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u19-l3-e5",
+              "t": "fill",
+              "before": "Nadaremos en a",
+              "after": ".",
+              "es": "Nadaremos en la playa.",
+              "options": [
+                "placha",
+                "mar",
+                "tren"
+              ],
+              "answer": "placha"
+            },
+            {
+              "id": "u19-l3-e6",
+              "t": "build",
+              "es": "Visitaré Huesca y Jaca.",
+              "answer": "Visitaré Uesca y Chaca.",
+              "tiles": [
+                "Visitaré",
+                "Chaca.",
+                "Uesca",
+                "y",
+                "nadamos",
+                "playa"
+              ]
+            },
+            {
+              "id": "u19-l3-e7",
+              "t": "choice",
+              "ar": "Nadaremos en a placha.",
+              "options": [
+                "La semana que viene visitaré a mi abuela.",
+                "Nadaremos en la playa.",
+                "¿Tienes el billete?"
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u19-l3-e8",
+              "t": "write",
+              "es": "Nadaremos en la playa.",
+              "answer": "Nadaremos en a placha."
+            }
+          ]
+        },
+        {
+          "id": "u19-l4",
+          "nombre": "Repaso",
+          "repaso": true
+        }
+      ],
+      "revisar": []
+    },
+    {
+      "id": "u20",
+      "titulo": "La montaña",
+      "tema": "Tuca, refuchio, nieu, plegar…",
+      "consejo": {
+        "titulo": "Consejo de Dragolingüe",
+        "html": "<p>En la montaña: la cumbre es la <b>tuca</b>, el refugio es el <b>refuchio</b>, la nieve es la <b>nieu</b> y el glaciar, la <b>chelera</b>.</p><p>«Viento» se dice <b>aire</b>: <i>fa aire</i> (hace viento). La mochila es la <b>muchila</b>.</p><p>«Llegar» es <b>plegar</b>; «arriba», <b>alto</b>, y «abajo», <b>abaixo</b>. <i>¡Hemos puyau ta o pico!</i></p>"
+      },
+      "vocabulario": [
+        {
+          "ar": "tuca",
+          "es": "cumbre"
+        },
+        {
+          "ar": "ibón",
+          "es": "lago de montaña"
+        },
+        {
+          "ar": "chelera",
+          "es": "glaciar"
+        },
+        {
+          "ar": "nieu",
+          "es": "nieve"
+        },
+        {
+          "ar": "peña",
+          "es": "roca"
+        },
+        {
+          "ar": "val",
+          "es": "valle"
+        },
+        {
+          "ar": "refuchio",
+          "es": "refugio"
+        },
+        {
+          "ar": "muchila",
+          "es": "mochila"
+        },
+        {
+          "ar": "aire",
+          "es": "viento"
+        },
+        {
+          "ar": "fa frío",
+          "es": "hace frío"
+        },
+        {
+          "ar": "escansar",
+          "es": "descansar"
+        },
+        {
+          "ar": "dormir",
+          "es": "dormir"
+        },
+        {
+          "ar": "plegar",
+          "es": "llegar"
+        },
+        {
+          "ar": "alto",
+          "es": "arriba"
+        },
+        {
+          "ar": "abaixo",
+          "es": "abajo"
+        },
+        {
+          "ar": "puyar",
+          "es": "subir"
+        },
+        {
+          "ar": "baixar",
+          "es": "bajar"
+        },
+        {
+          "ar": "pico",
+          "es": "pico"
+        }
+      ],
+      "lecciones": [
+        {
+          "id": "u20-l1",
+          "nombre": "Tucas y ibons",
+          "ejercicios": [
+            {
+              "id": "u20-l1-e1",
+              "t": "pick",
+              "es": "cumbre",
+              "answer": "tuca",
+              "options": [
+                [
+                  "tuca",
+                  "⛰️"
+                ],
+                [
+                  "chelera",
+                  "🧊"
+                ],
+                [
+                  "peña",
+                  "🪨"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l1-e2",
+              "t": "pick",
+              "es": "lago de montaña",
+              "answer": "ibón",
+              "options": [
+                [
+                  "chelera",
+                  "🧊"
+                ],
+                [
+                  "ibón",
+                  "💧"
+                ],
+                [
+                  "peña",
+                  "🪨"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l1-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "chelera",
+                  "glaciar"
+                ],
+                [
+                  "nieu",
+                  "nieve"
+                ],
+                [
+                  "peña",
+                  "roca"
+                ],
+                [
+                  "val",
+                  "valle"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l1-e4",
+              "t": "choice",
+              "ar": "Bi ha nieu en a tuca.",
+              "options": [
+                "Hay nieve en la cumbre.",
+                "El lago está en el valle.",
+                "Dormimos en el refugio."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u20-l1-e5",
+              "t": "fill",
+              "before": "Bi ha nieu en a",
+              "after": ".",
+              "es": "Hay nieve en la cumbre.",
+              "options": [
+                "tuca",
+                "val",
+                "peña"
+              ],
+              "answer": "tuca"
+            },
+            {
+              "id": "u20-l1-e6",
+              "t": "build",
+              "es": "El lago está en el valle.",
+              "answer": "O ibón ye en a val.",
+              "tiles": [
+                "a",
+                "ibón",
+                "en",
+                "val.",
+                "ye",
+                "nieve",
+                "O",
+                "el"
+              ]
+            },
+            {
+              "id": "u20-l1-e7",
+              "t": "choice",
+              "ar": "A chelera ye muito gran.",
+              "options": [
+                "Dormimos en el refugio.",
+                "Descansamos en el refugio.",
+                "El glaciar es muy grande."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u20-l1-e8",
+              "t": "write",
+              "es": "El glaciar es muy grande.",
+              "answer": "A chelera ye muito gran."
+            }
+          ]
+        },
+        {
+          "id": "u20-l2",
+          "nombre": "O refuchio",
+          "ejercicios": [
+            {
+              "id": "u20-l2-e1",
+              "t": "pick",
+              "es": "refugio",
+              "answer": "refuchio",
+              "options": [
+                [
+                  "dormir",
+                  "😴"
+                ],
+                [
+                  "refuchio",
+                  "🛖"
+                ],
+                [
+                  "aire",
+                  "🌬️"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l2-e2",
+              "t": "pick",
+              "es": "mochila",
+              "answer": "muchila",
+              "options": [
+                [
+                  "escansar",
+                  "😌"
+                ],
+                [
+                  "muchila",
+                  "🎒"
+                ],
+                [
+                  "dormir",
+                  "😴"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l2-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "aire",
+                  "viento"
+                ],
+                [
+                  "fa frío",
+                  "hace frío"
+                ],
+                [
+                  "escansar",
+                  "descansar"
+                ],
+                [
+                  "dormir",
+                  "dormir"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l2-e4",
+              "t": "choice",
+              "ar": "Dormimos en o refuchio.",
+              "options": [
+                "Ahora bajamos al refugio.",
+                "Dormimos en el refugio.",
+                "El lago está en el valle."
+              ],
+              "answer": 1
+            },
+            {
+              "id": "u20-l2-e5",
+              "t": "fill",
+              "before": "Dormimos en o",
+              "after": ".",
+              "es": "Dormimos en el refugio.",
+              "options": [
+                "refuchio",
+                "muchila",
+                "aire"
+              ],
+              "answer": "refuchio"
+            },
+            {
+              "id": "u20-l2-e6",
+              "t": "build",
+              "es": "Hace viento.",
+              "answer": "Fa aire.",
+              "tiles": [
+                "aire.",
+                "viento.",
+                "refugio",
+                "Fa"
+              ]
+            },
+            {
+              "id": "u20-l2-e7",
+              "t": "choice",
+              "ar": "Escansamos en o refuchio.",
+              "options": [
+                "Descansamos en el refugio.",
+                "El glaciar es muy grande.",
+                "Dormimos en el refugio."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u20-l2-e8",
+              "t": "write",
+              "es": "Descansamos en el refugio.",
+              "answer": "Escansamos en o refuchio."
+            }
+          ]
+        },
+        {
+          "id": "u20-l3",
+          "nombre": "¡Hemos plegau!",
+          "ejercicios": [
+            {
+              "id": "u20-l3-e1",
+              "t": "pick",
+              "es": "llegar",
+              "answer": "plegar",
+              "options": [
+                [
+                  "alto",
+                  "⬆️"
+                ],
+                [
+                  "pico",
+                  "🏔️"
+                ],
+                [
+                  "plegar",
+                  "🏁"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l3-e2",
+              "t": "pick",
+              "es": "arriba",
+              "answer": "alto",
+              "options": [
+                [
+                  "alto",
+                  "⬆️"
+                ],
+                [
+                  "pico",
+                  "🏔️"
+                ],
+                [
+                  "plegar",
+                  "🏁"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l3-e3",
+              "t": "match",
+              "pairs": [
+                [
+                  "abaixo",
+                  "abajo"
+                ],
+                [
+                  "puyar",
+                  "subir"
+                ],
+                [
+                  "baixar",
+                  "bajar"
+                ],
+                [
+                  "pico",
+                  "pico"
+                ]
+              ]
+            },
+            {
+              "id": "u20-l3-e4",
+              "t": "choice",
+              "ar": "¡Hemos puyau ta o pico!",
+              "options": [
+                "¡Hemos subido al pico!",
+                "Hace viento.",
+                "El glaciar es muy grande."
+              ],
+              "answer": 0
+            },
+            {
+              "id": "u20-l3-e5",
+              "t": "fill",
+              "before": "¡Hemos",
+              "after": "ta o pico!",
+              "es": "¡Hemos subido al pico!",
+              "options": [
+                "puyau",
+                "baixau",
+                "plegar"
+              ],
+              "answer": "puyau"
+            },
+            {
+              "id": "u20-l3-e6",
+              "t": "build",
+              "es": "Ahora bajamos al refugio.",
+              "answer": "Agora baixamos ta o refuchio.",
+              "tiles": [
+                "baixamos",
+                "subido",
+                "ta",
+                "o",
+                "Agora",
+                "abajo:",
+                "refuchio."
+              ]
+            },
+            {
+              "id": "u20-l3-e7",
+              "t": "choice",
+              "ar": "Mira abaixo: bi ha un ibón.",
+              "options": [
+                "Dormimos en el refugio.",
+                "Hay nieve en la cumbre.",
+                "Mira abajo: hay un lago."
+              ],
+              "answer": 2
+            },
+            {
+              "id": "u20-l3-e8",
+              "t": "write",
+              "es": "Mira abajo: hay un lago.",
+              "answer": "Mira abaixo: bi ha un ibón."
+            }
+          ]
+        },
+        {
+          "id": "u20-l4",
           "nombre": "Repaso",
           "repaso": true
         }
