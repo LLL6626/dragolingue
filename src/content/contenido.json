@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -296,6 +296,12 @@
                 "Buenas",
                 "nuei,"
               ]
+            },
+            {
+              "id": "u1-l1-w",
+              "t": "write",
+              "es": "Hola, ¿qué tal?",
+              "answer": "Ola, ¿qué tal?"
             }
           ]
         },
@@ -406,6 +412,12 @@
                 "¿De dónde eres?"
               ],
               "answer": 0
+            },
+            {
+              "id": "u1-l2-w",
+              "t": "write",
+              "es": "Me llamo Marta.",
+              "answer": "Me clamo Marta."
             }
           ]
         },
@@ -612,6 +624,12 @@
                 "mayestro"
               ],
               "answer": "muller"
+            },
+            {
+              "id": "u2-l1-w",
+              "t": "write",
+              "es": "Una niña y un niño.",
+              "answer": "Una chiqueta y un chiquet."
             }
           ]
         },
@@ -714,6 +732,12 @@
                 "muller",
                 "ye"
               ]
+            },
+            {
+              "id": "u2-l2-w",
+              "t": "write",
+              "es": "Yo soy maestra.",
+              "answer": "Yo soi mayestra."
             }
           ]
         },
@@ -832,6 +856,12 @@
                 "Ella es mi hija."
               ],
               "answer": 0
+            },
+            {
+              "id": "u2-l3-w",
+              "t": "write",
+              "es": "Ella es mi abuela.",
+              "answer": "Ella ye mi lola."
             }
           ]
         },
@@ -1059,6 +1089,12 @@
                 "Tienes dos niños."
               ],
               "answer": 0
+            },
+            {
+              "id": "u3-l1-w",
+              "t": "write",
+              "es": "Tengo dos hermanos.",
+              "answer": "Tiengo dos chirmans."
             }
           ]
         },
@@ -1175,6 +1211,12 @@
                 "Trece y siete son veinte."
               ],
               "answer": 2
+            },
+            {
+              "id": "u3-l2-w",
+              "t": "write",
+              "es": "Tienes quince amigos.",
+              "answer": "Tiens quince amigos."
             }
           ]
         },
@@ -1301,6 +1343,12 @@
                 "libro",
                 "tiene"
               ]
+            },
+            {
+              "id": "u3-l3-w",
+              "t": "write",
+              "es": "Tengo un libro verde.",
+              "answer": "Tiengo un libro verde."
             }
           ]
         },
@@ -1510,6 +1558,12 @@
                 "vin,",
                 "tiengo"
               ]
+            },
+            {
+              "id": "u4-l1-w",
+              "t": "write",
+              "es": "Querría agua, por favor.",
+              "answer": "Querría augua, por favor."
             }
           ]
         },
@@ -1634,6 +1688,12 @@
                 "carne.",
                 "beber"
               ]
+            },
+            {
+              "id": "u4-l2-w",
+              "t": "write",
+              "es": "Comemos pan y queso.",
+              "answer": "Minchamos pan y queso."
             }
           ]
         },
@@ -1724,6 +1784,15 @@
                 "Ella bebe leche."
               ],
               "answer": 2
+            },
+            {
+              "id": "u4-l3-w",
+              "t": "write",
+              "es": "Las patatas y los huevos.",
+              "answer": "As trunfas y os uegos.",
+              "alt": [
+                "As trunfas y os güegos."
+              ]
             }
           ]
         },
@@ -1915,6 +1984,12 @@
                 "cambra"
               ],
               "answer": "cambra"
+            },
+            {
+              "id": "u5-l1-w",
+              "t": "write",
+              "es": "Esta es mi habitación.",
+              "answer": "Ista ye a mía cambra."
             }
           ]
         },
@@ -1986,6 +2061,12 @@
                 "ha",
                 "tiene"
               ]
+            },
+            {
+              "id": "u5-l2-w",
+              "t": "write",
+              "es": "No hay ninguna silla.",
+              "answer": "No bi ha garra silla."
             }
           ]
         },
@@ -2073,6 +2154,12 @@
                 "Os",
                 "mesa."
               ]
+            },
+            {
+              "id": "u5-l3-w",
+              "t": "write",
+              "es": "Hay un hogar en la cocina.",
+              "answer": "Bi ha un fogaril en a cocina."
             }
           ]
         },
@@ -2256,6 +2343,12 @@
                 "boca"
               ],
               "answer": "uellos"
+            },
+            {
+              "id": "u6-l1-w",
+              "t": "write",
+              "es": "Tiene los ojos verdes.",
+              "answer": "Tiene os uellos verdes."
             }
           ]
         },
@@ -2362,6 +2455,12 @@
                 "mans.",
                 "tiens"
               ]
+            },
+            {
+              "id": "u6-l2-w",
+              "t": "write",
+              "es": "Los pies y las manos.",
+              "answer": "Os piez y as mans."
             }
           ]
         },
@@ -2439,6 +2538,12 @@
                 "Me duele la cabeza."
               ],
               "answer": 2
+            },
+            {
+              "id": "u6-l3-w",
+              "t": "write",
+              "es": "Tiene los ojos grandes.",
+              "answer": "Tiene os uellos grans."
             }
           ]
         },
@@ -2637,6 +2742,12 @@
                 "roya.",
                 "mixín"
               ]
+            },
+            {
+              "id": "u7-l1-w",
+              "t": "write",
+              "es": "Tengo un perro y dos gatos.",
+              "answer": "Tiengo un can y dos mixins."
             }
           ]
         },
@@ -2763,6 +2874,12 @@
                 "ovella.",
                 "ye"
               ]
+            },
+            {
+              "id": "u7-l2-w",
+              "t": "write",
+              "es": "En el monte hay vacas y cabras.",
+              "answer": "En o mont bi ha vacas y crabas."
             }
           ]
         },
@@ -2870,6 +2987,12 @@
                 "grans.",
                 "una"
               ]
+            },
+            {
+              "id": "u7-l3-w",
+              "t": "write",
+              "es": "Hay un oso en el monte.",
+              "answer": "Bi ha un onso en o mont."
             }
           ]
         },
@@ -3067,6 +3190,12 @@
                 "ahier",
                 "yes"
               ]
+            },
+            {
+              "id": "u8-l1-w",
+              "t": "write",
+              "es": "Mañana es jueves.",
+              "answer": "Maitín ye chueves."
             }
           ]
         },
@@ -3155,6 +3284,12 @@
                 "aviento",
                 "sol."
               ]
+            },
+            {
+              "id": "u8-l2-w",
+              "t": "write",
+              "es": "En diciembre hace frío.",
+              "answer": "En aviento fa frío."
             }
           ]
         },
@@ -3270,6 +3405,12 @@
                 "hue",
                 "fa"
               ]
+            },
+            {
+              "id": "u8-l3-w",
+              "t": "write",
+              "es": "En invierno hace frío.",
+              "answer": "En hibierno fa frío."
             }
           ]
         },
@@ -3417,6 +3558,12 @@
                 "Mi abuela es de Barbastro."
               ],
               "answer": 0
+            },
+            {
+              "id": "u9-l1-w",
+              "t": "write",
+              "es": "Yo soy de Huesca.",
+              "answer": "Yo soi de Uesca."
             }
           ]
         },
@@ -3496,6 +3643,12 @@
                 "voi",
                 "Huesca."
               ]
+            },
+            {
+              "id": "u9-l2-w",
+              "t": "write",
+              "es": "Voy a Jaca.",
+              "answer": "Voi ta Chaca."
             }
           ]
         },
@@ -3604,6 +3757,12 @@
                 "ha",
                 "puent"
               ]
+            },
+            {
+              "id": "u9-l3-w",
+              "t": "write",
+              "es": "Hay un puente en el pueblo.",
+              "answer": "Bi ha un puent en o lugar."
             }
           ]
         },
@@ -3788,6 +3947,12 @@
                 "Charro",
                 "minchamos"
               ]
+            },
+            {
+              "id": "u10-l1-w",
+              "t": "write",
+              "es": "El niño llora.",
+              "answer": "O chiquet plora."
             }
           ]
         },
@@ -3876,6 +4041,12 @@
                 "¿Has visto el monte?"
               ],
               "answer": 1
+            },
+            {
+              "id": "u10-l2-w",
+              "t": "write",
+              "es": "Hoy he comido en casa.",
+              "answer": "Hue he minchau en casa."
             }
           ]
         },
@@ -3953,6 +4124,12 @@
                 "Mi padre ha bajado del monte."
               ],
               "answer": 1
+            },
+            {
+              "id": "u10-l3-w",
+              "t": "write",
+              "es": "¿Qué has hecho hoy?",
+              "answer": "¿Qué has feito hue?"
             }
           ]
         },

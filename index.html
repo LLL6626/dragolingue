@@ -196,6 +196,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .fill-sentence{font-family:var(--f-display);font-size:1.6rem;font-weight:700;margin-bottom:6px}
 .fill-sentence .gap{display:inline-block;min-width:96px;border-bottom:3px solid var(--accent);text-align:center;color:var(--accent-ink)}
 .fill-es{color:var(--muted);margin-bottom:20px}
+.write-box{width:100%;font:inherit;font-weight:700;font-size:1.15rem;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:12px 14px;resize:none}
+.write-box:focus{outline:none;border-color:var(--accent)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .match-col{display:flex;flex-direction:column;gap:10px}
 .mbtn{padding:12px 8px;font-size:1rem}
@@ -346,7 +349,8 @@ let tab = "learn";
 const $app = document.getElementById("app");
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-const norm = s => s.toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ").trim();
+const norm = s => s.toLowerCase().replace(/[’‘´`]/g, "'").replace(/[¿?¡!.,;:«»"“”()]/g, "").replace(/\s+/g, " ").trim();
+const sinTildes = s => norm(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 function toast(msg) {
   const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t);
   setTimeout(() => t.remove(), 2400);
@@ -487,7 +491,7 @@ function renderEx() {
       <div class="coach"><div class="mini">${dragon("happy")}</div><div class="bubble">${esc(ex.ar)}</div></div>
       <div class="opts">${ex.options.map((o, i) => `<button class="opt" data-v="${i}">${esc(o)}</button>`).join("")}</div>`;
   } else if (ex.t === "build") {
-    body = `<p class="q-kind">Escribe en aragonés</p>
+    body = `<p class="q-kind">Construye la frase en aragonés</p>
       <div class="coach"><div class="mini">${dragon("think")}</div><div class="bubble">${esc(ex.es)}</div></div>
       <div class="answer-line" id="line"></div>
       <div class="bank" id="bank">${shuffle(ex.tiles.map((w, i) => [w, i])).map(([w, i]) => `<button class="tile" data-i="${i}">${esc(w)}</button>`).join("")}</div>`;
@@ -496,6 +500,11 @@ function renderEx() {
       <p class="fill-sentence">${esc(ex.before)} <span class="gap" id="gap">&nbsp;</span> ${esc(ex.after)}</p>
       <p class="fill-es">${esc(ex.es)}</p>
       <div class="opts">${shuffle(ex.options).map(o => `<button class="opt" data-v="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
+  } else if (ex.t === "write") {
+    body = `<p class="q-kind">Escribe en aragonés</p>
+      <div class="coach"><div class="mini">${dragon("think")}</div><div class="bubble">${esc(ex.es)}</div></div>
+      <label class="sr-only" for="write">Tu respuesta en aragonés</label>
+      <textarea id="write" class="write-box" rows="3" lang="an" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" placeholder="Escribe aquí en aragonés…"></textarea>`;
   } else if (ex.t === "match") {
     body = `<p class="q-kind">Une las parejas</p><h1 class="q-title">Aragonés y castellano</h1>
       <div class="match"><div class="match-col">${shuffle(ex.pairs.map((p, i) => [p[0], i])).map(([w, i]) => `<button class="mbtn" data-side="a" data-i="${i}">${esc(w)}</button>`).join("")}</div>
@@ -531,6 +540,12 @@ function wire(ex) {
       line.appendChild(t); setReady(true);
     });
   }
+  if (ex.t === "write") {
+    const box = $app.querySelector("#write");
+    box.oninput = () => { st.sel = box.value; setReady(norm(box.value).length > 0); };
+    box.onkeydown = e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); const c = $app.querySelector("#check"); if (c && !c.disabled) c.click(); } };
+    setTimeout(() => box.focus(), 50);
+  }
   if (ex.t === "match") {
     let pick = null;
     $app.querySelectorAll(".mbtn").forEach(b => b.onclick = () => {
@@ -557,10 +572,18 @@ function wire(ex) {
     if (ex.t === "choice") { ok = +st.sel === ex.answer; correct = ex.options[ex.answer]; }
     if (ex.t === "fill") { ok = st.sel === ex.answer; correct = `${ex.before} ${ex.answer} ${ex.after}`; }
     if (ex.t === "build") { ok = norm(st.built.map(i => ex.tiles[i]).join(" ")) === norm(ex.answer); correct = ex.answer; }
-    resolve(ok, correct);
+    let note = "";
+    if (ex.t === "write") {
+      const said = st.sel || "", valid = [ex.answer].concat(ex.alt || []);
+      correct = ex.answer;
+      if (valid.some(v => norm(v) === norm(said))) ok = true;
+      else { const v = valid.find(v => sinTildes(v) === sinTildes(said)); if (v) { ok = true; note = `Ojo con las tildes: se escribe «${v.replace(/[.]$/, "")}».`; } }
+      const box = $app.querySelector("#write"); if (box) { box.readOnly = true; box.blur(); }
+    }
+    resolve(ok, correct, note);
   };
 }
-function resolve(ok, correct) {
+function resolve(ok, correct, note) {
   const st = L.state; st.locked = true;
   const ex = st.ex;
   if (ok) { L.right++; if (!L.missed.has(ex) && !st.matchErr) L.firstTry++; }
@@ -570,7 +593,7 @@ function resolve(ok, correct) {
   sfx(ok ? "ok" : "ko");
   bar.className = "checkbar " + (ok ? "ok" : "ko");
   bar.innerHTML = `<div class="checkbar-inner"><div class="fb"><div class="mini">${dragon(ok ? "cheer" : "sad")}</div>
-    <div>${ok ? `<h3>${PRAISE[Math.floor(Math.random() * PRAISE.length)]}</h3>` :
+    <div>${ok ? `<h3>${PRAISE[Math.floor(Math.random() * PRAISE.length)]}</h3>${note ? `<p>${esc(note)}</p>` : ""}` :
       `<h3>${out ? "Te has quedado sin vidas" : "Casi lo tienes"}</h3><p>Respuesta correcta: ${esc(correct)}</p>`}</div></div>
     <button class="big-btn ${ok ? "" : "red"}" id="next">${out ? "Volver al mapa" : "Continuar"}</button></div>`;
   const prog = $app.querySelector(".progress i"); if (prog) prog.style.width = Math.round(L.right / L.total * 100) + "%";

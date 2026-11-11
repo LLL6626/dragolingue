@@ -56,6 +56,10 @@ for (const u of data.unidades ?? []) {
         case 'fill':
           if (!(ex.options ?? []).includes(ex.answer)) errors.push(`${where}: la respuesta «${ex.answer}» no está entre las opciones`);
           break;
+        case 'write':
+          if (!ex.es || !ex.answer) errors.push(`${where}: faltan la frase en castellano (es) o la respuesta (answer)`);
+          if (ex.alt && !Array.isArray(ex.alt)) errors.push(`${where}: alt debe ser una lista de respuestas válidas`);
+          break;
         case 'match':
           if ((ex.pairs ?? []).length < 2) errors.push(`${where}: hacen falta al menos 2 parejas`);
           break;
