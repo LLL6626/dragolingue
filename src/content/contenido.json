@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -505,7 +505,7 @@
       "lecciones": [
         {
           "id": "u2-l1",
-          "nombre": "Las personas",
+          "nombre": "As personas",
           "ejercicios": [
             {
               "id": "u2-l1-e1",
@@ -719,7 +719,7 @@
         },
         {
           "id": "u2-l3",
-          "nombre": "La familia",
+          "nombre": "A familia",
           "ejercicios": [
             {
               "id": "u2-l3-e1",
@@ -1180,7 +1180,7 @@
         },
         {
           "id": "u3-l3",
-          "nombre": "Los colores",
+          "nombre": "Os colores",
           "ejercicios": [
             {
               "id": "u3-l3-e1",
@@ -1639,7 +1639,7 @@
         },
         {
           "id": "u4-l3",
-          "nombre": "Lo, la, los, las",
+          "nombre": "O, a, os, as",
           "ejercicios": [
             {
               "id": "u4-l3-e1",
@@ -1808,7 +1808,7 @@
       "lecciones": [
         {
           "id": "u5-l1",
-          "nombre": "La casa",
+          "nombre": "A casa",
           "ejercicios": [
             {
               "id": "u5-l1-e1",
@@ -2149,7 +2149,7 @@
       "lecciones": [
         {
           "id": "u6-l1",
-          "nombre": "La cara",
+          "nombre": "A cara",
           "ejercicios": [
             {
               "id": "u6-l1-e1",
@@ -2768,7 +2768,7 @@
         },
         {
           "id": "u7-l3",
-          "nombre": "La naturaleza",
+          "nombre": "A naturaleza",
           "ejercicios": [
             {
               "id": "u7-l3-e1",
@@ -2974,7 +2974,7 @@
       "lecciones": [
         {
           "id": "u8-l1",
-          "nombre": "Los días",
+          "nombre": "Os días",
           "ejercicios": [
             {
               "id": "u8-l1-e1",
@@ -3072,7 +3072,7 @@
         },
         {
           "id": "u8-l2",
-          "nombre": "Los meses",
+          "nombre": "Os meses",
           "ejercicios": [
             {
               "id": "u8-l2-e1",
@@ -3160,7 +3160,7 @@
         },
         {
           "id": "u8-l3",
-          "nombre": "Lo orache",
+          "nombre": "L'orache",
           "ejercicios": [
             {
               "id": "u8-l3-e1",
@@ -3501,7 +3501,7 @@
         },
         {
           "id": "u9-l3",
-          "nombre": "Por lo camín",
+          "nombre": "Por o camín",
           "ejercicios": [
             {
               "id": "u9-l3-e1",
