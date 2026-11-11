@@ -251,6 +251,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* modal consejos */
 .sheet-back{position:fixed;inset:0;z-index:20;background:rgba(10,20,28,.45);display:flex;align-items:flex-end;justify-content:center}
+.share-prev{display:block;width:100%;max-width:300px;margin:12px auto;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.15);aspect-ratio:4/5;background:#FFF8E6}
+.seg{display:flex;gap:6px;background:var(--line);padding:4px;border-radius:12px}
+.seg button{flex:1;border:none;background:none;padding:8px;border-radius:9px;font:inherit;font-weight:800;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .sheet{background:var(--surface);width:100%;max-width:480px;max-height:85%;overflow:auto;border-radius:22px 22px 0 0;
   padding:20px max(16px, env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
 .sheet h2{color:var(--rojo);font-size:1.5rem}
@@ -449,6 +453,7 @@ function renderHome() {
   $app.querySelectorAll("[data-tip]").forEach(b => b.onclick = () => openTip(+b.dataset.tip));
   $app.querySelector("#brand").onclick = renderWelcome;
   const ab = $app.querySelector("#about"); if (ab) ab.onclick = () => renderAbout(0);
+  const sh = $app.querySelector("#share"); if (sh) sh.onclick = openShare;
   const sd = $app.querySelector("#sound"); if (sd) sd.onclick = () => { S.sound = S.sound === false; save(); if (S.sound) sfx("ok"); renderHome(); };
   const ul = $app.querySelector("#unlock"); if (ul) ul.onclick = () => { S.unlockAll = !S.unlockAll; save(); renderHome(); };
   const rs = $app.querySelector("#reset"); if (rs) rs.onclick = () => { S = { done: {}, xp: 0, streak: 0, lastDay: null, unlockAll: false, sound: S.sound, welcomed: true }; save(); tab = "learn"; renderHome(); toast("Progreso borrado."); };
@@ -518,10 +523,84 @@ function profileView() {
       <div class="metric"><b>${UNITS.flatMap(U => U.vocab).filter(([a]) => isLearned(a)).length}</b><span>palabras aprendidas</span></div>
     </div></div>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      <button class="big-btn" id="share">Compartir mi progreso</button>
       <button class="big-btn secondary" id="sound">${S.sound === false ? "🔇 Sonidos desactivados" : "🔊 Sonidos activados"}</button>
       <button class="big-btn secondary" id="about">Sobre el aragonés</button>
     </div>
     <p class="proto-note"><button class="link-btn" id="reset">Borrar el progreso</button></p>`;
+}
+/* ---------- Compartir el progreso (la imagen se crea en el móvil; no se envía a ningún servidor) ---------- */
+const SHARE_TXT = {
+  es: { dias: n => (n === 1 ? "día" : "días") + " aprendiendo aragonés", esc: n => n === 1 ? "escama" : "escamas", pal: n => n === 1 ? "palabra" : "palabras", uni: u => `Unidad ${u + 1} · ${UNITS[u].title}` },
+  an: { dias: n => (n === 1 ? "día" : "días") + " aprendendo aragonés", esc: n => n === 1 ? "escama" : "escamas", pal: n => n === 1 ? "parola" : "parolas", uni: u => `Unidat ${u + 1}` },
+};
+const BOOK_SVG = '<svg viewBox="0 0 24 24"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v15H5.5C4.7 19 4 18.3 4 17.5Z" fill="#2F5D7C"/><path d="M13 4h5.5c.8 0 1.5.7 1.5 1.5v12c0 .8-.7 1.5-1.5 1.5H13Z" fill="#5C8BAA"/></svg>';
+const loadImg = src => new Promise((ok, ko) => { const i = new Image(); i.onload = () => ok(i); i.onerror = ko; i.src = src; });
+const svgImg = svg => loadImg("data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" ')));
+function shareUnit() {
+  const c = currentLesson(); if (c) return c[0];
+  let u = 0; UNITS.forEach((U, i) => { if (!U.locked) u = i; }); return u;
+}
+async function drawShare(lang) {
+  const t = SHARE_TXT[lang], W = 1080, H = 1350;
+  const cv = document.createElement("canvas"); cv.width = W; cv.height = H; const g = cv.getContext("2d");
+  try { await Promise.all([document.fonts.load('800 100px "Baloo 2"'), document.fonts.load('800 40px "Nunito"'), document.fonts.load('700 40px "Nunito"')]); } catch (e) {}
+  const [drag, foot, gem, book] = await Promise.all([loadImg("web/img/dragolingue.jpg"), svgImg(ICON.fire), svgImg(ICON.gem), svgImg(BOOK_SVG)]);
+  const words = UNITS.flatMap(U => U.vocab).filter(([a]) => isLearned(a)).length;
+  g.fillStyle = "#FFF8E6"; g.fillRect(0, 0, W, H);
+  for (let x = 0; x < W; x += 180) { g.fillStyle = "#F2B200"; g.fillRect(x, 0, 90, 120); g.fillStyle = "#C8231B"; g.fillRect(x + 90, 0, 90, 120); }
+  // dragón en un círculo
+  const cx = W / 2, cy = 360, r = 140;
+  g.save(); g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.clip();
+  const sc = Math.max(2 * r / drag.width, 2 * r / drag.height); g.drawImage(drag, cx - drag.width * sc / 2, cy - drag.height * sc / 2, drag.width * sc, drag.height * sc); g.restore();
+  g.lineWidth = 12; g.strokeStyle = "#C8231B"; g.beginPath(); g.arc(cx, cy, r + 6, 0, Math.PI * 2); g.stroke();
+  // huellas + número de días
+  g.textBaseline = "alphabetic"; g.fillStyle = "#C8231B"; g.font = '800 270px "Baloo 2", sans-serif';
+  const num = String(S.streak), nw = g.measureText(num).width, iw = 190, gap = 26, x0 = cx - (iw + gap + nw) / 2;
+  g.drawImage(foot, x0, 600, iw, iw); g.textAlign = "left"; g.fillText(num, x0 + iw + gap, 800);
+  g.textAlign = "center"; g.fillStyle = "#1F2A33"; g.font = '800 64px "Baloo 2", sans-serif'; g.fillText(t.dias(S.streak), cx, 900);
+  // dos fichas
+  g.font = '800 40px "Nunito", sans-serif';
+  const chips = [[gem, `${S.xp} ${t.esc(S.xp)}`], [book, `${words} ${t.pal(words)}`]].map(([im, tx]) => ({ im, tx, w: 34 + 58 + 16 + g.measureText(tx).width + 34 }));
+  let x = cx - (chips.reduce((a, c) => a + c.w, 0) + 24) / 2;
+  for (const c of chips) {
+    g.fillStyle = "#fff"; g.strokeStyle = "#F2B200"; g.lineWidth = 4; g.beginPath(); g.roundRect(x, 950, c.w, 92, 46); g.fill(); g.stroke();
+    g.drawImage(c.im, x + 34, 967, 58, 58); g.fillStyle = "#1F2A33"; g.textAlign = "left"; g.fillText(c.tx, x + 34 + 58 + 16, 1010); x += c.w + 24;
+  }
+  g.textAlign = "center"; g.fillStyle = "#6B5A2E"; g.font = '700 38px "Nunito", sans-serif'; g.fillText(t.uni(shareUnit()), cx, 1100);
+  g.fillStyle = "#C8231B"; g.fillRect(0, H - 130, W, 130); g.fillStyle = "#fff"; g.font = '800 46px "Baloo 2", sans-serif'; g.fillText("Dragolingüe · aprende aragonés", cx, H - 50);
+  return cv;
+}
+function openShare() {
+  let lang = S.shareLang || "es";
+  const back = document.createElement("div"); back.className = "sheet-back";
+  back.innerHTML = `<div class="sheet" role="dialog" aria-label="Compartir mi progreso">
+    <h2>Compartir mi progreso</h2>
+    <div class="seg" style="margin-top:12px"><button data-l="es">Castellano</button><button data-l="an">Aragonés</button></div>
+    <img class="share-prev" alt="Imagen con tu progreso">
+    <button class="big-btn" id="sh-go">Compartir</button>
+    <button class="big-btn secondary" id="sh-close" style="margin-top:10px">Cerrar</button></div>`;
+  document.body.appendChild(back);
+  const close = () => back.remove(), img = back.querySelector(".share-prev");
+  let cv = null;
+  const paint = async () => {
+    back.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === lang));
+    cv = await drawShare(lang); img.src = cv.toDataURL("image/png");
+  };
+  back.querySelectorAll(".seg button").forEach(b => b.onclick = () => { lang = b.dataset.l; S.shareLang = lang; save(); paint(); });
+  back.querySelector("#sh-close").onclick = close;
+  back.onclick = e => { if (e.target === back) close(); };
+  back.querySelector("#sh-go").onclick = async () => {
+    if (!cv) return;
+    const blob = await new Promise(ok => cv.toBlob(ok, "image/png"));
+    const file = new File([blob], "dragolingue.png", { type: "image/png" });
+    try {
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file] }); return; }
+    } catch (e) { if (e && e.name === "AbortError") return; }
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "dragolingue.png"; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast("Imagen descargada.");
+  };
+  paint();
 }
 function openNoLives() {
   const back = document.createElement("div"); back.className = "sheet-back";

@@ -1,7 +1,12 @@
 // Service worker de Dragolingüe: permite usar la app sin conexión.
 // Primero intenta la red (así siempre llegan las correcciones del contenido) y, si no hay, usa la copia guardada.
-const CACHE = 'dragolingue-v21';
+<<<<<<< HEAD
+const CACHE = 'dragolingue-v22';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'src/content/contenido.json', 'web/icon-192.png', 'web/icon-512.png', 'web/logo.svg', 'web/paisajes.js', 'web/cumbres.js', 'web/img/portada.jpg', 'web/fonts/baloo2.woff', 'web/fonts/nunito.woff'];
+=======
+const CACHE = 'dragolingue-v22';
+const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'src/content/contenido.json', 'web/icon-192.png', 'web/icon-512.png', 'web/logo.svg', 'web/paisajes.js', 'web/img/portada.jpg', 'web/fonts/baloo2.woff', 'web/fonts/nunito.woff'];
+>>>>>>> fed02ac (Botón «Compartir mi progreso» en el perfil (imagen en castellano o aragonés))
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
