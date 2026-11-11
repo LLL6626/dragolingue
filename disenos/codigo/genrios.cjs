@@ -21,15 +21,15 @@ const I = { bg: grass('#E7C98A', '#D9B26A'), head: '#8A4B2A', accent: '#8A4B2A',
 // Orden de las unidades 1 a 10
 const P = [
   { key: 'ibon', title: 'Ibón: nace el río', ...mk('ibonInicio') },
-  { key: 'invierno', title: 'Invierno con nieve', ...mk('invierno'), lockedBg: '#9DA6AE' },
   { key: 'bosque', title: 'Bosque', ...mk('bosque') },
+  { key: 'otono', title: 'Río en otoño', ...I },
+  { key: 'invierno', title: 'Invierno con nieve', ...mk('invierno') },
+  { key: 'prado', title: 'Río en el prado (primavera)', ...G, head: '#4E8A3E', accent: '#4E8A3E' },
   { key: 'vacas', title: 'Prado con vacas y ovejas', ...mk('vacas') },
   { key: 'granja', title: 'Granja', ...mk('granja') },
-  { key: 'prado', title: 'Río en el prado', ...G },
-  { key: 'verano', title: 'Verano', ...mk('verano') },
   { key: 'huerta', title: 'Huerta: girasol, trigo y maíz', ...mk('cultivos1') },
-  { key: 'otono', title: 'Río en otoño', ...I },
   { key: 'campina', title: 'Campiña: olivar, trigo y girasol', ...mk('cultivos2') },
+  { key: 'verano', title: 'Verano', ...mk('verano') },
 ];
 const out = `// Paisajes del mapa de lecciones (unidades 1 a 10): un río que nace en un ibón y baja hasta el llano.
 // Cada lección es una piedra del río. Generado con disenos/codigo/genrios.cjs a partir de los bocetos.
