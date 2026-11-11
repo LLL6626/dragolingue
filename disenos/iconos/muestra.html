@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#F6F4EE;font-family:"Inter",system-ui,sans-serif;color:#1F2A33;padding:22px;width:820px}
+h1{font-size:22px;margin:0 0 4px} p.sub{margin:0 0 18px;color:#66727C}
+.row{display:grid;grid-template-columns:390px 1fr;gap:22px;align-items:center;margin-bottom:18px}
+.bar{background:#F6F4EE;border:2px solid #E2DDD0;border-radius:16px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;color:#C8231B;font-size:22px}.brand img{width:34px;height:34px;border-radius:8px}
+.stats{display:flex;gap:14px}.stat{display:flex;align-items:center;gap:4px;font-weight:800;font-size:18px}.stat svg{width:24px;height:24px}
+.lab b{display:block;font-size:17px;margin-bottom:2px}.lab span{color:#66727C;font-size:14px}
+.lab .tag{display:inline-block;background:#C8231B;color:#fff;font-size:11px;font-weight:800;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.big{display:flex;gap:28px;margin:6px 0 0;padding:16px;background:#fff;border:2px solid #E2DDD0;border-radius:16px}
+.big div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;color:#66727C;font-weight:700}.big svg{width:56px;height:56px}
+</style></head><body>
+<h1>Iconos de la barra de arriba</h1><p class="sub">Vidas · racha · puntos. Arriba, cómo está ahora; debajo, las propuestas.</p>
+<div id="rows"></div>
+<div class="big" id="big"></div>
+<script src="iconos.js"></script>
+<script>
+const V = [
+  ['Ahora (recuerda a Duolingo)', 'Corazón, fuego y diamante', ['heart','fuego','gema'], false],
+  ['A · Dragón', 'Huella de dragón (racha) y escamas (puntos)', ['heart','huella','escama'], true],
+  ['B · Pirineo', 'Sol (días de sol seguidos) y flor de nieve (edelweiss)', ['heart','sol','edelweiss'], false],
+  ['C · Campo', 'Espiga que crece (racha) y escamas (puntos)', ['heart','espiga','escama'], false],
+];
+document.getElementById('rows').innerHTML = V.map(([t, d, ic, rec]) => `<div class="row"><div class="bar"><span class="brand"><img src="logo.svg">Dragolingüe</span>
+  <span class="stats"><span class="stat">${IC[ic[0]]}5</span><span class="stat">${IC[ic[1]]}7</span><span class="stat">${IC[ic[2]]}120</span></span></div>
+  <div class="lab"><b>${t}${rec ? '<span class="tag">Recomendada</span>' : ''}</b><span>${d}</span></div></div>`).join('');
+document.getElementById('big').innerHTML = ['huella','escama','sol','edelweiss','espiga'].map(k => `<div>${IC[k]}${({huella:'Huella',escama:'Escama',sol:'Sol',edelweiss:'Edelweiss',espiga:'Espiga'})[k]}</div>`).join('');
+</script></body></html>
