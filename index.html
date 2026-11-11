@@ -494,7 +494,7 @@ function profileView() {
     <div><h1 style="font-size:1.5rem">Tu progreso</h1><p style="margin:2px 0 0;color:var(--muted)">Dragolingüe te acompaña en cada lección.</p></div></div>
     <div class="profile-grid">
       <div class="metric"><b>${S.streak}</b><span>días de racha</span></div>
-      <div class="metric"><b>${S.xp}</b><span>XP</span></div>
+      <div class="metric"><b>${S.xp}</b><span>escamas</span></div>
       <div class="metric"><b>${lessons}</b><span>lecciones</span></div>
       <div class="metric"><b>${UNITS.flatMap(U => U.vocab).filter(([a]) => isLearned(a)).length}</b><span>palabras aprendidas</span></div>
     </div></div>
@@ -706,7 +706,7 @@ function finishLesson() {
   $app.innerHTML = `<main class="finish"><div class="hero-dragon">${dragon("cheer")}</div>
     <h1>${wasPractice ? "¡Repaso completado!" : "¡Lección completada!"}</h1><p style="margin:0;color:var(--muted);font-weight:700">${esc(lessonName)} · Unidad ${L.u + 1}</p>
     <div class="finish-stats">
-      <div class="metric"><b>+${wasPractice ? 5 : xp}</b><span>XP</span></div>
+      <div class="metric"><b>+${wasPractice ? 5 : xp}</b><span>escamas</span></div>
       <div class="metric"><b>${acc}%</b><span>a la primera</span></div>
       <div class="metric"><b>${S.streak}</b><span>días de racha</span></div>
     </div>
