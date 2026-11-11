@@ -81,10 +81,13 @@ document.querySelectorAll('.path').forEach((p,pi)=>{
   const lakeRx=rx;
   const ground=(O.parcels||[]).map(q=>'<rect x="'+q[0]*r.width+'" y="'+q[1]*r.height+'" width="'+(q[2]-q[0])*r.width+'" height="'+(q[3]-q[1])*r.height+'" fill="'+q[4]+'" stroke="#9C8A5E" stroke-width="3" stroke-opacity=".35"/>').join('');
   let peaks='';
-  if(O.source){const W=r.width,b=O.source-20;peaks='<rect x="0" y="0" width="'+W+'" height="'+(b+10)+'" fill="#DCEBF4"/>'
-    +'<path d="M0 '+(b-10)+' L'+W*.12+' '+(b-70)+' L'+W*.24+' '+(b-40)+' L'+W*.42+' '+(b-120)+' L'+W*.58+' '+(b-60)+' L'+W*.74+' '+(b-135)+' L'+W*.9+' '+(b-70)+' L'+W+' '+(b-90)+' V'+(b+40)+' H0Z" fill="#A7B8C6"/>'
+  if(O.source){const W=r.width,b=O.source-20;peaks='<defs><linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6FBDEB"/><stop offset="1" stop-color="#C9E8F8"/></linearGradient></defs>'
+    +'<rect x="0" y="0" width="'+W+'" height="'+(b+10)+'" fill="url(#cielo)"/>'
+    +'<circle cx="'+W*.86+'" cy="38" r="34" fill="#FFE27A" opacity=".35"/><circle cx="'+W*.86+'" cy="38" r="22" fill="#FFD23F"/>'
+    +'<g fill="#fff" opacity=".95"><circle cx="'+W*.16+'" cy="34" r="11"/><circle cx="'+(W*.16+13)+'" cy="29" r="14"/><circle cx="'+(W*.16+28)+'" cy="34" r="10"/><rect x="'+W*.16+'" y="34" width="28" height="10"/></g>'
+    +'<path d="M0 '+(b-10)+' L'+W*.12+' '+(b-70)+' L'+W*.24+' '+(b-40)+' L'+W*.42+' '+(b-120)+' L'+W*.58+' '+(b-60)+' L'+W*.74+' '+(b-135)+' L'+W*.9+' '+(b-70)+' L'+W+' '+(b-90)+' V'+(b+40)+' H0Z" fill="#9DB4C8"/>'
     +'<path d="M'+W*.36+' '+(b-98)+' L'+W*.42+' '+(b-120)+' L'+W*.48+' '+(b-98)+' L'+W*.44+' '+(b-102)+' L'+W*.42+' '+(b-94)+' L'+W*.39+' '+(b-102)+'Z M'+W*.67+' '+(b-110)+' L'+W*.74+' '+(b-135)+' L'+W*.81+' '+(b-108)+' L'+W*.77+' '+(b-112)+' L'+W*.74+' '+(b-104)+' L'+W*.71+' '+(b-112)+'Z" fill="#fff"/>'
-    +'<path d="M0 '+(b+10)+' C'+W*.2+' '+(b-20)+' '+W*.4+' '+(b+5)+' '+W*.6+' '+(b-15)+' S'+W*.9+' '+(b-5)+' '+W+' '+(b-25)+' V'+(b+40)+' H0Z" fill="#8FAEA0"/>';}
+    +'<path d="M0 '+(b+10)+' C'+W*.2+' '+(b-20)+' '+W*.4+' '+(b+5)+' '+W*.6+' '+(b-15)+' S'+W*.9+' '+(b-5)+' '+W+' '+(b-25)+' V'+(b+40)+' H0Z" fill="#7FAF78"/>';}
   p.insertAdjacentHTML('afterbegin','<svg class="river" viewBox="0 0 '+r.width+' '+r.height+'" preserveAspectRatio="none">'+peaks+ground+river+place(p,lakeRx,{...O,seed:pi*7,lk})+'</svg>');
 });`; }
 
