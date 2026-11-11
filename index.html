@@ -489,7 +489,8 @@ function learnView() {
       h += `</div></section>`;
     });
   });
-  h += `<p class="proto-note">Prototipo · <button class="link-btn" id="unlock">${S.unlockAll ? "Volver al orden normal" : "Desbloquear todas las lecciones"}</button></p>`;
+  // Solo para revisar: aparece con ?pruebas en la dirección (o si ya estaba activado)
+  if (/[?&]pruebas\b/.test(location.search) || S.unlockAll) h += `<p class="proto-note">Modo de pruebas · <button class="link-btn" id="unlock">${S.unlockAll ? "Volver al orden normal" : "Desbloquear todas las lecciones"}</button></p>`;
   return h;
 }
 function vocabView() {
