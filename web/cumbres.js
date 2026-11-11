@@ -27,7 +27,7 @@
       const inF = (e, x, y) => { try { return e.isPointInFill(new DOMPoint(x, y)); } catch (_) { return false; } };
       let ri = 0; if (P.peak) { ri = paths.findIndex(e => inF(e, P.peak[0], P.peak[1] + 8)); if (ri < 0) ri = 0; }
       const surf = x => { for (let y = 0; y < 330; y += 2) { if (paths.some((e, i) => i >= ri && inF(e, x, y))) return y; } return 300; };
-      const pts = [[sp[0][0] * 3.6 - 50, H + 10]];
+      const pts = []; // el sendero empieza en la primera lección
       S.forEach((s, i) => {
         let y = sp[i][1];
         if (i < n - 1 && !sp[i][2]) y = Math.max(y, (TOP + surf(sp[i][0] * 3.6) * K + 4 - 33) / H);
