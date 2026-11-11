@@ -100,6 +100,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .stats{display:flex;gap:12px}
 .stat{display:flex;align-items:center;gap:4px;font-weight:800;font-variant-numeric:tabular-nums}
 .stat svg{width:22px;height:22px}
+.lives-stat{color:var(--rojo)}
+.lives-stat small{font-size:.72rem;font-weight:700;color:var(--muted);margin-left:2px}
+.hearts.free{font-size:.8rem;color:var(--accent-ink)}
 
 /* mapa */
 .view{flex:1;padding-bottom:96px}
@@ -159,8 +162,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .vocab-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:10px}
 .vocab-list .ar{font-weight:800}
 .vocab-list .es{color:var(--muted)}
+.learned-sum{margin:10px 0 0;font-size:.92rem}
+.vocab-list .learned{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--oro);color:#fff;font-size:.7rem;margin-right:6px;vertical-align:1px}
+.vocab-list .seen{font-size:.7rem;font-weight:800;color:var(--muted);border:1.5px solid var(--line);border-radius:8px;padding:0 4px;margin-right:6px}
 .profile-head{display:flex;gap:12px;align-items:center}
-.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.profile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
 .metric{border:2px solid var(--line);border-radius:14px;padding:10px;text-align:center}
 .metric b{display:block;font-family:var(--f-display);font-size:1.6rem;font-variant-numeric:tabular-nums}
 .metric span{font-size:.78rem;color:var(--muted);font-weight:700}
@@ -329,6 +335,43 @@ function load() {
   try { return Object.assign(base, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) { return base; }
 }
 function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+
+/* Vidas compartidas: 5 como máximo; se recupera una cada 15 minutos. Los repasos no gastan vidas y las devuelven todas. */
+const MAX_LIVES = 5, REGEN_MS = 15 * 60 * 1000;
+function lives() {
+  if (typeof S.lives !== "number") { S.lives = MAX_LIVES; S.livesAt = Date.now(); }
+  if (S.lives >= MAX_LIVES) { S.livesAt = Date.now(); return S.lives; }
+  const n = Math.floor((Date.now() - S.livesAt) / REGEN_MS);
+  if (n > 0) { S.lives = Math.min(MAX_LIVES, S.lives + n); S.livesAt = S.lives >= MAX_LIVES ? Date.now() : S.livesAt + n * REGEN_MS; save(); }
+  return S.lives;
+}
+function loseLife() { lives(); if (S.lives >= MAX_LIVES) S.livesAt = Date.now(); S.lives = Math.max(0, S.lives - 1); save(); }
+function refillLives() { S.lives = MAX_LIVES; S.livesAt = Date.now(); save(); }
+function nextLifeText() {
+  const ms = Math.max(0, S.livesAt + REGEN_MS - Date.now()), m = Math.floor(ms / 60000), sec = Math.floor(ms % 60000 / 1000);
+  return m + ":" + String(sec).padStart(2, "0");
+}
+
+/* Palabra aprendida: acertada en 3 días distintos */
+const LEARN_DAYS = 3;
+function vocabParts(a) { return a.split(/\s*[\/·]\s*/).map(norm).filter(Boolean); }
+function exText(ex) {
+  if (ex.t === "pick" || ex.t === "build" || ex.t === "write") return ex.answer;
+  if (ex.t === "choice") return ex.ar;
+  if (ex.t === "fill") return `${ex.before} ${ex.answer} ${ex.after}`;
+  if (ex.t === "match") return ex.pairs.map(p => p[0]).join(" | ");
+  return "";
+}
+function markWords(ex) {
+  const txt = " " + norm(exText(ex)).replace(/\|/g, " ") + " ", d = today();
+  S.words = S.words || {};
+  UNITS.forEach(U => U.vocab.forEach(([a]) => {
+    if (!vocabParts(a).some(p => txt.includes(" " + p + " "))) return;
+    const days = S.words[a] || (S.words[a] = []);
+    if (!days.includes(d)) { days.push(d); if (days.length > LEARN_DAYS) days.shift(); }
+  }));
+}
+const isLearned = a => ((S.words || {})[a] || []).length >= LEARN_DAYS;
 const lk = (u, l) => UNITS[u].lessons[l].id;
 function isDone(u, l) { return !!S.done[lk(u, l)]; }
 function currentLesson() {
@@ -362,6 +405,7 @@ function topbar() {
   return `<header class="topbar">
     <button class="brand" id="brand" aria-label="Volver a la bienvenida"><img src="web/logo.svg" alt="">Dragolingüe</button>
     <div class="stats">
+      <span class="stat lives-stat" title="Vidas (se recupera una cada 15 minutos)">${ICON.heart}<span id="lives-n">${lives()}</span></span>
       <span class="stat" title="Racha de días">${ICON.fire}${S.streak}</span>
       <span class="stat" title="Puntos de experiencia">${ICON.gem}${S.xp}</span>
     </div></header>`;
@@ -379,6 +423,7 @@ function renderHome() {
   html += `</main>` + tabbar();
   $app.className = "app"; $app.style.removeProperty("--accent"); $app.innerHTML = html;
   if (tab === "learn" && window.layoutPaisajes) layoutPaisajes($app);
+  paintLives();
   $app.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { tab = b.dataset.tab; renderHome(); });
   $app.querySelectorAll("[data-lesson]").forEach(b => b.onclick = () => {
     const [u, l] = b.dataset.lesson.split("-").map(Number);
@@ -392,6 +437,11 @@ function renderHome() {
   const rs = $app.querySelector("#reset"); if (rs) rs.onclick = () => { S = { done: {}, xp: 0, streak: 0, lastDay: null, unlockAll: false, sound: S.sound, welcomed: true }; save(); tab = "learn"; renderHome(); toast("Progreso borrado."); };
   const cur = $app.querySelector(".node.current"); if (cur && tab === "learn") setTimeout(() => cur.scrollIntoView({ block: "center", behavior: "smooth" }), 60);
 }
+function paintLives() {
+  const el = document.getElementById("lives-n"); if (!el) return;
+  const n = lives(); el.innerHTML = n + (n < MAX_LIVES ? `<small>${nextLifeText()}</small>` : "");
+}
+setInterval(paintLives, 1000);
 function learnView() {
   const cur = currentLesson();
   let h = "";
@@ -426,11 +476,14 @@ function learnView() {
   return h;
 }
 function vocabView() {
-  let h = `<h1 style="font-size:1.7rem;margin-top:8px">Tu vocabulario</h1><p style="color:var(--muted);margin:4px 0 0">Palabras de las unidades disponibles, en la grafía oficial de 2023.</p>`;
+  const all = UNITS.filter(U => !U.locked).flatMap(U => U.vocab), learned = all.filter(([a]) => isLearned(a)).length;
+  let h = `<h1 style="font-size:1.7rem;margin-top:8px">Tu vocabulario</h1><p style="color:var(--muted);margin:4px 0 0">Palabras de las unidades disponibles, en la grafía oficial de 2023.</p>
+    <p class="learned-sum"><b>${learned}</b> de ${all.length} palabras aprendidas · una palabra queda aprendida cuando la aciertas en ${LEARN_DAYS} días distintos.</p>`;
   UNITS.forEach((U, u) => {
     if (U.locked) return;
     h += `<div class="panel"><h2 style="font-size:1.2rem">Unidad ${u + 1} · ${U.title}</h2><div class="vocab-list">` +
-      U.vocab.map(([a, e]) => `<span class="ar">${esc(a)}</span><span class="es">${esc(e)}</span>`).join("") + `</div></div>`;
+      U.vocab.map(([a, e]) => { const n = ((S.words || {})[a] || []).length, ok = n >= LEARN_DAYS;
+        return `<span class="ar">${ok ? `<span class="learned" title="Aprendida">✓</span>` : n ? `<span class="seen" title="Acertada ${n} de ${LEARN_DAYS} días">${n}/${LEARN_DAYS}</span>` : ""}${esc(a)}</span><span class="es">${esc(e)}</span>`; }).join("") + `</div></div>`;
   });
   return h;
 }
@@ -442,12 +495,27 @@ function profileView() {
       <div class="metric"><b>${S.streak}</b><span>días de racha</span></div>
       <div class="metric"><b>${S.xp}</b><span>XP</span></div>
       <div class="metric"><b>${lessons}</b><span>lecciones</span></div>
+      <div class="metric"><b>${UNITS.flatMap(U => U.vocab).filter(([a]) => isLearned(a)).length}</b><span>palabras aprendidas</span></div>
     </div></div>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
       <button class="big-btn secondary" id="sound">${S.sound === false ? "🔇 Sonidos desactivados" : "🔊 Sonidos activados"}</button>
       <button class="big-btn secondary" id="about">Sobre el aragonés</button>
     </div>
     <p class="proto-note"><button class="link-btn" id="reset">Borrar el progreso</button></p>`;
+}
+function openNoLives() {
+  const back = document.createElement("div"); back.className = "sheet-back";
+  back.innerHTML = `<div class="sheet" role="dialog" aria-label="Sin vidas">
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px"><div style="width:70px">${dragon("sad")}</div><h2>Te has quedado sin vidas</h2></div>
+    <p>Recuperas una cada 15 minutos (la próxima en <b id="nl-t">${nextLifeText()}</b>). O haz un repaso: no gasta vidas y te las devuelve todas.</p>
+    <button class="big-btn" id="nl-practice" style="margin-top:12px">Repasar y recuperar vidas</button>
+    <button class="big-btn secondary" id="nl-wait" style="margin-top:10px">Esperar</button></div>`;
+  document.body.appendChild(back);
+  const iv = setInterval(() => { const t = back.querySelector("#nl-t"); if (t) t.textContent = nextLifeText(); if (lives() > 0) close(); }, 1000);
+  const close = () => { clearInterval(iv); back.remove(); paintLives(); };
+  back.querySelector("#nl-wait").onclick = close;
+  back.querySelector("#nl-practice").onclick = () => { close(); startPractice(); };
+  back.onclick = e => { if (e.target === back) close(); };
 }
 function openTip(u) {
   const T = UNITS[u].tip;
@@ -463,13 +531,25 @@ function openTip(u) {
 
 /* ---------- Lección ---------- */
 let L = null;
+function startPractice() {
+  // Repaso libre con lo ya aprendido (o con la lección actual si aún no hay nada hecho)
+  let pool = [];
+  UNITS.forEach((U, u) => U.lessons.forEach((Ls, l) => { if (!Ls.review && isDone(u, l)) pool.push(...Ls.ex); }));
+  const c = currentLesson() || [0, 0];
+  if (!pool.length) pool = UNITS[c[0]].lessons[c[1]].ex.slice();
+  const ex = shuffle(pool).slice(0, 8);
+  const PA = window.PAISAJES && PAISAJES[c[0]]; if (PA) $app.style.setProperty("--accent", PA.accent);
+  L = { u: c[0], l: c[1], practice: true, free: true, queue: ex, total: ex.length, i: 0, hearts: lives(), right: 0, firstTry: 0, missed: new Set(), state: null };
+  renderEx();
+}
 function startLesson(u, l) {
   const lesson = UNITS[u].lessons[l];
+  if (!lesson.review && lives() <= 0) { openNoLives(); return; }
   let ex = lesson.review
     ? shuffle(UNITS[u].lessons.filter(x => !x.review).flatMap(x => x.ex)).slice(0, 8)
     : lesson.ex.slice();
   const PA = window.PAISAJES && PAISAJES[u]; if (PA) $app.style.setProperty("--accent", PA.accent); else $app.style.removeProperty("--accent");
-  L = { u, l, queue: ex, total: ex.length, i: 0, hearts: 5, right: 0, firstTry: 0, missed: new Set(), state: null };
+  L = { u, l, free: lesson.review, queue: ex, total: ex.length, i: 0, hearts: lives(), right: 0, firstTry: 0, missed: new Set(), state: null };
   renderEx();
 }
 function lessonTop() {
@@ -477,7 +557,7 @@ function lessonTop() {
   return `<div class="lesson-top">
     <button class="icon-btn" id="quit" aria-label="Salir de la lección">${ICON.close}</button>
     <div class="progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>
-    <span class="hearts" aria-label="Vidas">${ICON.heart}${L.hearts}</span></div>`;
+    ${L.free ? `<span class="hearts free" title="Los repasos no gastan vidas">${ICON.heart}Repaso</span>` : `<span class="hearts" aria-label="Vidas">${ICON.heart}${L.hearts}</span>`}</div>`;
 }
 function renderEx() {
   const ex = L.queue[L.i];
@@ -586,10 +666,10 @@ function wire(ex) {
 function resolve(ok, correct, note) {
   const st = L.state; st.locked = true;
   const ex = st.ex;
-  if (ok) { L.right++; if (!L.missed.has(ex) && !st.matchErr) L.firstTry++; }
-  else { L.hearts--; L.missed.add(ex); L.queue.push(ex); }
+  if (ok) { L.right++; if (!L.missed.has(ex) && !st.matchErr) L.firstTry++; markWords(ex); save(); }
+  else { if (!L.free) { loseLife(); L.hearts = S.lives; } L.missed.add(ex); L.queue.push(ex); }
   const bar = $app.querySelector("#bar");
-  const out = L.hearts <= 0;
+  const out = !L.free && L.hearts <= 0;
   sfx(ok ? "ok" : "ko");
   bar.className = "checkbar " + (ok ? "ok" : "ko");
   bar.innerHTML = `<div class="checkbar-inner"><div class="fb"><div class="mini">${dragon(ok ? "cheer" : "sad")}</div>
@@ -597,10 +677,10 @@ function resolve(ok, correct, note) {
       `<h3>${out ? "Te has quedado sin vidas" : "Casi lo tienes"}</h3><p>Respuesta correcta: ${esc(correct)}</p>`}</div></div>
     <button class="big-btn ${ok ? "" : "red"}" id="next">${out ? "Volver al mapa" : "Continuar"}</button></div>`;
   const prog = $app.querySelector(".progress i"); if (prog) prog.style.width = Math.round(L.right / L.total * 100) + "%";
-  const hearts = $app.querySelector(".hearts"); if (hearts) hearts.innerHTML = ICON.heart + L.hearts;
+  const hearts = $app.querySelector(".hearts:not(.free)"); if (hearts) hearts.innerHTML = ICON.heart + L.hearts;
   const next = $app.querySelector("#next"); next.focus();
   next.onclick = () => {
-    if (out) { L = null; renderHome(); toast("Repasa los consejos de la unidad y vuelve a intentarlo."); return; }
+    if (out) { L = null; renderHome(); openNoLives(); return; }
     L.i++;
     if (L.i >= L.queue.length) finishLesson(); else renderEx();
   };
@@ -610,23 +690,26 @@ function finishLesson() {
   const acc = Math.round(L.firstTry / L.total * 100);
   const xp = 10 + (acc === 100 ? 5 : 0);
   sfx("win");
-  S.done[lk(L.u, L.l)] = true; S.xp += xp;
+  const wasFree = L.free, wasPractice = L.practice, before = lives();
+  if (!wasPractice) S.done[lk(L.u, L.l)] = true;
+  S.xp += wasPractice ? 5 : xp;
+  if (wasFree) refillLives();
   const t = today();
   if (S.lastDay !== t) {
     const y = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
     S.streak = S.lastDay === y ? S.streak + 1 : 1; S.lastDay = t;
   }
   save();
-  const lessonName = UNITS[L.u].lessons[L.l].name;
+  const lessonName = wasPractice ? "Repaso libre" : UNITS[L.u].lessons[L.l].name;
   $app.className = "app";
   $app.innerHTML = `<main class="finish"><div class="hero-dragon">${dragon("cheer")}</div>
-    <h1>¡Lección completada!</h1><p style="margin:0;color:var(--muted);font-weight:700">${esc(lessonName)} · Unidad ${L.u + 1}</p>
+    <h1>${wasPractice ? "¡Repaso completado!" : "¡Lección completada!"}</h1><p style="margin:0;color:var(--muted);font-weight:700">${esc(lessonName)} · Unidad ${L.u + 1}</p>
     <div class="finish-stats">
-      <div class="metric"><b>+${xp}</b><span>XP</span></div>
+      <div class="metric"><b>+${wasPractice ? 5 : xp}</b><span>XP</span></div>
       <div class="metric"><b>${acc}%</b><span>a la primera</span></div>
       <div class="metric"><b>${S.streak}</b><span>días de racha</span></div>
     </div>
-    <p style="margin:0">${first ? "Dragolingüe ha guardado tu progreso." : "Repaso hecho. ¡Muito bien!"}</p></main>
+    <p style="margin:0">${wasFree ? (before < MAX_LIVES ? `¡Vidas recuperadas! Vuelves a tener ${MAX_LIVES} ${ICON.heart.replace('<svg', '<svg width="18" height="18" style="vertical-align:-3px;color:var(--rojo)"')}` : "Repaso hecho. ¡Muito bien!") : first ? "Dragolingüe ha guardado tu progreso." : "Repaso hecho. ¡Muito bien!"}</p></main>
     <div class="checkbar"><div class="checkbar-inner"><button class="big-btn" id="cont">Continuar</button></div></div>`;
   L = null;
   $app.querySelector("#cont").onclick = () => { tab = "learn"; renderHome(); };
