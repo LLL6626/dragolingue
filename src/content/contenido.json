@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -307,7 +307,7 @@
         },
         {
           "id": "u1-l2",
-          "nombre": "Presentarse",
+          "nombre": "Presentar-se",
           "ejercicios": [
             {
               "id": "u1-l2-e1",
@@ -978,7 +978,7 @@
       "lecciones": [
         {
           "id": "u3-l1",
-          "nombre": "Del zero al diez",
+          "nombre": "D'o zero a o diez",
           "ejercicios": [
             {
               "id": "u3-l1-e1",
@@ -1100,7 +1100,7 @@
         },
         {
           "id": "u3-l2",
-          "nombre": "Del once al vinte",
+          "nombre": "D'o once a o vinte",
           "ejercicios": [
             {
               "id": "u3-l2-e1",
@@ -1222,7 +1222,7 @@
         },
         {
           "id": "u3-l3",
-          "nombre": "Os colores",
+          "nombre": "Os colors",
           "ejercicios": [
             {
               "id": "u3-l3-e1",
@@ -2620,7 +2620,7 @@
       "lecciones": [
         {
           "id": "u7-l1",
-          "nombre": "Animales de casa",
+          "nombre": "Animals de casa",
           "ejercicios": [
             {
               "id": "u7-l1-e1",
@@ -2753,7 +2753,7 @@
         },
         {
           "id": "u7-l2",
-          "nombre": "Animales del Pirineo",
+          "nombre": "Animals d'o Pirineo",
           "ejercicios": [
             {
               "id": "u7-l2-e1",
@@ -3487,7 +3487,7 @@
       "lecciones": [
         {
           "id": "u9-l1",
-          "nombre": "Lugares de Aragón",
+          "nombre": "Lugars d'Aragón",
           "ejercicios": [
             {
               "id": "u9-l1-e1",
