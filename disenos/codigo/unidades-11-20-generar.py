@@ -17,6 +17,8 @@ for u in U:
             opts = [[w[0], w[2]]] + [[o[0], o[2]] for o in others]; random.shuffle(opts)
             add({'t': 'pick', 'es': w[1], 'answer': w[0], 'options': opts})
         add({'t': 'match', 'pairs': [[a, e] for a, e, _ in W[2:6]]})
+        if l.get('nombres'):
+            add({'t': 'match', 'pairs': l['nombres']})
         def choice(s):
             wrong = random.sample([x[1] for x in allS if x != s], 2)
             opts = [s[1]] + wrong; random.shuffle(opts)
@@ -30,7 +32,7 @@ for u in U:
         choice(S[2])
         add({'t': 'write', 'es': S[2][1], 'answer': S[2][0]})
         lessons.append({'id': lid, 'nombre': l['nombre'], 'ejercicios': ex})
-    lessons.append({'id': f"{u['id']}-l4", 'nombre': 'Repaso', 'repaso': True})
+    lessons.append({'id': f"{u['id']}-l{len(u['lessons']) + 1}", 'nombre': 'Repaso', 'repaso': True})
     out.append({'id': u['id'], 'titulo': u['titulo'], 'tema': u['tema'],
                 'consejo': {'titulo': 'Consejo de Dragolingüe', 'html': u['tip']},
                 'vocabulario': vocab, 'lecciones': lessons, 'revisar': []})
