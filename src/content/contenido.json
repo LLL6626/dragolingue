@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -7491,30 +7491,6 @@
         {
           "ar": "guisar",
           "es": "cocinar"
-        },
-        {
-          "ar": "olivera",
-          "es": "olivo"
-        },
-        {
-          "ar": "almendrera",
-          "es": "almendro"
-        },
-        {
-          "ar": "noguera",
-          "es": "nogal"
-        },
-        {
-          "ar": "uga",
-          "es": "uva"
-        },
-        {
-          "ar": "ordio",
-          "es": "cebada"
-        },
-        {
-          "ar": "tocino",
-          "es": "cerdo"
         }
       ],
       "lecciones": [
@@ -7590,7 +7566,7 @@
               "ar": "Me cuaca o ternasco.",
               "options": [
                 "Me gusta el ternasco.",
-                "Hay aceite en la sartén.",
+                "Corta el pan.",
                 "Las migas son muy buenas."
               ],
               "answer": 0
@@ -7614,13 +7590,13 @@
               "es": "Las migas son muy buenas.",
               "answer": "As migas son muito buenas.",
               "tiles": [
-                "son",
-                "comemos",
                 "setas",
+                "buenas.",
                 "As",
                 "muito",
-                "buenas.",
-                "migas"
+                "migas",
+                "son",
+                "comemos"
               ]
             },
             {
@@ -7628,11 +7604,11 @@
               "t": "choice",
               "ar": "En agüerro minchamos castañas.",
               "options": [
-                "El nogal es muy grande.",
                 "En otoño comemos castañas.",
-                "En el campo hay olivos y almendros."
+                "Las migas son muy buenas.",
+                "Echa sal y aceite."
               ],
-              "answer": 1
+              "answer": 0
             },
             {
               "id": "u18-l1-e8",
@@ -7657,8 +7633,8 @@
                   "🔪"
                 ],
                 [
-                  "plato",
-                  "🍽️"
+                  "cullara",
+                  "🥄"
                 ],
                 [
                   "sartana",
@@ -7713,11 +7689,11 @@
               "t": "choice",
               "ar": "A cullara y a forqueta.",
               "options": [
-                "Comemos uva en otoño.",
-                "La cuchara y el tenedor.",
-                "En el campo hay olivos y almendros."
+                "El cuchillo está en la mesa.",
+                "Hay aceite en la sartén.",
+                "La cuchara y el tenedor."
               ],
-              "answer": 1
+              "answer": 2
             },
             {
               "id": "u18-l2-e5",
@@ -7738,13 +7714,13 @@
               "es": "El cuchillo está en la mesa.",
               "answer": "O cuitiello ye en a mesa.",
               "tiles": [
-                "ye",
-                "cuchara.",
                 "O",
-                "cuitiello",
-                "mesa.",
                 "a",
+                "cuchara.",
+                "cuitiello",
+                "ye",
                 "el",
+                "mesa.",
                 "en"
               ]
             },
@@ -7753,11 +7729,11 @@
               "t": "choice",
               "ar": "Bi ha aceite en a sartana.",
               "options": [
-                "Hay aceite en la sartén.",
-                "En otoño comemos castañas.",
-                "Corta el pan."
+                "La cuchara y el tenedor.",
+                "Las migas son muy buenas.",
+                "Hay aceite en la sartén."
               ],
-              "answer": 0
+              "answer": 2
             },
             {
               "id": "u18-l2-e8",
@@ -7798,12 +7774,12 @@
               "answer": "chitar",
               "options": [
                 [
-                  "sal",
-                  "🧂"
+                  "cocer",
+                  "♨️"
                 ],
                 [
-                  "guisar",
-                  "👩‍🍳"
+                  "aceite",
+                  "🫒"
                 ],
                 [
                   "chitar",
@@ -7839,10 +7815,10 @@
               "ar": "Corta o pan.",
               "options": [
                 "Echa sal y aceite.",
-                "El cuchillo está en la mesa.",
-                "Corta el pan."
+                "Corta el pan.",
+                "El cuchillo está en la mesa."
               ],
-              "answer": 2
+              "answer": 1
             },
             {
               "id": "u18-l3-e5",
@@ -7863,12 +7839,12 @@
               "es": "Echa sal y aceite.",
               "answer": "Chita sal y aceite.",
               "tiles": [
-                "y",
                 "el",
-                "Chita",
-                "sal",
+                "y",
                 "echa",
-                "aceite."
+                "Chita",
+                "aceite.",
+                "sal"
               ]
             },
             {
@@ -7876,11 +7852,11 @@
               "t": "choice",
               "ar": "Cuece as borrajas.",
               "options": [
-                "Comemos uva en otoño.",
-                "Me gusta el ternasco.",
-                "Cuece las borrajas."
+                "Corta el pan.",
+                "Cuece las borrajas.",
+                "Hay aceite en la sartén."
               ],
-              "answer": 2
+              "answer": 1
             },
             {
               "id": "u18-l3-e8",
@@ -7892,130 +7868,6 @@
         },
         {
           "id": "u18-l4",
-          "nombre": "En o campo",
-          "ejercicios": [
-            {
-              "id": "u18-l4-e1",
-              "t": "pick",
-              "es": "olivo",
-              "answer": "olivera",
-              "options": [
-                [
-                  "uga",
-                  "🍇"
-                ],
-                [
-                  "olivera",
-                  "🫒"
-                ],
-                [
-                  "tocino",
-                  "🐖"
-                ]
-              ]
-            },
-            {
-              "id": "u18-l4-e2",
-              "t": "pick",
-              "es": "almendro",
-              "answer": "almendrera",
-              "options": [
-                [
-                  "tocino",
-                  "🐖"
-                ],
-                [
-                  "almendrera",
-                  "🌸"
-                ],
-                [
-                  "uga",
-                  "🍇"
-                ]
-              ]
-            },
-            {
-              "id": "u18-l4-e3",
-              "t": "match",
-              "pairs": [
-                [
-                  "noguera",
-                  "nogal"
-                ],
-                [
-                  "uga",
-                  "uva"
-                ],
-                [
-                  "ordio",
-                  "cebada"
-                ],
-                [
-                  "tocino",
-                  "cerdo"
-                ]
-              ]
-            },
-            {
-              "id": "u18-l4-e4",
-              "t": "choice",
-              "ar": "En o campo bi ha oliveras y almendreras.",
-              "options": [
-                "Las migas son muy buenas.",
-                "Echa sal y aceite.",
-                "En el campo hay olivos y almendros."
-              ],
-              "answer": 2
-            },
-            {
-              "id": "u18-l4-e5",
-              "t": "fill",
-              "before": "En o campo bi ha",
-              "after": ".",
-              "es": "En el campo hay cebada.",
-              "options": [
-                "ordio",
-                "uga",
-                "noguera"
-              ],
-              "answer": "ordio"
-            },
-            {
-              "id": "u18-l4-e6",
-              "t": "build",
-              "es": "El nogal es muy grande.",
-              "answer": "A noguera ye muito gran.",
-              "tiles": [
-                "noguera",
-                "ye",
-                "muy",
-                "muito",
-                "el",
-                "gran.",
-                "A"
-              ]
-            },
-            {
-              "id": "u18-l4-e7",
-              "t": "choice",
-              "ar": "Minchamos uga en agüerro.",
-              "options": [
-                "En otoño comemos castañas.",
-                "Las migas son muy buenas.",
-                "Comemos uva en otoño."
-              ],
-              "answer": 2
-            },
-            {
-              "id": "u18-l4-e8",
-              "t": "write",
-              "es": "Comemos uva en otoño.",
-              "answer": "Minchamos uga en agüerro."
-            }
-          ]
-        },
-        {
-          "id": "u18-l5",
           "nombre": "Repaso",
           "repaso": true
         }
@@ -8102,30 +7954,6 @@
         {
           "ar": "tornaremos",
           "es": "volveremos"
-        },
-        {
-          "ar": "pardal",
-          "es": "gorrión"
-        },
-        {
-          "ar": "ababol",
-          "es": "amapola"
-        },
-        {
-          "ar": "abella",
-          "es": "abeja"
-        },
-        {
-          "ar": "caragol",
-          "es": "caracol"
-        },
-        {
-          "ar": "granota",
-          "es": "rana"
-        },
-        {
-          "ar": "sargantana",
-          "es": "lagartija"
         }
       ],
       "lecciones": [
@@ -8140,8 +7968,8 @@
               "answer": "maitín",
               "options": [
                 [
-                  "prosimo",
-                  "⏭️"
+                  "tornar",
+                  "🔙"
                 ],
                 [
                   "maitín",
@@ -8164,8 +7992,8 @@
                   "🌅"
                 ],
                 [
-                  "tornar",
-                  "🔙"
+                  "vacacions",
+                  "🏖️"
                 ],
                 [
                   "semana",
@@ -8201,8 +8029,8 @@
               "ar": "Maitín voi a viachar.",
               "options": [
                 "Mañana voy a viajar.",
-                "Un gorrión canta en la plaza.",
-                "Volveremos pronto."
+                "La semana que viene visitaré a mi abuela.",
+                "Visitaré Huesca y Jaca."
               ],
               "answer": 0
             },
@@ -8225,15 +8053,15 @@
               "es": "La semana que viene visitaré a mi abuela.",
               "answer": "A semana prosima visitaré a mi lola.",
               "tiles": [
-                "A",
                 "viajar",
+                "voy",
                 "mi",
-                "semana",
-                "visitaré",
-                "prosima",
                 "a",
                 "lola.",
-                "voy"
+                "A",
+                "semana",
+                "visitaré",
+                "prosima"
               ]
             },
             {
@@ -8241,8 +8069,8 @@
               "t": "choice",
               "ar": "Tornaremos luego.",
               "options": [
-                "Mañana voy a viajar.",
-                "Un gorrión canta en la plaza.",
+                "La semana que viene visitaré a mi abuela.",
+                "¿Tienes el billete, Francisco?",
                 "Volveremos pronto."
               ],
               "answer": 2
@@ -8266,16 +8094,16 @@
               "answer": "tren",
               "options": [
                 [
-                  "tren",
-                  "🚆"
-                ],
-                [
-                  "billete",
-                  "🎫"
+                  "autobús",
+                  "🚌"
                 ],
                 [
                   "maleta",
                   "🧳"
+                ],
+                [
+                  "tren",
+                  "🚆"
                 ]
               ]
             },
@@ -8286,16 +8114,16 @@
               "answer": "autobús",
               "options": [
                 [
-                  "maleta",
-                  "🧳"
-                ],
-                [
                   "autobús",
                   "🚌"
                 ],
                 [
-                  "coche",
-                  "🚗"
+                  "billete",
+                  "🎫"
+                ],
+                [
+                  "maleta",
+                  "🧳"
                 ]
               ]
             },
@@ -8326,11 +8154,11 @@
               "t": "choice",
               "ar": "Viacharemos en tren.",
               "options": [
-                "Hay amapolas en el campo.",
-                "La semana que viene visitaré a mi abuela.",
-                "Viajaremos en tren."
+                "Viajaremos en tren.",
+                "Visitaré Huesca y Jaca.",
+                "La semana que viene visitaré a mi abuela."
               ],
-              "answer": 2
+              "answer": 0
             },
             {
               "id": "u19-l2-e5",
@@ -8351,11 +8179,11 @@
               "es": "Mi maleta es grande.",
               "answer": "A mía maleta ye gran.",
               "tiles": [
-                "viajaremos",
-                "gran.",
                 "maleta",
-                "mía",
                 "ye",
+                "gran.",
+                "mía",
+                "viajaremos",
                 "tren",
                 "A"
               ]
@@ -8365,11 +8193,11 @@
               "t": "choice",
               "ar": "¿Tiens o billete, Francho?",
               "options": [
-                "Mi maleta es grande.",
-                "Un gorrión canta en la plaza.",
-                "¿Tienes el billete, Francisco?"
+                "¿Tienes el billete, Francisco?",
+                "Nadaremos en la playa.",
+                "Volveremos pronto."
               ],
-              "answer": 2
+              "answer": 0
             },
             {
               "id": "u19-l2-e8",
@@ -8390,16 +8218,16 @@
               "answer": "mar",
               "options": [
                 [
+                  "nadaremos",
+                  "🏊"
+                ],
+                [
                   "mar",
                   "🌊"
                 ],
                 [
                   "visitar",
                   "🗺️"
-                ],
-                [
-                  "nadaremos",
-                  "🏊"
                 ]
               ]
             },
@@ -8410,16 +8238,16 @@
               "answer": "placha",
               "options": [
                 [
-                  "visitar",
-                  "🗺️"
+                  "tornaremos",
+                  "🔙"
                 ],
                 [
                   "placha",
                   "🏖️"
                 ],
                 [
-                  "nadaremos",
-                  "🏊"
+                  "mar",
+                  "🌊"
                 ]
               ]
             },
@@ -8450,11 +8278,11 @@
               "t": "choice",
               "ar": "En vacacions viacharemos ta o mar.",
               "options": [
+                "Visitaré Huesca y Jaca.",
                 "En vacaciones viajaremos al mar.",
-                "La semana que viene visitaré a mi abuela.",
-                "Volveremos pronto."
+                "Mi maleta es grande."
               ],
-              "answer": 0
+              "answer": 1
             },
             {
               "id": "u19-l3-e5",
@@ -8475,12 +8303,12 @@
               "es": "Visitaré Huesca y Jaca.",
               "answer": "Visitaré Uesca y Chaca.",
               "tiles": [
+                "Visitaré",
+                "Chaca.",
+                "Uesca",
                 "y",
                 "nadamos",
-                "Uesca",
-                "playa",
-                "Visitaré",
-                "Chaca."
+                "playa"
               ]
             },
             {
@@ -8488,11 +8316,11 @@
               "t": "choice",
               "ar": "Nadaremos en a placha.",
               "options": [
+                "La semana que viene visitaré a mi abuela.",
                 "Nadaremos en la playa.",
-                "Viajaremos en tren.",
-                "Mi maleta es grande."
+                "¿Tienes el billete, Francisco?"
               ],
-              "answer": 0
+              "answer": 1
             },
             {
               "id": "u19-l3-e8",
@@ -8504,131 +8332,6 @@
         },
         {
           "id": "u19-l4",
-          "nombre": "En o lugar",
-          "ejercicios": [
-            {
-              "id": "u19-l4-e1",
-              "t": "pick",
-              "es": "gorrión",
-              "answer": "pardal",
-              "options": [
-                [
-                  "pardal",
-                  "🐦"
-                ],
-                [
-                  "caragol",
-                  "🐌"
-                ],
-                [
-                  "abella",
-                  "🐝"
-                ]
-              ]
-            },
-            {
-              "id": "u19-l4-e2",
-              "t": "pick",
-              "es": "amapola",
-              "answer": "ababol",
-              "options": [
-                [
-                  "sargantana",
-                  "🦎"
-                ],
-                [
-                  "ababol",
-                  "🌺"
-                ],
-                [
-                  "abella",
-                  "🐝"
-                ]
-              ]
-            },
-            {
-              "id": "u19-l4-e3",
-              "t": "match",
-              "pairs": [
-                [
-                  "abella",
-                  "abeja"
-                ],
-                [
-                  "caragol",
-                  "caracol"
-                ],
-                [
-                  "granota",
-                  "rana"
-                ],
-                [
-                  "sargantana",
-                  "lagartija"
-                ]
-              ]
-            },
-            {
-              "id": "u19-l4-e4",
-              "t": "choice",
-              "ar": "Bi ha ababols en o campo.",
-              "options": [
-                "Nadaremos en la playa.",
-                "Hay amapolas en el campo.",
-                "En vacaciones viajaremos al mar."
-              ],
-              "answer": 1
-            },
-            {
-              "id": "u19-l4-e5",
-              "t": "fill",
-              "before": "Veigo una",
-              "after": "en a peña.",
-              "es": "Veo una lagartija en la roca.",
-              "options": [
-                "sargantana",
-                "abella",
-                "granota"
-              ],
-              "answer": "sargantana"
-            },
-            {
-              "id": "u19-l4-e6",
-              "t": "build",
-              "es": "La rana está en el río.",
-              "answer": "A granota ye en o río.",
-              "tiles": [
-                "la",
-                "ye",
-                "río.",
-                "A",
-                "o",
-                "en",
-                "veo",
-                "granota"
-              ]
-            },
-            {
-              "id": "u19-l4-e7",
-              "t": "choice",
-              "ar": "Un pardal canta en a plaza.",
-              "options": [
-                "Un gorrión canta en la plaza.",
-                "Mi maleta es grande.",
-                "Viajaremos en tren."
-              ],
-              "answer": 0
-            },
-            {
-              "id": "u19-l4-e8",
-              "t": "write",
-              "es": "Un gorrión canta en la plaza.",
-              "answer": "Un pardal canta en a plaza."
-            }
-          ]
-        },
-        {
-          "id": "u19-l5",
           "nombre": "Repaso",
           "repaso": true
         }
@@ -8715,54 +8418,6 @@
         {
           "ar": "pico",
           "es": "pico"
-        },
-        {
-          "ar": "rabosa",
-          "es": "zorro"
-        },
-        {
-          "ar": "sarrio",
-          "es": "sarrio, rebeco"
-        },
-        {
-          "ar": "chabalín",
-          "es": "jabalí"
-        },
-        {
-          "ar": "voltor",
-          "es": "buitre"
-        },
-        {
-          "ar": "crebantagüesos",
-          "es": "quebrantahuesos"
-        },
-        {
-          "ar": "esquirol",
-          "es": "ardilla"
-        },
-        {
-          "ar": "carrasca",
-          "es": "encina"
-        },
-        {
-          "ar": "fau",
-          "es": "haya"
-        },
-        {
-          "ar": "abet",
-          "es": "abeto"
-        },
-        {
-          "ar": "chinebro",
-          "es": "enebro"
-        },
-        {
-          "ar": "buxo",
-          "es": "boj"
-        },
-        {
-          "ar": "flor de nieu",
-          "es": "edelweiss"
         }
       ],
       "lecciones": [
@@ -8777,16 +8432,16 @@
               "answer": "tuca",
               "options": [
                 [
-                  "ibón",
-                  "💧"
-                ],
-                [
-                  "val",
-                  "🏞️"
-                ],
-                [
                   "tuca",
                   "⛰️"
+                ],
+                [
+                  "chelera",
+                  "🧊"
+                ],
+                [
+                  "peña",
+                  "🪨"
                 ]
               ]
             },
@@ -8797,16 +8452,16 @@
               "answer": "ibón",
               "options": [
                 [
+                  "chelera",
+                  "🧊"
+                ],
+                [
                   "ibón",
                   "💧"
                 ],
                 [
-                  "val",
-                  "🏞️"
-                ],
-                [
-                  "tuca",
-                  "⛰️"
+                  "peña",
+                  "🪨"
                 ]
               ]
             },
@@ -8838,8 +8493,8 @@
               "ar": "Bi ha nieu en a tuca.",
               "options": [
                 "Hay nieve en la cumbre.",
-                "Ángel y Lucía descansan en el refugio.",
-                "¡Hemos subido al pico!"
+                "El lago está en el valle.",
+                "Dormimos en el refugio."
               ],
               "answer": 0
             },
@@ -8862,14 +8517,14 @@
               "es": "El lago está en el valle.",
               "answer": "O ibón ye en a val.",
               "tiles": [
-                "ye",
-                "nieve",
-                "el",
                 "a",
-                "O",
+                "ibón",
                 "en",
                 "val.",
-                "ibón"
+                "ye",
+                "nieve",
+                "O",
+                "el"
               ]
             },
             {
@@ -8877,8 +8532,8 @@
               "t": "choice",
               "ar": "A chelera ye muito gran.",
               "options": [
-                "Mira abajo: hay un lago.",
-                "Ahora bajamos al refugio.",
+                "Dormimos en el refugio.",
+                "Ángel y Lucía descansan en el refugio.",
                 "El glaciar es muy grande."
               ],
               "answer": 2
@@ -8902,16 +8557,16 @@
               "answer": "refuchio",
               "options": [
                 [
+                  "dormir",
+                  "😴"
+                ],
+                [
                   "refuchio",
                   "🛖"
                 ],
                 [
-                  "muchila",
-                  "🎒"
-                ],
-                [
-                  "dormir",
-                  "😴"
+                  "aire",
+                  "🌬️"
                 ]
               ]
             },
@@ -8922,16 +8577,16 @@
               "answer": "muchila",
               "options": [
                 [
-                  "muchila",
-                  "🎒"
-                ],
-                [
                   "escansar",
                   "😌"
                 ],
                 [
-                  "fa frío",
-                  "🥶"
+                  "muchila",
+                  "🎒"
+                ],
+                [
+                  "dormir",
+                  "😴"
                 ]
               ]
             },
@@ -8962,11 +8617,11 @@
               "t": "choice",
               "ar": "Dormimos en o refuchio.",
               "options": [
+                "Ahora bajamos al refugio.",
                 "Dormimos en el refugio.",
-                "Ángel y Lucía descansan en el refugio.",
-                "El zorro vive en el monte."
+                "El lago está en el valle."
               ],
-              "answer": 0
+              "answer": 1
             },
             {
               "id": "u20-l2-e5",
@@ -8987,10 +8642,10 @@
               "es": "Hace viento.",
               "answer": "Fa aire.",
               "tiles": [
-                "Fa",
                 "aire.",
+                "viento.",
                 "refugio",
-                "viento."
+                "Fa"
               ]
             },
             {
@@ -8999,8 +8654,8 @@
               "ar": "Ánchel y Luzía escansan en o refuchio.",
               "options": [
                 "Ángel y Lucía descansan en el refugio.",
-                "Hay sarrios en la cumbre.",
-                "Hace viento."
+                "El glaciar es muy grande.",
+                "Dormimos en el refugio."
               ],
               "answer": 0
             },
@@ -9047,12 +8702,12 @@
                   "⬆️"
                 ],
                 [
-                  "abaixo",
-                  "⬇️"
+                  "pico",
+                  "🏔️"
                 ],
                 [
-                  "baixar",
-                  "🥾"
+                  "plegar",
+                  "🏁"
                 ]
               ]
             },
@@ -9084,8 +8739,8 @@
               "ar": "¡Hemos puyau ta o pico!",
               "options": [
                 "¡Hemos subido al pico!",
-                "Hay nieve en la cumbre.",
-                "Ángel y Lucía descansan en el refugio."
+                "Hace viento.",
+                "El glaciar es muy grande."
               ],
               "answer": 0
             },
@@ -9108,13 +8763,13 @@
               "es": "Ahora bajamos al refugio.",
               "answer": "Agora baixamos ta o refuchio.",
               "tiles": [
-                "subido",
                 "baixamos",
-                "o",
-                "abajo:",
+                "subido",
                 "ta",
-                "refuchio.",
-                "Agora"
+                "o",
+                "Agora",
+                "abajo:",
+                "refuchio."
               ]
             },
             {
@@ -9122,11 +8777,11 @@
               "t": "choice",
               "ar": "Mira abaixo: bi ha un ibón.",
               "options": [
-                "Ahora bajamos al refugio.",
-                "Mira abajo: hay un lago.",
-                "La encina es un árbol muy viejo."
+                "Dormimos en el refugio.",
+                "Hay nieve en la cumbre.",
+                "Mira abajo: hay un lago."
               ],
-              "answer": 1
+              "answer": 2
             },
             {
               "id": "u20-l3-e8",
@@ -9138,256 +8793,6 @@
         },
         {
           "id": "u20-l4",
-          "nombre": "Animals d'o monte",
-          "ejercicios": [
-            {
-              "id": "u20-l4-e1",
-              "t": "pick",
-              "es": "zorro",
-              "answer": "rabosa",
-              "options": [
-                [
-                  "rabosa",
-                  "🦊"
-                ],
-                [
-                  "sarrio",
-                  "🐐"
-                ],
-                [
-                  "esquirol",
-                  "🐿️"
-                ]
-              ]
-            },
-            {
-              "id": "u20-l4-e2",
-              "t": "pick",
-              "es": "sarrio, rebeco",
-              "answer": "sarrio",
-              "options": [
-                [
-                  "chabalín",
-                  "🐗"
-                ],
-                [
-                  "sarrio",
-                  "🐐"
-                ],
-                [
-                  "esquirol",
-                  "🐿️"
-                ]
-              ]
-            },
-            {
-              "id": "u20-l4-e3",
-              "t": "match",
-              "pairs": [
-                [
-                  "chabalín",
-                  "jabalí"
-                ],
-                [
-                  "voltor",
-                  "buitre"
-                ],
-                [
-                  "crebantagüesos",
-                  "quebrantahuesos"
-                ],
-                [
-                  "esquirol",
-                  "ardilla"
-                ]
-              ]
-            },
-            {
-              "id": "u20-l4-e4",
-              "t": "choice",
-              "ar": "Bi ha sarrios en a tuca.",
-              "options": [
-                "Hay sarrios en la cumbre.",
-                "El zorro vive en el monte.",
-                "Hay nieve en la cumbre."
-              ],
-              "answer": 0
-            },
-            {
-              "id": "u20-l4-e5",
-              "t": "fill",
-              "before": "Bi ha un",
-              "after": "en o monte.",
-              "es": "Hay un jabalí en el monte.",
-              "options": [
-                "chabalín",
-                "esquirol",
-                "voltor"
-              ],
-              "answer": "chabalín"
-            },
-            {
-              "id": "u20-l4-e6",
-              "t": "build",
-              "es": "El zorro vive en el monte.",
-              "answer": "A rabosa vive en o monte.",
-              "tiles": [
-                "o",
-                "en",
-                "monte.",
-                "hay",
-                "vive",
-                "A",
-                "el",
-                "rabosa"
-              ]
-            },
-            {
-              "id": "u20-l4-e7",
-              "t": "choice",
-              "ar": "Veigo un voltor en o cielo.",
-              "options": [
-                "Veo un buitre en el cielo.",
-                "Ahora bajamos al refugio.",
-                "El glaciar es muy grande."
-              ],
-              "answer": 0
-            },
-            {
-              "id": "u20-l4-e8",
-              "t": "write",
-              "es": "Veo un buitre en el cielo.",
-              "answer": "Veigo un voltor en o cielo."
-            }
-          ]
-        },
-        {
-          "id": "u20-l5",
-          "nombre": "Árbols y flors",
-          "ejercicios": [
-            {
-              "id": "u20-l5-e1",
-              "t": "pick",
-              "es": "encina",
-              "answer": "carrasca",
-              "options": [
-                [
-                  "carrasca",
-                  "🌳"
-                ],
-                [
-                  "buxo",
-                  "🌿"
-                ],
-                [
-                  "chinebro",
-                  "🫐"
-                ]
-              ]
-            },
-            {
-              "id": "u20-l5-e2",
-              "t": "pick",
-              "es": "haya",
-              "answer": "fau",
-              "options": [
-                [
-                  "abet",
-                  "🌲"
-                ],
-                [
-                  "fau",
-                  "🍂"
-                ],
-                [
-                  "chinebro",
-                  "🫐"
-                ]
-              ]
-            },
-            {
-              "id": "u20-l5-e3",
-              "t": "match",
-              "pairs": [
-                [
-                  "abet",
-                  "abeto"
-                ],
-                [
-                  "chinebro",
-                  "enebro"
-                ],
-                [
-                  "buxo",
-                  "boj"
-                ],
-                [
-                  "flor de nieu",
-                  "edelweiss"
-                ]
-              ]
-            },
-            {
-              "id": "u20-l5-e4",
-              "t": "choice",
-              "ar": "A carrasca ye un árbol muito viello.",
-              "options": [
-                "Ahora bajamos al refugio.",
-                "Dormimos en el refugio.",
-                "La encina es un árbol muy viejo."
-              ],
-              "answer": 2
-            },
-            {
-              "id": "u20-l5-e5",
-              "t": "fill",
-              "before": "En a val bi ha un",
-              "after": ".",
-              "es": "En el valle hay un enebro.",
-              "options": [
-                "chinebro",
-                "buxo",
-                "abet"
-              ],
-              "answer": "chinebro"
-            },
-            {
-              "id": "u20-l5-e6",
-              "t": "build",
-              "es": "En el valle hay hayas.",
-              "answer": "En a val bi ha faus.",
-              "tiles": [
-                "En",
-                "bi",
-                "el",
-                "a",
-                "ha",
-                "hay",
-                "val",
-                "faus."
-              ]
-            },
-            {
-              "id": "u20-l5-e7",
-              "t": "choice",
-              "ar": "A flor de nieu ye blanca.",
-              "options": [
-                "La encina es un árbol muy viejo.",
-                "Dormimos en el refugio.",
-                "La flor de nieve (edelweiss) es blanca."
-              ],
-              "answer": 2
-            },
-            {
-              "id": "u20-l5-e8",
-              "t": "write",
-              "es": "La flor de nieve (edelweiss) es blanca.",
-              "answer": "A flor de nieu ye blanca."
-            }
-          ]
-        },
-        {
-          "id": "u20-l6",
           "nombre": "Repaso",
           "repaso": true
         }

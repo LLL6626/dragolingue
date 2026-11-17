@@ -97,10 +97,7 @@ unit('u18', 'La cocina aragonesa', 'Migas, ternasco, borraja, corta…',
     ('Bi ha aceite en a','.','Hay aceite en la sartén.',['sartana','olla','cullara'],'sartana'), ['el','cuchara.']),
   L('Una receta', [('cortar','cortar','🔪'),('chitar','echar','🫗'),('sal','sal','🧂'),('aceite','aceite','🫒'),('cocer','cocer','♨️'),('guisar','cocinar','👩‍🍳')],
     [('Corta o pan.','Corta el pan.'),('Chita sal y aceite.','Echa sal y aceite.'),('Cuece as borrajas.','Cuece las borrajas.')],
-    ('','sal y aceite.','Echa sal y aceite.',['Chita','Corta','Cuece'],'Chita'), ['echa','el']),
-  L('En o campo', [('olivera','olivo','🫒'),('almendrera','almendro','🌸'),('noguera','nogal','🥜'),('uga','uva','🍇'),('ordio','cebada','🌾'),('tocino','cerdo','🐖')],
-    [('En o campo bi ha oliveras y almendreras.','En el campo hay olivos y almendros.'),('A noguera ye muito gran.','El nogal es muy grande.'),('Minchamos uga en agüerro.','Comemos uva en otoño.')],
-    ('En o campo bi ha','.','En el campo hay cebada.',['ordio','uga','noguera'],'ordio'), ['el','muy'])])
+    ('','sal y aceite.','Echa sal y aceite.',['Chita','Corta','Cuece'],'Chita'), ['echa','el'])])
 
 unit('u19', 'Planes y vacaciones', 'Maitín, viacharé, voi a…',
  '<p>Para el futuro: <i>viacharé</i> (viajaré), <i>visitarás</i>, <i>tornaremos</i> (volveremos). O, más fácil, <b>voi a</b> + infinitivo: <i>maitín voi a viachar</i>.</p><p>«Mañana» es <b>maitín</b> y «la semana que viene», <i>a semana prosima</i>.</p><p>La playa es la <b>placha</b>, y «volver», <b>tornar</b>.</p>',
@@ -112,10 +109,7 @@ unit('u19', 'Planes y vacaciones', 'Maitín, viacharé, voi a…',
     ('Viacharemos en','.','Viajaremos en avión.',['avión','maleta','billete'],'avión'), ['tren','viajaremos']),
   L('Viacharé…', [('mar','mar','🌊'),('placha','playa','🏖️'),('visitar','visitar','🗺️'),('viachar','viajar','🧭'),('nadaremos','nadaremos','🏊'),('tornaremos','volveremos','🔙')],
     [('En vacacions viacharemos ta o mar.','En vacaciones viajaremos al mar.'),('Visitaré Uesca y Chaca.','Visitaré Huesca y Jaca.'),('Nadaremos en a placha.','Nadaremos en la playa.')],
-    ('Nadaremos en a','.','Nadaremos en la playa.',['placha','mar','tren'],'placha'), ['playa','nadamos']),
-  L('En o lugar', [('pardal','gorrión','🐦'),('ababol','amapola','🌺'),('abella','abeja','🐝'),('caragol','caracol','🐌'),('granota','rana','🐸'),('sargantana','lagartija','🦎')],
-    [('Bi ha ababols en o campo.','Hay amapolas en el campo.'),('A granota ye en o río.','La rana está en el río.'),('Un pardal canta en a plaza.','Un gorrión canta en la plaza.')],
-    ('Veigo una','en a peña.','Veo una lagartija en la roca.',['sargantana','abella','granota'],'sargantana'), ['veo','la'])])
+    ('Nadaremos en a','.','Nadaremos en la playa.',['placha','mar','tren'],'placha'), ['playa','nadamos'])])
 
 unit('u20', 'La montaña', 'Tuca, refuchio, nieu, plegar…',
  '<p>En la montaña: la cumbre es la <b>tuca</b>, el refugio es el <b>refuchio</b>, la nieve es la <b>nieu</b> y el glaciar, la <b>chelera</b>.</p><p>«Viento» se dice <b>aire</b>: <i>fa aire</i> (hace viento). La mochila es la <b>muchila</b>.</p><p>«Llegar» es <b>plegar</b>; «arriba», <b>alto</b>, y «abajo», <b>abaixo</b>. <i>¡Hemos puyau ta o pico!</i></p>',
@@ -127,10 +121,4 @@ unit('u20', 'La montaña', 'Tuca, refuchio, nieu, plegar…',
     ('Dormimos en o','.','Dormimos en el refugio.',['refuchio','muchila','aire'],'refuchio'), ['refugio','viento.']),
   L('¡Hemos plegau!', [('plegar','llegar','🏁'),('alto','arriba','⬆️'),('abaixo','abajo','⬇️'),('puyar','subir','🧗'),('baixar','bajar','🥾'),('pico','pico','🏔️')],
     [('¡Hemos puyau ta o pico!','¡Hemos subido al pico!'),('Agora baixamos ta o refuchio.','Ahora bajamos al refugio.'),('Mira abaixo: bi ha un ibón.','Mira abajo: hay un lago.')],
-    ('¡Hemos','ta o pico!','¡Hemos subido al pico!',['puyau','baixau','plegar'],'puyau'), ['subido','abajo:']),
-  L("Animals d'o monte", [('rabosa','zorro','🦊'),('sarrio','sarrio, rebeco','🐐'),('chabalín','jabalí','🐗'),('voltor','buitre','🦅'),('crebantagüesos','quebrantahuesos','🦴'),('esquirol','ardilla','🐿️')],
-    [('Bi ha sarrios en a tuca.','Hay sarrios en la cumbre.'),('A rabosa vive en o monte.','El zorro vive en el monte.'),('Veigo un voltor en o cielo.','Veo un buitre en el cielo.')],
-    ('Bi ha un','en o monte.','Hay un jabalí en el monte.',['chabalín','esquirol','voltor'],'chabalín'), ['hay','el']),
-  L('Árbols y flors', [('carrasca','encina','🌳'),('fau','haya','🍂'),('abet','abeto','🌲'),('chinebro','enebro','🫐'),('buxo','boj','🌿'),('flor de nieu','edelweiss','⭐')],
-    [('A carrasca ye un árbol muito viello.','La encina es un árbol muy viejo.'),('En a val bi ha faus.','En el valle hay hayas.'),('A flor de nieu ye blanca.','La flor de nieve (edelweiss) es blanca.')],
-    ('En a val bi ha un','.','En el valle hay un enebro.',['chinebro','buxo','abet'],'chinebro'), ['hay','el'])])
+    ('¡Hemos','ta o pico!','¡Hemos subido al pico!',['puyau','baixau','plegar'],'puyau'), ['subido','abajo:'])])
