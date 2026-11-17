@@ -12,7 +12,7 @@ unit('u11', 'La ropa', 'Camisa, pantalons, saya, levar…',
     [('A camisa ye blanca.','La camisa es blanca.'),('Os pantalons son curtos.','Los pantalones son cortos.'),('Un chapero negro.','Un sombrero negro.')],
     ('A saya ye','.','La falda es larga.',['larga','largo','largos'],'larga'), ['blanco','corto']),
   L('¿Qué levas?', [('chambreta','camiseta','👕'),('peducos','calcetines','🧦'),('botas','botas','🥾'),('abrigo','abrigo','🧥'),('bufanda','bufanda','🧣'),('cacherulo','pañuelo de cabeza','🟥')],
-    [('¿Qué levas hue?','¿Qué llevas hoy?'),('Levo o cacherulo.','Llevo el pañuelo.'),('Fa frío: leva o abrigo.','Hace frío: lleva el abrigo.')],
+    [('¿Qué levas hue?','¿Qué llevas hoy?'),('Levo o cacherulo.','Llevo el pañuelo.'),("Fa frío: leva l'abrigo.",'Hace frío: lleva el abrigo.')],
     ('Fa frío: leva','bufanda.','Hace frío: lleva la bufanda.',['a','o','os'],'a'), ['lleva','calor:'])])
 
 unit('u12', 'Tiempo libre y deportes', 'Me cuaca leyer, chugar, nadar…',
@@ -133,4 +133,4 @@ unit('u20', 'La montaña', 'Tuca, refuchio, nieu, plegar…',
     ('Bi ha un','en o monte.','Hay un jabalí en el monte.',['chabalín','esquirol','voltor'],'chabalín'), ['hay','el']),
   L('Árbols y flors', [('carrasca','encina','🌳'),('fau','haya','🍂'),('abet','abeto','🌲'),('chinebro','enebro','🫐'),('buxo','boj','🌿'),('flor de nieu','edelweiss','⭐')],
     [('A carrasca ye un árbol muito viello.','La encina es un árbol muy viejo.'),('En a val bi ha faus.','En el valle hay hayas.'),('A flor de nieu ye blanca.','La flor de nieve (edelweiss) es blanca.')],
-    ('Bi ha nieu en o','.','Hay nieve en el abeto.',['abet','buxo','chinebro'],'abet'), ['hay','la'])])
+    ('En a val bi ha un','.','En el valle hay un enebro.',['chinebro','buxo','abet'],'chinebro'), ['hay','el'])])

@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "ortografia": "Academia Aragonesa de la Lengua, 2023",
   "ayuda": {
     "tipos": {
@@ -4596,7 +4596,7 @@
             {
               "id": "u11-l3-e7",
               "t": "choice",
-              "ar": "Fa frío: leva o abrigo.",
+              "ar": "Fa frío: leva l'abrigo.",
               "options": [
                 "Juana lleva una falda.",
                 "Hace frío: lleva el abrigo.",
@@ -4608,7 +4608,7 @@
               "id": "u11-l3-e8",
               "t": "write",
               "es": "Hace frío: lleva el abrigo.",
-              "answer": "Fa frío: leva o abrigo."
+              "answer": "Fa frío: leva l'abrigo."
             }
           ]
         },
@@ -9341,15 +9341,15 @@
             {
               "id": "u20-l5-e5",
               "t": "fill",
-              "before": "Bi ha nieu en o",
+              "before": "En a val bi ha un",
               "after": ".",
-              "es": "Hay nieve en el abeto.",
+              "es": "En el valle hay un enebro.",
               "options": [
-                "abet",
+                "chinebro",
                 "buxo",
-                "chinebro"
+                "abet"
               ],
-              "answer": "abet"
+              "answer": "chinebro"
             },
             {
               "id": "u20-l5-e6",
@@ -9359,7 +9359,7 @@
               "tiles": [
                 "En",
                 "bi",
-                "la",
+                "el",
                 "a",
                 "ha",
                 "hay",
