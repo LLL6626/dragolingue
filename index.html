@@ -73,6 +73,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .about-top{display:flex;align-items:center;gap:12px;padding-block:14px}
 .dots{flex:1;display:flex;justify-content:center;gap:6px}
 .langs{display:flex;gap:6px}
+.music-btn{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;flex:none}
+.music-btn svg{width:20px;height:20px}
+.music-btn[aria-pressed="false"]{color:var(--muted);opacity:.75}
+.now-playing{text-align:center;font-size:.8rem;color:var(--muted);margin:10px 0 0}
 .lang{width:32px;height:32px;padding:0;border-radius:50%;border:2px solid transparent;background:none;display:grid;place-items:center;opacity:.5;transition:opacity .15s}
 .lang svg{width:26px;height:26px;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
 .lang[aria-pressed="true"]{opacity:1;border-color:var(--monte)}
@@ -927,6 +931,53 @@ const FLAG_AR = (() => {
 </g></svg>`;
 })();
 function aboutLang() { return S.aboutLang === "an" ? "an" : "es"; }
+/* ---------- Música de «Sobre el aragonés» (PRUEBA, rama «musica») ----------
+   Se elige una canción al azar y suena en bucle mientras se está en «Sobre el aragonés».
+   Un botón la quita o la pone, y la app lo recuerda. */
+const MUSIC = [
+  { f: "somos", t: "Somos", a: "José Antonio Labordeta" },
+  { f: "pais-perdido", t: "País perdido", a: "La Ronda de Boltaña" },
+  { f: "mermelada-de-moras", t: "Mermelada de moras", a: "La Ronda de Boltaña" },
+];
+const ICON_SOUND_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" stroke="none"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>';
+const ICON_SOUND_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" stroke="none"/><path d="M17 9l5 6M22 9l-5 6"/></svg>';
+const MZ = { ctx: null, gain: null, src: null, cur: null, buf: {}, want: false };
+const musicOn = () => S.music !== false;
+const musicCaption = () => (musicOn() && MZ.cur != null) ? `♪ ${MUSIC[MZ.cur].t} · ${MUSIC[MZ.cur].a} (versión marimba)` : "";
+function paintMusic() {
+  const b = document.getElementById("music"), np = document.getElementById("now-playing");
+  if (b) { const on = musicOn(); b.setAttribute("aria-pressed", on); b.innerHTML = on ? ICON_SOUND_ON : ICON_SOUND_OFF; b.title = b.ariaLabel = on ? "Quitar la música" : "Poner la música"; }
+  if (np) np.textContent = musicCaption();
+}
+async function musicStart() {
+  if (!musicOn() || !MZ.want) return;
+  if (!MZ.ctx) {
+    const C = window.AudioContext || window.webkitAudioContext; if (!C) return;
+    MZ.ctx = new C(); MZ.gain = MZ.ctx.createGain(); MZ.gain.connect(MZ.ctx.destination);
+  }
+  if (MZ.ctx.state === "suspended") MZ.ctx.resume().catch(() => {});
+  if (MZ.src) return;
+  if (MZ.cur == null) MZ.cur = Math.floor(Math.random() * MUSIC.length);
+  const m = MUSIC[MZ.cur];
+  if (!MZ.buf[m.f]) {
+    const ext = new Audio().canPlayType('audio/ogg; codecs="opus"') ? "ogg" : "mp3";
+    try { const r = await fetch(`web/musica/${m.f}.${ext}`); MZ.buf[m.f] = await MZ.ctx.decodeAudioData(await r.arrayBuffer()); }
+    catch (e) { return; }
+  }
+  if (MZ.src || !musicOn() || !MZ.want) return;
+  const s = MZ.ctx.createBufferSource(); s.buffer = MZ.buf[m.f]; s.loop = true; s.connect(MZ.gain);
+  const t = MZ.ctx.currentTime; MZ.gain.gain.cancelScheduledValues(t); MZ.gain.gain.setValueAtTime(0, t); MZ.gain.gain.linearRampToValueAtTime(0.6, t + 1.2);
+  s.start(); MZ.src = s; paintMusic();
+}
+function musicStop() { if (MZ.src) { try { MZ.src.stop(); } catch (e) {} MZ.src = null; } }
+function musicLeave() { MZ.want = false; musicStop(); }
+// Si el navegador no deja sonar sin tocar antes la pantalla, arranca al primer toque.
+document.addEventListener("pointerdown", () => { if (MZ.want && MZ.ctx && MZ.ctx.state === "suspended") MZ.ctx.resume().catch(() => {}); }, true);
+document.addEventListener("visibilitychange", () => {
+  if (!MZ.ctx) return;
+  if (document.hidden) MZ.ctx.suspend().catch(() => {}); else if (MZ.want) MZ.ctx.resume().catch(() => {});
+});
+
 function renderAbout(i, keep) {
   if (!keep || !aboutImgs.length) pickAboutImgs();
   window.scrollTo(0, 0);
@@ -936,6 +987,7 @@ function renderAbout(i, keep) {
   $app.innerHTML = `<main class="about">
     <div class="about-top"><button class="icon-btn" id="ab-close" aria-label="Cerrar">${ICON.close}</button>
       <div class="dots">${ABOUT.map((_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div>
+      <button class="music-btn" id="music" aria-pressed="${musicOn()}" aria-label="${musicOn() ? "Quitar la música" : "Poner la música"}" title="${musicOn() ? "Quitar la música" : "Poner la música"}">${musicOn() ? ICON_SOUND_ON : ICON_SOUND_OFF}</button>
       <div class="langs" role="group" aria-label="Idioma">
         <button class="lang" data-lang="es" aria-pressed="${aboutLang() === "es"}" title="Castellano">${FLAG_ES}</button>
         <button class="lang" data-lang="an" aria-pressed="${aboutLang() === "an"}" title="Aragonés">${FLAG_AR}</button>
@@ -951,11 +1003,14 @@ function renderAbout(i, keep) {
       <div class="talk"><div class="mini">${dragon("happy")}</div><p lang="${an ? "an" : "es"}">${esc(T.text)}</p></div>
       ${T.src ? `<p class="src">${esc(T.src)}</p>` : ""}
     </article>
+    <p class="now-playing" id="now-playing">${musicCaption()}</p>
     <div class="about-nav">
       ${i > 0 ? `<button class="big-btn secondary" id="ab-prev">Anterior</button>` : ""}
       <button class="big-btn" id="ab-next">${last ? "¡Aprende aragonés!" : an ? "Siguient" : "Siguiente"}</button>
     </div></main>`;
-  $app.querySelector("#ab-close").onclick = () => (S.welcomed ? renderHome() : renderWelcome());
+  MZ.want = true; musicStart();
+  $app.querySelector("#music").onclick = () => { S.music = !musicOn(); save(); if (musicOn()) musicStart(); else musicStop(); paintMusic(); };
+  $app.querySelector("#ab-close").onclick = () => { musicLeave(); S.welcomed ? renderHome() : renderWelcome(); };
   $app.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => {
     if (aboutLang() === b.dataset.lang) return;
     S.aboutLang = b.dataset.lang; save();
@@ -970,7 +1025,7 @@ function renderAbout(i, keep) {
   fl.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } };
   const p = $app.querySelector("#ab-prev"); if (p) p.onclick = () => renderAbout(i - 1, true);
   $app.querySelector("#ab-next").onclick = () => {
-    if (last) { S.welcomed = true; save(); tab = "learn"; renderHome(); } else renderAbout(i + 1, true);
+    if (last) { musicLeave(); S.welcomed = true; save(); tab = "learn"; renderHome(); } else renderAbout(i + 1, true);
   };
 }
 
